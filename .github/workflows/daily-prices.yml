@@ -71,3 +71,22 @@ jobs:
           git diff --cached --quiet && echo "No changes" || git commit -m "merged feed $(date -u +%F)"
           git pull --rebase --autostash origin main || true
           git push
+
+  alert:
+    needs: [scrape, merge]
+    if: failure()
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Open failure issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Nightly price run failed ${new Date().toISOString().slice(0,10)}`,
+              body: 'One or more chain jobs or the merge job failed. Check the run: ' + context.runUrl
+            });
