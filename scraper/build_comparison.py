@@ -37,8 +37,9 @@ def main():
             except json.JSONDecodeError:
                 continue
             n += 1
-            k = norm_key(r.get("name", ""))
-            if len(k) < 8:
+            ean = str(r.get("ean") or "").strip()
+            k = ("ean:" + ean) if len(ean) >= 12 else norm_key(r.get("name", ""))
+            if len(k.replace("ean:", "")) < 8:
                 continue
             if r["chain"] not in by_key[k] or r["price"] < by_key[k][r["chain"]]:
                 by_key[k][r["chain"]] = r["price"]

@@ -15,7 +15,8 @@ import sys
 import os
 import json
 import importlib
-from datetime import date, timedelta
+import time
+from datetime import date
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -49,15 +50,28 @@ def main():
 
     for chain in CHAINS:
         print(f"=== {chain} ===")
+        started = time.time()
         try:
             mod = importlib.import_module(chain)
             rows = mod.scrape(limit)
         except Exception as e:
-            print(f"  FAILED: {e}")
-            summary[chain] = {"error": str(e)}
+            print(f"  FAILED: {type(e).__name__}: {e}")
+            summary[chain] = {"error": f"{type(e).__name__}: {e}"}
+            continue
+        # guard: previous snapshot must exist and not be silently wiped
+        out = os.path.join(ROOT, "data", "latest", f"{chain}.jsonl")
+        prev_count = 0
+        if os.path.exists(out):
+            with open(out, encoding="utf-8") as f:
+                prev_count = sum(1 for _ in f)
+        if prev_count and len(rows) < prev_count * 0.3:
+            summary[chain] = {
+                "error": f"collapse guard: {len(rows)} rows vs {prev_count} before",
+                "kept_previous": True,
+            }
+            print(f"  !! kept previous snapshot ({len(rows)} new vs {prev_count})")
             continue
 
-        out = os.path.join(ROOT, "data", "latest", f"{chain}.jsonl")
         from common import write_jsonl
         write_jsonl(out, rows)
 
@@ -81,11 +95,16 @@ def main():
                 for c in changes:
                     f.write(json.dumps(c, ensure_ascii=False) + "\n")
 
-        summary[chain] = {"products": len(rows), "price_changes": len(changes)}
+        summary[chain] = {
+            "products": len(rows),
+            "price_changes": len(changes),
+            "seconds": round(time.time() - started, 1),
+        }
         print(f"  {len(rows)} products, {len(changes)} price changes")
 
     # merged file + summary
     merged = os.path.join(ROOT, "data", "latest", "prices.jsonl")
+    n_merged = 0
     with open(merged, "w", encoding="utf-8") as out:
         for chain in CHAINS:
             p = os.path.join(ROOT, "data", "latest", f"{chain}.jsonl")
@@ -94,8 +113,9 @@ def main():
             with open(p, encoding="utf-8") as f:
                 for line in f:
                     out.write(line)
+                    n_merged += 1
     with open(os.path.join(ROOT, "data", "latest", "summary.json"), "w") as f:
-        json.dump({"date": today, "chains": summary}, f, indent=1)
+        json.dump({"date": today, "total_rows": n_merged, "chains": summary}, f, indent=1)
     print(json.dumps(summary, indent=1))
 
 

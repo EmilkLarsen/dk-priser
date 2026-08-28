@@ -1,40 +1,41 @@
-"""Skousen.dk — premium appliances (kitchen, laundry, HVAC).
-sitemap-skou-products.xml -> /product/ pages -> ld+json price."""
-from common import get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl
+"""Skousen.dk — premium appliances. sitemap-skou-products.xml -> ld+json."""
+from common import sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_urls
 
 BASE = "https://www.skousen.dk"
 OUT = "data/latest/skousen.jsonl"
 
 
-def fetch_url_list(limit):
-    urls = sitemap_urls(get(f"{BASE}/seo/sitemap-skou-products.xml"))
-    urls = [u for u in urls if "/product/" in u]
+def fetch_url_list(limit=None):
+    urls = [u for u in sitemap_urls(get(BASE + "/seo/sitemap-skou-products.xml"))
+            if "/product/" in u]
     return urls[:limit] if limit else urls
 
 
-def scrape(limit= None) :
+def handle(u, html):
     rows = []
-    for u in fetch_url_list(limit):
-        try:
-            html = get(u)
-        except Exception as e:
-            print(f"  ! {u}: {e}")
+    for p in ldjson_products(html):
+        off = offer_from_ld(p)
+        if off:
+            off["price"] = sane_price(off["price"])
+        if not off or not off["price"]:
             continue
-        for p in ldjson_products(html):
-            off = offer_from_ld(p)
-            if not off:
-                continue
-            rows.append({
-                "chain": "skousen",
-                "sku": None,
-                "ean": None,
-                "name": p.get("name"),
-                "url": u,
-                "price": off["price"],
-                "in_stock": off["in_stock"],
-            })
-            break
+        if not off:
+            continue
+        rows.append({
+            "chain": "skousen",
+            "sku": None,
+            "ean": p.get("gtin13") or p.get("gtin") or p.get("ean"),
+            "name": p.get("name"),
+            "url": u,
+            "price": off["price"],
+            "in_stock": off["in_stock"],
+        })
+        break
     return rows
+
+
+def scrape(limit=None):
+    return scrape_urls(fetch_url_list(limit), handle)
 
 
 if __name__ == "__main__":
@@ -42,4 +43,4 @@ if __name__ == "__main__":
     lim = int(sys.argv[1]) if len(sys.argv) > 1 else None
     rows = scrape(lim)
     write_jsonl(OUT, rows)
-    print(f"skousen: {len(rows)} products -> {OUT}")
+    print("skousen: %d products -> %s" % (len(rows), OUT))

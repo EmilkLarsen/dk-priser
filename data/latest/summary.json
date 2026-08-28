@@ -2,40 +2,32 @@
  "date": "2026-08-28",
  "chains": {
   "silvan": {
-   "products": 15,
+   "products": 399,
    "price_changes": 0
   },
   "xlbyg": {
-   "products": 15,
-   "price_changes": 0
+   "error": "cannot import name 'sane_price' from 'common' (/Users/emillarsen/Desktop/GIthub/dk-byggepriser/scraper/common.py)"
   },
   "stark": {
-   "products": 13,
-   "price_changes": 0
+   "error": "cannot import name 'scrape_urls' from 'common' (/Users/emillarsen/Desktop/GIthub/dk-byggepriser/scraper/common.py)"
   },
   "bauhaus": {
-   "products": 12,
-   "price_changes": 0
+   "error": "cannot import name 'pmap' from 'common' (/Users/emillarsen/Desktop/GIthub/dk-byggepriser/scraper/common.py)"
   },
   "davidsen": {
-   "products": 334,
-   "price_changes": 0
+   "error": "cannot import name 'sane_price' from 'common' (/Users/emillarsen/Desktop/GIthub/dk-byggepriser/scraper/common.py)"
   },
   "fog": {
-   "products": 15,
-   "price_changes": 2
+   "error": "cannot import name 'sane_price' from 'common' (/Users/emillarsen/Desktop/GIthub/dk-byggepriser/scraper/common.py)"
   },
   "haraldnyborg": {
-   "products": 15,
-   "price_changes": 0
+   "error": "cannot import name 'sane_price' from 'common' (/Users/emillarsen/Desktop/GIthub/dk-byggepriser/scraper/common.py)"
   },
   "power": {
-   "products": 15,
-   "price_changes": 0
+   "error": "cannot import name 'sane_price' from 'common' (/Users/emillarsen/Desktop/GIthub/dk-byggepriser/scraper/common.py)"
   },
   "skousen": {
-   "products": 15,
-   "price_changes": 0
+   "error": "cannot import name 'sane_price' from 'common' (/Users/emillarsen/Desktop/GIthub/dk-byggepriser/scraper/common.py)"
   }
  }
 }
