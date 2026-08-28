@@ -14,6 +14,8 @@ import random
 import json
 import gzip
 import urllib.request
+import urllib.parse
+import urllib.error
 from concurrent.futures import ThreadPoolExecutor
 
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -36,11 +38,31 @@ def get(url, binary=False, max_bytes=40000000):
             time.sleep(wait)
         _last_req[host] = time.time()
     last_err = None
+    data = None
     for attempt in range(3):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*"})
-            with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
-                data = r.read(max_bytes)
+            class NoRedirect(urllib.request.HTTPRedirectHandler):
+                def redirect_request(self, req, fp, code, msg, headers, newurl):
+                    return None  # manual redirect handling
+
+            opener = urllib.request.build_opener(NoRedirect)
+            cur = url
+            for _ in range(5):
+                req = urllib.request.Request(cur, headers={"User-Agent": UA, "Accept": "*/*"})
+                try:
+                    with opener.open(req, timeout=TIMEOUT) as r:
+                        data = r.read(max_bytes)
+                    break
+                except urllib.error.HTTPError as e:
+                    if e.code in (301, 302, 303, 307, 308) and e.headers.get("Location"):
+                        cur = urllib.parse.urljoin(cur, e.headers["Location"])
+                        continue
+                    raise
+            if data is None:
+                raise RuntimeError("redirect loop: " + url)
+            if urllib.parse.urlsplit(cur).path.rstrip("/") != urllib.parse.urlsplit(url).path.rstrip("/"):
+                # a "product" URL that lands elsewhere = wrong product data
+                raise ValueError(f"redirected: {url} -> {cur}")
             last_err = None
             break
         except urllib.error.HTTPError as e:

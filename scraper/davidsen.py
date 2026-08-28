@@ -11,7 +11,8 @@ OUT = "data/latest/davidsen.jsonl"
 # variant block: productVariantId -> name -> priceInformation.price
 VAR_RE = re.compile(
     r'"productVariantId":"(\d+)","name":"([^"]{3,200})",'
-    r'"priceInformation":\{"price":\{"value":"([\d.,]+)"\}', re.S)
+    r'"priceInformation":\{"price":\{"value":"([\d.,]+)"\}'
+    r'(?:.{0,200}?"priceDescription":"([^"]{0,40})")?', re.S)
 # listing block: id -> name -> url (-p-<id>) ... price
 BLOCK_RE = re.compile(
     r'\{"id":"(\d+)","name":"([^"]+)","url":"(/[a-z0-9-]+-p-\d+)".{0,1500}?'
@@ -35,7 +36,8 @@ def fetch_url_list(limit=None):
 def handle(cu, html):
     rows, seen = [], set()
     for m in VAR_RE.finditer(html):
-        pid, name, price = m.groups()
+        pid, name, price = m.group(1), m.group(2), m.group(3)
+        unit = (m.group(4) or "").replace("kr./", "") or None
         key = "v" + pid
         if key in seen:
             continue
@@ -50,6 +52,7 @@ def handle(cu, html):
             "name": name,
             "url": "%s/search?q=%s" % (BASE, pid),  # variant-level URL fallback
             "price": p,
+            "unit": unit,
             "in_stock": None,
         })
     for m in BLOCK_RE.finditer(html):
