@@ -10,13 +10,26 @@ MD_SKU_RE = re.compile(r'itemprop="sku" content="([^"]+)"')
 NAME_RE = re.compile(r'<title[^>]*>([^<]+)</title>')
 
 
+# Bauhaus sitemap interleaves categories, blog posts and products with no
+# order. These patterns separate product URLs (12/12 verified hit rate on
+# itemprop microdata): dimension patterns (2400x520x18), specs (-4-w-,
+# -2000-k-, 320-lm), unit tokens (3-stk, oe95cm) or Magento -p-<id>.
+PRODUCT_PAT = re.compile(
+    r"(\d+x\d+|-p-\d{4,}|-\d+-\d+-|-\d+-w-|-\d+-v-|-\d+-a-|-\d+-k-"
+    r"|o\d+-\d+-cm-|\d+-stk|\d+-lm-|oe\d+cm|\d+,\d+-v)")
+
+
+def _looks_like_product(u):
+    return bool(PRODUCT_PAT.search(u))
+
+
 def fetch_url_list(limit=None):
     idx = get(f"{BASE}/media/sitemap_dk/sitemap.xml")
     files = sitemap_urls(idx)
     urls = []
     for f in files:
         us = [u for u in sitemap_urls(get(f))
-              if u.count("/") >= 3 and u != BASE + "/"]
+              if u != BASE + "/" and _looks_like_product(u)]
         urls.extend(us)
         if limit and len(urls) >= limit:
             break

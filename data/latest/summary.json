@@ -1,33 +1,48 @@
 {
  "date": "2026-08-28",
+ "total_rows": 890,
  "chains": {
   "silvan": {
-   "products": 399,
-   "price_changes": 0
+   "error": "collapse guard: 25 rows vs 399 before",
+   "kept_previous": true
   },
   "xlbyg": {
-   "error": "cannot import name 'sane_price' from 'common' (/Users/emillarsen/Desktop/GIthub/dk-byggepriser/scraper/common.py)"
+   "products": 25,
+   "price_changes": 0,
+   "seconds": 37.8
   },
   "stark": {
-   "error": "cannot import name 'scrape_urls' from 'common' (/Users/emillarsen/Desktop/GIthub/dk-byggepriser/scraper/common.py)"
+   "products": 20,
+   "price_changes": 0,
+   "seconds": 37.3
   },
   "bauhaus": {
-   "error": "cannot import name 'pmap' from 'common' (/Users/emillarsen/Desktop/GIthub/dk-byggepriser/scraper/common.py)"
+   "error": "collapse guard: 0 rows vs 12 before",
+   "kept_previous": true
   },
   "davidsen": {
-   "error": "cannot import name 'sane_price' from 'common' (/Users/emillarsen/Desktop/GIthub/dk-byggepriser/scraper/common.py)"
+   "error": "collapse guard: 25 rows vs 334 before",
+   "kept_previous": true
   },
   "fog": {
-   "error": "cannot import name 'sane_price' from 'common' (/Users/emillarsen/Desktop/GIthub/dk-byggepriser/scraper/common.py)"
+   "products": 25,
+   "price_changes": 12,
+   "seconds": 32.4
   },
   "haraldnyborg": {
-   "error": "cannot import name 'sane_price' from 'common' (/Users/emillarsen/Desktop/GIthub/dk-byggepriser/scraper/common.py)"
+   "products": 25,
+   "price_changes": 0,
+   "seconds": 33.2
   },
   "power": {
-   "error": "cannot import name 'sane_price' from 'common' (/Users/emillarsen/Desktop/GIthub/dk-byggepriser/scraper/common.py)"
+   "products": 25,
+   "price_changes": 0,
+   "seconds": 35.2
   },
   "skousen": {
-   "error": "cannot import name 'sane_price' from 'common' (/Users/emillarsen/Desktop/GIthub/dk-byggepriser/scraper/common.py)"
+   "products": 25,
+   "price_changes": 0,
+   "seconds": 31.0
   }
  }
 }
