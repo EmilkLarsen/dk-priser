@@ -1,0 +1,41 @@
+{
+ "date": "2026-08-28",
+ "chains": {
+  "silvan": {
+   "products": 15,
+   "price_changes": 0
+  },
+  "xlbyg": {
+   "products": 15,
+   "price_changes": 0
+  },
+  "stark": {
+   "products": 13,
+   "price_changes": 0
+  },
+  "bauhaus": {
+   "products": 12,
+   "price_changes": 0
+  },
+  "davidsen": {
+   "products": 334,
+   "price_changes": 0
+  },
+  "fog": {
+   "products": 15,
+   "price_changes": 2
+  },
+  "haraldnyborg": {
+   "products": 15,
+   "price_changes": 0
+  },
+  "power": {
+   "products": 15,
+   "price_changes": 0
+  },
+  "skousen": {
+   "products": 15,
+   "price_changes": 0
+  }
+ }
+}

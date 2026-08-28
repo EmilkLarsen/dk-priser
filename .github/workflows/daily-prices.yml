@@ -1,0 +1,35 @@
+name: daily-prices
+
+on:
+  schedule:
+    - cron: "0 2 * * *"   # 02:00 UTC = 04:00 DK, after nightly sitemap regen
+  workflow_dispatch: {}   # manual trigger button
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run scrapers (full)
+        run: python scraper/run_daily.py
+
+      - name: Build comparison + API package
+        run: python scraper/build_comparison.py
+
+      - name: Commit snapshots
+        run: |
+          git config user.name "price-bot"
+          git config user.email "bot@noreply.github.com"
+          git add data/latest data/history
+          git diff --cached --quiet && echo "No changes" || git commit -m "prices: $(date -u +%F)"
+          git pull --rebase --autostash || true
+          git push
