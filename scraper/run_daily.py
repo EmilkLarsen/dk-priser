@@ -79,14 +79,20 @@ def main():
         write_jsonl(out, rows)
 
         prev = load_prev(chain)
-        changes = []
+        changes, suspicious = [], 0
         for r in rows:
             key = r.get("sku") or r.get("url")
             old = prev.get(key)
             if old and old.get("price") != r.get("price"):
-                changes.append({"key": key, "old_price": old.get("price"),
+                old_p, new_p = old.get("price") or 0, r.get("price") or 0
+                ratio = (new_p / old_p) if old_p else 999
+                # >8x jump in one day is almost always a parse error, not a price
+                flag = {"suspicious": True} if ratio > 8 or ratio < 0.125 else {}
+                if flag:
+                    suspicious += 1
+                changes.append(dict({"key": key, "old_price": old.get("price"),
                                 "new_price": r.get("price"),
-                                "date": today, "url": r.get("url")})
+                                "date": today, "url": r.get("url")}, **flag))
         if changes:
             hdir = os.path.join(ROOT, "data", "history", chain)
             os.makedirs(hdir, exist_ok=True)
@@ -99,6 +105,7 @@ def main():
         summary[chain] = {
             "products": len(rows),
             "price_changes": len(changes),
+            "suspicious_changes": suspicious,
             "seconds": round(time.time() - started, 1),
         }
         print(f"  {len(rows)} products, {len(changes)} price changes")
