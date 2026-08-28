@@ -1,33 +1,26 @@
 #!/usr/bin/env python3
-"""Nightly orchestrator: run all chain scrapers, write snapshots + diffs.
+"""Full-refresh strategy for CI time limits.
 
-Usage:
-  python3 run_daily.py            # full run (all products)
-  python3 run_daily.py 200        # smoke run (N products per chain)
-
-Outputs:
-  data/latest/<chain>.jsonl          full snapshot (overwritten each run)
-  data/history/<chain>/<date>.jsonl  ONLY rows whose price changed vs yesterday
-  data/latest/prices.jsonl           merged all chains (what the API reads)
-  data/latest/summary.json           counts per chain for monitoring
+A complete catalog pass takes hours, so the nightly job runs chains in
+PARALLEL JOBS (one per chain, matrix strategy) — each chain easily fits
+its own 300-min limit, and GitHub runs them simultaneously on free
+public runners. run_daily.py gets --only <chain> to support this.
 """
 import sys
 import os
 import json
-import importlib
 import time
+import importlib
 from datetime import date
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHAINS = ["silvan", "xlbyg", "stark", "bauhaus", "davidsen",
           "fog", "haraldnyborg", "power", "skousen"]
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-def load_prev(chain: str) -> dict[str, dict]:
-    """Previous snapshot keyed by (sku or url)."""
+def load_prev(chain):
     path = os.path.join(ROOT, "data", "latest", f"{chain}.jsonl")
     prev = {}
     if not os.path.exists(path):
@@ -44,11 +37,21 @@ def load_prev(chain: str) -> dict[str, dict]:
 
 
 def main():
-    limit = int(sys.argv[1]) if len(sys.argv) > 1 else None
+    args = sys.argv[1:]
+    limit = None
+    only = None
+    if "--only" in args:
+        only = args[args.index("--only") + 1]
+        args = args[:args.index("--only")] + args[args.index("--only") + 2:]
+    limit = int(args[0]) if args else None
+    chains = [only] if only else CHAINS
+    if only and only not in CHAINS:
+        raise SystemExit(f"unknown chain: {only}")
+
     today = date.today().isoformat()
     summary = {}
 
-    for chain in CHAINS:
+    for chain in chains:
         print(f"=== {chain} ===")
         started = time.time()
         try:
@@ -58,7 +61,7 @@ def main():
             print(f"  FAILED: {type(e).__name__}: {e}")
             summary[chain] = {"error": f"{type(e).__name__}: {e}"}
             continue
-        # guard: previous snapshot must exist and not be silently wiped
+
         out = os.path.join(ROOT, "data", "latest", f"{chain}.jsonl")
         prev_count = 0
         if os.path.exists(out):
@@ -75,7 +78,6 @@ def main():
         from common import write_jsonl
         write_jsonl(out, rows)
 
-        # diff vs previous snapshot -> history file (changes only)
         prev = load_prev(chain)
         changes = []
         for r in rows:
@@ -88,7 +90,6 @@ def main():
         if changes:
             hdir = os.path.join(ROOT, "data", "history", chain)
             os.makedirs(hdir, exist_ok=True)
-            # append to today's file if it exists (retry runs)
             hpath = os.path.join(hdir, f"{today}.jsonl")
             mode = "a" if os.path.exists(hpath) else "w"
             with open(hpath, mode, encoding="utf-8") as f:
@@ -102,35 +103,24 @@ def main():
         }
         print(f"  {len(rows)} products, {len(changes)} price changes")
 
-    # merged file + summary
-    merged = os.path.join(ROOT, "data", "latest", "prices.jsonl")
-    n_merged = 0
-    with open(merged, "w", encoding="utf-8") as out:
-        for chain in CHAINS:
-            p = os.path.join(ROOT, "data", "latest", f"{chain}.jsonl")
-            if not os.path.exists(p):
-                continue
-            with open(p, encoding="utf-8") as f:
-                for line in f:
-                    out.write(line)
-                    n_merged += 1
-    # staleness ledger: record the last successful full snapshot per chain
-    # so consumers can reject data older than N days
-    ages_path = os.path.join(ROOT, "data", "latest", "ages.json")
-    ages = {}
-    if os.path.exists(ages_path):
-        try:
-            ages = json.load(open(ages_path))
-        except json.JSONDecodeError:
-            ages = {}
-    for chain in CHAINS:
-        d = summary.get(chain, {})
-        if "products" in d:          # success this run
-            ages[chain] = today
-    json.dump(ages, open(ages_path, "w"), indent=1)
-
-    with open(os.path.join(ROOT, "data", "latest", "summary.json"), "w") as f:
-        json.dump({"date": today, "total_rows": n_merged, "chains": summary}, f, indent=1)
+    if only:
+        spath = os.path.join(ROOT, "data", "latest", f"summary-{only}.json")
+        json.dump({"date": today, "chains": summary}, open(spath, "w"), indent=1)
+    else:
+        merged = os.path.join(ROOT, "data", "latest", "prices.jsonl")
+        n = 0
+        with open(merged, "w", encoding="utf-8") as out:
+            for chain in CHAINS:
+                p = os.path.join(ROOT, "data", "latest", f"{chain}.jsonl")
+                if not os.path.exists(p):
+                    continue
+                with open(p, encoding="utf-8") as f:
+                    for line in f:
+                        out.write(line)
+                        n += 1
+        json.dump({"date": today, "total_rows": n, "chains": summary},
+                  open(os.path.join(ROOT, "data", "latest", "summary.json"), "w"),
+                  indent=1)
     print(json.dumps(summary, indent=1))
 
 

@@ -1,12 +1,6 @@
 {
  "date": "2026-08-28",
- "total_rows": 913,
  "chains": {
-  "fog": {
-   "products": 20,
-   "price_changes": 0,
-   "seconds": 29.6
-  },
   "power": {
    "products": 20,
    "price_changes": 0,

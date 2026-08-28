@@ -3,7 +3,16 @@ name: daily-prices
 on:
   schedule:
     - cron: "0 2 * * *"   # 02:00 UTC = 04:00 DK, after nightly sitemap regen
-  workflow_dispatch: {}   # manual trigger button
+  workflow_dispatch:
+    inputs:
+      full:
+        description: "Full scrape (default: smoke 30/chain)"
+        required: false
+        default: "false"
+      limit:
+        description: "Products per chain (smoke mode)"
+        required: false
+        default: "30"
 
 permissions:
   contents: write
@@ -11,7 +20,12 @@ permissions:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      matrix:
+        chain: [silvan, xlbyg, stark, bauhaus, davidsen,
+                fog, haraldnyborg, power, skousen]
     steps:
       - uses: actions/checkout@v4
 
@@ -19,17 +33,41 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run scrapers (full)
-        run: python scraper/run_daily.py
+      - name: Run scraper (${{ matrix.chain }})
+        run: |
+          if [ "${{ inputs.full }}" = "true" ] || [ "${{ github.event_name }}" = "schedule" ]; then
+            python scraper/run_daily.py --only ${{ matrix.chain }}
+          else
+            python scraper/run_daily.py --only ${{ matrix.chain }} ${{ inputs.limit || '30' }}
+          fi
 
-      - name: Build comparison + API package
-        run: python scraper/build_comparison.py
-
-      - name: Commit snapshots
+      - name: Commit snapshot
         run: |
           git config user.name "price-bot"
           git config user.email "bot@noreply.github.com"
-          git add data/latest data/history
-          git diff --cached --quiet && echo "No changes" || git commit -m "prices: $(date -u +%F)"
-          git pull --rebase --autostash || true
+          git add data/latest/${{ matrix.chain }}.jsonl data/latest/summary-${{ matrix.chain }}.json data/history || true
+          git diff --cached --quiet && echo "No changes" || git commit -m "prices: ${{ matrix.chain }} $(date -u +%F)"
+          git pull --rebase --autostash origin main || true
+          git push
+
+  merge:
+    needs: scrape
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Merge + comparison
+        run: python scraper/merge_all.py
+
+      - name: Commit merged feed
+        run: |
+          git config user.name "price-bot"
+          git config user.email "bot@noreply.github.com"
+          git add data/latest/prices.jsonl data/latest/comparison.json data/latest/summary.json data/latest/ages.json || true
+          git diff --cached --quiet && echo "No changes" || git commit -m "merged feed $(date -u +%F)"
+          git pull --rebase --autostash origin main || true
           git push
