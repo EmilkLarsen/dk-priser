@@ -1,5 +1,5 @@
 """Johannes Fog — /da-dk/sitemap/products/{1..N} -> ld+json (ProductGroup)."""
-from common import sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_urls
+from common import valid_ean, first_str, sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_urls
 
 BASE = "https://www.johannesfog.dk"
 OUT = "data/latest/fog.jsonl"
@@ -17,7 +17,7 @@ def fetch_url_list(limit=None):
 
 
 def handle(u, html):
-    rows = []
+    rows, seen = [], set()
     for p in ldjson_products(html):
         off = offer_from_ld(p)
         if off:
@@ -26,10 +26,14 @@ def handle(u, html):
             continue
         if not off:
             continue
+        if u in seen:
+            continue
+        seen.add(u)
         rows.append({
             "chain": "fog",
-            "sku": u.rsplit("_", 1)[-1],
-            "ean": p.get("gtin13") or p.get("gtin") or p.get("ean"),
+            "sku": u.rstrip("/").rsplit("/", 1)[-1],
+            "ean": valid_ean(p.get("gtin13") or p.get("gtin") or p.get("ean")),
+            "image": first_str(p.get("image")),
             "name": p.get("name"),
             "url": u,
             "price": off["price"],

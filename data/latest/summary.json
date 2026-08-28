@@ -1,48 +1,47 @@
 {
  "date": "2026-08-28",
- "total_rows": 890,
+ "total_rows": 935,
  "chains": {
   "silvan": {
-   "error": "collapse guard: 25 rows vs 399 before",
+   "error": "collapse guard: 30 rows vs 399 before",
    "kept_previous": true
   },
   "xlbyg": {
-   "products": 25,
-   "price_changes": 0,
-   "seconds": 37.8
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1016)>"
   },
   "stark": {
-   "products": 20,
+   "products": 25,
    "price_changes": 0,
-   "seconds": 37.3
+   "seconds": 41.7
   },
   "bauhaus": {
-   "error": "collapse guard: 0 rows vs 12 before",
-   "kept_previous": true
+   "products": 27,
+   "price_changes": 0,
+   "seconds": 42.9
   },
   "davidsen": {
-   "error": "collapse guard: 25 rows vs 334 before",
+   "error": "collapse guard: 30 rows vs 334 before",
    "kept_previous": true
   },
   "fog": {
-   "products": 25,
-   "price_changes": 12,
-   "seconds": 32.4
+   "products": 30,
+   "price_changes": 0,
+   "seconds": 43.3
   },
   "haraldnyborg": {
-   "products": 25,
+   "products": 30,
    "price_changes": 0,
-   "seconds": 33.2
+   "seconds": 40.2
   },
   "power": {
-   "products": 25,
+   "products": 30,
    "price_changes": 0,
-   "seconds": 35.2
+   "seconds": 40.0
   },
   "skousen": {
-   "products": 25,
+   "products": 30,
    "price_changes": 0,
-   "seconds": 31.0
+   "seconds": 38.3
   }
  }
 }

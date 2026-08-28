@@ -44,6 +44,8 @@ def get(url, binary=False, max_bytes=40000000):
             last_err = None
             break
         except urllib.error.HTTPError as e:
+            if e.code == 404:
+                raise  # dead URL — retrying is pointless
             last_err = e
             if e.code in (429, 503):
                 time.sleep(45 + random.random() * 30)  # WAF cooldown
@@ -159,3 +161,30 @@ def sane_price(p):
     except (TypeError, ValueError):
         return None
     return p if MIN_PRICE <= p <= MAX_PRICE else None
+
+
+def valid_ean(e):
+    """GTIN-8/12/13/14 checksum validation — drops retailer junk GTINs."""
+    if e is None:
+        return None
+    s = str(e).strip()
+    if not s.isdigit() or len(s) not in (8, 12, 13, 14):
+        return None
+    total = sum(int(c) * (3 if i % 2 == 0 else 1)
+                for i, c in enumerate(reversed(s[1:])))
+    return s if (10 - total % 10) % 10 == int(s[-1]) else None
+
+
+def first_str(v):
+    """ld+json 'image' can be str, list or nested — normalize to first URL."""
+    if isinstance(v, str):
+        return v or None
+    if isinstance(v, list):
+        for it in v:
+            if isinstance(it, str) and it:
+                return it
+            if isinstance(it, dict) and it.get('url'):
+                return it['url']
+    if isinstance(v, dict):
+        return v.get('url')
+    return None

@@ -1,5 +1,5 @@
 """Harald Nyborg — sitemap-products.xml -> ld+json price."""
-from common import sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_urls
+from common import valid_ean, first_str, sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_urls
 
 BASE = "https://www.harald-nyborg.dk"
 OUT = "data/latest/haraldnyborg.jsonl"
@@ -23,7 +23,8 @@ def handle(u, html):
         rows.append({
             "chain": "haraldnyborg",
             "sku": None,
-            "ean": p.get("gtin13") or p.get("gtin") or p.get("ean"),
+            "ean": valid_ean(p.get("gtin13") or p.get("gtin") or p.get("ean")),
+            "image": first_str(p.get("image")),
             "name": p.get("name"),
             "url": u,
             "price": off["price"],

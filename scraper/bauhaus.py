@@ -23,6 +23,9 @@ def _looks_like_product(u):
     return bool(PRODUCT_PAT.search(u))
 
 
+
+OG_RE = re.compile(r'og:image"\s+content="([^"]+)"')  # newline between attrs
+
 def fetch_url_list(limit=None):
     idx = get(f"{BASE}/media/sitemap_dk/sitemap.xml")
     files = sitemap_urls(idx)
@@ -58,8 +61,10 @@ def handle(u, html):
         return []
     if not sk:
         return []  # real product pages always carry itemprop sku
+    og = OG_RE.search(html)
     return [{
         "chain": "bauhaus",
+        "image": og.group(1) if og else None,
         "sku": sk.group(1) if sk else None,
         "ean": None,
         "name": title.split("|")[0] or u.rsplit("/", 1)[-1],

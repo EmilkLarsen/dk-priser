@@ -114,6 +114,21 @@ def main():
                 for line in f:
                     out.write(line)
                     n_merged += 1
+    # staleness ledger: record the last successful full snapshot per chain
+    # so consumers can reject data older than N days
+    ages_path = os.path.join(ROOT, "data", "latest", "ages.json")
+    ages = {}
+    if os.path.exists(ages_path):
+        try:
+            ages = json.load(open(ages_path))
+        except json.JSONDecodeError:
+            ages = {}
+    for chain in CHAINS:
+        d = summary.get(chain, {})
+        if "products" in d:          # success this run
+            ages[chain] = today
+    json.dump(ages, open(ages_path, "w"), indent=1)
+
     with open(os.path.join(ROOT, "data", "latest", "summary.json"), "w") as f:
         json.dump({"date": today, "total_rows": n_merged, "chains": summary}, f, indent=1)
     print(json.dumps(summary, indent=1))

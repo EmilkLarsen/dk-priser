@@ -1,10 +1,14 @@
 """Silvan.dk — sitemap -> product pages -> schema.org ld+json price."""
-from common import sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_urls
+import re
+from common import valid_ean, first_str, sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_urls
 
 BASE = "https://www.silvan.dk"
 SITEMAP = BASE + "/sitemapvariantfeed.xml"
 OUT = "data/latest/silvan.jsonl"
 
+
+
+OG_RE = re.compile(r'<meta property="og:image" content="([^"]+)"')
 
 def fetch_url_list(limit=None):
     urls = [u for u in sitemap_urls(get(SITEMAP)) if "/produkt/" in u]
@@ -13,6 +17,8 @@ def fetch_url_list(limit=None):
 
 def handle(u, html):
     rows = []
+    og = OG_RE.search(html)
+    img = og.group(1) if og else None
     for p in ldjson_products(html):
         off = offer_from_ld(p)
         if off:
@@ -24,11 +30,13 @@ def handle(u, html):
         rows.append({
             "chain": "silvan",
             "sku": str(p.get("sku") or u.rsplit("-", 1)[-1]),
-            "ean": p.get("gtin13") or p.get("gtin") or p.get("ean"),
+            "ean": valid_ean(p.get("gtin13") or p.get("gtin") or p.get("ean")),
+            "image": first_str(p.get("image")),
             "name": p.get("name"),
             "url": u,
             "price": off["price"],
             "in_stock": off["in_stock"],
+            "image": img,
         })
         break
     return rows
