@@ -71,6 +71,7 @@ def handle(cu, html):
             "name": name,
             "url": BASE + url,
             "price": p,
+            "unit": None,
             "in_stock": None,
         })
     return rows

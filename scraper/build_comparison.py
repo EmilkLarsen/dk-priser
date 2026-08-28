@@ -19,8 +19,10 @@ def norm_key(name: str) -> str:
     s = unicodedata.normalize("NFKD", name or "").encode("ascii", "ignore").decode()
     s = s.lower()
     s = re.sub(r"[^a-z0-9x ]+", " ", s)
-    # strip size tokens like 25 l, 240 cm etc that differ per packaging
-    s = re.sub(r"\b\d+[.,]?\d*\s*(mm|cm|m|l|ml|g|kg|stk|pack|rul)\b", " ", s)
+    # WxL dimensions are product identity (a 21x120mm plank differs from
+    # 21x145mm) — never strip them. Only strip pure sale-format suffixes.
+    s = re.sub(r"\b(\d+x\d+([.,]\d+)?x?\d*)\s*(mm|cm|m)\b", r"DIM\1", s)
+    s = re.sub(r"\b\d+[.,]?\d*\s*(l|ml|g|kg|stk|pack|rul)\b", " ", s)
     s = re.sub(r"\s+", " ", s).strip()
     return s
 
@@ -62,8 +64,10 @@ def main():
     for k, chains in by_key.items():
         if len(chains) < 2:
             continue  # only multi-chain matches are interesting
-        prices = list(chains.values())
         n_products = len(key_products.get(k, ()))
+        if not k.startswith("ean:") and n_products > len(chains):
+            continue  # same product-size variants merged: min() would be biased
+        prices = list(chains.values())
         comparison.append({
             "key": k, "name": meta[k]["name"],
             "prices": chains,
