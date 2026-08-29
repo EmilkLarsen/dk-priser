@@ -1,10 +1,8 @@
 {
- "date": "2026-08-28",
+ "date": "2026-08-29",
  "chains": {
   "power": {
-   "products": 20,
-   "price_changes": 0,
-   "seconds": 27.2
+   "error": "HTTPError: HTTP Error 403: Forbidden"
   }
  }
 }
