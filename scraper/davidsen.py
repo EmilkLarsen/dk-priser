@@ -3,7 +3,7 @@
 Product sitemap URLs are paginated category walks (-c-id...-p-<id>) that
 also embed data, so we harvest both. Runs cheaply: 1 request serves ~30 products."""
 import re
-from common import sane_price, get, sitemap_urls, parse_dk_price, write_jsonl, pmap
+from common import html_gtin, sane_price, get, sitemap_urls, parse_dk_price, write_jsonl, pmap
 
 BASE = "https://www.davidsen.dk"
 OUT = "data/latest/davidsen.jsonl"
@@ -48,7 +48,7 @@ def handle(cu, html):
         rows.append({
             "chain": "davidsen",
             "sku": pid,
-            "ean": None,
+            "ean": html_gtin(html),
             "name": name,
             "url": "%s/search?q=%s" % (BASE, pid),  # variant-level URL fallback
             "price": p,
@@ -67,7 +67,7 @@ def handle(cu, html):
         rows.append({
             "chain": "davidsen",
             "sku": pid,
-            "ean": None,
+            "ean": html_gtin(html),
             "name": name,
             "url": BASE + url,
             "price": p,

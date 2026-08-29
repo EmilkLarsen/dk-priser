@@ -212,15 +212,18 @@ def sane_price(p):
 
 
 def valid_ean(e):
-    """GTIN-8/12/13/14 checksum validation — drops retailer junk GTINs."""
+    """GTIN-8/12/13/14 checksum validation — drops retailer junk GTINs.
+    Weights run 3,1,3,1... from the rightmost DATA digit (check digit excluded)."""
     if e is None:
         return None
     s = str(e).strip()
     if not s.isdigit() or len(s) not in (8, 12, 13, 14):
         return None
-    total = sum(int(c) * (3 if i % 2 == 0 else 1)
-                for i, c in enumerate(reversed(s[1:])))
-    return s if (10 - total % 10) % 10 == int(s[-1]) else None
+    digits = [int(c) for c in s]
+    check = digits.pop()
+    total = sum(d * (3 if i % 2 == 0 else 1)
+                for i, d in enumerate(reversed(digits)))
+    return s if (10 - total % 10) % 10 == check else None
 
 
 def first_str(v):
@@ -235,4 +238,17 @@ def first_str(v):
                 return it['url']
     if isinstance(v, dict):
         return v.get('url')
+    return None
+
+
+HTML_GTIN_RE = re.compile(r'"(?:gtin(?:13)?|ean)"\s*:\s*"(\d{8,14})"')
+
+
+def html_gtin(html):
+    """Fallback: many chains embed gtin in a JSON state blob outside ld+json.
+    Returns first checksum-valid GTIN on the page."""
+    for m in HTML_GTIN_RE.finditer(html):
+        v = valid_ean(m.group(1))
+        if v:
+            return v
     return None

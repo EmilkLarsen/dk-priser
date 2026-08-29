@@ -1,5 +1,5 @@
 """Skousen.dk — premium appliances. sitemap-skou-products.xml -> ld+json."""
-from common import valid_ean, first_str, sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_urls
+from common import html_gtin, valid_ean, first_str, sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_urls
 
 BASE = "https://www.skousen.dk"
 OUT = "data/latest/skousen.jsonl"
@@ -24,7 +24,7 @@ def handle(u, html):
         rows.append({
             "chain": "skousen",
             "sku": None,
-            "ean": valid_ean(p.get("gtin13") or p.get("gtin") or p.get("ean")),
+            "ean": valid_ean(p.get("gtin13") or p.get("gtin") or p.get("ean")) or html_gtin(html),
             "image": first_str(p.get("image")),
             "name": p.get("name"),
             "url": u,

@@ -1,5 +1,5 @@
 """Power.dk — appliances/electronics. products-{1..N} sitemaps -> ld+json."""
-from common import valid_ean, first_str, sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_urls
+from common import html_gtin, valid_ean, first_str, sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_urls
 
 BASE = "https://www.power.dk"
 OUT = "data/latest/power.jsonl"
@@ -30,7 +30,7 @@ def handle(u, html):
         rows.append({
             "chain": "power",
             "sku": sku,
-            "ean": valid_ean(p.get("gtin13") or p.get("gtin") or p.get("ean")),
+            "ean": valid_ean(p.get("gtin13") or p.get("gtin") or p.get("ean")) or html_gtin(html),
             "image": first_str(p.get("image")),
             "name": p.get("name"),
             "url": u,
