@@ -21,22 +21,48 @@ from concurrent.futures import ThreadPoolExecutor
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
       "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36")
 TIMEOUT = 25
-WORKERS = int(os.environ.get("SCRAPE_WORKERS", "12"))
+WORKERS = int(os.environ.get("SCRAPE_WORKERS", "24"))
 
 _last_req = {}
+_inflight = {}
 import threading
 _lock = threading.Lock()
+# Per-host lane control: up to 3 concurrent connections, >=0.45s between
+# request starts. ~2.2 req/s/host max — comparable to an active shopper,
+# 3x faster than the old single-lane throttle (which made full-catalog
+# runs exceed CI time limits).
+MAX_LANES = int(os.environ.get("SCRAPE_LANES", "3"))
+MIN_GAP = float(os.environ.get("SCRAPE_GAP", "0.45"))
+
+
+def _throttle(host):
+    while True:
+        with _lock:
+            now = time.time()
+            if _inflight.get(host, 0) < MAX_LANES and \
+                    now - _last_req.get(host, 0) >= MIN_GAP:
+                _last_req[host] = now
+                _inflight[host] = _inflight.get(host, 0) + 1
+                return
+        time.sleep(0.05)
+
+
+def _release(host):
+    with _lock:
+        _inflight[host] = max(0, _inflight.get(host, 1) - 1)
 
 
 def get(url, binary=False, max_bytes=40000000):
-    """Polite GET: per-host throttle + jitter, realistic UA."""
+    """Polite GET: per-host lane throttle + jitter, realistic UA."""
     host = re.match(r"https?://([^/]+)", url).group(1)
-    with _lock:
-        now = time.time()
-        wait = 1.0 + random.random() * 0.5 - (now - _last_req.get(host, 0))
-        if wait > 0:
-            time.sleep(wait)
-        _last_req[host] = time.time()
+    _throttle(host)
+    try:
+        return _get_inner(url, binary, max_bytes)
+    finally:
+        _release(host)
+
+
+def _get_inner(url, binary, max_bytes):
     last_err = None
     data = None
     for attempt in range(3):
