@@ -19,6 +19,10 @@ LATEST = os.path.join(ROOT, "data", "latest")
 def main():
     today = date.today().isoformat()
     merged_path = os.path.join(LATEST, "prices.jsonl")
+    prev_size = 0
+    if os.path.exists(merged_path):
+        with open(merged_path, encoding="utf-8") as f:
+            prev_size = sum(1 for _ in f)
     seen, n, dupes = set(), 0, 0
     with open(merged_path, "w", encoding="utf-8") as out:
         for chain in CHAINS:
@@ -65,6 +69,8 @@ def main():
             ages[chain] = today
     json.dump(ages, open(ages_path, "w"), indent=1)
 
+    if n == 0 or (prev_size and n < prev_size * 0.3):
+        raise SystemExit(f"merge collapse guard: {n} rows vs {prev_size} before — keeping previous feed")
     build_comparison()
     print(f"merged {n} rows ({dupes} dupes dropped); comparison rebuilt")
 
