@@ -17,6 +17,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: daily-prices
+  cancel-in-progress: false   # never kill a running catalog build
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -61,7 +65,10 @@ jobs:
           python-version: "3.12"
 
       - name: Merge + comparison
-        run: python scraper/merge_all.py
+        run: |
+          python scraper/merge_all.py
+          # prune history older than 120 days (repo stays small forever)
+          find data/history -name "*.jsonl" -mtime +120 -delete || true
 
       - name: Commit merged feed
         run: |

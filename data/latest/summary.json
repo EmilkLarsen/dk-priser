@@ -1,7 +1,17 @@
 {
- "date": "2026-08-28",
- "total_rows": 913,
+ "date": "2026-08-29",
+ "total_rows": 17047,
  "chains": {
+  "skousen": {
+   "products": 5332,
+   "price_changes": 0,
+   "seconds": 6693.0
+  },
+  "haraldnyborg": {
+   "products": 10862,
+   "price_changes": 0,
+   "seconds": 13628.6
+  },
   "fog": {
    "products": 20,
    "price_changes": 0,

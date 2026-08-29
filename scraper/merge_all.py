@@ -19,7 +19,7 @@ LATEST = os.path.join(ROOT, "data", "latest")
 def main():
     today = date.today().isoformat()
     merged_path = os.path.join(LATEST, "prices.jsonl")
-    n = 0
+    seen, n, dupes = set(), 0, 0
     with open(merged_path, "w", encoding="utf-8") as out:
         for chain in CHAINS:
             p = os.path.join(LATEST, f"{chain}.jsonl")
@@ -27,6 +27,15 @@ def main():
                 continue
             with open(p, encoding="utf-8") as f:
                 for line in f:
+                    try:
+                        r = json.loads(line)
+                    except json.JSONDecodeError:
+                        continue
+                    key = (r.get("chain"), r.get("sku") or r.get("url"))
+                    if key in seen:
+                        dupes += 1
+                        continue
+                    seen.add(key)
                     out.write(line)
                     n += 1
 
@@ -57,7 +66,7 @@ def main():
     json.dump(ages, open(ages_path, "w"), indent=1)
 
     build_comparison()
-    print(f"merged {n} rows; comparison rebuilt")
+    print(f"merged {n} rows ({dupes} dupes dropped); comparison rebuilt")
 
 
 if __name__ == "__main__":
