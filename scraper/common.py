@@ -95,7 +95,7 @@ def _get_inner(url, binary, max_bytes):
             if e.code == 404:
                 raise  # dead URL — retrying is pointless
             last_err = e
-            if e.code in (429, 503):
+            if e.code in (429, 503, 403):
                 time.sleep(45 + random.random() * 30)  # WAF cooldown
             else:
                 time.sleep(1.5 * (attempt + 1) + random.random())
