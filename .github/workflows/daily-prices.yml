@@ -91,6 +91,38 @@ jobs:
             echo "push conflict, retry $i"; sleep $((i * 10))
           done
 
+  continue-check:
+    needs: [scrape, merge]
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Detect incomplete chains
+        id: check
+        run: |
+          python scraper/check_incomplete.py || true
+          INC=$(python scraper/check_incomplete.py 2>/dev/null | sed -n 's/^incomplete: //p')
+          echo "incomplete=$INC" >> $GITHUB_OUTPUT
+      - name: Re-dispatch resume run for incomplete chains
+        if: steps.check.outputs.incomplete != '' && steps.check.outputs.incomplete != '(none)'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # avoid infinite loops: max 4 continuation attempts per day
+          ATTEMPT=$(ls data/latest/.continue-attempt-* 2>/dev/null | wc -l || echo 0)
+          if [ "$ATTEMPT" -ge 4 ]; then
+            echo "Max continuation attempts reached — will retry tomorrow"; exit 0
+          fi
+          touch "data/latest/.continue-attempt-$((ATTEMPT + 1))"
+          git config user.name price-bot; git config user.email bot@noreply.github.com
+          git add data/latest/.continue-attempt-* data/latest/completion.json
+          git commit -m "continue attempt $((ATTEMPT + 1))" || true
+          git pull --rebase --autostash origin main && git push || true
+          gh workflow run daily-prices.yml -f full=true -f resume=true
+
   alert:
     needs: [scrape, merge]
     if: always() && contains(needs.*.result, 'failure')

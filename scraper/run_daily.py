@@ -81,6 +81,10 @@ def main():
             with open(out, "a", encoding="utf-8") as f:
                 for r in rows:
                     f.write(json.dumps(r, ensure_ascii=False) + "\n")
+            # a resumed pass re-verified only part of the catalog
+            marker = os.path.join(ROOT, "data", "latest", f".{chain}-complete")
+            if os.path.exists(marker):
+                os.remove(marker)
             print(f"  +{len(rows)} appended (resume mode)")
         else:
             write_jsonl(out, rows)
@@ -115,6 +119,12 @@ def main():
             "suspicious_changes": suspicious,
             "seconds": round(time.time() - started, 1),
         }
+        # completion marker: a full (unlimited) run that wasn't a resume
+        # append = this chain's catalog is complete as of today
+        if not limit and not resuming:
+            marker = os.path.join(ROOT, "data", "latest", f".{chain}-complete")
+            with open(marker, "w") as mf:
+                mf.write(today)
         print(f"  {len(rows)} products, {len(changes)} price changes")
 
     if only:
