@@ -63,11 +63,12 @@ def main():
             continue
 
         out = os.path.join(ROOT, "data", "latest", f"{chain}.jsonl")
+        resuming = os.environ.get("RESUME") == "1"
         prev_count = 0
         if os.path.exists(out):
             with open(out, encoding="utf-8") as f:
                 prev_count = sum(1 for _ in f)
-        if prev_count and len(rows) < prev_count * 0.3:
+        if not resuming and prev_count and len(rows) < prev_count * 0.3:
             summary[chain] = {
                 "error": f"collapse guard: {len(rows)} rows vs {prev_count} before",
                 "kept_previous": True,
@@ -76,7 +77,13 @@ def main():
             continue
 
         from common import write_jsonl
-        write_jsonl(out, rows)
+        if resuming and os.path.exists(out):
+            with open(out, "a", encoding="utf-8") as f:
+                for r in rows:
+                    f.write(json.dumps(r, ensure_ascii=False) + "\n")
+            print(f"  +{len(rows)} appended (resume mode)")
+        else:
+            write_jsonl(out, rows)
 
         prev = load_prev(chain)
         changes, suspicious = [], 0

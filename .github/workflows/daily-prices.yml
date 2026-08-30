@@ -13,6 +13,10 @@ on:
         description: "Products per chain (smoke mode)"
         required: false
         default: "30"
+      resume:
+        description: "Resume mode: append to existing snapshots (for timeout continuation)"
+        required: false
+        default: "false"
 
 permissions:
   contents: write
@@ -24,7 +28,7 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 330
+    timeout-minutes: 350
     strategy:
       fail-fast: false
       matrix:
@@ -38,6 +42,8 @@ jobs:
           python-version: "3.12"
 
       - name: Run scraper (${{ matrix.chain }})
+        env:
+          RESUME: ${{ inputs.resume == 'true' && '1' || '0' }}
         run: |
           if [ "${{ inputs.full }}" = "true" ] || [ "${{ github.event_name }}" = "schedule" ]; then
             python scraper/run_daily.py --only ${{ matrix.chain }}

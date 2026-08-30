@@ -180,7 +180,17 @@ def parse_dk_price(s):
 
 
 def scrape_urls(urls, handle):
-    """Parallel scrape: handle(url, html) -> list of row dicts."""
+    """Parallel scrape: handle(url, html) -> list of row dicts.
+    Resume support: SCRAPE_OFFSET skips the first N urls (previous run died
+    there); results then get APPENDED by the caller instead of overwriting."""
+    off = int(os.environ.get("SCRAPE_OFFSET", "0"))
+    slc = os.environ.get("SCRAPE_SLICE")
+    if off:
+        urls = urls[off:]
+    if slc:
+        urls = urls[:int(slc)]
+    if off or slc:
+        print(f"  slice: offset={off} max={slc or 'all'} -> {len(urls)} urls")
     def work(u):
         try:
             return handle(u, get(u)) or []
