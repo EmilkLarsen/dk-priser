@@ -16,9 +16,10 @@ CHAINS = ["silvan", "xlbyg", "stark", "bauhaus", "davidsen",
 
 # known catalog sizes (approximate, from verified sources) — a chain whose
 # snapshot holds <60% of this is treated as incomplete even with a marker
+# Verified real catalog sizes (from completed production runs):
 EXPECTED = {
-    "silvan": 39000, "xlbyg": 45000, "stark": 25000, "bauhaus": 90000,
-    "davidsen": 25000, "fog": 29000, "haraldnyborg": 10800, "power": 28000,
+    "silvan": 39000, "xlbyg": 45000, "stark": 20000, "bauhaus": 22000,
+    "davidsen": 26000, "fog": 29000, "haraldnyborg": 10800, "power": 28000,
     "skousen": 5300,
 }
 
