@@ -6526,7 +6526,17 @@
    "bitumen overpap"
   ],
   "unit": "roll",
-  "fallbackPriceDKK": 499
+  "fallbackPriceDKK": 499,
+  "exclude": [
+   "klaeber",
+   "lim",
+   "soem",
+   "skiver",
+   "primer",
+   "patron",
+   "gennemfoering",
+   "haette"
+  ]
  },
  {
   "key": "roof_002",
@@ -6537,7 +6547,16 @@
    "roofing underlay bitumen"
   ],
   "unit": "roll",
-  "fallbackPriceDKK": 399
+  "fallbackPriceDKK": 399,
+  "exclude": [
+   "klaeber",
+   "lim",
+   "soem",
+   "skiver",
+   "primer",
+   "patron",
+   "kork"
+  ]
  },
  {
   "key": "roof_003",
@@ -6614,7 +6633,12 @@
    "aluminium inddækning"
   ],
   "unit": "m",
-  "fallbackPriceDKK": 89
+  "fallbackPriceDKK": 89,
+  "exclude": [
+   "soem",
+   "skrue",
+   "tape"
+  ]
  },
  {
   "key": "roof_010",
@@ -6680,7 +6704,13 @@
    "tagryg bånd"
   ],
   "unit": "roll",
-  "fallbackPriceDKK": 299
+  "fallbackPriceDKK": 299,
+  "exclude": [
+   "beslag",
+   "klips",
+   "soem",
+   "skrue"
+  ]
  },
  {
   "key": "roof_016",
@@ -6911,7 +6941,11 @@
    "sternbræt træ"
   ],
   "unit": "m",
-  "fallbackPriceDKK": 59
+  "fallbackPriceDKK": 59,
+  "exclude": [
+   "sten",
+   "beslag"
+  ]
  },
  {
   "key": "roof_037",
@@ -6922,7 +6956,11 @@
    "vindskede træ"
   ],
   "unit": "m",
-  "fallbackPriceDKK": 69
+  "fallbackPriceDKK": 69,
+  "exclude": [
+   "sten",
+   "beslag"
+  ]
  },
  {
   "key": "roof_038",
@@ -6967,7 +7005,15 @@
    "underlay membrane"
   ],
   "unit": "roll",
-  "fallbackPriceDKK": 999
+  "fallbackPriceDKK": 999,
+  "exclude": [
+   "clips",
+   "strammer",
+   "strips",
+   "soem",
+   "klammer",
+   "net"
+  ]
  },
  {
   "key": "roof_042",
@@ -6978,7 +7024,17 @@
    "diffusionstæt undertag"
   ],
   "unit": "roll",
-  "fallbackPriceDKK": 799
+  "fallbackPriceDKK": 799,
+  "exclude": [
+   "clips",
+   "strammer",
+   "strips",
+   "soem",
+   "klammer",
+   "beslag",
+   "skrue",
+   "net"
+  ]
  },
  {
   "key": "roof_043",
@@ -7011,7 +7067,16 @@
    "plastfolie 0.20"
   ],
   "unit": "roll",
-  "fallbackPriceDKK": 299
+  "fallbackPriceDKK": 299,
+  "exclude": [
+   "tape",
+   "hjoerne",
+   "krave",
+   "manchet",
+   "lim",
+   "klae",
+   "sut"
+  ]
  },
  {
   "key": "roof_046",
@@ -7080,7 +7145,17 @@
    "glasuld 50"
   ],
   "unit": "m2",
-  "fallbackPriceDKK": 29
+  "fallbackPriceDKK": 29,
+  "exclude": [
+   "tape",
+   "skrue",
+   "plugs",
+   "net",
+   "knive",
+   "murbatts",
+   "skillevaeg",
+   "terraen"
+  ]
  },
  {
   "key": "roof_052",
@@ -7092,7 +7167,16 @@
    "glasuld 100"
   ],
   "unit": "m2",
-  "fallbackPriceDKK": 45
+  "fallbackPriceDKK": 45,
+  "exclude": [
+   "tape",
+   "skrue",
+   "plugs",
+   "net",
+   "knive",
+   "murbatts",
+   "skillevaeg"
+  ]
  },
  {
   "key": "roof_053",
@@ -7419,7 +7503,16 @@
   "coverage": {
    "per_m2": 10,
    "note": "betontagsten ca. 10 stk/m2"
-  }
+  },
+  "exclude": [
+   "kroge",
+   "clips",
+   "beslag",
+   "skrue",
+   "klaeber",
+   "maling",
+   "rens"
+  ]
  },
  {
   "key": "roof_082",
@@ -7434,7 +7527,16 @@
   "coverage": {
    "per_m2": 12,
    "note": "tegl/falstagsten ca. 12-14 stk/m2"
-  }
+  },
+  "exclude": [
+   "kroge",
+   "clips",
+   "beslag",
+   "skrue",
+   "klaeber",
+   "maling",
+   "rens"
+  ]
  },
  {
   "key": "roof_083",
@@ -7449,7 +7551,14 @@
   "coverage": {
    "per_m": 2.5,
    "note": "rygningssten ca. 2.5 stk/lbm"
-  }
+  },
+  "exclude": [
+   "beslag",
+   "klips",
+   "skrue",
+   "kit",
+   "lim"
+  ]
  },
  {
   "key": "roof_084",

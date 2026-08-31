@@ -43,8 +43,12 @@ JUNK = re.compile(
 
 
 def norm(s: str) -> str:
-    s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode()
-    s = s.lower()
+    s = (s or "").lower()
+    # Danish letters don't NFKD-decompose — transliterate before the ascii strip
+    # so "klæber"/"nedløb"/"lægte" survive as klaeber/nedloeb/laegte.
+    s = s.translate(str.maketrans({"æ": "ae", "ø": "oe", "å": "aa",
+                                   "ä": "ae", "ö": "oe", "ü": "ue"}))
+    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
     s = re.sub(r"[^a-z0-9 ]+", " ", s)
     return re.sub(r"\s+", " ", s).strip()
 
@@ -136,11 +140,14 @@ def match_products(item, prods):
     The AI is still told these are keyword candidates and to skip wrong variants."""
     phrases = key_phrases(item)
     phrase_toks = [(p.split()) for p in phrases]
+    exclude = [norm(x) for x in item.get("exclude", [])]
 
     hits = []
     seen = set()
     for pr in prods:
         title = pr["_norm"]
+        if exclude and any(x and x in title for x in exclude):
+            continue
         best = 0
         for toks in phrase_toks:
             if toks and all(t in title for t in toks):
