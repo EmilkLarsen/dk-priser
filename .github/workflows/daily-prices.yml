@@ -77,6 +77,8 @@ jobs:
       - name: Merge + comparison
         run: |
           python scraper/merge_all.py
+          # Small BOM-matchable catalog the Fixer app fetches at runtime.
+          python scraper/build_estimator_catalog.py
           # prune history older than 120 days (repo stays small forever)
           find data/history -name "*.jsonl" -mtime +120 -delete || true
 
@@ -84,7 +86,7 @@ jobs:
         run: |
           git config user.name "price-bot"
           git config user.email "bot@noreply.github.com"
-          git add data/latest/prices.jsonl data/latest/comparison.json data/latest/summary.json data/latest/ages.json data/latest/index.html data/latest/schema.json || true
+          git add data/latest/prices.jsonl data/latest/comparison.json data/latest/summary.json data/latest/ages.json data/latest/index.html data/latest/schema.json data/latest/estimator_catalog.json || true
           git diff --cached --quiet && echo "No changes" || git commit -m "merged feed $(date -u +%F)"
           for i in 1 2 3 4 5 6 7 8; do
             git pull --rebase --autostash origin main && git push && break
