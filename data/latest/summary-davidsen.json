@@ -2,10 +2,10 @@
  "date": "2026-08-31",
  "chains": {
   "davidsen": {
-   "products": 26790,
+   "products": 26764,
    "price_changes": 42,
    "suspicious_changes": 0,
-   "seconds": 9528.1
+   "seconds": 9735.9
   }
  }
 }
