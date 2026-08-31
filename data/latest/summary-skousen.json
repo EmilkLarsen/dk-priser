@@ -1,8 +1,11 @@
 {
- "date": "2026-08-29",
+ "date": "2026-08-31",
  "chains": {
   "skousen": {
-   "error": "HTTPError: HTTP Error 429: Too Many Requests"
+   "products": 5133,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "seconds": 12822.7
   }
  }
 }
