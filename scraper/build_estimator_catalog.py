@@ -1,28 +1,28 @@
 #!/usr/bin/env python3
-"""Build data/latest/estimator_catalog.json — the small, BOM-matchable catalog
-the Fixer app fetches at runtime (MaterialCatalogStore.remoteCatalogURL).
+"""Build data/latest/estimator_catalog.json — the small feed the Fixer app
+fetches at runtime (MaterialCatalogStore.remoteCatalogURL).
 
-The app already ships ~707 canonical building-material keys it knows how to
-match an AI material list against (scraper/estimator_keys.json, mirrored from
-the app's material_catalog_v1.json). For each key this script finds the real
-matching products in prices.jsonl and sets the unit price to the median across
-chains — but ONLY when the match is confident AND the scraped median sits
-within a sane ratio of the app's own fallback price. That guard is what stops
-a unit mismatch (per-tile vs per-m2 vs per-pallet) from poisoning an estimate:
-if the scraped number looks wrong, the hand-tuned fallback is kept.
+For each of the ~707 canonical material keys the app knows how to match an AI
+material list against (scraper/estimator_keys.json, mirrored from the app's
+material_catalog_v1.json), this finds the best real matching products in
+prices.jsonl and attaches them WITH their parsed pack size. The app hands
+those to the estimate AI, which picks a product, works out how much is needed
+from the roof area, rounds up to whole packs, and sums the real line costs.
 
-Output is a bare JSON array, schema-identical to material_catalog_v1.json plus
-optional provenance fields (the Swift decoder ignores unknown keys):
-  {key,name,synonyms,unit,unitPriceDKK,source,
-   sources?:[chain], sampleCount?:int, priceRange?:[min,max], updated?:YYYY-MM-DD}
+No synthetic/median price and no hand-tuned fallback price is emitted — the
+app is moving to live retail prices only. Keys with no confident product
+match are still emitted (so the app keeps the taxonomy) but carry no
+products, and the estimate is told to flag those lines as unverified.
 
-~200 KB. The app caches it to disk, refreshes daily in the background, and
-falls back to its bundled catalog if this file is missing or fails validation.
+Output: bare JSON array, one entry per key:
+  {key, name, synonyms, unit,
+   products?: [{t: title, p: price, c: chain, u: url, pack?: {q: float, u: unit}}],
+   updated?: YYYY-MM-DD}
+~400 KB (well under 100 KB gzipped over the CDN).
 """
 import json
 import os
 import re
-import statistics
 import unicodedata
 from collections import defaultdict
 from datetime import date
@@ -31,61 +31,134 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LATEST = os.path.join(ROOT, "data", "latest")
 HERE = os.path.dirname(os.path.abspath(__file__))
 
-# Conservative on purpose: a wrong "live" price is worse than a rough hand-tuned
-# one. A key is only refined when several chains independently agree AND the
-# result is a sane multiple of the app's own fallback.
-RATIO_LOW, RATIO_HIGH = 0.5, 2.0     # scraped median must be 0.5x-2x the fallback
-MIN_CHAINS = 3                        # >= 3 chains must have a matching product
-MIN_SAMPLES, MAX_SAMPLES = 3, 40      # too few = fragile, too many = match too broad
-MAX_IQR_SPREAD = 0.65                # interquartile spread / median, after trimming
-MAX_PRICE = 20000                     # skip obvious bundles/appliances/sheds early
-
-# Units where a raw retail price is directly comparable to a catalog unit price.
-# "m2" (tiles, boards) and "m" (gutters, battens) need pack-size parsing to be
-# trustworthy, so they keep their hand-tuned fallback for now.
-COMPARABLE_UNITS = {"roll", "bag", "box", "set", "pcs", "liter"}
+MAX_PRODUCTS_PER_KEY = 6
+MAX_PRICE = 15000          # a single material line item is never this expensive
+MIN_PRICE = 3
+# Titles containing these are finished structures / signage / kits, not the
+# raw material — they poison a "cheapest match" pick.
+JUNK = re.compile(
+    r"\b(skur|hytte|shelter|b[aå]lhytte|cykelskur|legehus|pavillon|carport|"
+    r"drivhus|skilt|klisterm[aæ]rke|pickup|bog|dvd|gavekort|stiga|"
+    r"n[aå]lefilt|t[oø]jklemme|legetoej|leget[oø]j)\b", re.I)
 
 
 def norm(s: str) -> str:
     s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode()
     s = s.lower()
     s = re.sub(r"[^a-z0-9 ]+", " ", s)
-    s = re.sub(r"\s+", " ", s).strip()
-    return s
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def parse_pack(name: str):
+    """Best-effort pack size from a retail title. Returns {"q": float, "u": unit}
+    or None. unit is one of m2, m, pcs, l, kg."""
+    s = (name or "").lower().replace(",", ".")
+    # area roll: "1,1x50 m", "0,25 X 10,0 m", "2,15x46,5 m"
+    m = re.search(r"(\d+(?:\.\d+)?)\s*[x×]\s*(\d+(?:\.\d+)?)\s*m(?:\b|eter)", s)
+    if m:
+        a = float(m.group(1)) * float(m.group(2))
+        if 0.5 <= a <= 200:
+            return {"q": round(a, 1), "u": "m2"}
+    # explicit m2 / kvm
+    m = re.search(r"(\d+(?:\.\d+)?)\s*(?:m2|m²|kvm)\b", s)
+    if m:
+        return {"q": float(m.group(1)), "u": "m2"}
+    # count: "100 stk", "50 stk.", "a 35mm pakket" -> ignore; "20 stk"
+    m = re.search(r"(\d+)\s*stk\b", s)
+    if m:
+        n = int(m.group(1))
+        if 1 <= n <= 5000:
+            return {"q": float(n), "u": "pcs"}
+    # timber / batten length: "38x73 ... 420 cm", "... 4200 mm", "600cm"
+    m = re.search(r"(\d{2,4})\s*cm\b", s)
+    if m:
+        v = int(m.group(1)) / 100
+        if 1 <= v <= 12:
+            return {"q": round(v, 1), "u": "m"}
+    m = re.search(r"\b(\d{3,5})\s*mm\b", s)
+    if m:
+        v = int(m.group(1)) / 1000
+        if 1 <= v <= 12:
+            return {"q": round(v, 1), "u": "m"}
+    # linear metres: "x 5 m", "x 80m", "310 mm x 5 m", "str 11 600cm" handled above
+    m = re.search(r"[x×]\s*(\d+(?:\.\d+)?)\s*m\b", s)
+    if m:
+        v = float(m.group(1))
+        if 1 <= v <= 100:
+            return {"q": v, "u": "m"}
+    # volume / weight
+    m = re.search(r"(\d+(?:\.\d+)?)\s*(l|liter|ltr)\b", s)
+    if m:
+        return {"q": float(m.group(1)), "u": "l"}
+    m = re.search(r"(\d+(?:\.\d+)?)\s*kg\b", s)
+    if m:
+        return {"q": float(m.group(1)), "u": "kg"}
+    return None
 
 
 def load_products():
-    path = os.path.join(LATEST, "prices.jsonl")
     prods = []
-    with open(path, encoding="utf-8") as f:
+    with open(os.path.join(LATEST, "prices.jsonl"), encoding="utf-8") as f:
         for line in f:
             try:
                 r = json.loads(line)
             except json.JSONDecodeError:
                 continue
             p = r.get("price")
-            if not isinstance(p, (int, float)) or p <= 0 or p > MAX_PRICE:
+            name = r.get("name", "")
+            if not isinstance(p, (int, float)) or not (MIN_PRICE <= p <= MAX_PRICE):
                 continue
-            r["_norm"] = norm(r.get("name", ""))
+            if JUNK.search(name):
+                continue
+            r["_norm"] = norm(name)
             prods.append(r)
     return prods
 
 
+_PAREN = re.compile(r"\(.*?\)")
+_UNITWORD = re.compile(r"\b(rulle|rull|pcs|stk|kit|set|box|kasse|pk|pakke)\b")
+
+
+def key_phrases(item):
+    """Match phrases for a key: the canonical name (parentheticals + unit words
+    stripped) plus each synonym, longest first."""
+    base = _UNITWORD.sub(" ", _PAREN.sub(" ", item["name"]))
+    raw = {norm(base)} | {norm(s) for s in item.get("synonyms", [])}
+    return sorted((p for p in raw if len(p) >= 3),
+                  key=lambda p: -len(p.split()))
+
+
 def match_products(item, prods):
-    """A product matches when every token of at least one phrase (the canonical
-    name or a synonym) is a substring of the product's normalised title."""
-    phrases = sorted(
-        {norm(item["name"])} | {norm(s) for s in item.get("synonyms", [])},
-        key=len,
-    )
-    phrase_toks = [p.split() for p in phrases if len(p) >= 3]
+    """A product matches when every token of some match phrase is a substring of
+    its normalised title. Score = word-count of the most specific phrase that
+    matched (a 2-word phrase like 'undertag diffusionsaaben' is a far stronger
+    signal than a bare 'undertag'), so the real material outranks accessories.
+    The AI is still told these are keyword candidates and to skip wrong variants."""
+    phrases = key_phrases(item)
+    phrase_toks = [(p.split()) for p in phrases]
+
     hits = []
+    seen = set()
     for pr in prods:
         title = pr["_norm"]
+        best = 0
         for toks in phrase_toks:
             if toks and all(t in title for t in toks):
-                hits.append(pr)
-                break
+                best = max(best, len(toks))
+        if best == 0:
+            continue
+        dedup = (pr["chain"], round(pr["price"]), pr["_norm"][:44])
+        if dedup in seen:
+            continue
+        seen.add(dedup)
+        pr = dict(pr)
+        pr["_score"] = best
+        hits.append(pr)
+
+    # If any product matched a multi-word phrase, drop the bare single-word
+    # matches entirely — they're almost always a different product.
+    if any(h["_score"] >= 2 for h in hits):
+        hits = [h for h in hits if h["_score"] >= 2]
     return hits
 
 
@@ -95,53 +168,67 @@ def main():
     today = date.today().isoformat()
 
     out = []
-    refined = 0
+    with_products = 0
     for item in keys:
-        fallback = float(item["fallbackPriceDKK"])
         entry = {
             "key": item["key"],
             "name": item["name"],
             "synonyms": item.get("synonyms", []),
             "unit": item["unit"],
-            "unitPriceDKK": round(fallback),
-            "source": "catalog:v1",
         }
-
-        if item["unit"] in COMPARABLE_UNITS:
-            hits = match_products(item, prods)
+        if item.get("coverage"):
+            entry["coverage"] = item["coverage"]
+        hits = match_products(item, prods)
+        if hits:
+            def rank(h):
+                pack = parse_pack(h.get("name", ""))
+                return (
+                    -h.get("_score", 0),                          # most specific match first
+                    0 if h.get("in_stock") is not False else 1,   # in-stock first
+                    0 if pack else 1,                              # parsed pack first
+                    h["price"],                                    # cheaper first
+                )
+            hits.sort(key=rank)
+            # spread across chains: take best-ranked per chain first, then fill
             by_chain = defaultdict(list)
             for h in hits:
-                by_chain[h["chain"]].append(h["price"])
-            # one representative price per chain (the median of that chain's
-            # matches), so a chain with many noisy hits can't dominate.
-            chain_prices = {c: statistics.median(sorted(v)) for c, v in by_chain.items()}
-            samples = sorted(chain_prices.values())
-
-            if (MIN_CHAINS <= len(chain_prices)
-                    and MIN_SAMPLES <= len(hits) <= MAX_SAMPLES):
-                # drop the single lowest+highest chain before measuring agreement
-                core = samples[1:-1] if len(samples) >= 4 else samples
-                med = statistics.median(core)
-                iqr = (core[-1] - core[0]) / med if med else 99
-                if (iqr <= MAX_IQR_SPREAD
-                        and RATIO_LOW * fallback <= med <= RATIO_HIGH * fallback):
-                    entry["unitPriceDKK"] = round(med)
-                    entry["source"] = f"dk-priser:{today}"
-                    entry["sources"] = sorted(chain_prices.keys())
-                    entry["sampleCount"] = len(hits)
-                    entry["priceRange"] = [round(samples[0]), round(samples[-1])]
-                    entry["updated"] = today
-                    refined += 1
-
+                by_chain[h["chain"]].append(h)
+            picked = []
+            i = 0
+            while len(picked) < MAX_PRODUCTS_PER_KEY and any(by_chain.values()):
+                for c in list(by_chain):
+                    if by_chain[c]:
+                        picked.append(by_chain[c].pop(0))
+                        if len(picked) >= MAX_PRODUCTS_PER_KEY:
+                            break
+                i += 1
+                if i > 20:
+                    break
+            products = []
+            for h in picked:
+                pk = parse_pack(h.get("name", ""))
+                p = {
+                    "t": h.get("name", "").strip(),
+                    "p": round(h["price"], 2),
+                    "c": h["chain"],
+                }
+                if h.get("url"):
+                    p["u"] = h["url"]
+                if pk:
+                    p["pack"] = pk
+                products.append(p)
+            entry["products"] = products
+            entry["updated"] = today
+            with_products += 1
         out.append(entry)
 
     dst = os.path.join(LATEST, "estimator_catalog.json")
     with open(dst, "w", encoding="utf-8") as f:
-        json.dump(out, f, ensure_ascii=False, indent=1)
+        json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
 
-    pct = refined * 100 // max(1, len(out))
-    print(f"estimator_catalog.json: {len(out)} items, {refined} refined with "
-          f"live prices ({pct}%)  ->  {os.path.getsize(dst) // 1024} KB")
+    kb = os.path.getsize(dst) // 1024
+    print(f"estimator_catalog.json: {len(out)} keys, {with_products} with live "
+          f"products ({with_products * 100 // max(1, len(out))}%)  ->  {kb} KB")
 
 
 if __name__ == "__main__":

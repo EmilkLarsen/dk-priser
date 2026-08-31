@@ -7415,7 +7415,11 @@
    "betontagsten"
   ],
   "unit": "m2",
-  "fallbackPriceDKK": 179
+  "fallbackPriceDKK": 179,
+  "coverage": {
+   "per_m2": 10,
+   "note": "betontagsten ca. 10 stk/m2"
+  }
  },
  {
   "key": "roof_082",
@@ -7426,7 +7430,11 @@
    "tegl tagsten"
   ],
   "unit": "m2",
-  "fallbackPriceDKK": 299
+  "fallbackPriceDKK": 299,
+  "coverage": {
+   "per_m2": 12,
+   "note": "tegl/falstagsten ca. 12-14 stk/m2"
+  }
  },
  {
   "key": "roof_083",
@@ -7437,7 +7445,11 @@
    "rygning tegl"
   ],
   "unit": "set",
-  "fallbackPriceDKK": 699
+  "fallbackPriceDKK": 699,
+  "coverage": {
+   "per_m": 2.5,
+   "note": "rygningssten ca. 2.5 stk/lbm"
+  }
  },
  {
   "key": "roof_084",
@@ -7525,7 +7537,11 @@
    "tagplader bølge"
   ],
   "unit": "m2",
-  "fallbackPriceDKK": 179
+  "fallbackPriceDKK": 179,
+  "coverage": {
+   "per_m2": 1,
+   "note": "bolgeplade normalt m2-pris"
+  }
  },
  {
   "key": "roof_092",
@@ -7536,7 +7552,11 @@
    "stålplader tag"
   ],
   "unit": "m2",
-  "fallbackPriceDKK": 199
+  "fallbackPriceDKK": 199,
+  "coverage": {
+   "per_m2": 1,
+   "note": "trapezplade normalt m2-pris"
+  }
  },
  {
   "key": "roof_093",
@@ -7636,7 +7656,11 @@
    "osb m2"
   ],
   "unit": "m2",
-  "fallbackPriceDKK": 69
+  "fallbackPriceDKK": 69,
+  "coverage": {
+   "m2_per_unit": 2.98,
+   "note": "OSB plade 62.5x244 cm = ca. 1.52 m2; 122x244=2.98 m2"
+  }
  },
  {
   "key": "roof_102",
@@ -7648,7 +7672,11 @@
    "plywood m2"
   ],
   "unit": "m2",
-  "fallbackPriceDKK": 89
+  "fallbackPriceDKK": 89,
+  "coverage": {
+   "m2_per_unit": 2.98,
+   "note": "krydsfiner plade 122x244 cm = ca. 2.98 m2"
+  }
  },
  {
   "key": "roof_103",
@@ -7660,7 +7688,11 @@
    "gips m2"
   ],
   "unit": "m2",
-  "fallbackPriceDKK": 39
+  "fallbackPriceDKK": 39,
+  "coverage": {
+   "m2_per_unit": 3.0,
+   "note": "gipsplade 120x250-260 cm = ca. 3 m2"
+  }
  },
  {
   "key": "roof_104",
