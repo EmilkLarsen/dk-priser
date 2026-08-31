@@ -41,6 +41,33 @@ JUNK = re.compile(
     r"drivhus|skilt|klisterm[aæ]rke|pickup|bog|dvd|gavekort|stiga|"
     r"n[aå]lefilt|t[oø]jklemme|legetoej|leget[oø]j)\b", re.I)
 
+# Accessory / fixing / consumable words. When a product title's HEAD noun is one
+# of these, it's almost always the wrong row for a material line ("undertagsclips"
+# for "undertag", "tagpapklæber" for "tagpap"). Applied globally, in norm() space.
+ACCESSORY = {
+    "clips", "klips", "beslag", "krog", "kroge", "skrue", "skruer", "soem",
+    "klammer", "haefteklammer", "plugs", "dyvel", "strammer", "strips", "spaendebaand",
+    "klaeber", "lim", "primer", "tape", "fuge", "fugemasse", "silikone", "manchet",
+    "krave", "hjoerne", "prop", "haette", "haet", "rist", "filter", "net",
+    "maling", "rens", "algefjerner", "impraegnering", "gennemfoering", "adapter",
+    "kobling", "muffe", "endebund", "samlestykke", "udloeb", "boejning", "vinkel",
+    "holder", "baerer", "konsol", "montagesaet", "reparation", "reparationskit",
+}
+
+# Sane per-catalog-unit price band. A product whose derived per-unit price lands
+# outside this is a unit mismatch / wrong variant and is dropped.
+SANE_UNIT_BAND = {
+    "m2": (5, 900),      # covering, boards, membrane, insulation
+    "m": (3, 400),       # battens, gutters, fascia, flashing
+    "roll": (40, 3500),
+    "bag": (20, 800),
+    "box": (25, 1200),
+    "set": (30, 4000),
+    "liter": (15, 600),
+    "kg": (2, 200),
+    "pcs": (1, 3000),
+}
+
 
 def norm(s: str) -> str:
     s = (s or "").lower()
@@ -122,6 +149,14 @@ def load_products():
 _PAREN = re.compile(r"\(.*?\)")
 _UNITWORD = re.compile(r"\b(rulle|rull|pcs|stk|kit|set|box|kasse|pk|pakke)\b")
 
+STOP = {"til", "og", "med", "for", "inkl", "pr", "stk", "mm", "cm", "m", "m2",
+        "sort", "hvid", "graa", "roed", "bla", "gr", "a", "ce", "kg", "l",
+        "70", "c18", "type"}
+
+
+def _content_tokens(s):
+    return [t for t in norm(s).split() if t not in STOP and len(t) > 1]
+
 
 def key_phrases(item):
     """Match phrases for a key: the canonical name (parentheticals + unit words
@@ -141,6 +176,33 @@ def match_products(item, prods):
     phrases = key_phrases(item)
     phrase_toks = [(p.split()) for p in phrases]
     exclude = [norm(x) for x in item.get("exclude", [])]
+    # the material's own head noun(s) — never treat these as accessory words
+    material_words = set(_content_tokens(item["name"])) | {
+        t for s in item.get("synonyms", []) for t in _content_tokens(s)
+    }
+    cu = item["unit"].lower()
+    band = SANE_UNIT_BAND.get(cu)
+    cov = item.get("coverage") or {}
+
+    def derived_unit_price(pr):
+        """Rough per-catalog-unit price for the sanity band (mirrors the app)."""
+        pk = parse_pack(pr.get("name", ""))
+        price = pr["price"]
+        if pk and pk["q"] > 0:
+            pu = pk["u"]
+            if (cu, pu) in {("m2", "m2"), ("m", "m"), ("liter", "l"), ("kg", "kg"), ("pcs", "pcs")}:
+                return price / pk["q"]
+            if cu in ("roll", "bag", "box", "set"):
+                return price
+        if cu == "m2" and cov.get("per_m2"):
+            return price * cov["per_m2"]
+        if cu == "m" and cov.get("per_m"):
+            return price * cov["per_m"]
+        if cu == "m2" and cov.get("m2_per_unit"):
+            return price / cov["m2_per_unit"]
+        if cu in ("roll", "bag", "box", "set", "pcs"):
+            return price
+        return None
 
     hits = []
     seen = set()
@@ -154,6 +216,19 @@ def match_products(item, prods):
                 best = max(best, len(toks))
         if best == 0:
             continue
+
+        # accessory guard: if the FIRST content word of the title is an accessory
+        # term (and not one of this material's own words), it's the wrong row.
+        head = next((t for t in _content_tokens(pr.get("name", "")) if t not in STOP), "")
+        if head in ACCESSORY and head not in material_words:
+            continue
+
+        # unit-band guard
+        if band:
+            up = derived_unit_price(pr)
+            if up is not None and not (band[0] <= up <= band[1]):
+                continue
+
         dedup = (pr["chain"], round(pr["price"]), pr["_norm"][:44])
         if dedup in seen:
             continue
