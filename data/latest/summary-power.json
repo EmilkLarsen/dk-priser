@@ -1,11 +1,11 @@
 {
- "date": "2026-08-31",
+ "date": "2026-09-01",
  "chains": {
   "power": {
-   "products": 28372,
+   "products": 28409,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "seconds": 12857.6
+   "seconds": 12870.0
   }
  }
 }
