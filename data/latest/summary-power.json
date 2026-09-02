@@ -1,11 +1,9 @@
 {
- "date": "2026-09-01",
+ "date": "2026-09-02",
  "chains": {
   "power": {
-   "products": 28423,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "seconds": 12915.8
+   "error": "collapse guard: 28497 rows vs 141948 before",
+   "kept_previous": true
   }
  }
 }
