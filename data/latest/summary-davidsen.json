@@ -1,11 +1,9 @@
 {
- "date": "2026-09-01",
+ "date": "2026-09-02",
  "chains": {
   "davidsen": {
-   "products": 26823,
-   "price_changes": 42,
-   "suspicious_changes": 0,
-   "seconds": 9226.9
+   "error": "collapse guard: 26825 rows vs 133913 before",
+   "kept_previous": true
   }
  }
 }
