@@ -4319,6 +4319,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:8720169191532",
+  "name": "Philips Led Pære 40w E14 P45 2200k Amber",
+  "prices": {
+   "fog": 43.0,
+   "haraldnyborg": 89.0
+  },
+  "min": 43.0,
+  "max": 89.0,
+  "spread_pct": 107.0,
+  "match": "exact"
+ },
+ {
   "key": "ean:5703302164511",
   "name": "LK Fuga lampeudtag clipsroset m/jord Ø80 mm hvid",
   "prices": {
@@ -8993,6 +9005,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5703538452697",
+  "name": "Abena pose 22 L LDPE klar 22 MY 54,5X50,5 cm",
+  "prices": {
+   "davidsen": 26.0,
+   "fog": 44.95
+  },
+  "min": 26.0,
+  "max": 44.95,
+  "spread_pct": 72.9,
+  "match": "exact"
+ },
+ {
   "key": "ean:4003318838545",
   "name": "Abus 787 nøgleboks m/LED og kodehjul til vægmontering",
   "prices": {
@@ -10686,6 +10710,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:7332462083738",
+  "name": "SmartStore Classic 4 l tranparent 30x19x11 cm",
+  "prices": {
+   "davidsen": 24.0,
+   "fog": 39.96
+  },
+  "min": 24.0,
+  "max": 39.96,
+  "spread_pct": 66.5,
+  "match": "exact"
+ },
+ {
   "key": "ean:5703873213571",
   "name": "Afbryder enkel m/korr. IP54",
   "prices": {
@@ -10902,6 +10938,18 @@
   "min": 29.0,
   "max": 48.0,
   "spread_pct": 65.5,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5708605015683",
+  "name": "DUKA ONE PRO 25 S  1-rums varmegenvinding Ø100 mm",
+  "prices": {
+   "davidsen": 4960.0,
+   "fog": 2999.0
+  },
+  "min": 2999.0,
+  "max": 4960.0,
+  "spread_pct": 65.4,
   "match": "exact"
  },
  {
@@ -11566,6 +11614,18 @@
   },
   "min": 495.0,
   "max": 799.0,
+  "spread_pct": 61.4,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5711094001938",
+  "name": "DOLLE clickFIX56 lofttrappe 3-d træstige 67,6x14x117,5 cm",
+  "prices": {
+   "davidsen": 2620.0,
+   "fog": 1623.0
+  },
+  "min": 1623.0,
+  "max": 2620.0,
   "spread_pct": 61.4,
   "match": "exact"
  },
@@ -23348,6 +23408,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5708614913024",
+  "name": "HOME It® flexvandslange 30 m",
+  "prices": {
+   "davidsen": 260.0,
+   "fog": 199.0
+  },
+  "min": 199.0,
+  "max": 260.0,
+  "spread_pct": 30.7,
+  "match": "exact"
+ },
+ {
   "key": "ean:4059952570143",
   "name": "Bosch 18v Bajonetsav Advanced Uden Batteri & Lader",
   "prices": {
@@ -27346,6 +27418,19 @@
   "match": "exact"
  },
  {
+  "key": "ean:8719514315976",
+  "name": "Philips Kerte LED pære E14 15W 1 pack",
+  "prices": {
+   "davidsen": 46.95,
+   "fog": 49.95,
+   "haraldnyborg": 40.0
+  },
+  "min": 40.0,
+  "max": 49.95,
+  "spread_pct": 24.9,
+  "match": "exact"
+ },
+ {
   "key": "ean:8718699782054",
   "name": "Philips Kerte LED pære E14 25W 2 pack",
   "prices": {
@@ -27908,6 +27993,18 @@
   },
   "min": 169.0,
   "max": 210.0,
+  "spread_pct": 24.3,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4975364067302",
+  "name": "Tajima Convoy-Super fugepistol",
+  "prices": {
+   "davidsen": 305.0,
+   "fog": 379.0
+  },
+  "min": 305.0,
+  "max": 379.0,
   "spread_pct": 24.3,
   "match": "exact"
  },
@@ -50536,18 +50633,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:8719514315976",
-  "name": "Philips Kerte LED pære E14 15W 1 pack",
-  "prices": {
-   "davidsen": 46.95,
-   "fog": 49.95
-  },
-  "min": 46.95,
-  "max": 49.95,
-  "spread_pct": 6.4,
-  "match": "exact"
- },
- {
   "key": "ean:8719514372184",
   "name": "Philips Smart WiZ white LED pære E27 6,7W globe klar",
   "prices": {
@@ -52249,6 +52334,18 @@
   },
   "min": 95.0,
   "max": 100.0,
+  "spread_pct": 5.3,
+  "match": "exact"
+ },
+ {
+  "key": "ean:8719514315433",
+  "name": "Philips Vintage Standard pære 25W E27 guld",
+  "prices": {
+   "davidsen": 38.0,
+   "haraldnyborg": 40.0
+  },
+  "min": 38.0,
+  "max": 40.0,
   "spread_pct": 5.3,
   "match": "exact"
  },
@@ -59192,6 +59289,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5708781226903",
+  "name": "Afsætningspæle m/rød top 2,5x2,5x90 cm",
+  "prices": {
+   "davidsen": 18.0,
+   "fog": 17.95
+  },
+  "min": 17.95,
+  "max": 18.0,
+  "spread_pct": 0.3,
+  "match": "exact"
+ },
+ {
   "key": "ean:7040665044202",
   "name": "Adax Nova 20 olieradiator 2000W 230V",
   "prices": {
@@ -60112,114 +60221,6 @@
   },
   "min": 69.95,
   "max": 70.0,
-  "spread_pct": 0.1,
-  "match": "exact"
- },
- {
-  "key": "ean:5709137042017",
-  "name": "Roliba quickled skrue elgalvaniseret 8x74 mm 2 stk.",
-  "prices": {
-   "davidsen": 35.0,
-   "fog": 34.96
-  },
-  "min": 34.96,
-  "max": 35.0,
-  "spread_pct": 0.1,
-  "match": "exact"
- },
- {
-  "key": "ean:4058546496128",
-  "name": "Ryobi RDC18-0 pletrenser 18V ONE+",
-  "prices": {
-   "davidsen": 80.0,
-   "fog": 79.95
-  },
-  "min": 79.95,
-  "max": 80.0,
-  "spread_pct": 0.1,
-  "match": "exact"
- },
- {
-  "key": "ean:4892210206909",
-  "name": "Ryobi RTR18-0 overfræser 18V ONE+ solo",
-  "prices": {
-   "davidsen": 1199.0,
-   "fog": 1198.0
-  },
-  "min": 1198.0,
-  "max": 1199.0,
-  "spread_pct": 0.1,
-  "match": "exact"
- },
- {
-  "key": "ean:4892210205452",
-  "name": "Ryobi RY18BVXA-0 løvblæser 18V ONE+ solo",
-  "prices": {
-   "davidsen": 1899.0,
-   "fog": 1898.0
-  },
-  "min": 1898.0,
-  "max": 1899.0,
-  "spread_pct": 0.1,
-  "match": "exact"
- },
- {
-  "key": "ean:5704070530973",
-  "name": "Spekter standard cykellakpensel 13 mm 2 stk.",
-  "prices": {
-   "davidsen": 38.0,
-   "fog": 37.96
-  },
-  "min": 37.96,
-  "max": 38.0,
-  "spread_pct": 0.1,
-  "match": "exact"
- },
- {
-  "key": "ean:4042448238368",
-  "name": "Tesa malertape standard 50m x 50mm",
-  "prices": {
-   "davidsen": 65.0,
-   "fog": 64.95
-  },
-  "min": 64.95,
-  "max": 65.0,
-  "spread_pct": 0.1,
-  "match": "exact"
- },
- {
-  "key": "ean:5703873242618",
-  "name": "Wexim byggestrømstavle 32A gul",
-  "prices": {
-   "davidsen": 900.0,
-   "fog": 899.0
-  },
-  "min": 899.0,
-  "max": 900.0,
-  "spread_pct": 0.1,
-  "match": "exact"
- },
- {
-  "key": "ean:5712508018146",
-  "name": "Wimex Fur Classic Komposithegn Koksgrå 180 cm",
-  "prices": {
-   "davidsen": 2815.0,
-   "fog": 2818.0
-  },
-  "min": 2815.0,
-  "max": 2818.0,
-  "spread_pct": 0.1,
-  "match": "exact"
- },
- {
-  "key": "ean:3700546708305",
-  "name": "Withings Scanwatch 2 42mm Sort",
-  "prices": {
-   "fog": 2698.0,
-   "power": 2695.0
-  },
-  "min": 2695.0,
-  "max": 2698.0,
   "spread_pct": 0.1,
   "match": "exact"
  }
