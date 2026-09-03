@@ -1,8 +1,8 @@
 {
- "date": "2026-09-02",
+ "date": "2026-09-03",
  "chains": {
   "bauhaus": {
-   "error": "collapse guard: 23221 rows vs 116107 before",
+   "error": "collapse guard: 23220 rows vs 116107 before",
    "kept_previous": true
   }
  }
