@@ -1,8 +1,8 @@
 {
- "date": "2026-09-02",
+ "date": "2026-09-03",
  "chains": {
   "fog": {
-   "error": "collapse guard: 29948 rows vs 149488 before",
+   "error": "collapse guard: 29931 rows vs 149488 before",
    "kept_previous": true
   }
  }
