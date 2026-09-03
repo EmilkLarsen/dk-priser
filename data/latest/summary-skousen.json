@@ -1,11 +1,9 @@
 {
- "date": "2026-09-01",
+ "date": "2026-09-03",
  "chains": {
   "skousen": {
-   "products": 5185,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "seconds": 7338.7
+   "error": "collapse guard: 5140 rows vs 20607 before",
+   "kept_previous": true
   }
  }
 }
