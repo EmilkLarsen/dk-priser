@@ -1,31 +1,29 @@
 {
- "date": "2026-09-03",
+ "date": "2026-09-04",
  "total_rows": 120858,
  "chains": {
-  "power": {
-   "error": "collapse guard: 28497 rows vs 141948 before",
-   "kept_previous": true
-  },
   "haraldnyborg": {
-   "error": "collapse guard: 10942 rows vs 54245 before",
+   "error": "collapse guard: 11007 rows vs 54245 before",
    "kept_previous": true
   },
-  "skousen": {
-   "products": 5185,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "seconds": 7338.7
-  },
-  "fog": {
-   "error": "collapse guard: 29948 rows vs 149488 before",
+  "bauhaus": {
+   "error": "collapse guard: 23220 rows vs 116107 before",
    "kept_previous": true
   },
   "davidsen": {
    "error": "collapse guard: 26825 rows vs 133913 before",
    "kept_previous": true
   },
-  "bauhaus": {
-   "error": "collapse guard: 23221 rows vs 116107 before",
+  "power": {
+   "error": "collapse guard: 28492 rows vs 141948 before",
+   "kept_previous": true
+  },
+  "skousen": {
+   "error": "collapse guard: 5140 rows vs 20607 before",
+   "kept_previous": true
+  },
+  "fog": {
+   "error": "collapse guard: 29931 rows vs 149488 before",
    "kept_previous": true
   }
  }
