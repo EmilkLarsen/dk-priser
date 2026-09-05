@@ -1,5 +1,5 @@
 {
- "date": "2026-09-04",
+ "date": "2026-09-05",
  "chains": {
   "davidsen": {
    "error": "collapse guard: 26823 rows vs 133913 before",
