@@ -1,8 +1,8 @@
 {
- "date": "2026-09-05",
+ "date": "2026-09-06",
  "chains": {
   "power": {
-   "error": "collapse guard: 28476 rows vs 141948 before",
+   "error": "collapse guard: 28450 rows vs 141948 before",
    "kept_previous": true
   }
  }
