@@ -1,9 +1,9 @@
 {
- "date": "2026-09-06",
+ "date": "2026-09-07",
  "total_rows": 120858,
  "chains": {
   "haraldnyborg": {
-   "error": "collapse guard: 11134 rows vs 54245 before",
+   "error": "collapse guard: 11221 rows vs 54245 before",
    "kept_previous": true
   },
   "bauhaus": {
@@ -15,7 +15,7 @@
    "kept_previous": true
   },
   "power": {
-   "error": "collapse guard: 28476 rows vs 141948 before",
+   "error": "collapse guard: 28450 rows vs 141948 before",
    "kept_previous": true
   },
   "skousen": {
@@ -23,7 +23,7 @@
    "kept_previous": true
   },
   "fog": {
-   "error": "collapse guard: 29956 rows vs 149488 before",
+   "error": "collapse guard: 29955 rows vs 149488 before",
    "kept_previous": true
   }
  }
