@@ -1,8 +1,8 @@
 {
- "date": "2026-09-08",
+ "date": "2026-09-09",
  "chains": {
   "davidsen": {
-   "error": "collapse guard: 26815 rows vs 133913 before",
+   "error": "collapse guard: 26795 rows vs 133913 before",
    "kept_previous": true
   }
  }
