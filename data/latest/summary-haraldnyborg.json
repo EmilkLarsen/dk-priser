@@ -1,8 +1,8 @@
 {
- "date": "2026-09-08",
+ "date": "2026-09-09",
  "chains": {
   "haraldnyborg": {
-   "error": "collapse guard: 11217 rows vs 54245 before",
+   "error": "collapse guard: 11413 rows vs 54245 before",
    "kept_previous": true
   }
  }
