@@ -2,11 +2,7 @@
  "date": "2026-09-16",
  "chains": {
   "davidsen": {
-<<<<<<< HEAD
-   "error": "collapse guard: 211 rows vs 133913 before",
-=======
-   "error": "collapse guard: 6 rows vs 133913 before",
->>>>>>> 6e68b04 (CRITICAL weekly-audit fixes: time-budgeted scraping (270min cap, committed offsets -> big chains finish across runs), dedupe-on-write (bloated 5x append files collapse to catalog size), nightly cron un-dead)
+   "error": "collapse guard: 26765 rows vs 133913 before",
    "kept_previous": true
   }
  }
