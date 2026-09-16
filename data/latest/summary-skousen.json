@@ -2,8 +2,7 @@
  "date": "2026-09-16",
  "chains": {
   "skousen": {
-   "error": "collapse guard: 187 rows vs 20607 before",
-   "kept_previous": true
+   "error": "HTTPError: HTTP Error 429: Too Many Requests"
   }
  }
 }
