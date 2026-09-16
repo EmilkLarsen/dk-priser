@@ -1,8 +1,8 @@
 {
- "date": "2026-09-12",
+ "date": "2026-09-16",
  "chains": {
   "skousen": {
-   "error": "collapse guard: 5371 rows vs 20607 before",
+   "error": "collapse guard: 187 rows vs 20607 before",
    "kept_previous": true
   }
  }
