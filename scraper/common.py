@@ -16,7 +16,7 @@ import gzip
 import urllib.request
 import urllib.parse
 import urllib.error
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
       "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36")
@@ -228,7 +228,7 @@ def scrape_urls(urls, handle):
     return rows
 
 
-def scrape_with_checkpoint(chain, urls, handle, limit=None):
+def scrape_with_checkpoint(chain, urls, handle, limit=None, deadline=None):
     """For catalogs too large for one CI job to finish (Silvan ~41k URLs,
     XL-BYG ~35k+ across 7 sub-sitemaps, Stark 100k+ variant URLs, many dead)
     - every nightly run for these three has been getting killed by CI's own
@@ -263,6 +263,22 @@ def scrape_with_checkpoint(chain, urls, handle, limit=None):
     all of this and behaves exactly like plain scrape_urls, so a deliberate
     small test run can never be confused with (or pollute) real daily
     progress.
+
+    `deadline` (a `time.time()`-style unix timestamp) matters because the
+    per-URL checkpoint files above only protect a run that gets to keep
+    running - CI's own job timeout SIGKILLs the whole job the instant it's
+    hit, which tears down the runner (and every byte of "durable" progress
+    on its local disk) before the caller's own commit-and-push step ever
+    gets to run. Confirmed live: silvan/xlbyg/stark have never once
+    finished OR made committed progress since this function shipped,
+    because every run that didn't finish naturally was a run that
+    contributed nothing at all. Stopping a comfortable margin BEFORE that
+    external kill - by giving up on any URL not yet complete and returning
+    whatever's checkpointed instead of waiting on `ex.map` to visit every
+    one - means the calling script exits normally, the checkpoint files
+    make it into the same commit as the day's `.jsonl` output, and the
+    *next* invocation actually resumes into new URLs instead of into an
+    empty seen-set again.
     """
     if limit:
         return scrape_urls(urls[:limit], handle)
@@ -290,14 +306,36 @@ def scrape_with_checkpoint(chain, urls, handle, limit=None):
 
         with open(seen_path, "a", encoding="utf-8") as seen_f, \
                 open(checkpoint_path, "a", encoding="utf-8") as ckpt_f:
-            with ThreadPoolExecutor(max_workers=WORKERS) as ex:
-                for u, rows in ex.map(work, remaining):
+            ex = ThreadPoolExecutor(max_workers=WORKERS)
+            try:
+                futures = {ex.submit(work, u): u for u in remaining}
+                done = 0
+                for fut in as_completed(futures):
+                    u, rows = fut.result()
+                    done += 1
                     seen_f.write(u + "\n")
                     seen_f.flush()
                     for row in rows:
                         ckpt_f.write(json.dumps(row, ensure_ascii=False) + "\n")
                     if rows:
                         ckpt_f.flush()
+                    if deadline and time.time() > deadline:
+                        # Give up on whatever's still queued rather than
+                        # `ex.map`'s all-submitted-up-front behavior, which
+                        # would otherwise leave nothing to check a deadline
+                        # between (`__exit__` blocks until every submitted
+                        # future finishes regardless of how many results
+                        # we've stopped consuming). `cancel_futures=True`
+                        # drops every not-yet-started future immediately;
+                        # only the handful already mid-request keep running
+                        # to their own timeout - a small, bounded tail, not
+                        # the remaining URL count.
+                        print(f"  {chain}: soft deadline reached, stopping "
+                              f"early ({len(seen) + done} of "
+                              f"{len(urls)} attempted so far today)")
+                        break
+            finally:
+                ex.shutdown(wait=False, cancel_futures=True)
         with open(seen_path, encoding="utf-8") as f:
             seen = {line.rstrip("\n") for line in f if line.strip()}
 

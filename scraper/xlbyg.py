@@ -41,12 +41,12 @@ def handle(u, html):
     return rows
 
 
-def scrape(limit=None):
+def scrape(limit=None, deadline=None):
     # 7 product sub-sitemaps, ~5.1k urls each (verified live) - ~35k+ total,
     # no single CI job finishes that at the deliberately polite request
     # rate, see scrape_with_checkpoint's own doc comment for why this isn't
     # scrape_urls.
-    return scrape_with_checkpoint("xlbyg", fetch_url_list(limit), handle, limit)
+    return scrape_with_checkpoint("xlbyg", fetch_url_list(limit), handle, limit, deadline)
 
 
 if __name__ == "__main__":

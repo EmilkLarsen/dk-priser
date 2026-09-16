@@ -41,11 +41,11 @@ def handle(u, html):
     return rows
 
 
-def scrape(limit=None):
+def scrape(limit=None, deadline=None):
     # ~41k real product URLs (verified live) - no single CI job finishes
     # that at the deliberately polite request rate, see
     # scrape_with_checkpoint's own doc comment for why this isn't scrape_urls.
-    return scrape_with_checkpoint("silvan", fetch_url_list(limit), handle, limit)
+    return scrape_with_checkpoint("silvan", fetch_url_list(limit), handle, limit, deadline)
 
 
 if __name__ == "__main__":

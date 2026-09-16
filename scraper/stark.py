@@ -50,14 +50,14 @@ def handle(u, raw):
     }]
 
 
-def scrape(limit=None):
+def scrape(limit=None, deadline=None):
     # Two variant sitemaps, 50k+ urls each (verified live) - a huge share
     # are dead 404s (documented above/in the repo README), but even a
     # cheap 404 costs a request, and 100k+ requests at the deliberately
     # polite rate is still no single-CI-job's worth of time. See
     # scrape_with_checkpoint's own doc comment for why this isn't a plain
     # scrape_urls (or, as before, hand-rolled pmap) call.
-    return scrape_with_checkpoint("stark", fetch_url_list(limit), handle, limit)
+    return scrape_with_checkpoint("stark", fetch_url_list(limit), handle, limit, deadline)
 
 
 if __name__ == "__main__":

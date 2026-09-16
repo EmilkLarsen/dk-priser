@@ -10,6 +10,7 @@ import sys
 import os
 import json
 import time
+import inspect
 import importlib
 from datetime import date
 
@@ -51,12 +52,25 @@ def main():
     today = date.today().isoformat()
     summary = {}
 
+    # A soft internal cutoff so silvan/xlbyg/stark's checkpointed scrape
+    # exits normally with time to spare before the JOB's own hard timeout
+    # (350 min in daily-prices.yml) SIGKILLs it - a run killed externally
+    # never reaches "Commit snapshot", so nothing it did survives (see
+    # scrape_with_checkpoint's own doc comment). Only meaningful for chain
+    # modules whose scrape() accepts a `deadline` kwarg; the other, fast
+    # chains ignore it.
+    deadline_seconds = os.environ.get("SCRAPE_DEADLINE_SECONDS")
+    deadline = time.time() + int(deadline_seconds) if deadline_seconds else None
+
     for chain in chains:
         print(f"=== {chain} ===")
         started = time.time()
         try:
             mod = importlib.import_module(chain)
-            rows = mod.scrape(limit)
+            if "deadline" in inspect.signature(mod.scrape).parameters:
+                rows = mod.scrape(limit, deadline=deadline)
+            else:
+                rows = mod.scrape(limit)
         except Exception as e:
             print(f"  FAILED: {type(e).__name__}: {e}")
             summary[chain] = {"error": f"{type(e).__name__}: {e}"}

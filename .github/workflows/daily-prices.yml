@@ -44,7 +44,17 @@ jobs:
       - name: Run scraper (${{ matrix.chain }})
         env:
           RESUME: ${{ inputs.resume == 'true' && '1' || '0' }}
-          SCRAPE_BUDGET: "270"   # stop cleanly after 4.5h, commit offset, continue next run
+          SCRAPE_BUDGET: "270"   # stop cleanly after 4.5h, commit offset, continue next run - scrape_urls chains (bauhaus/davidsen/fog/haraldnyborg/power/skousen)
+          # 300 min soft cutoff inside this job's 350-min hard timeout above -
+          # the 50-min gap is what lets a checkpointed chain (silvan/xlbyg/
+          # stark) exit on its own and reach "Commit snapshot" instead of
+          # being SIGKILLed mid-request with nothing durably saved. Separate
+          # from SCRAPE_BUDGET above because these three chains go through
+          # scrape_with_checkpoint, not scrape_urls - see that function's own
+          # doc comment for why an externally killed job previously meant
+          # zero progress, forever, even after SCRAPE_BUDGET shipped for the
+          # other six chains.
+          SCRAPE_DEADLINE_SECONDS: "18000"
         run: |
           if [ "${{ inputs.full }}" = "true" ] || [ "${{ github.event_name }}" = "schedule" ]; then
             python scraper/run_daily.py --only ${{ matrix.chain }}
@@ -57,6 +67,14 @@ jobs:
           git config user.name "price-bot"
           git config user.email "bot@noreply.github.com"
           git add data/latest/${{ matrix.chain }}.jsonl data/latest/summary-${{ matrix.chain }}.json data/history || true
+          # Checkpoint/seen-set files (only silvan/xlbyg/stark produce these -
+          # see scrape_with_checkpoint) committed separately: without this,
+          # every fresh job checkout starts that resume logic from a
+          # permanently empty seen-set, since nothing on the runner's own
+          # disk survives past this job - confirmed live, these three chains
+          # never made net progress across dozens of runs despite the
+          # checkpoint code appearing to work correctly within a single run.
+          git add data/latest/.checkpoint-${{ matrix.chain }}.jsonl data/latest/.seen-${{ matrix.chain }}.txt 2>/dev/null || true
           git diff --cached --quiet && echo "No changes" || git commit -m "prices: ${{ matrix.chain }} $(date -u +%F)"
           # push with retry: concurrent chain jobs rebase against each other
           for i in 1 2 3 4 5 6 7 8; do
