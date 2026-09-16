@@ -2,7 +2,7 @@
  "date": "2026-09-16",
  "chains": {
   "davidsen": {
-   "error": "collapse guard: 26771 rows vs 133913 before",
+   "error": "collapse guard: 211 rows vs 133913 before",
    "kept_previous": true
   }
  }
