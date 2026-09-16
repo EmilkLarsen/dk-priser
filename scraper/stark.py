@@ -2,7 +2,7 @@
 Amounts in oere. Campaign price 0 = no campaign."""
 import re
 import html as htmllib
-from common import get, sitemap_urls, write_jsonl, scrape_urls
+from common import get, sitemap_urls, write_jsonl, scrape_with_checkpoint
 
 BASE = "https://www.stark.dk"
 OUT = "data/latest/stark.jsonl"
@@ -51,14 +51,13 @@ def handle(u, raw):
 
 
 def scrape(limit=None):
-    def work(u):
-        try:
-            return handle(u, get(u))
-        except Exception as e:
-            print(f"  ! {u}: {e}")
-            return []
-    from common import pmap
-    return pmap(work, fetch_url_list(limit))
+    # Two variant sitemaps, 50k+ urls each (verified live) - a huge share
+    # are dead 404s (documented above/in the repo README), but even a
+    # cheap 404 costs a request, and 100k+ requests at the deliberately
+    # polite rate is still no single-CI-job's worth of time. See
+    # scrape_with_checkpoint's own doc comment for why this isn't a plain
+    # scrape_urls (or, as before, hand-rolled pmap) call.
+    return scrape_with_checkpoint("stark", fetch_url_list(limit), handle, limit)
 
 
 if __name__ == "__main__":

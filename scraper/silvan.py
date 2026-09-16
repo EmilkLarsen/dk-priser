@@ -1,6 +1,6 @@
 """Silvan.dk — sitemap -> product pages -> schema.org ld+json price."""
 import re
-from common import html_gtin, valid_ean, first_str, sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_urls
+from common import html_gtin, valid_ean, first_str, sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_with_checkpoint
 
 BASE = "https://www.silvan.dk"
 SITEMAP = BASE + "/sitemapvariantfeed.xml"
@@ -42,7 +42,10 @@ def handle(u, html):
 
 
 def scrape(limit=None):
-    return scrape_urls(fetch_url_list(limit), handle)
+    # ~41k real product URLs (verified live) - no single CI job finishes
+    # that at the deliberately polite request rate, see
+    # scrape_with_checkpoint's own doc comment for why this isn't scrape_urls.
+    return scrape_with_checkpoint("silvan", fetch_url_list(limit), handle, limit)
 
 
 if __name__ == "__main__":
