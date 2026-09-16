@@ -159,10 +159,12 @@ def offer_from_ld(product):
     price = off.get("price")
     if price in (None, "", 0):
         return None
+    avail = str(off.get("availability") or "")
+    in_stock = ("InStock" in avail) if avail else None  # absent = unknown
     return {
         "price": float(price),
         "currency": off.get("priceCurrency", "DKK"),
-        "in_stock": "InStock" in str(off.get("availability", "")),
+        "in_stock": in_stock,
     }
 
 

@@ -8595,5 +8595,1112 @@
   ],
   "unit": "m2",
   "fallbackPriceDKK": 340
+ },
+ {
+  "key": "door_slab_interior",
+  "name": "Indvendig dør (dørblad)",
+  "synonyms": [
+   "indvendig dør",
+   "dørblad",
+   "dørplade",
+   "innerdør",
+   "dør 725x2040",
+   "dør 825x2040",
+   "interior door",
+   "door leaf",
+   "door slab",
+   "indvendig doer"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "låsekasse",
+   "slutblik",
+   "låsecylinder",
+   "cylinder",
+   "dørgreb",
+   "greb",
+   "hængsel",
+   "karm",
+   "skrue",
+   "beslag",
+   "spion",
+   "pumpe",
+   "stopper",
+   "skilt",
+   "lås"
+  ]
+ },
+ {
+  "key": "door_slab_exterior",
+  "name": "Yderdør",
+  "synonyms": [
+   "yderdør",
+   "hoveddør",
+   "entredør",
+   "terrassedør",
+   "yderdor",
+   "front door",
+   "exterior door",
+   "entry door",
+   "terrace door"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "lås",
+   "låsekasse",
+   "cylinder",
+   "greb",
+   "hængsel",
+   "karm",
+   "skrue",
+   "beslag",
+   "dørlås",
+   "terrassedørlås",
+   "spion",
+   "pumpe",
+   "stopper"
+  ]
+ },
+ {
+  "key": "door_frame_interior",
+  "name": "Dørkarm (karmtræ)",
+  "synonyms": [
+   "dørkarm",
+   "karmtræ",
+   "karmtræ sæt",
+   "dørramme",
+   "karmträ",
+   "door frame",
+   "door casing",
+   "door liner",
+   "doerkarm"
+  ],
+  "unit": "set",
+  "exclude": [
+   "skrue",
+   "skunklem",
+   "skunk",
+   "lem",
+   "beslag",
+   "skab",
+   "køkken",
+   "hængsel",
+   "greb",
+   "lås",
+   "plug"
+  ]
+ },
+ {
+  "key": "door_hinge",
+  "name": "Dørhængsel (sæt)",
+  "synonyms": [
+   "dørhængsel",
+   "dørhængsler",
+   "hængsel",
+   "hængsler",
+   "dørhengsel",
+   "door hinge",
+   "door hinges",
+   "butt hinge",
+   "doerhaengsel"
+  ],
+  "unit": "set",
+  "exclude": [
+   "skab",
+   "køkken",
+   "låge",
+   "møbel",
+   "klaver",
+   "stabel",
+   "smig"
+  ]
+ },
+ {
+  "key": "door_handle_set",
+  "name": "Dørgreb sæt (greb + skilte)",
+  "synonyms": [
+   "dørgreb",
+   "dørgreb sæt",
+   "dørgrebsgarnitur",
+   "grebgarnitur",
+   "dørgrebssæt",
+   "door handle",
+   "door handle set",
+   "lever handle",
+   "doergreb"
+  ],
+  "unit": "set",
+  "exclude": [
+   "skab",
+   "køkken",
+   "møbel",
+   "karm",
+   "skrue",
+   "beslag",
+   "cylinder",
+   "indvendig dør",
+   "dørblade",
+   "spion",
+   "låsekasse",
+   "massiv",
+   "solid",
+   "dannebrog",
+   "finland",
+   "ubehandlet"
+  ]
+ },
+ {
+  "key": "door_lock_case",
+  "name": "Låsekasse (indstikslås)",
+  "synonyms": [
+   "låsekasse",
+   "indstikslås",
+   "låsekasse indstik",
+   "lasekasse",
+   "mortise lock",
+   "mortice lock",
+   "lock case",
+   "deadlock"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "greb",
+   "skilt",
+   "cylinder",
+   "slutblik",
+   "dørgreb",
+   "karm"
+  ]
+ },
+ {
+  "key": "door_cylinder",
+  "name": "Låsecylinder",
+  "synonyms": [
+   "låsecylinder",
+   "cylinder",
+   "sikkerhedscylinder",
+   "lasecylinder",
+   "lock cylinder",
+   "euro cylinder",
+   "door cylinder",
+   "profile cylinder"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "låsekasse",
+   "greb",
+   "slutblik",
+   "skilt",
+   "dørgreb"
+  ]
+ },
+ {
+  "key": "door_strike_plate",
+  "name": "Slutblik",
+  "synonyms": [
+   "slutblik",
+   "slutplade",
+   "låseblik",
+   "strike plate",
+   "striker plate",
+   "latch plate"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "ukrudt",
+   "keeper",
+   "cord",
+   "hair",
+   "garden",
+   "magnet",
+   "låsekasse"
+  ]
+ },
+ {
+  "key": "door_stop",
+  "name": "Dørstopper",
+  "synonyms": [
+   "dørstopper",
+   "dørstop",
+   "door stop",
+   "door stopper",
+   "door wedge",
+   "doerstopper"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "greb",
+   "skab",
+   "møbel",
+   "køkken"
+  ]
+ },
+ {
+  "key": "door_shims",
+  "name": "Indkiler / sleer (dørkiler)",
+  "synonyms": [
+   "dørkiler",
+   "kiler",
+   "sleer",
+   "indkiler",
+   "doerkiler",
+   "shims",
+   "door shims",
+   "packers",
+   "wedges",
+   "glazing packers"
+  ],
+  "unit": "pack",
+  "exclude": [
+   "tilefix",
+   "nivellering",
+   "flise",
+   "nivelering",
+   "eftermontering",
+   "k-mur",
+   "beslag",
+   "monteringsbeslag"
+  ]
+ },
+ {
+  "key": "door_closer",
+  "name": "Dørpumpe (dørlukker)",
+  "synonyms": [
+   "dørpumpe",
+   "dørlukker",
+   "door closer",
+   "overhead door closer",
+   "doerpumpe"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "checky",
+   "tæppe",
+   "carpet",
+   "tappet",
+   "tegning"
+  ]
+ },
+ {
+  "key": "door_peephole",
+  "name": "Dørspion",
+  "synonyms": [
+   "dørspion",
+   "kighul",
+   "peephole",
+   "door viewer",
+   "doerspion"
+  ],
+  "unit": "pcs"
+ },
+ {
+  "key": "door_letter_plate",
+  "name": "Brevklap / brevsprække",
+  "synonyms": [
+   "brevklap",
+   "brevsprække",
+   "postkasseklap",
+   "letter plate",
+   "letterbox flap",
+   "letter flap"
+  ],
+  "unit": "pcs"
+ },
+ {
+  "key": "window_unit",
+  "name": "Vindueselement (komplet vindue)",
+  "synonyms": [
+   "vindueselement",
+   "vinduesparti",
+   "window unit",
+   "window element",
+   "komplet vindue"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "maling",
+   "beskyttelse",
+   "telt",
+   "drivhus",
+   "vitavia",
+   "jalousi",
+   "tagvindue",
+   "partytelt",
+   "gori",
+   "skjuler",
+   "film",
+   "sæt",
+   "bundliste",
+   "dafa",
+   "karmliste",
+   "beslag",
+   "kravler",
+   "kraver",
+   "fluefanger",
+   "fluefælde",
+   "skraber",
+   "pest",
+   "udskiftningsblad",
+   "isolering",
+   "vindueskravler",
+   "sensor",
+   "klistermærke",
+   "nylonvridere",
+   "strips",
+   "greb",
+   "vasker",
+   "refill",
+   "i-profil",
+   "tesamoll",
+   "folie",
+   "insekt",
+   "fugle",
+   "foderhus",
+   "net",
+   "insect",
+   "d-c-fix",
+   "olie",
+   "lys",
+   "figur",
+   "halloween",
+   "deko",
+   "dekoration",
+   "lys"
+  ]
+ },
+ {
+  "key": "window_glazing_double",
+  "name": "Termorude (2-lags glas)",
+  "synonyms": [
+   "termorude",
+   "2-lags glas",
+   "isolerrude",
+   "termoglas",
+   "double glazing",
+   "double glazed unit",
+   "insulated glass unit",
+   "thermopane"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "flagstang",
+   "plasttopbeslag",
+   "beslag",
+   "dano",
+   "mast"
+  ]
+ },
+ {
+  "key": "window_handle",
+  "name": "Vinduesgreb",
+  "synonyms": [
+   "vinduesgreb",
+   "vindueshåndtag",
+   "window handle",
+   "casement handle",
+   "vindueshaandtag",
+   "window lock handle"
+  ],
+  "unit": "pcs"
+ },
+ {
+  "key": "window_hinge",
+  "name": "Vindueshængsel",
+  "synonyms": [
+   "vindueshængsel",
+   "vindueshængsler",
+   "vinduesbeslag",
+   "window hinge",
+   "casement hinge",
+   "friction stay",
+   "vindueshaengsel"
+  ],
+  "unit": "set",
+  "exclude": [
+   "dør",
+   "skab",
+   "køkken"
+  ]
+ },
+ {
+  "key": "window_seal_strip",
+  "name": "Tætningsliste vindue",
+  "synonyms": [
+   "tætningsliste",
+   "vinduesliste",
+   "window seal",
+   "weatherstrip",
+   "window weather stripping",
+   "tætningsliste vindue"
+  ],
+  "unit": "roll",
+  "exclude": [
+   "dør",
+   "køleskab",
+   "frys"
+  ]
+ },
+ {
+  "key": "window_sill",
+  "name": "Vindueskarm / sålbænk",
+  "synonyms": [
+   "vindueskarm",
+   "sålbænk",
+   "karmplade",
+   "vinduesplade",
+   "window sill",
+   "window board",
+   "sill board",
+   "vindueskarm træ",
+   "saalbaenk"
+  ],
+  "unit": "m",
+  "exclude": [
+   "maling",
+   "beskyttelse",
+   "beslag",
+   "skrue"
+  ]
+ },
+ {
+  "key": "glazing_bead",
+  "name": "Glasliste",
+  "synonyms": [
+   "glasliste",
+   "glasliste træ",
+   "glazing bead",
+   "glass bead",
+   "glasliste pvc",
+   "glass list"
+  ],
+  "unit": "m"
+ },
+ {
+  "key": "glazing_putty",
+  "name": "Vindueskit",
+  "synonyms": [
+   "vindueskit",
+   "kit",
+   "glaspudser kit",
+   "glazing putty",
+   "glazing compound",
+   "window putty"
+  ],
+  "unit": "kg",
+  "exclude": [
+   "reparation",
+   "reparationskit",
+   "glas",
+   "rude"
+  ]
+ },
+ {
+  "key": "stair_tread",
+  "name": "Trappetrin",
+  "synonyms": [
+   "trappetrin",
+   "trin",
+   "stair tread",
+   "step",
+   "trappetrin eg",
+   "trappetrin bøg"
+  ],
+  "unit": "pcs"
+ },
+ {
+  "key": "stair_handrail",
+  "name": "Håndliste / gelænder",
+  "synonyms": [
+   "håndliste",
+   "gelænder",
+   "håndgelænder",
+   "handrail",
+   "banister",
+   "railing",
+   "haandliste"
+  ],
+  "unit": "m"
+ },
+ {
+  "key": "stair_baluster",
+  "name": "Baluster (gelænderstolpe)",
+  "synonyms": [
+   "baluster",
+   "gelænderstolpe",
+   "sprosse",
+   "gelændersprosse",
+   "balusters",
+   "spindles",
+   "stair spindle"
+  ],
+  "unit": "pcs"
+ },
+ {
+  "key": "stair_stringer",
+  "name": "Trappevange",
+  "synonyms": [
+   "trappevange",
+   "vange",
+   "stringer",
+   "stair stringer",
+   "vange trappe"
+  ],
+  "unit": "pcs"
+ },
+ {
+  "key": "paving_slab",
+  "name": "Belægningsfliser (havelfliser)",
+  "synonyms": [
+   "havelfliser",
+   "belægningsfliser",
+   "betonfliser",
+   "havefliser",
+   "paving slab",
+   "patio slab",
+   "concrete paver"
+  ],
+  "unit": "m2",
+  "exclude": [
+   "rens",
+   "fjern",
+   "rensemiddel",
+   "dyrup",
+   "gori",
+   "væg",
+   "mur",
+   "imprægnering",
+   "dug",
+   "wire",
+   "opbindingswire",
+   "fibertex",
+   "plantex",
+   "membran",
+   "gummi",
+   "kantprofil",
+   "schiene",
+   "handsker",
+   "kantbånd"
+  ]
+ },
+ {
+  "key": "paving_brick",
+  "name": "Klinker / brosten",
+  "synonyms": [
+   "klinker",
+   "brosten",
+   "belægningsklinker",
+   "pavers",
+   "brick pavers",
+   "chaussésten",
+   "herregårdssten"
+  ],
+  "unit": "m2"
+ },
+ {
+  "key": "kerb_stone",
+  "name": "Kantsten",
+  "synonyms": [
+   "kantsten",
+   "kantblok",
+   "kantsten beton",
+   "kerbstone",
+   "curb stone",
+   "kerb",
+   "curb"
+  ],
+  "unit": "m"
+ },
+ {
+  "key": "paving_subbase",
+  "name": "Stabilgrus / bundsikringsgrus",
+  "synonyms": [
+   "stabilgrus",
+   "bundsikring",
+   "bærelag",
+   "bundsikringsgrus",
+   "sub base",
+   "base course",
+   "road base",
+   "stabilgrus 25kg"
+  ],
+  "unit": "bag"
+ },
+ {
+  "key": "weed_fabric",
+  "name": "Ukrudtsdug (fiberdug)",
+  "synonyms": [
+   "ukrudtsdug",
+   "fiberdug",
+   "jorddug",
+   "ukrudtsmembran",
+   "weed fabric",
+   "weed barrier",
+   "geotextile",
+   "membran underlag"
+  ],
+  "unit": "roll"
+ },
+ {
+  "key": "fence_panel",
+  "name": "Hegnspanel",
+  "synonyms": [
+   "hegnspanel",
+   "hegnssektion",
+   "fence panel",
+   "privacy panel",
+   "hegnspanel træ",
+   "panelhegn"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "beslag",
+   "l-beslag",
+   "vægbeslag",
+   "stolpespyd",
+   "stolpefod",
+   "skrue",
+   "isolator",
+   "hegnspæl",
+   "maskestørrel",
+   "pileflet",
+   "tråd"
+  ]
+ },
+ {
+  "key": "fence_post",
+  "name": "Hegnspæl",
+  "synonyms": [
+   "hegnspæl",
+   "hegnsstolpe",
+   "hegnspael",
+   "fence post",
+   "fence pole",
+   "stolpe træ",
+   "hegnsstolper"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "beslag",
+   "skrue",
+   "elementbeslag",
+   "l-beslag",
+   "isolator",
+   "skjul",
+   "renovationsskjul"
+  ]
+ },
+ {
+  "key": "fence_post_foot",
+  "name": "Stolpespyd (stolpefod)",
+  "synonyms": [
+   "stolpespyd",
+   "stolpefod",
+   "stolpesko",
+   "post spike",
+   "post anchor",
+   "post support",
+   "stolpe beslag"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "skrue",
+   "møtrik",
+   "bolt"
+  ]
+ },
+ {
+  "key": "fence_gate",
+  "name": "Hegnslåge",
+  "synonyms": [
+   "hegnslåge",
+   "låge",
+   "havelåge",
+   "hegnslaage",
+   "fence gate",
+   "garden gate"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "gateway",
+   "smart",
+   "wifi",
+   "hub",
+   "dæmper",
+   "adapter",
+   "lågedæmper",
+   "lågeadapter"
+  ]
+ },
+ {
+  "key": "fence_wire",
+  "name": "Hegnstråd / trådnet",
+  "synonyms": [
+   "hegnstråd",
+   "trådnet",
+   "hegnsnet",
+   "hønsenet",
+   "wire mesh",
+   "fencing wire",
+   "chicken wire",
+   "netting"
+  ],
+  "unit": "roll"
+ },
+ {
+  "key": "insulation_batts_50mm",
+  "name": "Mineraluld 50mm",
+  "synonyms": [
+   "mineraluld 50mm",
+   "isolering 50mm",
+   "batts 50",
+   "mineral wool 50mm",
+   "rockwool 50",
+   "glava 50"
+  ],
+  "unit": "m2"
+ },
+ {
+  "key": "insulation_batts_150mm",
+  "name": "Mineraluld 150mm",
+  "synonyms": [
+   "mineraluld 150mm",
+   "isolering 150mm",
+   "batts 150",
+   "mineral wool 150mm",
+   "rockwool 150"
+  ],
+  "unit": "m2"
+ },
+ {
+  "key": "insulation_batts_200mm",
+  "name": "Mineraluld 200mm",
+  "synonyms": [
+   "mineraluld 200mm",
+   "isolering 200mm",
+   "batts 200",
+   "mineral wool 200mm",
+   "rockwool 200"
+  ],
+  "unit": "m2"
+ },
+ {
+  "key": "insulation_pir_board",
+  "name": "PIR isoleringsplade",
+  "synonyms": [
+   "pir plade",
+   "pir",
+   "isoleringsplade pir",
+   "pir board",
+   "pir insulation",
+   "polyiso board",
+   "kingspan"
+  ],
+  "unit": "m2"
+ },
+ {
+  "key": "insulation_eps_board",
+  "name": "EPS / flamingo plade",
+  "synonyms": [
+   "eps plade",
+   "flamingo",
+   "polystyren",
+   "eps",
+   "eps board",
+   "styrofoam",
+   "polystyrenplade"
+  ],
+  "unit": "m2"
+ },
+ {
+  "key": "insulation_loose_fill",
+  "name": "Løsfyld isolering",
+  "synonyms": [
+   "løsfyld",
+   "løsfyldsisolering",
+   "papirisolering",
+   "cellulose insulation",
+   "loose fill insulation",
+   "indblæst isolering"
+  ],
+  "unit": "bag"
+ },
+ {
+  "key": "vapor_barrier_tape",
+  "name": "Damspærretape / isoleringstape",
+  "synonyms": [
+   "damspærretape",
+   "isolationstape",
+   "damspærre tape",
+   "vapor barrier tape",
+   "foil tape",
+   "alutape"
+  ],
+  "unit": "roll"
+ },
+ {
+  "key": "radiator_panel",
+  "name": "Panelradiator",
+  "synonyms": [
+   "radiator",
+   "panelradiator",
+   "radiatorelement",
+   "panel radiator",
+   "radiator hvid",
+   "convector radiator"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "skjuler",
+   "spray",
+   "maling",
+   "twist",
+   "skjold",
+   "spraymaling",
+   "cover",
+   "skjuler"
+  ]
+ },
+ {
+  "key": "radiator_towel",
+  "name": "Håndklædetørrer (radiator)",
+  "synonyms": [
+   "håndklædetørrer",
+   "håndklæderadiator",
+   "haandklaedetoerrer",
+   "towel warmer",
+   "towel radiator",
+   "håndklædetørrer el"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "spray",
+   "maling",
+   "skjuler"
+  ]
+ },
+ {
+  "key": "radiator_bracket",
+  "name": "Radiatorophæng",
+  "synonyms": [
+   "radiatorophæng",
+   "radiatorbeslag",
+   "radiator bracket",
+   "radiator mount",
+   "radiator konsol",
+   "vægkonsol radiator"
+  ],
+  "unit": "set",
+  "exclude": [
+   "cykel"
+  ]
+ },
+ {
+  "key": "underfloor_heating_pipe",
+  "name": "Gulvvarme rør",
+  "synonyms": [
+   "gulvvarmerør",
+   "gulvvarme rør",
+   "underfloor heating pipe",
+   "ufh pipe",
+   "gulvvarme slange",
+   "pex gulvvarme"
+  ],
+  "unit": "m"
+ },
+ {
+  "key": "brick_common",
+  "name": "Mursten (almindelig)",
+  "synonyms": [
+   "mursten",
+   "mursten rød",
+   "teglsten",
+   "brick",
+   "common brick",
+   "mursten 228x108"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "rist",
+   "facaderist",
+   "ventil",
+   "afdækning"
+  ]
+ },
+ {
+  "key": "brick_facing",
+  "name": "Facadesten / forblender",
+  "synonyms": [
+   "facadesten",
+   "forblender",
+   "facing brick",
+   "facade brick",
+   "forblendersten"
+  ],
+  "unit": "pcs"
+ },
+ {
+  "key": "concrete_block",
+  "name": "Betonblok / lecablok",
+  "synonyms": [
+   "betonblok",
+   "lecablok",
+   "leca blok",
+   "concrete block",
+   "lightweight block",
+   "gasbetonblok"
+  ],
+  "unit": "pcs"
+ },
+ {
+  "key": "aerated_block",
+  "name": "Gasbeton blok (porebeton)",
+  "synonyms": [
+   "gasbeton",
+   "porebeton",
+   "gasbetonblok",
+   "multipor",
+   "aerated concrete",
+   "autoclaved aerated",
+   "ytong"
+  ],
+  "unit": "pcs"
+ },
+ {
+  "key": "parquet_floor_m2",
+  "name": "Parketgulv (pr m2)",
+  "synonyms": [
+   "parketgulv",
+   "parket",
+   "træparket",
+   "parquet",
+   "parket ege",
+   "parquet floor",
+   "parketgulv eg"
+  ],
+  "unit": "m2"
+ },
+ {
+  "key": "engineered_wood_floor_m2",
+  "name": "Trægulv (lamel / 3-stav)",
+  "synonyms": [
+   "trægulv",
+   "lamelgulv",
+   "3-stav gulv",
+   "engineered wood floor",
+   "traegulv",
+   "plankegulv"
+  ],
+  "unit": "m2"
+ },
+ {
+  "key": "carpet_tile",
+  "name": "Tæppefliser",
+  "synonyms": [
+   "tæppefliser",
+   "tæppeflis",
+   "carpet tile",
+   "carpet tiles",
+   "tæppe gulv",
+   "tæppefliser kontor"
+  ],
+  "unit": "m2",
+  "exclude": [
+   "skåner",
+   "måtte",
+   "gulvmåtte",
+   "fortelt",
+   "gulvtæppe",
+   "løber"
+  ]
+ },
+ {
+  "key": "gipsboard_9mm",
+  "name": "Gipsplade 9mm",
+  "synonyms": [
+   "gipsplade 9mm",
+   "gips 9mm",
+   "gypsum board 9mm",
+   "plasterboard 9mm",
+   "gipsplade tynd"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "skrue",
+   "spartel"
+  ]
+ },
+ {
+  "key": "soundproof_gipsboard",
+  "name": "Lydgips / akustikgips",
+  "synonyms": [
+   "lydgips",
+   "akustikgips",
+   "lydgipsplade",
+   "soundproof plasterboard",
+   "acoustic plasterboard",
+   "lydplade"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "skrue",
+   "spartel"
+  ]
+ },
+ {
+  "key": "ceiling_grid_profile",
+  "name": "Nedhængt loft profil (akustik)",
+  "synonyms": [
+   "loftprofil",
+   "nedhængt loft",
+   "t-profil",
+   "loft skinne",
+   "ceiling grid",
+   "t grid profile",
+   "akustikloft profil"
+  ],
+  "unit": "m"
+ },
+ {
+  "key": "gutter_pvc",
+  "name": "Tagrende (PVC)",
+  "synonyms": [
+   "tagrende",
+   "tagrende pvc",
+   "tagrender",
+   "gutter",
+   "guttering",
+   "rain gutter",
+   "tagrende hvid"
+  ],
+  "unit": "m"
+ },
+ {
+  "key": "gutter_bracket",
+  "name": "Tagrendebeslag",
+  "synonyms": [
+   "tagrendebeslag",
+   "tagrendeholder",
+   "gutter bracket",
+   "gutter clip",
+   "tagrende beslag"
+  ],
+  "unit": "pcs",
+  "exclude": [
+   "bil",
+   "cykel"
+  ]
+ },
+ {
+  "key": "downpipe_pvc",
+  "name": "Nedløbsrør (tagvand)",
+  "synonyms": [
+   "nedløbsrør",
+   "nedløb",
+   "downpipe",
+   "downspout",
+   "tagvand nedløb",
+   "nedløbsrør pvc"
+  ],
+  "unit": "m"
  }
 ]

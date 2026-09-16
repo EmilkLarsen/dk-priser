@@ -31,12 +31,11 @@ def handle(u, html):
             "chain": "silvan",
             "sku": str(p.get("sku") or u.rsplit("-", 1)[-1]),
             "ean": valid_ean(p.get("gtin13") or p.get("gtin") or p.get("ean")) or html_gtin(html),
-            "image": first_str(p.get("image")),
             "name": p.get("name"),
             "url": u,
             "price": off["price"],
             "in_stock": off["in_stock"],
-            "image": img,
+            "image": img or first_str(p.get("image")),
         })
         break
     return rows

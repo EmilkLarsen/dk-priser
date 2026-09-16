@@ -22,8 +22,13 @@ def fetch_url_list(limit=None):
     return urls[:limit] if limit else urls
 
 
+OG_RE = re.compile(r'og:image"\s*content="([^"]+)"')
+
+
 def handle(u, raw):
     text = htmllib.unescape(raw)
+    og = OG_RE.search(text)
+    img = og.group(1) if og else None
     m = GROSS_RE.search(text)
     if not m:
         return []
@@ -38,7 +43,8 @@ def handle(u, raw):
         "ean": None,
         "name": slug.replace("-", " ").title(),
         "url": u,
-        "price": (price_ore / 100.0) if 50 <= price_ore <= 25000000 else None,
+        "image": img,
+        "price": price_ore / 100.0,
         "in_stock": None,
         "campaign": camp_ore > 0,
     }]

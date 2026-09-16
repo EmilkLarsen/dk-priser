@@ -35,6 +35,12 @@ def fetch_url_list(limit=None):
 
 def handle(cu, html):
     rows, seen = [], set()
+    # image lookup: davidsen CDN URLs embed the product id in the filename
+    img_by_sku = {}
+    for m2 in re.finditer(
+            r'(https://davidsen\.cdn\.bizzkit\.cloud/[^"\\\s]*?/([0-9]{6,})_1\.webp)',
+            html):
+        img_by_sku.setdefault(m2.group(2), m2.group(1))
     for m in VAR_RE.finditer(html):
         pid, name, price = m.group(1), m.group(2), m.group(3)
         unit = (m.group(4) or "").replace("kr./", "") or None
@@ -50,6 +56,7 @@ def handle(cu, html):
             "sku": pid,
             "ean": html_gtin(html),
             "name": name,
+            "image": img_by_sku.get(pid),
             "url": "%s/search?q=%s" % (BASE, pid),  # variant-level URL fallback
             "price": p,
             "unit": unit,
@@ -69,6 +76,7 @@ def handle(cu, html):
             "sku": pid,
             "ean": html_gtin(html),
             "name": name,
+            "image": img_by_sku.get(pid),
             "url": BASE + url,
             "price": p,
             "unit": None,
