@@ -2,7 +2,7 @@
  "date": "2026-09-16",
  "chains": {
   "haraldnyborg": {
-   "error": "collapse guard: 11795 rows vs 54245 before",
+   "error": "collapse guard: 199 rows vs 54245 before",
    "kept_previous": true
   }
  }
