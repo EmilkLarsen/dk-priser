@@ -1,5 +1,5 @@
 """XL-BYG.dk — product sitemaps (b2c-1..N) -> product pages -> ld+json price."""
-from common import html_gtin, valid_ean, first_str, sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_urls
+from common import html_gtin, valid_ean, first_str, sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_with_checkpoint
 
 BASE = "https://www.xl-byg.dk"
 OUT = "data/latest/xlbyg.jsonl"
@@ -42,7 +42,11 @@ def handle(u, html):
 
 
 def scrape(limit=None):
-    return scrape_urls(fetch_url_list(limit), handle)
+    # 7 product sub-sitemaps, ~5.1k urls each (verified live) - ~35k+ total,
+    # no single CI job finishes that at the deliberately polite request
+    # rate, see scrape_with_checkpoint's own doc comment for why this isn't
+    # scrape_urls.
+    return scrape_with_checkpoint("xlbyg", fetch_url_list(limit), handle, limit)
 
 
 if __name__ == "__main__":

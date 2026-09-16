@@ -228,6 +228,104 @@ def scrape_urls(urls, handle):
     return rows
 
 
+def scrape_with_checkpoint(chain, urls, handle, limit=None):
+    """For catalogs too large for one CI job to finish (Silvan ~41k URLs,
+    XL-BYG ~35k+ across 7 sub-sitemaps, Stark 100k+ variant URLs, many dead)
+    - every nightly run for these three has been getting killed by CI's own
+    timeout partway through, every single day, since this project started.
+    Plain scrape_urls()/pmap() can't survive that: results only exist in a
+    Python list held in memory, and CI's timeout SIGKILLs the process with
+    no chance to run any cleanup code, so 100% of an interrupted run's work
+    was lost - the "resume" the workflow re-dispatches for restarts from
+    URL #1 every time, re-scraping (and duplicating, since nothing
+    de-duplicated on append) the same first few hundred URLs and never
+    making net progress. This instead:
+
+    1. Writes each URL's outcome to data/latest/.seen-<chain>.txt and each
+       resulting row to data/latest/.checkpoint-<chain>.jsonl AS IT GOES
+       (flushed per URL), not at the end - however far a run gets before
+       being killed is durably on disk already.
+    2. On the NEXT invocation (today's next continue-check retry, or
+       literally the same cron slot tomorrow if the catalog is bigger than
+       one day's realistic throughput at the deliberately polite request
+       rate), reads that seen-set back and skips every URL already
+       attempted - real forward progress instead of restarting.
+    3. Returns the full CUMULATIVE checkpoint (de-duplicated by url/sku) -
+       everything attempted across however many invocations it took so
+       far, not just this one's slice - so the per-chain output file gets
+       progressively MORE complete every time this runs, rather than an
+       all-or-nothing wait for one invocation to somehow get through a
+       100k-URL list. Once the full list is actually covered, the
+       seen-set/checkpoint reset so tomorrow starts a clean pass against
+       that day's re-fetched sitemap (real catalog changes still show up).
+
+    Only engages when `limit` is falsy - an explicit smoke-test slice skips
+    all of this and behaves exactly like plain scrape_urls, so a deliberate
+    small test run can never be confused with (or pollute) real daily
+    progress.
+    """
+    if limit:
+        return scrape_urls(urls[:limit], handle)
+
+    seen_path = f"data/latest/.seen-{chain}.txt"
+    checkpoint_path = f"data/latest/.checkpoint-{chain}.jsonl"
+    os.makedirs(os.path.dirname(seen_path), exist_ok=True)
+
+    seen = set()
+    if os.path.exists(seen_path):
+        with open(seen_path, encoding="utf-8") as f:
+            seen = {line.rstrip("\n") for line in f if line.strip()}
+
+    remaining = [u for u in urls if u not in seen]
+    if seen:
+        print(f"  resume: {len(seen)} already attempted today, {len(remaining)} left of {len(urls)}")
+
+    if remaining:
+        def work(u):
+            try:
+                return u, (handle(u, get(u)) or [])
+            except Exception as e:
+                print(f"  ! {u}: {e}")
+                return u, []
+
+        with open(seen_path, "a", encoding="utf-8") as seen_f, \
+                open(checkpoint_path, "a", encoding="utf-8") as ckpt_f:
+            with ThreadPoolExecutor(max_workers=WORKERS) as ex:
+                for u, rows in ex.map(work, remaining):
+                    seen_f.write(u + "\n")
+                    seen_f.flush()
+                    for row in rows:
+                        ckpt_f.write(json.dumps(row, ensure_ascii=False) + "\n")
+                    if rows:
+                        ckpt_f.flush()
+        with open(seen_path, encoding="utf-8") as f:
+            seen = {line.rstrip("\n") for line in f if line.strip()}
+
+    cumulative, dedup_keys = [], set()
+    if os.path.exists(checkpoint_path):
+        with open(checkpoint_path, encoding="utf-8") as f:
+            for line in f:
+                try:
+                    row = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                key = row.get("url") or row.get("sku")
+                if key in dedup_keys:
+                    continue
+                dedup_keys.add(key)
+                cumulative.append(row)
+
+    if len(seen) >= len(urls):
+        print(f"  {chain}: full catalog covered today ({len(cumulative)} rows) - resetting checkpoint for tomorrow")
+        for p in (seen_path, checkpoint_path):
+            if os.path.exists(p):
+                os.remove(p)
+    else:
+        print(f"  {chain}: {len(seen)}/{len(urls)} urls covered so far today, {len(cumulative)} rows checkpointed")
+
+    return cumulative
+
+
 def write_jsonl(path, rows):
     d = os.path.dirname(path)
     if d:
