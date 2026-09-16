@@ -44,6 +44,7 @@ jobs:
       - name: Run scraper (${{ matrix.chain }})
         env:
           RESUME: ${{ inputs.resume == 'true' && '1' || '0' }}
+          SCRAPE_BUDGET: "270"   # stop cleanly after 4.5h, commit offset, continue next run
         run: |
           if [ "${{ inputs.full }}" = "true" ] || [ "${{ github.event_name }}" = "schedule" ]; then
             python scraper/run_daily.py --only ${{ matrix.chain }}

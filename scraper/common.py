@@ -181,25 +181,51 @@ def parse_dk_price(s):
         return None
 
 
+_deadline = None
+
+
 def scrape_urls(urls, handle):
-    """Parallel scrape: handle(url, html) -> list of row dicts.
-    Resume support: SCRAPE_OFFSET skips the first N urls (previous run died
-    there); results then get APPENDED by the caller instead of overwriting."""
+    """Parallel scrape with TIME BUDGET + resume.
+
+    SCRAPE_OFFSET: skip first N urls (continuing a previous partial run).
+    SCRAPE_BUDGET: stop fetching after this many minutes, reporting the
+    offset to continue from — the orchestrator commits it as state so the
+    next run continues where this one stopped. Big chains therefore finish
+    across 2-3 runs instead of dying at the CI limit every night.
+    """
+    global _deadline
     off = int(os.environ.get("SCRAPE_OFFSET", "0"))
-    slc = os.environ.get("SCRAPE_SLICE")
+    budget = os.environ.get("SCRAPE_BUDGET")
+    if budget:
+        _deadline = time.time() + float(budget) * 60
     if off:
         urls = urls[off:]
-    if slc:
-        urls = urls[:int(slc)]
-    if off or slc:
-        print(f"  slice: offset={off} max={slc or 'all'} -> {len(urls)} urls")
     def work(u):
         try:
             return handle(u, get(u)) or []
         except Exception as e:
             print(f"  ! {u}: {e}")
             return []
-    return pmap(work, urls)
+    rows = []
+    done = 0
+    def tracked(u):
+        nonlocal done
+        if _deadline and time.time() > _deadline:
+            return None  # budget exhausted: stop issuing new fetches
+        r = work(u)
+        done += 1
+        return r
+    with ThreadPoolExecutor(max_workers=WORKERS) as ex:
+        for r in ex.map(tracked, urls):
+            if r is None:
+                break
+            rows.extend(r or [])
+    processed = off + min(done, len(urls))
+    if _deadline and done < len(urls):
+        remaining = len(urls) - done
+        globals()["last_continue_offset"] = processed
+        print(f"  TIME_BUDGET_REACHED offset={processed} remaining={remaining}")
+    return rows
 
 
 def write_jsonl(path, rows):

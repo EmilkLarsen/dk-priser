@@ -63,7 +63,24 @@ def main():
             continue
 
         out = os.path.join(ROOT, "data", "latest", f"{chain}.jsonl")
-        resuming = os.environ.get("RESUME") == "1"
+        # persist continuation offset if the time budget stopped us mid-chain
+        import common as _c
+        cont = getattr(_c, "last_continue_offset", None)
+        state_path = os.path.join(ROOT, "data", "latest", "scrape_offsets.json")
+        offsets = {}
+        if os.path.exists(state_path):
+            try:
+                offsets = json.load(open(state_path))
+            except json.JSONDecodeError:
+                offsets = {}
+        if cont:
+            offsets[chain] = {"offset": cont, "date": today}
+        else:
+            offsets.pop(chain, None)
+        os.makedirs(os.path.dirname(state_path), exist_ok=True)
+        json.dump(offsets, open(state_path, "w"), indent=1)
+
+        resuming = os.environ.get("RESUME") == "1" or bool(cont)
         prev_count = 0
         if os.path.exists(out):
             with open(out, encoding="utf-8") as f:
@@ -77,17 +94,33 @@ def main():
             continue
 
         from common import write_jsonl
-        if resuming and os.path.exists(out):
-            with open(out, "a", encoding="utf-8") as f:
-                for r in rows:
-                    f.write(json.dumps(r, ensure_ascii=False) + "\n")
-            # a resumed pass re-verified only part of the catalog
-            marker = os.path.join(ROOT, "data", "latest", f".{chain}-complete")
-            if os.path.exists(marker):
-                os.remove(marker)
-            print(f"  +{len(rows)} appended (resume mode)")
-        else:
-            write_jsonl(out, rows)
+        # merge with previous file, keeping the LATEST observation per key —
+        # files stay catalog-sized no matter how many partial passes feed them
+        existing = {}
+        if os.path.exists(out):
+            with open(out, encoding="utf-8") as f:
+                for line in f:
+                    try:
+                        rr = json.loads(line)
+                    except json.JSONDecodeError:
+                        continue
+                    existing[rr.get("sku") or rr.get("url")] = rr
+        fresh_keys = set()
+        for r in rows:
+            existing[r.get("sku") or r.get("url")] = r
+            fresh_keys.add(r.get("sku") or r.get("url"))
+        merged_rows = list(existing.values())
+        write_jsonl(out, merged_rows)
+        # completion marker only when every url in the chain was processed
+        complete_now = not limit and os.environ.get("RESUME") != "1" and len(rows) > 0
+        marker = os.path.join(ROOT, "data", "latest", f".{chain}-complete")
+        if complete_now:
+            with open(marker, "w") as mf:
+                mf.write(today)
+        elif os.path.exists(marker):
+            os.remove(marker)
+        print(f"  {len(rows)} fresh rows ({len(merged_rows)} total after merge, "
+              f"{max(0, prev_count - len(fresh_keys))} prior retained)")
 
         prev = load_prev(chain)
         changes, suspicious = [], 0
