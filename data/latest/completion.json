@@ -2,15 +2,15 @@
  "date": "2026-09-17",
  "detail": {
   "silvan": {
-   "rows": 28758,
+   "rows": 40142,
    "complete": false
   },
   "xlbyg": {
-   "rows": 23550,
+   "rows": 33644,
    "complete": false
   },
   "stark": {
-   "rows": 12129,
+   "rows": 12190,
    "complete": false
   },
   "bauhaus": {
@@ -30,11 +30,11 @@
    "complete": false
   },
   "power": {
-   "rows": 29269,
+   "rows": 29285,
    "complete": false
   },
   "skousen": {
-   "rows": 5427,
+   "rows": 5448,
    "complete": false
   }
  }
