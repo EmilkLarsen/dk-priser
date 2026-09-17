@@ -393,6 +393,40 @@ def scrape_with_checkpoint(chain, urls, handle, limit=None, deadline=None):
     return cumulative
 
 
+def rotate_slice(urls, rotation_days, today_epoch_day=None):
+    """Deterministic 1/rotation_days slice of `urls`, cycling by day-of-epoch
+    so the full list is covered once every `rotation_days` days.
+
+    Exists for chains whose real catalog (post dead-URL filtering) is too
+    large to fetch in one CI job's time budget no matter how politely rate-
+    limited (stark: ~85k sitemap URLs, most of them dead - even at ~2.2
+    req/s that's ~10+ hours). The two "smarter" alternatives were checked
+    live against real sitemaps/product pages first: sitemap `<lastmod>` is
+    a single build-timestamp shared by EVERY url in the file (confirmed on
+    both silvan's and stark's real sitemaps - all 50,000 stark entries
+    carried the identical value), and none of these sites' product pages
+    return a real ETag/Last-Modified either (all no-cache/no-store,
+    server-rendered). Neither gives a trustworthy "did this specific
+    product change" signal - trusting either risks silently never
+    refreshing a chain again if a site's stamp ever freezes, which is
+    exactly the class of bug this whole pipeline has been getting fixed
+    for. This makes no claim about what changed: it just guarantees every
+    url gets refetched at least once every `rotation_days` days, on our
+    own schedule, with no external signal to get wrong. The tradeoff is
+    explicit and bounded (a given product can be up to rotation_days-1
+    days stale) rather than an unbounded, silent risk.
+
+    Pure and stateless by design - the same day always maps to the same
+    slice, so a same-day retry/resume sees identical input without needing
+    its own persisted state.
+    """
+    if today_epoch_day is None:
+        today_epoch_day = int(time.time() // 86400)
+    ordered = sorted(urls)
+    nth = today_epoch_day % rotation_days
+    return [u for i, u in enumerate(ordered) if i % rotation_days == nth]
+
+
 def write_jsonl(path, rows):
     d = os.path.dirname(path)
     if d:

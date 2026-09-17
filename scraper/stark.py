@@ -1,11 +1,21 @@
 """STARK.dk — variant sitemaps -> product pages -> embedded GrossPrice JSON.
 Amounts in oere. Campaign price 0 = no campaign."""
 import re
+import os
+import json
+import time
 import html as htmllib
-from common import get, sitemap_urls, write_jsonl, scrape_with_checkpoint
+from common import get, sitemap_urls, write_jsonl, scrape_with_checkpoint, rotate_slice
 
 BASE = "https://www.stark.dk"
 OUT = "data/latest/stark.jsonl"
+# ~85k real sitemap urls (verified live, 2026-09-17), a huge share dead
+# 404s - no realistic CI time budget scrapes all of them daily. See
+# rotate_slice's own doc comment for why this is a deterministic day-of-
+# epoch rotation, not a lastmod/etag-based "only fetch what changed"
+# scheme (checked both live first; neither is trustworthy on this site).
+ROTATION_DAYS = int(os.environ.get("STARK_ROTATION_DAYS", "7"))
+ROTATION_MARKER = "data/latest/.stark-rotation-day"
 
 GROSS_RE = re.compile(
     r'"GrossPrice":\{[^}]*?"StandardPriceInVat":"?(\d+)"?'
@@ -50,14 +60,63 @@ def handle(u, raw):
     }]
 
 
+def _reset_checkpoint_if_new_rotation(today_slice):
+    # scrape_with_checkpoint's own seen/checkpoint files persist across
+    # invocations so an interrupted run resumes into the SAME target list -
+    # correct when that list is stable, but rotation changes WHICH urls are
+    # today's target daily. A stale seen-set from a DIFFERENT (disjoint)
+    # day's slice would never satisfy scrape_with_checkpoint's own "seen >=
+    # len(urls)" reset condition (every url in a new day's slice is new to
+    # it), so it would just accumulate forever without ever cleanly
+    # resetting. Detect a rotation change and clear it explicitly instead -
+    # safe either way this can be "wrong": at worst (a same-day continue-
+    # check redispatch that happens to cross UTC midnight) it means
+    # redoing a handful of urls already fetched a few hours earlier, never
+    # silently skipping one.
+    last_slice = None
+    if os.path.exists(ROTATION_MARKER):
+        try:
+            last_slice = int(open(ROTATION_MARKER).read().strip())
+        except (ValueError, OSError):
+            last_slice = None
+    if last_slice != today_slice:
+        for p in ("data/latest/.seen-stark.txt", "data/latest/.checkpoint-stark.jsonl"):
+            if os.path.exists(p):
+                os.remove(p)
+        with open(ROTATION_MARKER, "w") as f:
+            f.write(str(today_slice))
+
+
 def scrape(limit=None, deadline=None):
-    # Two variant sitemaps, 50k+ urls each (verified live) - a huge share
-    # are dead 404s (documented above/in the repo README), but even a
-    # cheap 404 costs a request, and 100k+ requests at the deliberately
-    # polite rate is still no single-CI-job's worth of time. See
-    # scrape_with_checkpoint's own doc comment for why this isn't a plain
-    # scrape_urls (or, as before, hand-rolled pmap) call.
-    return scrape_with_checkpoint("stark", fetch_url_list(limit), handle, limit, deadline)
+    all_urls = fetch_url_list(limit)
+    if limit:
+        # Smoke-test slice: behaves exactly like before, no rotation - a
+        # deliberate small test run should never be confused with (or
+        # skew) real day-to-day rotation state.
+        return scrape_with_checkpoint("stark", all_urls, handle, limit, deadline)
+
+    today_slice = int(time.time() // 86400) % ROTATION_DAYS
+    _reset_checkpoint_if_new_rotation(today_slice)
+    todays_urls = rotate_slice(all_urls, ROTATION_DAYS)
+    fresh_rows = scrape_with_checkpoint("stark", todays_urls, handle, None, deadline)
+
+    # Merge with whatever's already on disk from the OTHER rotation_days-1
+    # slices so the caller (run_daily.py) always sees one complete, full-
+    # catalog-sized view - transparent either way, exactly like a full
+    # scrape's return value, so its own collapse guard and merge-by-key
+    # logic need no special-casing for rotation at all.
+    existing_by_key = {}
+    if os.path.exists(OUT):
+        with open(OUT, encoding="utf-8") as f:
+            for line in f:
+                try:
+                    r = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                existing_by_key[r.get("sku") or r.get("url")] = r
+    for r in fresh_rows:
+        existing_by_key[r.get("sku") or r.get("url")] = r
+    return list(existing_by_key.values())
 
 
 if __name__ == "__main__":
