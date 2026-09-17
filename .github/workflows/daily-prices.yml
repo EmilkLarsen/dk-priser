@@ -80,6 +80,19 @@ jobs:
           # never made net progress across dozens of runs despite the
           # checkpoint code appearing to work correctly within a single run.
           git add data/latest/.checkpoint-${{ matrix.chain }}.jsonl data/latest/.seen-${{ matrix.chain }}.txt 2>/dev/null || true
+          # stark's rotation-day marker (data/latest/.stark-rotation-day, see
+          # rotate_slice/stark.py) is its OWN separate `git add` - its
+          # existence is independent of the checkpoint pair above (it
+          # outlives a completed rotation slice, which deletes ITS OWN
+          # checkpoint files but never touches this marker), and `git add`
+          # aborts the ENTIRE command - staging NOTHING, not even paths that
+          # DO exist - the moment any one listed path doesn't match
+          # (confirmed locally). Mixed into the line above, a completed
+          # slice (marker present, checkpoint pair absent) would silently
+          # fail to commit the marker at all - the same class of "resume
+          # state never actually persists" bug already found and fixed once
+          # for the checkpoint files themselves.
+          git add data/latest/.stark-rotation-day 2>/dev/null || true
           git diff --cached --quiet && echo "No changes" || git commit -m "prices: ${{ matrix.chain }} $(date -u +%F)"
           # push with retry: concurrent chain jobs rebase against each other.
           # A real conflict (not just a fast-forward race) leaves the rebase

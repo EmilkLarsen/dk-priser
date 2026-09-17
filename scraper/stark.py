@@ -95,9 +95,10 @@ def scrape(limit=None, deadline=None):
         # skew) real day-to-day rotation state.
         return scrape_with_checkpoint("stark", all_urls, handle, limit, deadline)
 
-    today_slice = int(time.time() // 86400) % ROTATION_DAYS
+    today_epoch_day = int(time.time() // 86400)
+    today_slice = today_epoch_day % ROTATION_DAYS
     _reset_checkpoint_if_new_rotation(today_slice)
-    todays_urls = rotate_slice(all_urls, ROTATION_DAYS)
+    todays_urls = rotate_slice(all_urls, ROTATION_DAYS, today_epoch_day=today_epoch_day)
     fresh_rows = scrape_with_checkpoint("stark", todays_urls, handle, None, deadline)
 
     # Merge with whatever's already on disk from the OTHER rotation_days-1
