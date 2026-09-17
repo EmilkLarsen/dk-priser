@@ -34,12 +34,40 @@ _lock = threading.Lock()
 MAX_LANES = int(os.environ.get("SCRAPE_LANES", "3"))
 MIN_GAP = float(os.environ.get("SCRAPE_GAP", "0.45"))
 
+# Per-host adaptive backoff - confirmed live (skousen, 2026-09-16): a site
+# rate-limiting us gets one 429/503/403 per worker thread, and each thread
+# independently sleeps a flat 45-75s then retries at the SAME per-host rate
+# it was already using - up to MAX_LANES threads all retrying a struggling
+# site at once isn't backing off, it's re-hammering it on a timer. This
+# makes the whole host pause (not just the one URL that got blocked) once
+# any thread sees a block signal, escalating on repeated blocks instead of
+# retrying at an unchanged pace - standard adaptive-backoff practice, not a
+# judgment call about how aggressive to be with any one site.
+_host_backoff_until = {}
+BACKOFF_INITIAL = 60.0
+BACKOFF_MAX = 600.0
+
+
+def _note_rate_limited(host):
+    with _lock:
+        now = time.time()
+        prev_until = _host_backoff_until.get(host, 0)
+        if prev_until > now:
+            # still within a previous backoff window and got blocked again -
+            # escalate rather than restart the same short wait
+            duration = min(BACKOFF_MAX, (prev_until - now) * 2)
+        else:
+            duration = BACKOFF_INITIAL
+        _host_backoff_until[host] = now + duration
+
 
 def _throttle(host):
     while True:
         with _lock:
             now = time.time()
-            if _inflight.get(host, 0) < MAX_LANES and \
+            if now < _host_backoff_until.get(host, 0):
+                pass  # host is in a backoff window - wait it out below
+            elif _inflight.get(host, 0) < MAX_LANES and \
                     now - _last_req.get(host, 0) >= MIN_GAP:
                 _last_req[host] = now
                 _inflight[host] = _inflight.get(host, 0) + 1
@@ -57,12 +85,12 @@ def get(url, binary=False, max_bytes=40000000):
     host = re.match(r"https?://([^/]+)", url).group(1)
     _throttle(host)
     try:
-        return _get_inner(url, binary, max_bytes)
+        return _get_inner(url, binary, max_bytes, host)
     finally:
         _release(host)
 
 
-def _get_inner(url, binary, max_bytes):
+def _get_inner(url, binary, max_bytes, host):
     last_err = None
     data = None
     for attempt in range(3):
@@ -96,7 +124,8 @@ def _get_inner(url, binary, max_bytes):
                 raise  # dead URL — retrying is pointless
             last_err = e
             if e.code in (429, 503, 403):
-                time.sleep(45 + random.random() * 30)  # WAF cooldown
+                _note_rate_limited(host)  # pause every worker on this host, not just this URL
+                time.sleep(45 + random.random() * 30)  # this worker's own WAF cooldown
             else:
                 time.sleep(1.5 * (attempt + 1) + random.random())
         except Exception as e:
