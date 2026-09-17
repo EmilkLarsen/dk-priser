@@ -1,47 +1,60 @@
 {
  "date": "2026-09-17",
- "total_rows": 168159,
+ "total_rows": 187431,
  "chains": {
-  "silvan": {
-   "products": 26275,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "seconds": 16255.6
-  },
-  "skousen": {
-   "error": "HTTPError: HTTP Error 429: Too Many Requests"
-  },
   "haraldnyborg": {
-   "error": "collapse guard: 11753 rows vs 54245 before",
-   "kept_previous": true
-  },
-  "fog": {
-   "error": "collapse guard: 30175 rows vs 149488 before",
-   "kept_previous": true
-  },
-  "stark": {
-   "products": 199,
+   "products": 11754,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "seconds": 216.8
+   "seconds": 5328.6
   },
-  "xlbyg": {
-   "products": 21482,
-   "price_changes": 200,
+  "silvan": {
+   "products": 28701,
+   "price_changes": 0,
    "suspicious_changes": 0,
-   "seconds": 16222.3
+   "seconds": 18000.8
   },
   "bauhaus": {
-   "error": "collapse guard: 22293 rows vs 116107 before",
-   "kept_previous": true
+   "products": 22240,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "seconds": 13015.3
   },
-  "power": {
-   "error": "collapse guard: 28744 rows vs 141948 before",
-   "kept_previous": true
+  "xlbyg": {
+   "products": 23762,
+   "price_changes": 223,
+   "suspicious_changes": 0,
+   "seconds": 18001.0
   },
   "davidsen": {
-   "error": "collapse guard: 26765 rows vs 133913 before",
-   "kept_previous": true
+   "products": 26763,
+   "price_changes": 42,
+   "suspicious_changes": 0,
+   "seconds": 9213.9
+  },
+  "power": {
+   "products": 28755,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "seconds": 13056.2
+  },
+  "skousen": {
+   "products": 2308,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "seconds": 16647.3
+  },
+  "stark": {
+   "products": 12129,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "seconds": 10695.7
+  },
+  "fog": {
+   "products": 30173,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "seconds": 13707.0
   }
  }
 }
