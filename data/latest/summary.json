@@ -1,37 +1,22 @@
 {
- "date": "2026-09-16",
- "total_rows": 121005,
+ "date": "2026-09-17",
+ "total_rows": 168159,
  "chains": {
-  "haraldnyborg": {
-   "error": "collapse guard: 199 rows vs 54245 before",
-   "kept_previous": true
-  },
   "silvan": {
-   "products": 200,
+   "products": 26275,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "seconds": 104.1
-  },
-  "bauhaus": {
-   "error": "collapse guard: 197 rows vs 116107 before",
-   "kept_previous": true
-  },
-  "xlbyg": {
-   "products": 200,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "seconds": 143.5
-  },
-  "davidsen": {
-   "error": "collapse guard: 211 rows vs 133913 before",
-   "kept_previous": true
-  },
-  "power": {
-   "error": "collapse guard: 200 rows vs 141948 before",
-   "kept_previous": true
+   "seconds": 16255.6
   },
   "skousen": {
-   "error": "collapse guard: 187 rows vs 20607 before",
+   "error": "HTTPError: HTTP Error 429: Too Many Requests"
+  },
+  "haraldnyborg": {
+   "error": "collapse guard: 11753 rows vs 54245 before",
+   "kept_previous": true
+  },
+  "fog": {
+   "error": "collapse guard: 30175 rows vs 149488 before",
    "kept_previous": true
   },
   "stark": {
@@ -40,8 +25,22 @@
    "suspicious_changes": 0,
    "seconds": 216.8
   },
-  "fog": {
-   "error": "collapse guard: 200 rows vs 149488 before",
+  "xlbyg": {
+   "products": 21482,
+   "price_changes": 200,
+   "suspicious_changes": 0,
+   "seconds": 16222.3
+  },
+  "bauhaus": {
+   "error": "collapse guard: 22293 rows vs 116107 before",
+   "kept_previous": true
+  },
+  "power": {
+   "error": "collapse guard: 28744 rows vs 141948 before",
+   "kept_previous": true
+  },
+  "davidsen": {
+   "error": "collapse guard: 26765 rows vs 133913 before",
    "kept_previous": true
   }
  }
