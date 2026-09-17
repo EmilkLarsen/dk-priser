@@ -116,33 +116,45 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Merge + comparison
-        run: |
-          python scraper/merge_all.py
-          # Small BOM-matchable catalog the Fixer app fetches at runtime.
-          python scraper/build_estimator_catalog.py
-          # prune history older than 120 days (repo stays small forever)
-          find data/history -name "*.jsonl" -mtime +120 -delete || true
-
-      - name: Commit merged feed
+      - name: Merge, commit, and push
         run: |
           git config user.name "price-bot"
           git config user.email "bot@noreply.github.com"
-          git add data/latest/prices.jsonl data/latest/comparison.json data/latest/summary.json data/latest/ages.json data/latest/index.html data/latest/schema.json data/latest/estimator_catalog.json || true
-          git diff --cached --quiet && echo "No changes" || git commit -m "merged feed $(date -u +%F)"
-          # Same rebase-recovery + fail-loudly fix as the scrape jobs' own
-          # "Commit snapshot" step above - see its comment. This is the step
-          # that silently lost an entire evening's merged feed on 2026-09-16
-          # (conflict in the auto-generated index.html/summary.json), so
-          # sync-dk-priser kept ingesting a stale prices.jsonl for hours
-          # with no failure anywhere to signal it.
+          # Every file this job produces is 100% derived from the per-chain
+          # data/latest/<chain>.jsonl files already in the checkout (see
+          # merge_all.py's own header) - nothing here is hand-authored, so
+          # there is never a reason to fight to preserve one frozen local
+          # snapshot of them over a fresher one. Confirmed live: this exact
+          # push previously got stuck in a real rebase conflict (a near-
+          # empty "merge" from an earlier CANCELLED dispatch's own
+          # `if: always()` merge job landed on main first, then this run's
+          # real, hours-later merge conflicted against it) and silently
+          # lost an entire evening's feed. Rather than detect-and-recover
+          # from that one shape of conflict, this regenerates from
+          # whatever's actually on origin on every retry - reset onto the
+          # latest main, rebuild, commit, plain-push; if someone else's
+          # commit lands in that same window, there's nothing to reconcile,
+          # just redo the cycle against the new tip. No rebase, so nothing
+          # to get stuck mid-conflict on.
           pushed=false
           for i in 1 2 3 4 5 6 7 8; do
-            if git pull --rebase --autostash origin main && git push; then
+            git fetch origin main -q
+            git reset --hard origin/main -q
+            python scraper/merge_all.py
+            # Small BOM-matchable catalog the Fixer app fetches at runtime.
+            python scraper/build_estimator_catalog.py
+            # prune history older than 120 days (repo stays small forever)
+            find data/history -name "*.jsonl" -mtime +120 -delete || true
+            git add data/latest/prices.jsonl data/latest/comparison.json data/latest/summary.json data/latest/ages.json data/latest/index.html data/latest/schema.json data/latest/estimator_catalog.json || true
+            if git diff --cached --quiet; then
+              echo "No changes"; pushed=true; break
+            fi
+            git commit -q -m "merged feed $(date -u +%F)"
+            if git push origin main; then
               pushed=true; break
             fi
-            git rebase --abort 2>/dev/null || true
-            echo "push conflict, retry $i"; sleep $((i * 10))
+            echo "push race, retry $i - origin moved, regenerating against its new tip"
+            sleep $((i * 10))
           done
           if [ "$pushed" != true ]; then
             echo "::error::failed to push the merged feed after 8 retries - prices.jsonl was NOT updated"
