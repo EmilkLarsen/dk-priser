@@ -5,6 +5,7 @@ import os
 import sys
 import json
 import glob
+import gzip
 from datetime import date
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__))))
@@ -19,8 +20,19 @@ LATEST = os.path.join(ROOT, "data", "latest")
 def main():
     today = date.today().isoformat()
     merged_path = os.path.join(LATEST, "prices.jsonl")
+    merged_gz_path = merged_path + ".gz"
+    # The collapse guard below needs yesterday's row count, but prices.jsonl
+    # itself is no longer committed (see the workflow's own comment - it hit
+    # GitHub's 50MB warning and kept growing) - only prices.jsonl.gz survives
+    # between runs now. Decompress THAT to get a real prev_size instead of
+    # silently reading 0 every time (which would disable this guard for good,
+    # exactly the kind of always-passes-because-the-baseline-is-wrong bug
+    # already found and fixed once in run_daily.py's own collapse guard).
     prev_size = 0
-    if os.path.exists(merged_path):
+    if os.path.exists(merged_gz_path):
+        with gzip.open(merged_gz_path, "rt", encoding="utf-8") as f:
+            prev_size = sum(1 for _ in f)
+    elif os.path.exists(merged_path):
         with open(merged_path, encoding="utf-8") as f:
             prev_size = sum(1 for _ in f)
     seen, n, dupes = set(), 0, 0

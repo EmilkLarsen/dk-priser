@@ -145,7 +145,19 @@ jobs:
             python scraper/build_estimator_catalog.py
             # prune history older than 120 days (repo stays small forever)
             find data/history -name "*.jsonl" -mtime +120 -delete || true
-            git add data/latest/prices.jsonl data/latest/comparison.json data/latest/summary.json data/latest/ages.json data/latest/index.html data/latest/schema.json data/latest/estimator_catalog.json || true
+            # Commit the gzipped feed, not the raw one - confirmed live,
+            # prices.jsonl reached 59MB (past GitHub's 50MB warning, closing
+            # in on its 100MB hard block) and only grows as silvan/xlbyg/
+            # stark catch up. Gzip -9 on this file measured 59MB -> 9.1MB
+            # (verified byte-identical round trip locally before this
+            # shipped), and sync-dk-priser now fetches+decompresses the
+            # .gz directly (falls back to the plain file if it's ever
+            # missing) - nothing downstream loses any data, this only
+            # changes the bytes at rest in git.
+            gzip -kf9 data/latest/prices.jsonl
+            git rm --cached --ignore-unmatch -q data/latest/prices.jsonl
+            rm -f data/latest/prices.jsonl
+            git add data/latest/prices.jsonl.gz data/latest/comparison.json data/latest/summary.json data/latest/ages.json data/latest/index.html data/latest/schema.json data/latest/estimator_catalog.json || true
             if git diff --cached --quiet; then
               echo "No changes"; pushed=true; break
             fi

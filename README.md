@@ -27,11 +27,17 @@ different structure — needs its own parser).
 
 ```
 data/latest/<chain>.jsonl      full snapshot per chain (overwritten nightly)
-data/latest/prices.jsonl       all chains merged — this is what the API reads
+data/latest/prices.jsonl.gz    all chains merged, gzipped — this is what the API reads
 data/latest/comparison.json    products matched across ≥2 chains, sorted by spread
 data/latest/summary.json       run stats (counts, errors) for monitoring
 data/history/<chain>/<date>.jsonl  price CHANGES only (append-only log)
 ```
+
+`prices.jsonl` itself is no longer committed — uncompressed it passed 59MB
+(past GitHub's 50MB warning, headed for its 100MB hard block) and only grows
+as chains catch up. Gzip -9 gets it to ~9MB with the exact same rows; every
+reader just needs to decompress it (`sync-dk-priser` does this via
+`DecompressionStream`).
 
 Row format: `{"chain","sku","ean","name","url","price","in_stock","campaign"}`
 
@@ -48,7 +54,8 @@ python3 scraper/build_comparison.py   # cross-chain comparison + API package
 GitHub Actions runs the full scrape daily at 04:00 Danish time
 (`.github/workflows/daily-prices.yml`) and commits the new snapshots.
 Zero infra: the repo IS the database. The Fixer backend reads
-`data/latest/prices.jsonl` via raw.githubusercontent / jsDelivr.
+`data/latest/prices.jsonl.gz` via raw.githubusercontent (falls back to a
+plain `prices.jsonl` if the gzip one is ever missing).
 
 ## How the estimator uses this
 
