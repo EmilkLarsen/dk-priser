@@ -217,7 +217,12 @@ jobs:
           gh workflow run daily-prices.yml -f full=true -f resume=true
 
   alert:
-    needs: [scrape, merge]
+    # continue-check added: it now does real git/bash work of its own (the
+    # race-proof push loop above) that scrape/merge failing wouldn't catch -
+    # a broken continue-check previously could never trip this alert at all,
+    # since `contains(needs.*.result, ...)` only looks at jobs actually
+    # listed here.
+    needs: [scrape, merge, continue-check]
     if: always() && contains(needs.*.result, 'failure')
     runs-on: ubuntu-latest
     permissions:
@@ -234,7 +239,13 @@ jobs:
               state: 'open', per_page: 100
             });
             const dup = existing.data.find(i => i.title === title);
-            const body = 'One or more chain jobs or the merge job failed. Check the run: ' + context.runUrl;
+            // `context.runUrl` isn't a real property on the script context
+            // (Context only exposes serverUrl/repo/runId etc.) - this
+            // always rendered as the literal string "undefined" in the
+            // issue body, so the one thing the alert exists to give you
+            // (a link to actually go look) never worked.
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const body = 'One or more chain jobs, the merge job, or continue-check failed. Check the run: ' + runUrl;
             if (dup) {
               await github.rest.issues.createComment({ owner: context.repo.owner,
                 repo: context.repo.repo, issue_number: dup.number, body });
