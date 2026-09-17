@@ -16,6 +16,18 @@ OUT = "data/latest/stark.jsonl"
 # scheme (checked both live first; neither is trustworthy on this site).
 ROTATION_DAYS = int(os.environ.get("STARK_ROTATION_DAYS", "7"))
 ROTATION_MARKER = "data/latest/.stark-rotation-day"
+# Distinct from ROTATION_MARKER above: that one just records which slice's
+# checkpoint state is currently valid (written BEFORE scraping starts, so
+# it can't also mean "finished"). This one is only written AFTER
+# scrape_with_checkpoint reports full coverage - confirmed live
+# (2026-09-17): without it, a same-day continue-check redispatch (firing
+# because some OTHER chain was still incomplete) has no way to tell
+# "already fully scraped today" from "haven't started today", since
+# scrape_with_checkpoint deletes its own seen/checkpoint files the moment
+# a slice completes - so it just re-fetched the SAME ~12k urls from
+# scratch for nothing, burning another ~3h of a job that had already
+# finished its job for the day.
+COMPLETE_MARKER = "data/latest/.stark-rotation-complete"
 
 GROSS_RE = re.compile(
     r'"GrossPrice":\{[^}]*?"StandardPriceInVat":"?(\d+)"?'
@@ -98,8 +110,25 @@ def scrape(limit=None, deadline=None):
     today_epoch_day = int(time.time() // 86400)
     today_slice = today_epoch_day % ROTATION_DAYS
     _reset_checkpoint_if_new_rotation(today_slice)
-    todays_urls = rotate_slice(all_urls, ROTATION_DAYS, today_epoch_day=today_epoch_day)
-    fresh_rows = scrape_with_checkpoint("stark", todays_urls, handle, None, deadline)
+
+    already_done = False
+    if os.path.exists(COMPLETE_MARKER):
+        try:
+            already_done = int(open(COMPLETE_MARKER).read().strip()) == today_slice
+        except (ValueError, OSError):
+            already_done = False
+
+    if already_done:
+        fresh_rows = []
+    else:
+        todays_urls = rotate_slice(all_urls, ROTATION_DAYS, today_epoch_day=today_epoch_day)
+        fresh_rows = scrape_with_checkpoint("stark", todays_urls, handle, None, deadline)
+        # scrape_with_checkpoint deletes its own seen file once it reports
+        # full coverage - that's also our only signal today's slice is
+        # genuinely finished, safe to record here.
+        if not os.path.exists("data/latest/.seen-stark.txt"):
+            with open(COMPLETE_MARKER, "w") as f:
+                f.write(str(today_slice))
 
     # Merge with whatever's already on disk from the OTHER rotation_days-1
     # slices so the caller (run_daily.py) always sees one complete, full-

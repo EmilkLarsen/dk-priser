@@ -93,6 +93,14 @@ jobs:
           # state never actually persists" bug already found and fixed once
           # for the checkpoint files themselves.
           git add data/latest/.stark-rotation-day 2>/dev/null || true
+          # Same reasoning again for .stark-rotation-complete: it's written
+          # only once a slice fully finishes, so on an interrupted run it's
+          # absent while .stark-rotation-day (written at the very start,
+          # every run) is present - mixing the two into one `git add` would
+          # mean the interrupted run's rotation-day update fails to commit
+          # too, purely because the OTHER, unrelated marker doesn't exist
+          # yet this time.
+          git add data/latest/.stark-rotation-complete 2>/dev/null || true
           git diff --cached --quiet && echo "No changes" || git commit -m "prices: ${{ matrix.chain }} $(date -u +%F)"
           # push with retry: concurrent chain jobs rebase against each other.
           # A real conflict (not just a fast-forward race) leaves the rebase
