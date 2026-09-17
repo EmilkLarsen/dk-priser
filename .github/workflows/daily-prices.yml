@@ -76,11 +76,29 @@ jobs:
           # checkpoint code appearing to work correctly within a single run.
           git add data/latest/.checkpoint-${{ matrix.chain }}.jsonl data/latest/.seen-${{ matrix.chain }}.txt 2>/dev/null || true
           git diff --cached --quiet && echo "No changes" || git commit -m "prices: ${{ matrix.chain }} $(date -u +%F)"
-          # push with retry: concurrent chain jobs rebase against each other
+          # push with retry: concurrent chain jobs rebase against each other.
+          # A real conflict (not just a fast-forward race) leaves the rebase
+          # itself mid-conflict - confirmed live: every one of these 8
+          # retries then fails identically with "Pulling is not possible
+          # because you have unmerged files", the loop exhausts silently,
+          # and the step still exits 0 (its last command was a plain echo),
+          # so a genuinely lost push looked like success. `rebase --abort`
+          # before each retry gives it a real chance to succeed against
+          # whatever's on origin by then; failing loudly if all 8 still
+          # don't land means a stuck push shows up as a failed job instead
+          # of vanishing.
+          pushed=false
           for i in 1 2 3 4 5 6 7 8; do
-            git pull --rebase --autostash origin main && git push && break
+            if git pull --rebase --autostash origin main && git push; then
+              pushed=true; break
+            fi
+            git rebase --abort 2>/dev/null || true
             echo "push conflict, retry $i"; sleep $((i * 10))
           done
+          if [ "$pushed" != true ]; then
+            echo "::error::failed to push ${{ matrix.chain }}'s snapshot after 8 retries - scraped data was NOT committed"
+            exit 1
+          fi
 
   merge:
     needs: scrape
@@ -107,10 +125,24 @@ jobs:
           git config user.email "bot@noreply.github.com"
           git add data/latest/prices.jsonl data/latest/comparison.json data/latest/summary.json data/latest/ages.json data/latest/index.html data/latest/schema.json data/latest/estimator_catalog.json || true
           git diff --cached --quiet && echo "No changes" || git commit -m "merged feed $(date -u +%F)"
+          # Same rebase-recovery + fail-loudly fix as the scrape jobs' own
+          # "Commit snapshot" step above - see its comment. This is the step
+          # that silently lost an entire evening's merged feed on 2026-09-16
+          # (conflict in the auto-generated index.html/summary.json), so
+          # sync-dk-priser kept ingesting a stale prices.jsonl for hours
+          # with no failure anywhere to signal it.
+          pushed=false
           for i in 1 2 3 4 5 6 7 8; do
-            git pull --rebase --autostash origin main && git push && break
+            if git pull --rebase --autostash origin main && git push; then
+              pushed=true; break
+            fi
+            git rebase --abort 2>/dev/null || true
             echo "push conflict, retry $i"; sleep $((i * 10))
           done
+          if [ "$pushed" != true ]; then
+            echo "::error::failed to push the merged feed after 8 retries - prices.jsonl was NOT updated"
+            exit 1
+          fi
 
   continue-check:
     needs: [scrape, merge]
