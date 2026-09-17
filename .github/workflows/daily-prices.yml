@@ -189,17 +189,31 @@ jobs:
           # today's, and permanently pins this at "max reached" the moment
           # any 4 attempts have ever happened - silently disabling
           # auto-continue for good instead of just for the rest of that day.
-          TODAY=$(date -u +%F)
-          find data/latest -maxdepth 1 -name '.continue-attempt-*' -not -name ".continue-attempt-${TODAY}-*" -delete
-          ATTEMPT=$(ls data/latest/.continue-attempt-${TODAY}-* 2>/dev/null | wc -l || echo 0)
-          if [ "$ATTEMPT" -ge 4 ]; then
-            echo "Max continuation attempts reached for today — will retry tomorrow"; exit 0
-          fi
-          touch "data/latest/.continue-attempt-${TODAY}-$((ATTEMPT + 1))"
+          #
+          # Same fetch/reset/regenerate/push pattern as the merge job (see
+          # its own comment) instead of a bare `|| true` rebase attempt -
+          # the marker files and completion.json are just as fully
+          # regenerable, and a silently-lost attempt marker here means the
+          # 4-per-day counter under- or over-counts real attempts, which
+          # either wastes redispatches or wrongly blocks them for the rest
+          # of the day.
           git config user.name price-bot; git config user.email bot@noreply.github.com
-          git add -A data/latest/.continue-attempt-* data/latest/completion.json
-          git commit -m "continue attempt $((ATTEMPT + 1)) ($TODAY)" || true
-          git pull --rebase --autostash origin main && git push || true
+          for i in 1 2 3; do
+            git fetch origin main -q
+            git reset --hard origin/main -q
+            python scraper/check_incomplete.py || true
+            TODAY=$(date -u +%F)
+            find data/latest -maxdepth 1 -name '.continue-attempt-*' -not -name ".continue-attempt-${TODAY}-*" -delete
+            ATTEMPT=$(ls data/latest/.continue-attempt-${TODAY}-* 2>/dev/null | wc -l || echo 0)
+            if [ "$ATTEMPT" -ge 4 ]; then
+              echo "Max continuation attempts reached for today — will retry tomorrow"; exit 0
+            fi
+            touch "data/latest/.continue-attempt-${TODAY}-$((ATTEMPT + 1))"
+            git add -A data/latest/.continue-attempt-* data/latest/completion.json
+            git commit -q -m "continue attempt $((ATTEMPT + 1)) ($TODAY)" || true
+            if git push origin main; then break; fi
+            echo "push race, retry $i"; sleep $((i * 5))
+          done
           gh workflow run daily-prices.yml -f full=true -f resume=true
 
   alert:
