@@ -2,7 +2,12 @@ name: daily-prices
 
 on:
   schedule:
-    - cron: "0 2 * * *"   # 02:00 UTC = 04:00 DK, after nightly sitemap regen
+    # 02:17, not 02:00 - GitHub's own docs warn that top-of-the-hour cron
+    # triggers queue behind everyone else's, and it showed: confirmed live,
+    # every "02:00" run actually started 06:47-07:30 UTC, a ~5h delay that
+    # ate deep into the very time budget these chains need. A few minutes
+    # off the hour costs nothing and avoids that queue entirely.
+    - cron: "17 2 * * *"   # ~02:17 UTC = ~04:17 DK, after nightly sitemap regen
   workflow_dispatch:
     inputs:
       full:
