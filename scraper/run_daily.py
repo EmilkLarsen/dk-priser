@@ -95,10 +95,25 @@ def main():
         json.dump(offsets, open(state_path, "w"), indent=1)
 
         resuming = os.environ.get("RESUME") == "1" or bool(cont)
-        prev_count = 0
+        # Read the existing file keyed by sku/url, same key the merge below
+        # uses - prev_count is the DEDUPED count, not raw line count. A file
+        # bloated by an old bug (confirmed live: bauhaus/davidsen/fog/power/
+        # haraldnyborg all sat at 5x their real size) makes every correct,
+        # normally-sized fresh scrape look like a "collapse" against the
+        # raw line count, so the guard rejected every good run since - kept
+        # re-committing the same bloat forever and never once let a real,
+        # accurate scrape through. Deduping first means the guard compares
+        # against what the catalog actually contains.
+        existing = {}
         if os.path.exists(out):
             with open(out, encoding="utf-8") as f:
-                prev_count = sum(1 for _ in f)
+                for line in f:
+                    try:
+                        rr = json.loads(line)
+                    except json.JSONDecodeError:
+                        continue
+                    existing[rr.get("sku") or rr.get("url")] = rr
+        prev_count = len(existing)
         if not resuming and prev_count and len(rows) < prev_count * 0.3:
             summary[chain] = {
                 "error": f"collapse guard: {len(rows)} rows vs {prev_count} before",
@@ -110,15 +125,6 @@ def main():
         from common import write_jsonl
         # merge with previous file, keeping the LATEST observation per key —
         # files stay catalog-sized no matter how many partial passes feed them
-        existing = {}
-        if os.path.exists(out):
-            with open(out, encoding="utf-8") as f:
-                for line in f:
-                    try:
-                        rr = json.loads(line)
-                    except json.JSONDecodeError:
-                        continue
-                    existing[rr.get("sku") or rr.get("url")] = rr
         fresh_keys = set()
         for r in rows:
             existing[r.get("sku") or r.get("url")] = r
