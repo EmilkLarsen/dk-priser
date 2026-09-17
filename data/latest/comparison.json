@@ -732,6 +732,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:4013288157454",
+  "name": "WERA IMPAKTOR BITS TORX 10 STK",
+  "prices": {
+   "davidsen": 450.0,
+   "fog": 47.0
+  },
+  "min": 47.0,
+  "max": 450.0,
+  "spread_pct": 857.4,
+  "match": "exact"
+ },
+ {
   "key": "ean:5703393721389",
   "name": "Plus Basic bord/bænkesæt med 2 ryglæn og påbygninger 260 cm sort",
   "prices": {
@@ -753,18 +765,6 @@
   "min": 169.0,
   "max": 1275.0,
   "spread_pct": 654.4,
-  "match": "exact"
- },
- {
-  "key": "ean:4013288157454",
-  "name": "WERA IMPAKTOR BITS TORX 10 STK",
-  "prices": {
-   "davidsen": 450.0,
-   "fog": 60.0
-  },
-  "min": 60.0,
-  "max": 450.0,
-  "spread_pct": 650.0,
   "match": "exact"
  },
  {
@@ -1467,6 +1467,18 @@
   "min": 43.75,
   "max": 139.0,
   "spread_pct": 217.7,
+  "match": "exact"
+ },
+ {
+  "key": "ean:8718696169414",
+  "name": "Philips Loftlampe Led 24w 2700k Softline",
+  "prices": {
+   "fog": 71.0,
+   "haraldnyborg": 225.0
+  },
+  "min": 71.0,
+  "max": 225.0,
+  "spread_pct": 216.9,
   "match": "exact"
  },
  {
@@ -2678,18 +2690,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:4059952532882",
-  "name": "Bosch EXPERT SDS max-8X hammerbor 16x200x340 mm",
-  "prices": {
-   "davidsen": 845.0,
-   "fog": 345.0
-  },
-  "min": 345.0,
-  "max": 845.0,
-  "spread_pct": 144.9,
-  "match": "exact"
- },
- {
   "key": "ean:3253560743611",
   "name": "Stanley Polygriptang 250mm",
   "prices": {
@@ -2699,6 +2699,18 @@
   "min": 69.0,
   "max": 169.0,
   "spread_pct": 144.9,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4059952532882",
+  "name": "Bosch EXPERT SDS max-8X hammerbor 16x200x340 mm",
+  "prices": {
+   "davidsen": 845.0,
+   "fog": 346.0
+  },
+  "min": 346.0,
+  "max": 845.0,
+  "spread_pct": 144.2,
   "match": "exact"
  },
  {
@@ -3891,6 +3903,18 @@
   "min": 164.0,
   "max": 359.8,
   "spread_pct": 119.4,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4066407003989",
+  "name": "Gardena Hjulbørste til SILENO pro/max/free",
+  "prices": {
+   "davidsen": 125.0,
+   "fog": 57.0
+  },
+  "min": 57.0,
+  "max": 125.0,
+  "spread_pct": 119.3,
   "match": "exact"
  },
  {
@@ -10214,6 +10238,19 @@
   "match": "exact"
  },
  {
+  "key": "ean:8719514320666",
+  "name": "Philips Hue White pære E14 LED",
+  "prices": {
+   "davidsen": 158.4,
+   "fog": 100.0,
+   "power": 169.0
+  },
+  "min": 100.0,
+  "max": 169.0,
+  "spread_pct": 69.0,
+  "match": "exact"
+ },
+ {
   "key": "ean:5706751072550",
   "name": "Printpapir PP-40 - 4-pak",
   "prices": {
@@ -10283,19 +10320,6 @@
   "min": 130.0,
   "max": 219.0,
   "spread_pct": 68.5,
-  "match": "exact"
- },
- {
-  "key": "ean:5709417002410",
-  "name": "Knudsen kilen K-Klods 45C Mix i plastboks",
-  "prices": {
-   "davidsen": 375.0,
-   "fog": 223.0,
-   "haraldnyborg": 255.0
-  },
-  "min": 223.0,
-  "max": 375.0,
-  "spread_pct": 68.2,
   "match": "exact"
  },
  {
@@ -14026,6 +14050,19 @@
   "match": "exact"
  },
  {
+  "key": "ean:5709417002410",
+  "name": "Knudsen kilen K-Klods 45C Mix i plastboks",
+  "prices": {
+   "davidsen": 375.0,
+   "fog": 242.0,
+   "haraldnyborg": 255.0
+  },
+  "min": 242.0,
+  "max": 375.0,
+  "spread_pct": 55.0,
+  "match": "exact"
+ },
+ {
   "key": "ean:5703873209888",
   "name": "Træskruer til indbygningsdåser elforzinket 2,9x41 mm 10 stk.",
   "prices": {
@@ -15328,18 +15365,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:4066407003989",
-  "name": "Gardena Hjulbørste til SILENO pro/max/free",
-  "prices": {
-   "davidsen": 125.0,
-   "fog": 189.0
-  },
-  "min": 125.0,
-  "max": 189.0,
-  "spread_pct": 51.2,
-  "match": "exact"
- },
- {
   "key": "ean:5704314120205",
   "name": "Jasa dørstopper Ø22x75 mm rustfri stål",
   "prices": {
@@ -16581,6 +16606,18 @@
   },
   "min": 135.0,
   "max": 199.0,
+  "spread_pct": 47.4,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5704924014925",
+  "name": "Nordlux Pontio 27 udendørs væglampe galvaniseret stål",
+  "prices": {
+   "davidsen": 395.0,
+   "fog": 268.0
+  },
+  "min": 268.0,
+  "max": 395.0,
   "spread_pct": 47.4,
   "match": "exact"
  },
@@ -19343,18 +19380,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5704924014925",
-  "name": "Nordlux Pontio 27 udendørs væglampe galvaniseret stål",
-  "prices": {
-   "davidsen": 395.0,
-   "fog": 282.0
-  },
-  "min": 282.0,
-  "max": 395.0,
-  "spread_pct": 40.1,
-  "match": "exact"
- },
- {
   "key": "ean:5704413017956",
   "name": "Pendelroset mini Hvid",
   "prices": {
@@ -20001,6 +20026,18 @@
   "min": 539.0,
   "max": 749.0,
   "spread_pct": 39.0,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5703538499128",
+  "name": "Abena container/affaldssæk 240 L klar 10 stk rulle",
+  "prices": {
+   "davidsen": 50.0,
+   "fog": 36.0
+  },
+  "min": 36.0,
+  "max": 50.0,
+  "spread_pct": 38.9,
   "match": "exact"
  },
  {
@@ -23705,18 +23742,6 @@
   "min": 265.0,
   "max": 349.0,
   "spread_pct": 31.7,
-  "match": "exact"
- },
- {
-  "key": "ean:5703538499128",
-  "name": "Abena container/affaldssæk 240 L klar 10 stk rulle",
-  "prices": {
-   "davidsen": 50.0,
-   "fog": 38.0
-  },
-  "min": 38.0,
-  "max": 50.0,
-  "spread_pct": 31.6,
   "match": "exact"
  },
  {
@@ -28989,18 +29014,6 @@
   },
   "min": 1285.0,
   "max": 1598.0,
-  "spread_pct": 24.4,
-  "match": "exact"
- },
- {
-  "key": "ean:4013288219282",
-  "name": "Wera 881/4/1 SB bitholder m/skruedybdebegrænsning 3 dele",
-  "prices": {
-   "davidsen": 260.0,
-   "fog": 209.0
-  },
-  "min": 209.0,
-  "max": 260.0,
   "spread_pct": 24.4,
   "match": "exact"
  },
@@ -34437,18 +34450,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:8718696169414",
-  "name": "Philips Loftlampe Led 24w 2700k Softline",
-  "prices": {
-   "fog": 189.0,
-   "haraldnyborg": 225.0
-  },
-  "min": 189.0,
-  "max": 225.0,
-  "spread_pct": 19.0,
-  "match": "exact"
- },
- {
   "key": "fiskars xact kultivator",
   "name": "Fiskars Xact, Kultivator",
   "prices": {
@@ -37223,6 +37224,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:4013288158536",
+  "name": "Wera 867/4 IMP DC SB Impaktor bits",
+  "prices": {
+   "davidsen": 57.0,
+   "fog": 49.0
+  },
+  "min": 49.0,
+  "max": 57.0,
+  "spread_pct": 16.3,
+  "match": "exact"
+ },
+ {
   "key": "ean:4011097780658",
   "name": "Hg Crometta 1jet Håndbruser Eco Krom/hvid",
   "prices": {
@@ -37760,6 +37773,18 @@
   },
   "min": 64.95,
   "max": 75.0,
+  "spread_pct": 15.5,
+  "match": "exact"
+ },
+ {
+  "key": "ean:3439510198056",
+  "name": "Paslode IM100Xi gas sømpistol til 34° 63-100 mm stavsøm",
+  "prices": {
+   "davidsen": 6199.0,
+   "fog": 5367.0
+  },
+  "min": 5367.0,
+  "max": 6199.0,
   "spread_pct": 15.5,
   "match": "exact"
  },
@@ -38922,6 +38947,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:4013288219282",
+  "name": "Wera 881/4/1 SB bitholder m/skruedybdebegrænsning 3 dele",
+  "prices": {
+   "davidsen": 260.0,
+   "fog": 227.0
+  },
+  "min": 227.0,
+  "max": 260.0,
+  "spread_pct": 14.5,
+  "match": "exact"
+ },
+ {
   "key": "ean:4053423230888",
   "name": "Bosch 18v Slagboremaskine Universal 18v-60 Inkl 2,0ah Batteri Un3481",
   "prices": {
@@ -39266,18 +39303,6 @@
   },
   "min": 579.0,
   "max": 660.0,
-  "spread_pct": 14.0,
-  "match": "exact"
- },
- {
-  "key": "ean:4013288158536",
-  "name": "Wera 867/4 IMP DC SB Impaktor bits",
-  "prices": {
-   "davidsen": 57.0,
-   "fog": 50.0
-  },
-  "min": 50.0,
-  "max": 57.0,
   "spread_pct": 14.0,
   "match": "exact"
  },
@@ -41886,6 +41911,18 @@
   },
   "min": 84.95,
   "max": 95.0,
+  "spread_pct": 11.8,
+  "match": "exact"
+ },
+ {
+  "key": "ean:8720169191396",
+  "name": "Philips Classic LED pære E27 35W",
+  "prices": {
+   "davidsen": 38.0,
+   "fog": 34.0
+  },
+  "min": 34.0,
+  "max": 38.0,
   "spread_pct": 11.8,
   "match": "exact"
  },
@@ -44917,18 +44954,6 @@
   },
   "min": 3805.0,
   "max": 4168.0,
-  "spread_pct": 9.5,
-  "match": "exact"
- },
- {
-  "key": "ean:3439510198056",
-  "name": "Paslode IM100Xi gas sømpistol til 34° 63-100 mm stavsøm",
-  "prices": {
-   "davidsen": 6199.0,
-   "fog": 5662.0
-  },
-  "min": 5662.0,
-  "max": 6199.0,
   "spread_pct": 9.5,
   "match": "exact"
  },
@@ -50273,6 +50298,19 @@
   "match": "exact"
  },
  {
+  "key": "ean:8718699681036",
+  "name": "Philips Moire plafond 6W hvid",
+  "prices": {
+   "davidsen": 39.0,
+   "fog": 37.0,
+   "haraldnyborg": 40.0
+  },
+  "min": 37.0,
+  "max": 40.0,
+  "spread_pct": 8.1,
+  "match": "exact"
+ },
+ {
   "key": "ean:5703393751232",
   "name": "PLUS Artura komposithegn 90×135 cm",
   "prices": {
@@ -52673,19 +52711,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:8719514320666",
-  "name": "Philips Hue White pære E14 LED",
-  "prices": {
-   "davidsen": 158.4,
-   "fog": 169.0,
-   "power": 169.0
-  },
-  "min": 158.4,
-  "max": 169.0,
-  "spread_pct": 6.7,
-  "match": "exact"
- },
- {
   "key": "ean:5703393712363",
   "name": "PLUS Plank enkeltlåge inkl. beslag 100×125 cm",
   "prices": {
@@ -53198,6 +53223,18 @@
   },
   "min": 845.0,
   "max": 899.0,
+  "spread_pct": 6.4,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5708614904305",
+  "name": "Cozze Pizzaovn 13\" Classic Gas 30mbar Regulator Medfølger Ikke",
+  "prices": {
+   "fog": 1018.0,
+   "haraldnyborg": 1083.0
+  },
+  "min": 1018.0,
+  "max": 1083.0,
   "spread_pct": 6.4,
   "match": "exact"
  },
@@ -54174,18 +54211,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5708614904305",
-  "name": "Cozze Pizzaovn 13\" Classic Gas 30mbar Regulator Medfølger Ikke",
-  "prices": {
-   "fog": 1023.0,
-   "haraldnyborg": 1083.0
-  },
-  "min": 1023.0,
-  "max": 1083.0,
-  "spread_pct": 5.9,
-  "match": "exact"
- },
- {
   "key": "ean:5703873234859",
   "name": "E-Line instal. kabel 5x1,5 50 m grå",
   "prices": {
@@ -54458,18 +54483,6 @@
   },
   "min": 17.0,
   "max": 17.95,
-  "spread_pct": 5.6,
-  "match": "exact"
- },
- {
-  "key": "ean:8720169191396",
-  "name": "Philips Classic LED pære E27 35W",
-  "prices": {
-   "davidsen": 38.0,
-   "fog": 36.0
-  },
-  "min": 36.0,
-  "max": 38.0,
   "spread_pct": 5.6,
   "match": "exact"
  },
@@ -55239,19 +55252,6 @@
   },
   "min": 1739.0,
   "max": 1831.0,
-  "spread_pct": 5.3,
-  "match": "exact"
- },
- {
-  "key": "ean:8718699681036",
-  "name": "Philips Moire plafond 6W hvid",
-  "prices": {
-   "davidsen": 39.0,
-   "fog": 38.0,
-   "haraldnyborg": 40.0
-  },
-  "min": 38.0,
-  "max": 40.0,
   "spread_pct": 5.3,
   "match": "exact"
  },
@@ -58980,6 +58980,18 @@
   "match": "probable"
  },
  {
+  "key": "trip trap gulvlak silkemat 2|l:2.5",
+  "name": "Trip Trap, Gulvlak, silkemat, 2,5 L",
+  "prices": {
+   "silvan": 340.0,
+   "bauhaus": 349.95
+  },
+  "min": 340.0,
+  "max": 349.95,
+  "spread_pct": 2.9,
+  "match": "probable"
+ },
+ {
   "key": "ean:5701951090656",
   "name": "Adora Exigo 150CC brusearmatur krom",
   "prices": {
@@ -60225,18 +60237,6 @@
   "min": 294.0,
   "max": 299.0,
   "spread_pct": 1.7,
-  "match": "exact"
- },
- {
-  "key": "ean:7311490043785",
-  "name": "Anza Elite penselsæt udendørs 20-35-75 mm",
-  "prices": {
-   "davidsen": 245.0,
-   "fog": 249.0
-  },
-  "min": 245.0,
-  "max": 249.0,
-  "spread_pct": 1.6,
   "match": "exact"
  }
 ]
