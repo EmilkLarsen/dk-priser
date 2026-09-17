@@ -2,10 +2,10 @@
  "date": "2026-09-17",
  "chains": {
   "power": {
-   "products": 28755,
+   "products": 28759,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "seconds": 13056.2
+   "seconds": 13102.3
   }
  }
 }
