@@ -94,7 +94,24 @@ def main():
         os.makedirs(os.path.dirname(state_path), exist_ok=True)
         json.dump(offsets, open(state_path, "w"), indent=1)
 
-        resuming = os.environ.get("RESUME") == "1" or bool(cont)
+        # Per-chain signals only, never the blanket workflow-level RESUME
+        # env var (`-f resume=true` on the WHOLE dispatch). Confirmed live
+        # (2026-09-18): continue-check sets that flag whenever ANY chain is
+        # incomplete, which - given the completion-marker bug just fixed
+        # below - has been true almost constantly for weeks. Gating the
+        # collapse guard's bypass on that blanket flag meant it was
+        # effectively disabled for every chain, every time, during nearly
+        # every run, including chains that scraped a completely normal
+        # pass that day - a genuinely broken scrape (a site outage, a
+        # parser regression) could have slipped through undetected the
+        # entire time, for the very case the guard exists to catch. A
+        # chain only needs its OWN guard bypassed when ITS OWN scrape
+        # is legitimately still catching up.
+        checkpoint_pending = (
+            os.path.exists(os.path.join(ROOT, "data", "latest", f".seen-{chain}.txt"))
+            or os.path.exists(os.path.join(ROOT, "data", "latest", f".checkpoint-{chain}.jsonl"))
+        )
+        resuming = bool(cont) or checkpoint_pending
         # Read the existing file keyed by sku/url, same key the merge below
         # uses - prev_count is the DEDUPED count, not raw line count. A file
         # bloated by an old bug (confirmed live: bauhaus/davidsen/fog/power/
@@ -150,19 +167,17 @@ def main():
         # never free).
         #
         # Fixed by checking what actually happened to THIS chain's own
-        # scrape instead: `cont` is scrape_urls' own per-chain signal that
-        # ITS time budget cut it short (the 6 non-checkpoint chains);
-        # leftover checkpoint/seen files are scrape_with_checkpoint's own
-        # signal of the same thing (silvan/xlbyg/stark, and for stark
-        # specifically that's scoped to today's rotation slice, which is
-        # the right, achievable definition of "done for today" - the
-        # separate row-count-vs-EXPECTED check in check_incomplete.py is
-        # what judges whether the accumulated catalog is big enough).
-        checkpoint_pending = (
-            os.path.exists(os.path.join(ROOT, "data", "latest", f".seen-{chain}.txt"))
-            or os.path.exists(os.path.join(ROOT, "data", "latest", f".checkpoint-{chain}.jsonl"))
-        )
-        complete_now = not limit and not cont and not checkpoint_pending and len(rows) > 0
+        # scrape instead: `resuming` (computed above, same `cont` +
+        # checkpoint-file signals the guard bypass just used) - `cont` is
+        # scrape_urls' own per-chain signal that ITS time budget cut it
+        # short (the 6 non-checkpoint chains); leftover checkpoint/seen
+        # files are scrape_with_checkpoint's own signal of the same thing
+        # (silvan/xlbyg/stark, and for stark specifically that's scoped to
+        # today's rotation slice, which is the right, achievable
+        # definition of "done for today" - the separate row-count-vs-
+        # EXPECTED check in check_incomplete.py is what judges whether the
+        # accumulated catalog is big enough).
+        complete_now = not limit and not resuming and len(rows) > 0
         marker = os.path.join(ROOT, "data", "latest", f".{chain}-complete")
         if complete_now:
             with open(marker, "w") as mf:
@@ -202,12 +217,6 @@ def main():
             "suspicious_changes": suspicious,
             "seconds": round(time.time() - started, 1),
         }
-        # completion marker: a full (unlimited) run that wasn't a resume
-        # append = this chain's catalog is complete as of today
-        if not limit and not resuming:
-            marker = os.path.join(ROOT, "data", "latest", f".{chain}-complete")
-            with open(marker, "w") as mf:
-                mf.write(today)
         print(f"  {len(rows)} products, {len(changes)} price changes")
 
     if only:
