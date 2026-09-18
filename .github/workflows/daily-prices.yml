@@ -18,10 +18,6 @@ on:
         description: "Products per chain (smoke mode)"
         required: false
         default: "30"
-      resume:
-        description: "Resume mode: append to existing snapshots (for timeout continuation)"
-        required: false
-        default: "false"
 
 permissions:
   contents: write
@@ -48,17 +44,15 @@ jobs:
 
       - name: Run scraper (${{ matrix.chain }})
         env:
-          RESUME: ${{ inputs.resume == 'true' && '1' || '0' }}
-          SCRAPE_BUDGET: "270"   # stop cleanly after 4.5h, commit offset, continue next run - scrape_urls chains (bauhaus/davidsen/fog/haraldnyborg/power/skousen)
-          # 300 min soft cutoff inside this job's 350-min hard timeout above -
-          # the 50-min gap is what lets a checkpointed chain (silvan/xlbyg/
-          # stark) exit on its own and reach "Commit snapshot" instead of
-          # being SIGKILLed mid-request with nothing durably saved. Separate
-          # from SCRAPE_BUDGET above because these three chains go through
-          # scrape_with_checkpoint, not scrape_urls - see that function's own
-          # doc comment for why an externally killed job previously meant
-          # zero progress, forever, even after SCRAPE_BUDGET shipped for the
-          # other six chains.
+          # All nine chains now go through scrape_with_checkpoint (2026-09-18
+          # - bauhaus/davidsen had NO time-budget protection at all before
+          # this, and fog/haraldnyborg/power/skousen's own SCRAPE_OFFSET
+          # resume was confirmed dead code end to end - see each chain's own
+          # scrape() comment). One deadline for all of them: 300 min soft
+          # cutoff inside this job's 350-min hard timeout above - the 50-min
+          # gap is what lets a checkpointed chain exit on its own and reach
+          # "Commit snapshot" instead of being SIGKILLed mid-request with
+          # nothing durably saved.
           SCRAPE_DEADLINE_SECONDS: "18000"
         run: |
           if [ "${{ inputs.full }}" = "true" ] || [ "${{ github.event_name }}" = "schedule" ]; then
@@ -164,8 +158,15 @@ jobs:
             python scraper/merge_all.py
             # Small BOM-matchable catalog the Fixer app fetches at runtime.
             python scraper/build_estimator_catalog.py
-            # prune history older than 120 days (repo stays small forever)
-            find data/history -name "*.jsonl" -mtime +120 -delete || true
+            # History pruning now happens INSIDE merge_all.py itself
+            # (prune_old_history) - this `find -mtime` never actually
+            # worked: every fresh `actions/checkout` resets every file's
+            # mtime to "now", so "-mtime +120" compared "now" against
+            # "now" on every single run and could never match anything.
+            # Confirmed live: data/history had unpruned files going back
+            # weeks despite this line running as part of every merge since
+            # it was added. The real fix reads each file's own date from
+            # its filename instead of trusting checkout-reset timestamps.
             # Commit the gzipped feed, not the raw one - confirmed live,
             # prices.jsonl reached 59MB (past GitHub's 50MB warning, closing
             # in on its 100MB hard block) and only grows as silvan/xlbyg/
@@ -209,7 +210,7 @@ jobs:
           python scraper/check_incomplete.py || true
           INC=$(python scraper/check_incomplete.py 2>/dev/null | sed -n 's/^incomplete: //p')
           echo "incomplete=$INC" >> $GITHUB_OUTPUT
-      - name: Re-dispatch resume run for incomplete chains
+      - name: Re-dispatch for incomplete chains
         if: steps.check.outputs.incomplete != '' && steps.check.outputs.incomplete != '(none)'
         env:
           GH_TOKEN: ${{ github.token }}
@@ -247,7 +248,17 @@ jobs:
             if git push origin main; then break; fi
             echo "push race, retry $i"; sleep $((i * 5))
           done
-          gh workflow run daily-prices.yml -f full=true -f resume=true
+          # `resume=true` used to be a workflow-level flag threaded down
+          # into a RESUME env var for run_daily.py - removed 2026-09-18
+          # once every scrape() call went through scrape_with_checkpoint,
+          # which resumes from its own committed per-url state regardless
+          # of any flag. That blanket flag was also the actual root cause
+          # of a 3-week-old bug (see run_daily.py's own comment): it
+          # suppressed the completion marker AND the collapse guard for
+          # every chain, on every run, whenever this redispatch fired -
+          # which, because no chain could ever reach "complete" while it
+          # was set, was almost always.
+          gh workflow run daily-prices.yml -f full=true
 
   alert:
     # continue-check added: it now does real git/bash work of its own (the

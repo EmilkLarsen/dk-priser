@@ -1,5 +1,5 @@
 """Harald Nyborg — sitemap-products.xml -> ld+json price."""
-from common import html_gtin, valid_ean, first_str, sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_urls
+from common import html_gtin, valid_ean, first_str, sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_with_checkpoint
 
 BASE = "https://www.harald-nyborg.dk"
 OUT = "data/latest/haraldnyborg.jsonl"
@@ -34,8 +34,10 @@ def handle(u, html):
     return rows
 
 
-def scrape(limit=None):
-    return scrape_urls(fetch_url_list(limit), handle)
+def scrape(limit=None, deadline=None):
+    # Was scrape_urls - see fog.py's identical fix/comment for why
+    # (SCRAPE_OFFSET resume is confirmed dead code end to end).
+    return scrape_with_checkpoint("haraldnyborg", fetch_url_list(limit), handle, limit, deadline)
 
 
 if __name__ == "__main__":

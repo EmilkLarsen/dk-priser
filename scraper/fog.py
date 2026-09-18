@@ -1,5 +1,5 @@
 """Johannes Fog — /da-dk/sitemap/products/{1..N} -> ld+json (ProductGroup)."""
-from common import html_gtin, valid_ean, first_str, sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_urls
+from common import html_gtin, valid_ean, first_str, sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_with_checkpoint
 
 BASE = "https://www.johannesfog.dk"
 OUT = "data/latest/fog.jsonl"
@@ -43,8 +43,17 @@ def handle(u, html):
     return rows
 
 
-def scrape(limit=None):
-    return scrape_urls(fetch_url_list(limit), handle)
+def scrape(limit=None, deadline=None):
+    # Was scrape_urls (SCRAPE_BUDGET + SCRAPE_OFFSET resume) - confirmed
+    # live (2026-09-18) that resume path is dead code end to end
+    # (SCRAPE_OFFSET is never set anywhere in the workflow; run_daily.py
+    # writes scrape_offsets.json but nothing reads it back), so any run
+    # that ever hit its own time budget would restart from url #0 again
+    # next time, forever, silently never reaching whatever was past that
+    # cutoff. Only ever masked here by fog finishing within budget every
+    # day so far. scrape_with_checkpoint is the same, already-proven
+    # mechanism silvan/xlbyg/stark/skousen use instead.
+    return scrape_with_checkpoint("fog", fetch_url_list(limit), handle, limit, deadline)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 """Skousen.dk — premium appliances. sitemap-skou-products.xml -> ld+json."""
-from common import html_gtin, valid_ean, first_str, sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_urls
+from common import html_gtin, valid_ean, first_str, sane_price, get, sitemap_urls, ldjson_products, offer_from_ld, write_jsonl, scrape_with_checkpoint
 
 BASE = "https://www.skousen.dk"
 OUT = "data/latest/skousen.jsonl"
@@ -35,8 +35,22 @@ def handle(u, html):
     return rows
 
 
-def scrape(limit=None):
-    return scrape_urls(fetch_url_list(limit), handle)
+def scrape(limit=None, deadline=None):
+    # Was scrape_urls (SCRAPE_BUDGET + SCRAPE_OFFSET resume) - confirmed
+    # live (2026-09-18) that mechanism is dead code end to end: SCRAPE_OFFSET
+    # is never set anywhere in the workflow (run_daily.py writes
+    # scrape_offsets.json but nothing ever reads it back into the env), so
+    # every run always started this chain over from url #0. Only masked
+    # for skousen because its real catalog (~5,341 urls, verified live) is
+    # small enough that even a full from-scratch pass usually finishes
+    # within budget despite heavy rate-limiting - a bigger catalog, or
+    # worse rate-limiting, would have meant silently never discovering
+    # anything past wherever the time budget cut off, forever, every
+    # single day. scrape_with_checkpoint is the same, already-proven
+    # mechanism silvan/xlbyg/stark use: real committed per-url progress
+    # instead of a numeric offset that depends on the url list staying in
+    # identical order across separate fetches of the sitemap.
+    return scrape_with_checkpoint("skousen", fetch_url_list(limit), handle, limit, deadline)
 
 
 if __name__ == "__main__":

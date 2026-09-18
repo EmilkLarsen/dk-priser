@@ -6,7 +6,8 @@ import sys
 import json
 import glob
 import gzip
-from datetime import date
+import re
+from datetime import date, timedelta
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__))))
 from build_comparison import main as build_comparison  # noqa: E402
@@ -85,7 +86,53 @@ def main():
         raise SystemExit(f"merge collapse guard: {n} rows vs {prev_size} before — keeping previous feed")
     build_comparison()
     build_status_page()
-    print(f"merged {n} rows ({dupes} dupes dropped); comparison rebuilt")
+    pruned = prune_old_history()
+    print(f"merged {n} rows ({dupes} dupes dropped); comparison rebuilt"
+          + (f"; pruned {pruned} history files >120d old" if pruned else ""))
+
+
+HISTORY_DATE_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})\.jsonl$")
+
+
+def prune_old_history(max_age_days=120, today=None):
+    """Delete data/history/<chain>/<date>.jsonl files older than max_age_days.
+
+    Was previously `find data/history -name "*.jsonl" -mtime +120 -delete`
+    in the workflow - looked reasonable, never actually worked. Every CI
+    job does a fresh `actions/checkout`, and git does not (and cannot)
+    preserve original commit timestamps as file mtimes - a freshly checked
+    out file's mtime is always "now", the moment of that checkout, on
+    every single run. `-mtime +120` was therefore comparing "now" against
+    "now" every single day, forever, and could never delete anything -
+    confirmed: data/history has commits going back to 2026-08-28 that were
+    never once pruned despite this running as part of every merge job
+    since. Fixed by reading the real date directly from each file's own
+    name (data/history/<chain>/<YYYY-MM-DD>.jsonl) instead of trusting
+    filesystem metadata that git checkouts make meaningless.
+    """
+    if today is None:
+        today = date.today()
+    cutoff = today - timedelta(days=max_age_days)
+    removed = 0
+    history_root = os.path.join(LATEST, "..", "history")
+    if not os.path.isdir(history_root):
+        return removed
+    for chain_dir in os.listdir(history_root):
+        full_dir = os.path.join(history_root, chain_dir)
+        if not os.path.isdir(full_dir):
+            continue
+        for fname in os.listdir(full_dir):
+            m = HISTORY_DATE_RE.match(fname)
+            if not m:
+                continue
+            try:
+                file_date = date.fromisoformat(m.group(1))
+            except ValueError:
+                continue
+            if file_date < cutoff:
+                os.remove(os.path.join(full_dir, fname))
+                removed += 1
+    return removed
 
 
 

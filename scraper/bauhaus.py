@@ -1,6 +1,6 @@
 """Bauhaus.dk — Magento sitemap -> product pages -> data-price-amount."""
 import re
-from common import get, sitemap_urls, write_jsonl
+from common import get, sitemap_urls, write_jsonl, scrape_with_checkpoint
 
 BASE = "https://www.bauhaus.dk"
 OUT = "data/latest/bauhaus.jsonl"
@@ -74,15 +74,20 @@ def handle(u, html):
     }]
 
 
-def scrape(limit=None):
-    from common import pmap
-
-    def work(u):
-        try:
-            return handle(u, get(u))
-        except Exception:
-            return []
-    return pmap(work, fetch_url_list(limit))
+def scrape(limit=None, deadline=None):
+    # Was a bare pmap() call - no time budget, no checkpoint, nothing
+    # committed if this ever ran long enough to hit the JOB's own hard
+    # timeout (confirmed live 2026-09-18 this was true of bauhaus AND
+    # davidsen, the only two chains with this gap - the other seven all
+    # go through scrape_urls or scrape_with_checkpoint, which both have
+    # SOME form of time-budget protection). A bad day for this specific
+    # site (slow responses, WAF backoff) would have meant total data loss
+    # for that run, the exact failure mode already fixed once for
+    # silvan/xlbyg/stark. scrape_with_checkpoint gives every chain the
+    # same real, committed, per-url resume - free here since bauhaus
+    # already finishes comfortably within budget most days; it only
+    # matters on a bad one.
+    return scrape_with_checkpoint("bauhaus", fetch_url_list(limit), handle, limit, deadline)
 
 
 if __name__ == "__main__":

@@ -3,7 +3,7 @@
 Product sitemap URLs are paginated category walks (-c-id...-p-<id>) that
 also embed data, so we harvest both. Runs cheaply: 1 request serves ~30 products."""
 import re
-from common import html_gtin, sane_price, get, sitemap_urls, parse_dk_price, write_jsonl, pmap
+from common import html_gtin, sane_price, get, sitemap_urls, parse_dk_price, write_jsonl, scrape_with_checkpoint
 
 BASE = "https://www.davidsen.dk"
 OUT = "data/latest/davidsen.jsonl"
@@ -85,14 +85,10 @@ def handle(cu, html):
     return rows
 
 
-def scrape(limit=None):
-    def work(cu):
-        try:
-            return handle(cu, get(cu))
-        except Exception as e:
-            print(f"  ! {cu}: {e}")
-            return []
-    return pmap(work, fetch_url_list(limit))
+def scrape(limit=None, deadline=None):
+    # Was a bare pmap() call - see bauhaus.py's identical fix/comment for
+    # why (no time budget, no checkpoint, nothing committed on a bad day).
+    return scrape_with_checkpoint("davidsen", fetch_url_list(limit), handle, limit, deadline)
 
 
 if __name__ == "__main__":
