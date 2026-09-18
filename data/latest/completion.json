@@ -1,5 +1,5 @@
 {
- "date": "2026-09-17",
+ "date": "2026-09-18",
  "detail": {
   "silvan": {
    "rows": 40154,
@@ -34,7 +34,7 @@
    "complete": false
   },
   "skousen": {
-   "rows": 5448,
+   "rows": 5461,
    "complete": false
   }
  }
