@@ -48,18 +48,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5701701040115",
-  "name": "Juliana Gartner 21,4 m² drivhus alu/sort med 3mm hærdet glas",
-  "prices": {
-   "davidsen": 36975.0,
-   "fog": 199.0
-  },
-  "min": 199.0,
-  "max": 36975.0,
-  "spread_pct": 18480.4,
-  "match": "exact"
- },
- {
   "key": "ean:5709417108129",
   "name": "Knudsen Kilen Kombi bundstykke 35x80x100 mm",
   "prices": {
@@ -1793,6 +1781,18 @@
   "min": 15.5,
   "max": 44.95,
   "spread_pct": 190.0,
+  "match": "exact"
+ },
+ {
+  "key": "ean:8719514263567",
+  "name": "Philips lysstofrør 2,5W 300 mm 1 pack",
+  "prices": {
+   "davidsen": 110.0,
+   "fog": 38.0
+  },
+  "min": 38.0,
+  "max": 110.0,
+  "spread_pct": 189.5,
   "match": "exact"
  },
  {
@@ -3785,6 +3785,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5708085100084",
+  "name": "Bon-fire kaffe/the kande, emajle, 2,2 l",
+  "prices": {
+   "davidsen": 225.0,
+   "fog": 499.0
+  },
+  "min": 225.0,
+  "max": 499.0,
+  "spread_pct": 121.8,
+  "match": "exact"
+ },
+ {
   "key": "ean:5703873233050",
   "name": "E-Line + stikprop flad hvid 230V 16A",
   "prices": {
@@ -3830,18 +3842,6 @@
   "min": 34.0,
   "max": 74.95,
   "spread_pct": 120.4,
-  "match": "exact"
- },
- {
-  "key": "ean:8719514263567",
-  "name": "Philips lysstofrør 2,5W 300 mm 1 pack",
-  "prices": {
-   "davidsen": 110.0,
-   "fog": 50.0
-  },
-  "min": 50.0,
-  "max": 110.0,
-  "spread_pct": 120.0,
   "match": "exact"
  },
  {
@@ -3927,18 +3927,6 @@
   "min": 320.0,
   "max": 699.0,
   "spread_pct": 118.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5708085100183",
-  "name": "Bon-fire halv bbq pande 29x57 cm",
-  "prices": {
-   "davidsen": 325.0,
-   "fog": 149.0
-  },
-  "min": 149.0,
-  "max": 325.0,
-  "spread_pct": 118.1,
   "match": "exact"
  },
  {
@@ -4119,18 +4107,6 @@
   "min": 60.0,
   "max": 129.0,
   "spread_pct": 115.0,
-  "match": "exact"
- },
- {
-  "key": "ean:6411501238801",
-  "name": "Fiskars universaIsaks m/teleskopskaft UPX86",
-  "prices": {
-   "davidsen": 899.95,
-   "fog": 419.0
-  },
-  "min": 419.0,
-  "max": 899.95,
-  "spread_pct": 114.8,
   "match": "exact"
  },
  {
@@ -6771,20 +6747,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:8719514261082",
-  "name": "WiZ Smart LED bånd forlænger 1 m",
-  "prices": {
-   "davidsen": 135.0,
-   "fog": 72.0,
-   "haraldnyborg": 89.0,
-   "power": 90.0
-  },
-  "min": 72.0,
-  "max": 135.0,
-  "spread_pct": 87.5,
-  "match": "exact"
- },
- {
   "key": "ean:4045921012325",
   "name": "GeoFennel FR 75-MM modtager til linjelaser",
   "prices": {
@@ -7171,6 +7133,20 @@
   "min": 140.0,
   "max": 259.0,
   "spread_pct": 85.0,
+  "match": "exact"
+ },
+ {
+  "key": "ean:8719514261082",
+  "name": "WiZ Smart LED bånd forlænger 1 m",
+  "prices": {
+   "davidsen": 135.0,
+   "fog": 73.0,
+   "haraldnyborg": 89.0,
+   "power": 90.0
+  },
+  "min": 73.0,
+  "max": 135.0,
+  "spread_pct": 84.9,
   "match": "exact"
  },
  {
@@ -11302,19 +11278,6 @@
   "min": 27.95,
   "max": 46.0,
   "spread_pct": 64.6,
-  "match": "exact"
- },
- {
-  "key": "ean:8718696167977",
-  "name": "Philips Hue Lily udendørs spot LED extension",
-  "prices": {
-   "davidsen": 610.0,
-   "fog": 503.0,
-   "power": 827.0
-  },
-  "min": 503.0,
-  "max": 827.0,
-  "spread_pct": 64.4,
   "match": "exact"
  },
  {
@@ -16718,18 +16681,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:4003718058574",
-  "name": "AL-KO knivsæt",
-  "prices": {
-   "davidsen": 250.0,
-   "fog": 170.0
-  },
-  "min": 170.0,
-  "max": 250.0,
-  "spread_pct": 47.1,
-  "match": "exact"
- },
- {
   "key": "ean:4052836004369",
   "name": "Bøjning PP 32 mm x 15° grå",
   "prices": {
@@ -17042,18 +16993,6 @@
   "min": 74.5,
   "max": 109.0,
   "spread_pct": 46.3,
-  "match": "exact"
- },
- {
-  "key": "ean:5708085100022",
-  "name": "Bon-fire kaffe/the kande, emajle, 2,2 l",
-  "prices": {
-   "davidsen": 225.0,
-   "fog": 329.0
-  },
-  "min": 225.0,
-  "max": 329.0,
-  "spread_pct": 46.2,
   "match": "exact"
  },
  {
@@ -18492,6 +18431,19 @@
   "match": "exact"
  },
  {
+  "key": "ean:8718696167977",
+  "name": "Philips Hue Lily udendørs spot LED extension",
+  "prices": {
+   "davidsen": 610.0,
+   "fog": 579.0,
+   "power": 827.0
+  },
+  "min": 579.0,
+  "max": 827.0,
+  "spread_pct": 42.8,
+  "match": "exact"
+ },
+ {
   "key": "ean:8718699681135",
   "name": "Philips Moire plafond 17W hvid",
   "prices": {
@@ -19292,6 +19244,18 @@
   "min": 64.0,
   "max": 89.95,
   "spread_pct": 40.5,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4003718058574",
+  "name": "AL-KO knivsæt",
+  "prices": {
+   "davidsen": 250.0,
+   "fog": 178.0
+  },
+  "min": 178.0,
+  "max": 250.0,
+  "spread_pct": 40.4,
   "match": "exact"
  },
  {
@@ -25563,18 +25527,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5703873220012",
-  "name": "E-line stikdåse 3-vejs med jord 1,5 m",
-  "prices": {
-   "davidsen": 45.0,
-   "fog": 35.0
-  },
-  "min": 35.0,
-  "max": 45.0,
-  "spread_pct": 28.6,
-  "match": "exact"
- },
- {
   "key": "ean:5702551000502",
   "name": "Tjep MX-50 trykluft tromlesømpistol",
   "prices": {
@@ -27070,18 +27022,6 @@
   "match": "probable"
  },
  {
-  "key": "bonus myrelokkedase",
-  "name": "BONUS MYRELOKKEDÅSE 4 STK.",
-  "prices": {
-   "xlbyg": 79.0,
-   "bauhaus": 99.95
-  },
-  "min": 79.0,
-  "max": 99.95,
-  "spread_pct": 26.5,
-  "match": "probable"
- },
- {
   "key": "ean:3165140179812",
   "name": "Bosch Expert til Metal X551 slibeskive Ø125 mm K40",
   "prices": {
@@ -27330,18 +27270,6 @@
   },
   "min": 150.0,
   "max": 189.0,
-  "spread_pct": 26.0,
-  "match": "exact"
- },
- {
-  "key": "ean:5701984106607",
-  "name": "Udskyder m/tap 305 mm elforzinket",
-  "prices": {
-   "davidsen": 155.0,
-   "fog": 123.0
-  },
-  "min": 123.0,
-  "max": 155.0,
   "spread_pct": 26.0,
   "match": "exact"
  },
@@ -29318,6 +29246,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:8032601869207",
+  "name": "Master gasvarmekanon BLP 17M",
+  "prices": {
+   "davidsen": 1665.0,
+   "fog": 1344.0
+  },
+  "min": 1344.0,
+  "max": 1665.0,
+  "spread_pct": 23.9,
+  "match": "exact"
+ },
+ {
   "key": "ean:4042448268051",
   "name": "Tesa® Malertape Precision Outdoor 2 x 25 m x 25 mm",
   "prices": {
@@ -29554,18 +29494,6 @@
   },
   "min": 29.95,
   "max": 37.0,
-  "spread_pct": 23.5,
-  "match": "exact"
- },
- {
-  "key": "ean:8032601869207",
-  "name": "Master gasvarmekanon BLP 17M",
-  "prices": {
-   "davidsen": 1665.0,
-   "fog": 1348.0
-  },
-  "min": 1348.0,
-  "max": 1665.0,
   "spread_pct": 23.5,
   "match": "exact"
  },
@@ -31193,6 +31121,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5703873220012",
+  "name": "E-line stikdåse 3-vejs med jord 1,5 m",
+  "prices": {
+   "davidsen": 45.0,
+   "fog": 37.0
+  },
+  "min": 37.0,
+  "max": 45.0,
+  "spread_pct": 21.6,
+  "match": "exact"
+ },
+ {
   "key": "ean:7640110696729",
   "name": "Leica Disto D1 afstandsmåler med Bluetooth®",
   "prices": {
@@ -31901,18 +31841,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:4014549358238",
-  "name": "Festool HKC 55 EB-BASIC rundsav solo",
-  "prices": {
-   "davidsen": 4276.2,
-   "fog": 3536.0
-  },
-  "min": 3536.0,
-  "max": 4276.2,
-  "spread_pct": 20.9,
-  "match": "exact"
- },
- {
   "key": "ean:8719514372368",
   "name": "Philips Smart WiZ white LED pære E14 4,6W kerte mat",
   "prices": {
@@ -32125,6 +32053,18 @@
   },
   "min": 1098.0,
   "max": 1325.0,
+  "spread_pct": 20.7,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4014549358238",
+  "name": "Festool HKC 55 EB-BASIC rundsav solo",
+  "prices": {
+   "davidsen": 4276.2,
+   "fog": 3543.0
+  },
+  "min": 3543.0,
+  "max": 4276.2,
   "spread_pct": 20.7,
   "match": "exact"
  },
@@ -36275,6 +36215,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:3165140262705",
+  "name": "Bosch overgangsadaptersæt m/6 dele til standardhulsave",
+  "prices": {
+   "davidsen": 75.0,
+   "fog": 64.0
+  },
+  "min": 64.0,
+  "max": 75.0,
+  "spread_pct": 17.2,
+  "match": "exact"
+ },
+ {
   "key": "ean:4251295113586",
   "name": "Fernco kobling 135-152°/98-115°",
   "prices": {
@@ -37653,6 +37605,18 @@
   },
   "min": 2010.0,
   "max": 2328.0,
+  "spread_pct": 15.8,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5708614913314",
+  "name": "Home It Bambuspinde 120cm Ø10mm 4-pak",
+  "prices": {
+   "fog": 17.95,
+   "haraldnyborg": 15.5
+  },
+  "min": 15.5,
+  "max": 17.95,
   "spread_pct": 15.8,
   "match": "exact"
  },
@@ -39307,6 +39271,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5701984106607",
+  "name": "Udskyder m/tap 305 mm elforzinket",
+  "prices": {
+   "davidsen": 155.0,
+   "fog": 136.0
+  },
+  "min": 136.0,
+  "max": 155.0,
+  "spread_pct": 14.0,
+  "match": "exact"
+ },
+ {
   "key": "ean:4013288163257",
   "name": "Wera 867/4 IMP DC SB Impaktor bits",
   "prices": {
@@ -39532,6 +39508,18 @@
   },
   "min": 29.0,
   "max": 32.96,
+  "spread_pct": 13.7,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5701701040115",
+  "name": "Juliana Univent vinduesåbner til max 7 kg.",
+  "prices": {
+   "davidsen": 175.0,
+   "fog": 199.0
+  },
+  "min": 175.0,
+  "max": 199.0,
   "spread_pct": 13.7,
   "match": "exact"
  },
@@ -41216,6 +41204,30 @@
   "match": "exact"
  },
  {
+  "key": "junckers gulvolie klar 2|l:2.5",
+  "name": "Junckers, Gulvolie, klar, 2,5 L",
+  "prices": {
+   "silvan": 399.95,
+   "bauhaus": 448.95
+  },
+  "min": 399.95,
+  "max": 448.95,
+  "spread_pct": 12.3,
+  "match": "probable"
+ },
+ {
+  "key": "junckers gulvolie hvid 2|l:2.5",
+  "name": "Junckers, Gulvolie, hvid, 2,5 L",
+  "prices": {
+   "silvan": 399.95,
+   "bauhaus": 448.95
+  },
+  "min": 399.95,
+  "max": 448.95,
+  "spread_pct": 12.3,
+  "match": "probable"
+ },
+ {
   "key": "ean:5035048750247",
   "name": "Dewalt DCD800NT-XJ 18V bore-/skruemaskine solo",
   "prices": {
@@ -41696,18 +41708,6 @@
   "min": 58.0,
   "max": 64.95,
   "spread_pct": 12.0,
-  "match": "exact"
- },
- {
-  "key": "ean:3165140262705",
-  "name": "Bosch overgangsadaptersæt m/6 dele til standardhulsave",
-  "prices": {
-   "davidsen": 75.0,
-   "fog": 67.0
-  },
-  "min": 67.0,
-  "max": 75.0,
-  "spread_pct": 11.9,
   "match": "exact"
  },
  {
@@ -59484,18 +59484,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:4078500053259",
-  "name": "Gardena 9000 dykpumpe til rent vand 300W",
-  "prices": {
-   "davidsen": 495.0,
-   "fog": 483.0
-  },
-  "min": 483.0,
-  "max": 495.0,
-  "spread_pct": 2.5,
-  "match": "exact"
- },
- {
   "key": "ean:8718291443605",
   "name": "Philips Creek udendørs væglampe med sensor sort",
   "prices": {
@@ -60237,6 +60225,18 @@
   "min": 294.0,
   "max": 299.0,
   "spread_pct": 1.7,
+  "match": "exact"
+ },
+ {
+  "key": "ean:7311490043785",
+  "name": "Anza Elite penselsæt udendørs 20-35-75 mm",
+  "prices": {
+   "davidsen": 245.0,
+   "fog": 249.0
+  },
+  "min": 245.0,
+  "max": 249.0,
+  "spread_pct": 1.6,
   "match": "exact"
  }
 ]
