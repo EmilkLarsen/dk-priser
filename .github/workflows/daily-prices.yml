@@ -65,7 +65,18 @@ jobs:
         run: |
           git config user.name "price-bot"
           git config user.email "bot@noreply.github.com"
-          git add data/latest/${{ matrix.chain }}.jsonl data/latest/summary-${{ matrix.chain }}.json data/history || true
+          git add data/latest/${{ matrix.chain }}.jsonl data/latest/summary-${{ matrix.chain }}.json || true
+          # data/history is its OWN separate `git add`, never bundled with
+          # this chain's real files above. Git can't track an empty
+          # directory - if prune_old_history() (merge_all.py) ever deletes
+          # the last remaining file anywhere under data/history, the whole
+          # path stops matching anything on the NEXT checkout, and `git
+          # add` aborts the ENTIRE command the instant any one listed path
+          # doesn't exist (confirmed locally) - staging nothing, not even
+          # this chain's own .jsonl/summary files bundled on the same line.
+          # A history-pruning side effect should never be able to block a
+          # chain's actual scraped data from being committed.
+          git add data/history 2>/dev/null || true
           # Checkpoint/seen-set files (only silvan/xlbyg/stark produce these -
           # see scrape_with_checkpoint) committed separately: without this,
           # every fresh job checkout starts that resume logic from a
