@@ -1227,7 +1227,7 @@
  },
  {
   "key": "ean:5708722243006",
-  "name": "Morsø bålfad Fire pot sort",
+  "name": "Morsø Ignis grillrist til bålfad",
   "prices": {
    "davidsen": 495.0,
    "fog": 1695.0
@@ -9064,6 +9064,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5703302094610",
+  "name": "LK Fuga indsats stikkontakt 1 1/2 modul hvid",
+  "prices": {
+   "davidsen": 120.0,
+   "haraldnyborg": 69.0
+  },
+  "min": 69.0,
+  "max": 120.0,
+  "spread_pct": 73.9,
+  "match": "exact"
+ },
+ {
   "key": "ean:5701054002181",
   "name": "Dana linoliekit 682 natur 375 ml",
   "prices": {
@@ -12393,6 +12405,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:4004025082047",
+  "name": "Wagner Furno 300 varmepistol",
+  "prices": {
+   "davidsen": 206.0,
+   "fog": 329.0
+  },
+  "min": 206.0,
+  "max": 329.0,
+  "spread_pct": 59.7,
+  "match": "exact"
+ },
+ {
   "key": "ean:5701701590108",
   "name": "Allux 1007G stander galvaniseret",
   "prices": {
@@ -12770,18 +12794,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:4004025082047",
-  "name": "Wagner Furno 300 varmepistol",
-  "prices": {
-   "davidsen": 208.0,
-   "fog": 329.0
-  },
-  "min": 208.0,
-  "max": 329.0,
-  "spread_pct": 58.2,
-  "match": "exact"
- },
- {
   "key": "ean:5701984104467",
   "name": "PN skabshængsel m/løs tap hvid",
   "prices": {
@@ -12936,18 +12948,6 @@
   },
   "min": 997.5,
   "max": 1570.0,
-  "spread_pct": 57.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5703302094610",
-  "name": "LK Fuga indsats stikkontakt 1 1/2 modul hvid",
-  "prices": {
-   "davidsen": 120.0,
-   "haraldnyborg": 76.25
-  },
-  "min": 76.25,
-  "max": 120.0,
   "spread_pct": 57.4,
   "match": "exact"
  },
@@ -23732,6 +23732,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5704587020523",
+  "name": "Sprehn lærlingesæt brolægger inkl. kasse",
+  "prices": {
+   "davidsen": 5390.0,
+   "fog": 7122.0
+  },
+  "min": 5390.0,
+  "max": 7122.0,
+  "spread_pct": 32.1,
+  "match": "exact"
+ },
+ {
   "key": "ean:3700546708053",
   "name": "Withings Body Comp Hvid Badevægt",
   "prices": {
@@ -24383,18 +24395,6 @@
   },
   "min": 52.0,
   "max": 68.0,
-  "spread_pct": 30.8,
-  "match": "exact"
- },
- {
-  "key": "ean:5704587020523",
-  "name": "Sprehn lærlingesæt brolægger inkl. kasse",
-  "prices": {
-   "davidsen": 5445.0,
-   "fog": 7122.0
-  },
-  "min": 5445.0,
-  "max": 7122.0,
   "spread_pct": 30.8,
   "match": "exact"
  },
@@ -42650,6 +42650,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:4004025081910",
+  "name": "Wagner W150 Black Range malersprøjte",
+  "prices": {
+   "davidsen": 538.0,
+   "fog": 599.0
+  },
+  "min": 538.0,
+  "max": 599.0,
+  "spread_pct": 11.3,
+  "match": "exact"
+ },
+ {
   "key": "ean:4008496550739",
   "name": "VARTA Genopladelig batteri  - C 3000mAh 2-pak",
   "prices": {
@@ -44342,18 +44354,6 @@
   },
   "min": 99.0,
   "max": 109.0,
-  "spread_pct": 10.1,
-  "match": "exact"
- },
- {
-  "key": "ean:4004025081910",
-  "name": "Wagner W150 Black Range malersprøjte",
-  "prices": {
-   "davidsen": 544.0,
-   "fog": 599.0
-  },
-  "min": 544.0,
-  "max": 599.0,
   "spread_pct": 10.1,
   "match": "exact"
  },

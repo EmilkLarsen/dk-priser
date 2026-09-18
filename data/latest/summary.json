@@ -3,10 +3,10 @@
  "total_rows": 221027,
  "chains": {
   "haraldnyborg": {
-   "products": 11803,
+   "products": 11800,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "seconds": 5745.8
+   "seconds": 5344.5
   },
   "silvan": {
    "products": 26748,
@@ -27,10 +27,10 @@
    "seconds": 18001.7
   },
   "davidsen": {
-   "products": 26722,
+   "products": 26716,
    "price_changes": 42,
    "suspicious_changes": 0,
-   "seconds": 9251.7
+   "seconds": 9327.4
   },
   "power": {
    "products": 28761,
