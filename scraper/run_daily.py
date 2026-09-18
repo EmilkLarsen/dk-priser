@@ -131,8 +131,38 @@ def main():
             fresh_keys.add(r.get("sku") or r.get("url"))
         merged_rows = list(existing.values())
         write_jsonl(out, merged_rows)
-        # completion marker only when every url in the chain was processed
-        complete_now = not limit and os.environ.get("RESUME") != "1" and len(rows) > 0
+        # completion marker only when every url in the chain was processed.
+        #
+        # Confirmed live (2026-09-18): this used to gate on the WORKFLOW-
+        # level `RESUME` env var (`-f resume=true` on the whole dispatch),
+        # not anything specific to this chain. The very first time
+        # continue-check ever redispatched with resume=true, EVERY chain's
+        # marker stopped updating - including chains that scraped a
+        # completely normal, full, successful pass that same run - because
+        # the blanket flag suppressed `complete_now` for all nine
+        # regardless. With no chain ever reaching "complete" again, every
+        # future check_incomplete.py run saw the same stale (weeks-old)
+        # markers, endlessly triggered another resume=true redispatch, and
+        # the pipeline never went idle - found via a live chain of 5+
+        # back-to-back full runs with zero gap, which is also what was
+        # actually delaying the nightly cron (not GitHub's top-of-hour
+        # queueing, the earlier diagnosis - the concurrency slot was just
+        # never free).
+        #
+        # Fixed by checking what actually happened to THIS chain's own
+        # scrape instead: `cont` is scrape_urls' own per-chain signal that
+        # ITS time budget cut it short (the 6 non-checkpoint chains);
+        # leftover checkpoint/seen files are scrape_with_checkpoint's own
+        # signal of the same thing (silvan/xlbyg/stark, and for stark
+        # specifically that's scoped to today's rotation slice, which is
+        # the right, achievable definition of "done for today" - the
+        # separate row-count-vs-EXPECTED check in check_incomplete.py is
+        # what judges whether the accumulated catalog is big enough).
+        checkpoint_pending = (
+            os.path.exists(os.path.join(ROOT, "data", "latest", f".seen-{chain}.txt"))
+            or os.path.exists(os.path.join(ROOT, "data", "latest", f".checkpoint-{chain}.jsonl"))
+        )
+        complete_now = not limit and not cont and not checkpoint_pending and len(rows) > 0
         marker = os.path.join(ROOT, "data", "latest", f".{chain}-complete")
         if complete_now:
             with open(marker, "w") as mf:
