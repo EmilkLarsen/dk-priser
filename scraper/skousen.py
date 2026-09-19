@@ -50,7 +50,8 @@ def scrape(limit=None, deadline=None):
     # mechanism silvan/xlbyg/stark use: real committed per-url progress
     # instead of a numeric offset that depends on the url list staying in
     # identical order across separate fetches of the sitemap.
-    return scrape_with_checkpoint("skousen", fetch_url_list(limit), handle, limit, deadline)
+    return scrape_with_checkpoint("skousen", fetch_url_list(limit), handle, limit, deadline,
+                                  fetch_max_bytes=250000)
 
 
 if __name__ == "__main__":

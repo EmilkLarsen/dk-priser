@@ -257,7 +257,7 @@ def scrape_urls(urls, handle):
     return rows
 
 
-def scrape_with_checkpoint(chain, urls, handle, limit=None, deadline=None):
+def scrape_with_checkpoint(chain, urls, handle, limit=None, deadline=None, fetch_max_bytes=None):
     """For catalogs too large for one CI job to finish (Silvan ~41k URLs,
     XL-BYG ~35k+ across 7 sub-sitemaps, Stark 100k+ variant URLs, many dead)
     - every nightly run for these three has been getting killed by CI's own
@@ -336,19 +336,35 @@ def scrape_with_checkpoint(chain, urls, handle, limit=None, deadline=None):
             # kept yesterday's price via the merge. Only a permanent
             # outcome (404, "redirected" to another product) or a parse
             # problem may legitimately count as done.
+            def fetch(max_bytes=None):
+                try:
+                    return get(u, max_bytes=max_bytes) if max_bytes else get(u), True
+                except urllib.error.HTTPError as e:
+                    print(f"  ! {u}: {e}")
+                    return None, e.code in (404, 410)   # (no body, permanent?)
+                except ValueError as e:      # "redirected: ..." = dead/moved URL
+                    print(f"  ! {u}: {e}")
+                    return None, True
+                except Exception as e:
+                    print(f"  ! {u}: {e}")
+                    return None, False
+
+            # fetch_max_bytes: read only the head of the page (skousen's
+            # product data sits in the first ~140KB of 500-900KB pages).
+            # If the head yields no row, fall back to the full page before
+            # concluding there's no product, so an unusual layout can't
+            # silently lose rows.
+            html, ok = fetch(fetch_max_bytes)
+            if html is None:
+                return u, ([] if ok else None)
             try:
-                html = get(u)
-            except urllib.error.HTTPError as e:
-                print(f"  ! {u}: {e}")
-                return u, ([] if e.code in (404, 410) else None)
-            except ValueError as e:      # "redirected: ..." = dead/moved URL
-                print(f"  ! {u}: {e}")
-                return u, []
-            except Exception as e:
-                print(f"  ! {u}: {e}")
-                return u, None
-            try:
-                return u, (handle(u, html) or [])
+                rows = handle(u, html) or []
+                if not rows and fetch_max_bytes:
+                    html, ok = fetch()
+                    if html is None:
+                        return u, ([] if ok else None)
+                    rows = handle(u, html) or []
+                return u, rows
             except Exception as e:
                 print(f"  ! {u}: parse error {type(e).__name__}: {e}")
                 return u, []

@@ -68,6 +68,11 @@ jobs:
           # "Commit snapshot" instead of being SIGKILLed mid-request with
           # nothing durably saved.
           SCRAPE_DEADLINE_SECONDS: "18000"
+          # Without this Python block-buffers stdout when it is not a TTY:
+          # the whole run log arrived in one chunk at the very end (skousen,
+          # 2026-09-19: every line stamped 11:19:53 after a 07:20 start),
+          # making it impossible to see live progress or where time goes.
+          PYTHONUNBUFFERED: "1"
         run: |
           if [ "${{ inputs.continuation }}" = "true" ]; then
             INC=$(python scraper/check_incomplete.py 2>/dev/null | sed -n 's/^incomplete: //p')
