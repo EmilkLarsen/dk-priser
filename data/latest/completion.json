@@ -11,31 +11,31 @@
   },
   "stark": {
    "rows": 36010,
-   "complete": false
+   "complete": true
   },
   "bauhaus": {
    "rows": 23370,
-   "complete": false
+   "complete": true
   },
   "davidsen": {
    "rows": 22672,
-   "complete": false
+   "complete": true
   },
   "fog": {
    "rows": 30371,
-   "complete": false
+   "complete": true
   },
   "haraldnyborg": {
    "rows": 11952,
-   "complete": false
+   "complete": true
   },
   "power": {
    "rows": 29315,
-   "complete": false
+   "complete": true
   },
   "skousen": {
-   "rows": 5467,
-   "complete": false
+   "rows": 5639,
+   "complete": true
   }
  }
 }
