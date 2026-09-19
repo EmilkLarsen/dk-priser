@@ -327,44 +327,84 @@ def scrape_with_checkpoint(chain, urls, handle, limit=None, deadline=None):
 
     if remaining:
         def work(u):
+            # Returns (url, rows) - or (url, None) for a TRANSIENT fetch
+            # failure (429/403/5xx/timeout/connection error). Confirmed
+            # live (2026-09-18, skousen: 84 x HTTP 429): every exception
+            # used to become (u, []) and the url was then written to the
+            # seen-set, i.e. "handled for today" - so a product that only
+            # hit a rate-limit burst was silently never re-tried and just
+            # kept yesterday's price via the merge. Only a permanent
+            # outcome (404, "redirected" to another product) or a parse
+            # problem may legitimately count as done.
             try:
-                return u, (handle(u, get(u)) or [])
+                html = get(u)
+            except urllib.error.HTTPError as e:
+                print(f"  ! {u}: {e}")
+                return u, ([] if e.code in (404, 410) else None)
+            except ValueError as e:      # "redirected: ..." = dead/moved URL
+                print(f"  ! {u}: {e}")
+                return u, []
             except Exception as e:
                 print(f"  ! {u}: {e}")
+                return u, None
+            try:
+                return u, (handle(u, html) or [])
+            except Exception as e:
+                print(f"  ! {u}: parse error {type(e).__name__}: {e}")
                 return u, []
 
         with open(seen_path, "a", encoding="utf-8") as seen_f, \
                 open(checkpoint_path, "a", encoding="utf-8") as ckpt_f:
-            ex = ThreadPoolExecutor(max_workers=WORKERS)
-            try:
-                futures = {ex.submit(work, u): u for u in remaining}
-                done = 0
-                for fut in as_completed(futures):
-                    u, rows = fut.result()
-                    done += 1
-                    seen_f.write(u + "\n")
-                    seen_f.flush()
-                    for row in rows:
-                        ckpt_f.write(json.dumps(row, ensure_ascii=False) + "\n")
-                    if rows:
-                        ckpt_f.flush()
-                    if deadline and time.time() > deadline:
-                        # Give up on whatever's still queued rather than
-                        # `ex.map`'s all-submitted-up-front behavior, which
-                        # would otherwise leave nothing to check a deadline
-                        # between (`__exit__` blocks until every submitted
-                        # future finishes regardless of how many results
-                        # we've stopped consuming). `cancel_futures=True`
-                        # drops every not-yet-started future immediately;
-                        # only the handful already mid-request keep running
-                        # to their own timeout - a small, bounded tail, not
-                        # the remaining URL count.
-                        print(f"  {chain}: soft deadline reached, stopping "
-                              f"early ({len(seen) + done} of "
-                              f"{len(urls)} attempted so far today)")
-                        break
-            finally:
-                ex.shutdown(wait=False, cancel_futures=True)
+
+            def record(u, rows):
+                seen_f.write(u + "\n")
+                seen_f.flush()
+                for row in rows:
+                    ckpt_f.write(json.dumps(row, ensure_ascii=False) + "\n")
+                if rows:
+                    ckpt_f.flush()
+
+            def run_pass(todo, workers):
+                """Scrape `todo`; returns (transient-failed urls, hit_deadline).
+                Successful/permanent outcomes are recorded immediately."""
+                failed, hit = [], False
+                ex = ThreadPoolExecutor(max_workers=workers)
+                try:
+                    futures = [ex.submit(work, u) for u in todo]
+                    for fut in as_completed(futures):
+                        u, rows = fut.result()
+                        if rows is None:
+                            failed.append(u)   # NOT marked seen (see work())
+                        else:
+                            record(u, rows)
+                        if deadline and time.time() > deadline:
+                            # `cancel_futures=True` below drops every
+                            # not-yet-started future at once; only the few
+                            # already mid-request run on to their own
+                            # timeout - a small bounded tail.
+                            hit = True
+                            break
+                finally:
+                    ex.shutdown(wait=False, cancel_futures=True)
+                return failed, hit
+
+            failed, hit_deadline = run_pass(remaining, WORKERS)
+            if failed and not hit_deadline:
+                # One bounded retry for transient failures (rate-limit
+                # bursts etc.) after letting the host cool off. Whatever
+                # still fails is recorded as attempted so a genuinely
+                # broken URL can't keep the chain "resuming" forever.
+                print(f"  {chain}: retrying {len(failed)} transient failures once")
+                time.sleep(min(120, 30 + len(failed) * 0.2))
+                failed2, hit_deadline = run_pass(failed, min(WORKERS, MAX_LANES))
+                if not hit_deadline:
+                    for u in failed2:
+                        record(u, [])
+                    if failed2:
+                        print(f"  {chain}: {len(failed2)} urls still failing after retry - keeping prior data")
+            if hit_deadline:
+                print(f"  {chain}: soft deadline reached, stopping early "
+                      f"(transient failures left unseen for the next run)")
         with open(seen_path, encoding="utf-8") as f:
             seen = {line.rstrip("\n") for line in f if line.strip()}
 
