@@ -180,8 +180,14 @@ def main():
         complete_now = not limit and not resuming and len(rows) > 0
         marker = os.path.join(ROOT, "data", "latest", f".{chain}-complete")
         if complete_now:
+            # Stamped with the date the scrape FINISHED, not `today`
+            # (computed once at process start): a run that started before
+            # 00:00 UTC and finished after would otherwise write yesterday's
+            # date, which check_incomplete.py (comparing against the date it
+            # runs on) reads as "not done today" - forcing a needless full
+            # re-scrape of a chain that had just completed.
             with open(marker, "w") as mf:
-                mf.write(today)
+                mf.write(date.today().isoformat())
         elif os.path.exists(marker):
             os.remove(marker)
         print(f"  {len(rows)} fresh rows ({len(merged_rows)} total after merge, "

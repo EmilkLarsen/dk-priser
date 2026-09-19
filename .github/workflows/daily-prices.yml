@@ -18,6 +18,14 @@ on:
         description: "Products per chain (smoke mode)"
         required: false
         default: "30"
+      continuation:
+        description: "Continuation run: skip chains already complete today"
+        required: false
+        default: "false"
+      resume:
+        description: "Deprecated, ignored (kept so old queued runs' redispatch doesn't 422)"
+        required: false
+        default: "false"
 
 permissions:
   contents: write
@@ -37,6 +45,12 @@ jobs:
                 fog, haraldnyborg, power, skousen]
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Always main's CURRENT tip, never the SHA this run was created
+          # at: a run queued behind another one (concurrency group) would
+          # otherwise scrape on a base missing everything the earlier run
+          # committed in the meantime (see scripts/commit_chain.sh).
+          ref: main
 
       - uses: actions/setup-python@v5
         with:
@@ -55,6 +69,13 @@ jobs:
           # nothing durably saved.
           SCRAPE_DEADLINE_SECONDS: "18000"
         run: |
+          if [ "${{ inputs.continuation }}" = "true" ]; then
+            INC=$(python scraper/check_incomplete.py 2>/dev/null | sed -n 's/^incomplete: //p')
+            case ",$INC," in
+              *",${{ matrix.chain }},"*) echo "${{ matrix.chain }} still incomplete - continuing" ;;
+              *) echo "${{ matrix.chain }} already complete today - skipping"; exit 0 ;;
+            esac
+          fi
           if [ "${{ inputs.full }}" = "true" ] || [ "${{ github.event_name }}" = "schedule" ]; then
             python scraper/run_daily.py --only ${{ matrix.chain }}
           else
@@ -62,74 +83,10 @@ jobs:
           fi
 
       - name: Commit snapshot
-        run: |
-          git config user.name "price-bot"
-          git config user.email "bot@noreply.github.com"
-          git add data/latest/${{ matrix.chain }}.jsonl data/latest/summary-${{ matrix.chain }}.json || true
-          # data/history is its OWN separate `git add`, never bundled with
-          # this chain's real files above. Git can't track an empty
-          # directory - if prune_old_history() (merge_all.py) ever deletes
-          # the last remaining file anywhere under data/history, the whole
-          # path stops matching anything on the NEXT checkout, and `git
-          # add` aborts the ENTIRE command the instant any one listed path
-          # doesn't exist (confirmed locally) - staging nothing, not even
-          # this chain's own .jsonl/summary files bundled on the same line.
-          # A history-pruning side effect should never be able to block a
-          # chain's actual scraped data from being committed.
-          git add data/history 2>/dev/null || true
-          # Checkpoint/seen-set files (only silvan/xlbyg/stark produce these -
-          # see scrape_with_checkpoint) committed separately: without this,
-          # every fresh job checkout starts that resume logic from a
-          # permanently empty seen-set, since nothing on the runner's own
-          # disk survives past this job - confirmed live, these three chains
-          # never made net progress across dozens of runs despite the
-          # checkpoint code appearing to work correctly within a single run.
-          git add data/latest/.checkpoint-${{ matrix.chain }}.jsonl data/latest/.seen-${{ matrix.chain }}.txt 2>/dev/null || true
-          # stark's rotation-day marker (data/latest/.stark-rotation-day, see
-          # rotate_slice/stark.py) is its OWN separate `git add` - its
-          # existence is independent of the checkpoint pair above (it
-          # outlives a completed rotation slice, which deletes ITS OWN
-          # checkpoint files but never touches this marker), and `git add`
-          # aborts the ENTIRE command - staging NOTHING, not even paths that
-          # DO exist - the moment any one listed path doesn't match
-          # (confirmed locally). Mixed into the line above, a completed
-          # slice (marker present, checkpoint pair absent) would silently
-          # fail to commit the marker at all - the same class of "resume
-          # state never actually persists" bug already found and fixed once
-          # for the checkpoint files themselves.
-          git add data/latest/.stark-rotation-day 2>/dev/null || true
-          # Same reasoning again for .stark-rotation-complete: it's written
-          # only once a slice fully finishes, so on an interrupted run it's
-          # absent while .stark-rotation-day (written at the very start,
-          # every run) is present - mixing the two into one `git add` would
-          # mean the interrupted run's rotation-day update fails to commit
-          # too, purely because the OTHER, unrelated marker doesn't exist
-          # yet this time.
-          git add data/latest/.stark-rotation-complete 2>/dev/null || true
-          git diff --cached --quiet && echo "No changes" || git commit -m "prices: ${{ matrix.chain }} $(date -u +%F)"
-          # push with retry: concurrent chain jobs rebase against each other.
-          # A real conflict (not just a fast-forward race) leaves the rebase
-          # itself mid-conflict - confirmed live: every one of these 8
-          # retries then fails identically with "Pulling is not possible
-          # because you have unmerged files", the loop exhausts silently,
-          # and the step still exits 0 (its last command was a plain echo),
-          # so a genuinely lost push looked like success. `rebase --abort`
-          # before each retry gives it a real chance to succeed against
-          # whatever's on origin by then; failing loudly if all 8 still
-          # don't land means a stuck push shows up as a failed job instead
-          # of vanishing.
-          pushed=false
-          for i in 1 2 3 4 5 6 7 8; do
-            if git pull --rebase --autostash origin main && git push; then
-              pushed=true; break
-            fi
-            git rebase --abort 2>/dev/null || true
-            echo "push conflict, retry $i"; sleep $((i * 10))
-          done
-          if [ "$pushed" != true ]; then
-            echo "::error::failed to push ${{ matrix.chain }}'s snapshot after 8 retries - scraped data was NOT committed"
-            exit 1
-          fi
+        # All the git logic (stale-base-proof: reset onto origin/main and
+        # re-apply only this chain's own files, no rebase) lives in
+        # scripts/commit_chain.sh - see its header for the incident.
+        run: bash scripts/commit_chain.sh ${{ matrix.chain }}
 
   merge:
     needs: scrape
@@ -137,6 +94,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Always main's CURRENT tip, never the SHA this run was created
+          # at: a run queued behind another one (concurrency group) would
+          # otherwise scrape on a base missing everything the earlier run
+          # committed in the meantime (see scripts/commit_chain.sh).
+          ref: main
 
       - uses: actions/setup-python@v5
         with:
@@ -215,6 +178,12 @@ jobs:
       actions: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Always main's CURRENT tip, never the SHA this run was created
+          # at: a run queued behind another one (concurrency group) would
+          # otherwise scrape on a base missing everything the earlier run
+          # committed in the meantime (see scripts/commit_chain.sh).
+          ref: main
       - name: Detect incomplete chains
         id: check
         run: |
@@ -269,7 +238,7 @@ jobs:
           # every chain, on every run, whenever this redispatch fired -
           # which, because no chain could ever reach "complete" while it
           # was set, was almost always.
-          gh workflow run daily-prices.yml -f full=true
+          gh workflow run daily-prices.yml -f full=true -f continuation=true
 
   alert:
     # continue-check added: it now does real git/bash work of its own (the
@@ -284,6 +253,12 @@ jobs:
       issues: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Always main's CURRENT tip, never the SHA this run was created
+          # at: a run queued behind another one (concurrency group) would
+          # otherwise scrape on a base missing everything the earlier run
+          # committed in the meantime (see scripts/commit_chain.sh).
+          ref: main
       - name: Open failure issue
         uses: actions/github-script@v7
         with:
