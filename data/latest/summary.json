@@ -1,60 +1,60 @@
 {
- "date": "2026-09-19",
- "total_rows": 233266,
+ "date": "2026-09-20",
+ "total_rows": 240557,
  "chains": {
   "haraldnyborg": {
-   "products": 11795,
+   "products": 11813,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "seconds": 5342.7
+   "seconds": 5348.6
   },
   "silvan": {
-   "products": 40058,
+   "products": 28728,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "seconds": 7368.6
+   "seconds": 18002.0
   },
   "bauhaus": {
-   "products": 22292,
+   "products": 22285,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "seconds": 13709.7
+   "seconds": 14502.6
   },
   "xlbyg": {
-   "products": 33943,
-   "price_changes": 300,
+   "products": 23428,
+   "price_changes": 208,
    "suspicious_changes": 0,
-   "seconds": 7498.6
+   "seconds": 18002.3
   },
   "davidsen": {
    "products": 22951,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "seconds": 9147.2
+   "seconds": 9109.1
   },
   "power": {
-   "products": 28729,
+   "products": 28705,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "seconds": 13057.8
+   "seconds": 13023.9
   },
   "skousen": {
-   "products": 5219,
+   "products": 2337,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "seconds": 14596.2
+   "seconds": 18000.5
   },
   "stark": {
-   "products": 36010,
+   "products": 43261,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "seconds": 8.0
+   "seconds": 15311.8
   },
   "fog": {
-   "products": 30157,
+   "products": 30154,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "seconds": 13644.8
+   "seconds": 13682.3
   }
  }
 }
