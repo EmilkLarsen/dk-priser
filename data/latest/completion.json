@@ -1,5 +1,5 @@
 {
- "date": "2026-09-19",
+ "date": "2026-09-20",
  "detail": {
   "silvan": {
    "rows": 40277,
@@ -10,7 +10,7 @@
    "complete": false
   },
   "stark": {
-   "rows": 36010,
+   "rows": 43261,
    "complete": true
   },
   "bauhaus": {
@@ -26,16 +26,16 @@
    "complete": true
   },
   "haraldnyborg": {
-   "rows": 11952,
+   "rows": 11964,
    "complete": true
   },
   "power": {
-   "rows": 29315,
+   "rows": 29339,
    "complete": true
   },
   "skousen": {
-   "rows": 5639,
-   "complete": true
+   "rows": 5643,
+   "complete": false
   }
  }
 }
