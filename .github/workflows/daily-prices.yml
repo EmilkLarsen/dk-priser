@@ -41,10 +41,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        chain: [silvan, xlbyg, stark, bauhaus, davidsen,
-                fog, haraldnyborg, power, skousen,
-                byggmax_se, k_rauta_fi, byggmakker_no, monter_no,
-                bauhaus_se, byggmax_fi, wickes_uk, praxis_nl, ace_us]
+        chain: [silvan, xlbyg, stark, bauhaus, davidsen, fog, haraldnyborg, power, skousen]
     steps:
       - uses: actions/checkout@v4
         with:
