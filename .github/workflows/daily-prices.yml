@@ -245,6 +245,15 @@ jobs:
           # was set, was almost always.
           gh workflow run daily-prices.yml -f full=true -f continuation=true
 
+      # Last step, `if: always()`, so it can never block the redispatch above
+      # but still fails this job (-> the alert job opens an issue) when a
+      # chain has gone >3 days without ever completing a full pass - see
+      # scraper/check_stale.py. Checkout is main's tip, i.e. includes every
+      # marker this run's scrape jobs just committed.
+      - name: Alert on chains stuck for days
+        if: always()
+        run: python scraper/check_stale.py
+
   alert:
     # continue-check added: it now does real git/bash work of its own (the
     # race-proof push loop above) that scrape/merge failing wouldn't catch -
