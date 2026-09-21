@@ -37,6 +37,49 @@ def load_prev(chain):
     return prev
 
 
+# Expiry of delisted products. A row that a COMPLETE pass no longer
+# refreshes gets `missing_since: <date>` (fresh rows never carry the field,
+# so day-to-day diffs stay tiny); if it is still missing 14 days later it is
+# dropped from the catalog. Previously rows were retained forever, so a
+# delisted product kept its last price in the app indefinitely (~600 such rows
+# at haraldnyborg alone by 2026-09-21).
+EXPIRE_AFTER_DAYS = 14
+# If a single complete pass leaves more than this share of a chain missing,
+# treat it as a broken scrape (sitemap change, parser regression, block) and
+# touch nothing - real delistings never remove 15% of a catalog at once.
+MAX_MISSING_FRACTION = 0.15
+# Chains whose daily pass only covers a rotating slice of the catalog: rows
+# outside today's slice are "missing" by design, so no expiry applies.
+ROTATING_CHAINS = {"stark"}
+
+
+def expire_missing(existing, fresh_keys, today):
+    """Stamp/drop rows a complete pass did not refresh. Mutates `existing`.
+    Returns (newly_missing, dropped, skipped_reason)."""
+    missing = [k for k in existing if k not in fresh_keys]
+    if not missing:
+        return 0, 0, None
+    if len(missing) > MAX_MISSING_FRACTION * len(existing):
+        return 0, 0, f"{len(missing)} of {len(existing)} rows missing (> {MAX_MISSING_FRACTION:.0%})"
+    stamped = dropped = 0
+    for k in missing:
+        row = existing[k]
+        since = row.get("missing_since")
+        if not since:
+            row["missing_since"] = today
+            stamped += 1
+            continue
+        try:
+            age = (date.fromisoformat(today) - date.fromisoformat(since)).days
+        except ValueError:
+            row["missing_since"] = today
+            continue
+        if age >= EXPIRE_AFTER_DAYS:
+            del existing[k]
+            dropped += 1
+    return stamped, dropped, None
+
+
 def main():
     args = sys.argv[1:]
     limit = None
@@ -146,6 +189,13 @@ def main():
         for r in rows:
             existing[r.get("sku") or r.get("url")] = r
             fresh_keys.add(r.get("sku") or r.get("url"))
+        expired = 0
+        if not limit and not resuming and rows and chain not in ROTATING_CHAINS:
+            stamped, expired, skipped = expire_missing(existing, fresh_keys, today)
+            if skipped:
+                print(f"  expiry skipped: {skipped}")
+            elif stamped or expired:
+                print(f"  {stamped} products newly missing, {expired} expired (missing >= {EXPIRE_AFTER_DAYS} days)")
         merged_rows = list(existing.values())
         write_jsonl(out, merged_rows)
         # completion marker only when every url in the chain was processed.
@@ -221,6 +271,7 @@ def main():
             "products": len(rows),
             "price_changes": len(changes),
             "suspicious_changes": suspicious,
+            "expired": expired,
             "seconds": round(time.time() - started, 1),
         }
         print(f"  {len(rows)} products, {len(changes)} price changes")
