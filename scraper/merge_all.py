@@ -14,7 +14,9 @@ from build_comparison import main as build_comparison  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHAINS = ["silvan", "xlbyg", "stark", "bauhaus", "davidsen",
-          "fog", "haraldnyborg", "power", "skousen"]
+          "fog", "haraldnyborg", "power", "skousen",
+          "byggmax_se", "k_rauta_fi", "byggmakker_no", "monter_no",
+          "bauhaus_se", "byggmax_fi"]
 LATEST = os.path.join(ROOT, "data", "latest")
 
 

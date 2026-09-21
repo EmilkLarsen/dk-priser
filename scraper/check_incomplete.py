@@ -12,7 +12,9 @@ from datetime import date
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LATEST = os.path.join(ROOT, "data", "latest")
 CHAINS = ["silvan", "xlbyg", "stark", "bauhaus", "davidsen",
-          "fog", "haraldnyborg", "power", "skousen"]
+          "fog", "haraldnyborg", "power", "skousen",
+          "byggmax_se", "k_rauta_fi", "byggmakker_no", "monter_no",
+          "bauhaus_se", "byggmax_fi"]
 
 # known catalog sizes (approximate, from verified sources) — a chain whose
 # snapshot holds <60% of this is treated as incomplete even with a marker
@@ -21,6 +23,9 @@ EXPECTED = {
     "silvan": 39000, "xlbyg": 45000, "stark": 20000, "bauhaus": 22000,
     "davidsen": 26000, "fog": 29000, "haraldnyborg": 10800, "power": 28000,
     "skousen": 5300,
+    # Scandinavia (initial estimates until first full pass verifies)
+    "byggmax_se": 8000, "k_rauta_fi": 15000, "byggmakker_no": 20000,
+    "monter_no": 15000, "bauhaus_se": 5000, "byggmax_fi": 5000,
 }
 
 
