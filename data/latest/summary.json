@@ -3,61 +3,40 @@
  "total_rows": 243667,
  "chains": {
   "haraldnyborg": {
-   "products": 11813,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "seconds": 5350.3
+   "error": "collapse guard: 50 rows vs 11964 before",
+   "kept_previous": true
   },
   "silvan": {
-   "products": 40051,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 6241.3
+   "error": "collapse guard: 50 rows vs 40278 before",
+   "kept_previous": true
   },
   "bauhaus": {
-   "products": 22281,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "seconds": 11925.0
+   "error": "collapse guard: 47 rows vs 23370 before",
+   "kept_previous": true
   },
   "xlbyg": {
-   "products": 33942,
-   "price_changes": 300,
-   "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 6108.3
+   "error": "collapse guard: 50 rows vs 33660 before",
+   "kept_previous": true
   },
   "davidsen": {
-   "products": 22922,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "seconds": 9160.8
+   "error": "collapse guard: 58 rows vs 22678 before",
+   "kept_previous": true
   },
   "power": {
-   "products": 28703,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "seconds": 13007.1
+   "error": "collapse guard: 50 rows vs 29370 before",
+   "kept_previous": true
   },
   "skousen": {
-   "products": 5287,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 11261.5
+   "error": "collapse guard: 50 rows vs 5649 before",
+   "kept_previous": true
   },
   "stark": {
-   "products": 46323,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "seconds": 14371.6
+   "error": "collapse guard: 50 rows vs 46323 before",
+   "kept_previous": true
   },
   "fog": {
-   "products": 30118,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "seconds": 13866.2
+   "error": "collapse guard: 50 rows vs 30375 before",
+   "kept_previous": true
   }
  }
 }
