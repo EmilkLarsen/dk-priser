@@ -9,10 +9,11 @@
    "seconds": 5350.3
   },
   "silvan": {
-   "products": 30496,
+   "products": 40051,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "seconds": 18000.9
+   "expired": 0,
+   "seconds": 6241.3
   },
   "bauhaus": {
    "products": 22281,
@@ -21,10 +22,11 @@
    "seconds": 11925.0
   },
   "xlbyg": {
-   "products": 25600,
-   "price_changes": 234,
+   "products": 33942,
+   "price_changes": 300,
    "suspicious_changes": 0,
-   "seconds": 18001.5
+   "expired": 0,
+   "seconds": 6108.3
   },
   "davidsen": {
    "products": 22922,
@@ -39,10 +41,11 @@
    "seconds": 13007.1
   },
   "skousen": {
-   "products": 2625,
+   "products": 5287,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "seconds": 18050.3
+   "expired": 0,
+   "seconds": 11261.5
   },
   "stark": {
    "products": 46323,
