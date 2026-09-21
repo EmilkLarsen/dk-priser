@@ -14,7 +14,7 @@ LATEST = os.path.join(ROOT, "data", "latest")
 CHAINS = ["silvan", "xlbyg", "stark", "bauhaus", "davidsen",
           "fog", "haraldnyborg", "power", "skousen",
           "byggmax_se", "k_rauta_fi", "byggmakker_no", "monter_no",
-          "bauhaus_se", "byggmax_fi"]
+          "bauhaus_se", "byggmax_fi", "wickes_uk", "praxis_nl", "ace_us"]
 
 # known catalog sizes (approximate, from verified sources) — a chain whose
 # snapshot holds <60% of this is treated as incomplete even with a marker
@@ -26,6 +26,8 @@ EXPECTED = {
     # Scandinavia (initial estimates until first full pass verifies)
     "byggmax_se": 8000, "k_rauta_fi": 15000, "byggmakker_no": 20000,
     "monter_no": 15000, "bauhaus_se": 5000, "byggmax_fi": 5000,
+    # UK / NL / USA (initial estimates until first full pass verifies)
+    "wickes_uk": 15000, "praxis_nl": 30000, "ace_us": 50000,
 }
 
 

@@ -20,7 +20,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHAINS = ["silvan", "xlbyg", "stark", "bauhaus", "davidsen",
           "fog", "haraldnyborg", "power", "skousen",
           "byggmax_se", "k_rauta_fi", "byggmakker_no", "monter_no",
-          "bauhaus_se", "byggmax_fi"]
+          "bauhaus_se", "byggmax_fi", "wickes_uk", "praxis_nl", "ace_us"]
 
 
 def load_prev(chain):
