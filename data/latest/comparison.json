@@ -27733,6 +27733,18 @@
   "match": "exact"
  },
  {
+  "key": "exit toys tempo mini fodboldmal DIM90x60|dim:90x60cm",
+  "name": "Exit Toys, Tempo Mini Fodboldmål, 90x60 cm, 2 stk.",
+  "prices": {
+   "silvan": 654.95,
+   "bauhaus": 519.0
+  },
+  "min": 519.0,
+  "max": 654.95,
+  "spread_pct": 26.2,
+  "match": "probable"
+ },
+ {
   "key": "ean:5704587008088",
   "name": "Blue Electric stander t/arbejdslampe 2,5 M",
   "prices": {
@@ -60229,18 +60241,6 @@
   },
   "min": 23999.0,
   "max": 24650.0,
-  "spread_pct": 2.7,
-  "match": "exact"
- },
- {
-  "key": "ean:5713885011843",
-  "name": "Protox Asbest- & Støvbinder AS25 - 10L",
-  "prices": {
-   "davidsen": 1711.0,
-   "fog": 1758.0
-  },
-  "min": 1711.0,
-  "max": 1758.0,
   "spread_pct": 2.7,
   "match": "exact"
  }
