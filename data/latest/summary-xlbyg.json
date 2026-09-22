@@ -1,9 +1,12 @@
 {
- "date": "2026-09-21",
+ "date": "2026-09-22",
  "chains": {
   "xlbyg": {
-   "error": "collapse guard: 50 rows vs 33660 before",
-   "kept_previous": true
+   "products": 24849,
+   "price_changes": 234,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 18000.8
   }
  }
 }
