@@ -250,7 +250,10 @@ jobs:
       # scraper/check_stale.py. Checkout is main's tip, i.e. includes every
       # marker this run's scrape jobs just committed.
       - name: Alert on chains stuck for days
-        if: always()
+        # Full/nightly runs only: a smoke run (limit=N) intentionally does not
+        # write completion markers, so judging staleness here would make every
+        # validation run "fail" on chains that have never had a full pass.
+        if: always() && (github.event_name == 'schedule' || inputs.full == true)
         run: python scraper/check_stale.py
 
   alert:
