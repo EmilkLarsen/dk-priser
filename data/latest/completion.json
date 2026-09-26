@@ -1,24 +1,12 @@
 {
- "date": "2026-09-25",
+ "date": "2026-09-26",
  "detail": {
-  ".checkpoint-silvan": {
-   "rows": 31938,
-   "complete": false
-  },
-  ".checkpoint-skousen": {
-   "rows": 3070,
-   "complete": false
-  },
-  ".checkpoint-xlbyg": {
-   "rows": 21970,
-   "complete": false
-  },
   "bauhaus": {
-   "rows": 23441,
+   "rows": 23450,
    "complete": true
   },
   "davidsen": {
-   "rows": 22686,
+   "rows": 22687,
    "complete": true
   },
   "fog": {
@@ -26,27 +14,27 @@
    "complete": true
   },
   "haraldnyborg": {
-   "rows": 11993,
+   "rows": 11999,
    "complete": true
   },
   "power": {
-   "rows": 29586,
+   "rows": 29602,
    "complete": true
   },
   "silvan": {
-   "rows": 40370,
+   "rows": 40439,
    "complete": false
   },
   "skousen": {
-   "rows": 5690,
-   "complete": false
+   "rows": 5705,
+   "complete": true
   },
   "stark": {
-   "rows": 66314,
+   "rows": 68470,
    "complete": true
   },
   "xlbyg": {
-   "rows": 33841,
+   "rows": 34013,
    "complete": false
   }
  }
