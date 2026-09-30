@@ -1,40 +1,56 @@
 {
- "date": "2026-09-30",
+ "date": "2026-09-25",
  "detail": {
   "bauhaus": {
-   "rows": 23563,
+   "rows": 23441,
    "complete": true
   },
+  "bauhaus_cz": {
+   "rows": 15,
+   "complete": false
+  },
+  "brico_be": {
+   "rows": 15,
+   "complete": false
+  },
   "davidsen": {
-   "rows": 22688,
+   "rows": 22686,
    "complete": true
   },
   "fog": {
-   "rows": 30499,
+   "rows": 30481,
    "complete": true
+  },
+  "hagebau_at": {
+   "rows": 12,
+   "complete": false
   },
   "haraldnyborg": {
-   "rows": 12059,
+   "rows": 11993,
    "complete": true
   },
+  "merkur_si": {
+   "rows": 25,
+   "complete": false
+  },
   "power": {
-   "rows": 29696,
+   "rows": 29586,
    "complete": true
   },
   "silvan": {
-   "rows": 40534,
-   "complete": false
+   "rows": 40386,
+   "complete": true
   },
   "skousen": {
-   "rows": 5746,
+   "rows": 5690,
    "complete": false
   },
   "stark": {
-   "rows": 74483,
-   "complete": false
+   "rows": 66314,
+   "complete": true
   },
   "xlbyg": {
-   "rows": 34280,
+   "rows": 33841,
    "complete": false
   }
  }
