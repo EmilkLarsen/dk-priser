@@ -9,7 +9,7 @@ Product pages: itemprop="price" content="9.99" + og:image (verified
 2026-09-24). Currency EUR.
 """
 import re
-from common import get, sane_price, write_jsonl, scrape_urls
+from common import get, sane_price, write_jsonl, scrape_urls, scrape_with_checkpoint
 
 BASE = "https://www.merkur.si"
 OUT = "data/latest/merkur_si.jsonl"
@@ -76,8 +76,8 @@ def handle(u, html):
     }]
 
 
-def scrape(limit=None):
-    return scrape_urls(fetch_url_list(limit), handle)
+def scrape(limit=None, deadline=None):
+    return scrape_with_checkpoint("merkur_si", fetch_url_list(limit), handle, limit, deadline)
 
 
 if __name__ == "__main__":

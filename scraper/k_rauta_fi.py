@@ -2,7 +2,7 @@
 /sitemap/products{0..N}.xml; product URLs end with /<EAN>; ld+json Offer
 via regex (site's ld+json block isn't reliably parseable as a whole)."""
 import re
-from common import get, sitemap_urls, sane_price, write_jsonl
+from common import get, sitemap_urls, sane_price, write_jsonl, scrape_with_checkpoint
 
 BASE = "https://www.k-rauta.fi"
 OUT = "data/latest/k_rauta_fi.jsonl"
@@ -52,16 +52,8 @@ def handle(u, html):
     }]
 
 
-def scrape(limit=None):
-    from common import pmap
-
-    def work(u):
-        try:
-            return handle(u, get(u))
-        except Exception as e:
-            print(f"  ! {u}: {e}")
-            return []
-    return pmap(work, fetch_url_list(limit))
+def scrape(limit=None, deadline=None):
+    return scrape_with_checkpoint("k_rauta_fi", fetch_url_list(limit), handle, limit, deadline)
 
 
 if __name__ == "__main__":

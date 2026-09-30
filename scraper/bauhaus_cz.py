@@ -6,7 +6,7 @@ sitemap.xml (50k URLs) + sitemap-1.xml; product pages end in a 7-9 digit id
 (the JSON "price" key is ex-VAT — do not use), og:image present.
 """
 import re
-from common import get, sane_price, write_jsonl, scrape_urls
+from common import get, sane_price, write_jsonl, scrape_urls, scrape_with_checkpoint
 
 BASE = "https://www.bauhaus.cz"
 OUT = "data/latest/bauhaus_cz.jsonl"
@@ -57,8 +57,8 @@ def handle(u, html):
     }]
 
 
-def scrape(limit=None):
-    return scrape_urls(fetch_url_list(limit), handle)
+def scrape(limit=None, deadline=None):
+    return scrape_with_checkpoint("bauhaus_cz", fetch_url_list(limit), handle, limit, deadline)
 
 
 if __name__ == "__main__":

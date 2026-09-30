@@ -3,7 +3,7 @@
 price + priceCurrency + availability."""
 import re
 import gzip
-from common import get, sitemap_urls, sane_price, valid_ean, write_jsonl, pmap
+from common import get, sitemap_urls, sane_price, valid_ean, write_jsonl, pmap, scrape_with_checkpoint
 
 BASE = "https://www.obi.sk"
 OUT = "data/latest/obi_sk.jsonl"
@@ -84,14 +84,8 @@ def handle(u, html):
     }]
 
 
-def scrape(limit=None):
-    def work(u):
-        try:
-            return handle(u, get(u))
-        except Exception as e:
-            print(f"  ! {u}: {e}")
-            return []
-    return pmap(work, fetch_url_list(limit))
+def scrape(limit=None, deadline=None):
+    return scrape_with_checkpoint("obi_sk", fetch_url_list(limit), handle, limit, deadline)
 
 
 if __name__ == "__main__":

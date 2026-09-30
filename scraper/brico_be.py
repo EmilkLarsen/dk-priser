@@ -8,7 +8,7 @@ Product pages: JSON blob "price": 8.49 with adjacent "priceCurrency":"EUR"
 (verified; no itemprop). og:image on cloudfront, title in <title>.
 """
 import re
-from common import get, sane_price, write_jsonl, scrape_urls
+from common import get, sane_price, write_jsonl, scrape_urls, scrape_with_checkpoint
 
 BASE = "https://www.brico.be"
 OUT = "data/latest/brico_be.jsonl"
@@ -68,8 +68,8 @@ def handle(u, html):
     }]
 
 
-def scrape(limit=None):
-    return scrape_urls(fetch_url_list(limit), handle)
+def scrape(limit=None, deadline=None):
+    return scrape_with_checkpoint("brico_be", fetch_url_list(limit), handle, limit, deadline)
 
 
 if __name__ == "__main__":
