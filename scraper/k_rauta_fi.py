@@ -18,7 +18,14 @@ def fetch_url_list(limit=None):
     while True:
         try:
             xml = get(f"{BASE}/sitemap/products{i}.xml")
-        except Exception:
+        except Exception as e:
+            # 404 on products{i} = clean end of chunks. ANY other failure must
+            # be visible — a silent break here reads as "full catalog covered
+            # (0 rows)" and the chain reports complete-ish with zero data
+            # (verified live in CI 2026-09-30: k_rauta_fi 0 products).
+            print(f"  ! k_rauta_fi: sitemap products{i}.xml failed: {e}")
+            if i == 0:
+                raise   # can't even fetch the first chunk = nothing to scrape
             break
         us = [u for u in sitemap_urls(xml) if EAN_RE.search(u)]
         urls.extend(us)
