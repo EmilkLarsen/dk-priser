@@ -32086,6 +32086,18 @@
   "match": "exact"
  },
  {
+  "key": "nordlux renton 150 lysarmatur 151 2 cm|dim:2cm",
+  "name": "Nordlux Renton 150, Lysarmatur, 151,2 cm",
+  "prices": {
+   "silvan": 199.95,
+   "stark": 163.95
+  },
+  "min": 163.95,
+  "max": 199.95,
+  "spread_pct": 22.0,
+  "match": "ambiguous"
+ },
+ {
   "key": "ean:5702441716223",
   "name": "Clean Carpet ECO Patrona antracit 45x75 cm",
   "prices": {
@@ -60237,18 +60249,6 @@
   },
   "min": 329.0,
   "max": 340.0,
-  "spread_pct": 3.3,
-  "match": "exact"
- },
- {
-  "key": "ean:4008496550739",
-  "name": "VARTA Genopladelig batteri  - C 3000mAh 2-pak",
-  "prices": {
-   "haraldnyborg": 60.0,
-   "power": 62.0
-  },
-  "min": 60.0,
-  "max": 62.0,
   "spread_pct": 3.3,
   "match": "exact"
  }
