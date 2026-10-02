@@ -20022,6 +20022,18 @@
   "match": "exact"
  },
  {
+  "key": "rias rodena nylonvrider",
+  "name": "Rias Rodena, Nylonvrider, 25 stk.",
+  "prices": {
+   "silvan": 52.95,
+   "stark": 74.65
+  },
+  "min": 52.95,
+  "max": 74.65,
+  "spread_pct": 41.0,
+  "match": "ambiguous"
+ },
+ {
   "key": "ean:5712649000062",
   "name": "Alpha vindtæt vindspærre 1,5x50 m grå",
   "prices": {
@@ -60232,18 +60244,6 @@
  {
   "key": "ean:5709128655967",
   "name": "Onduline Galvaniseret Søm 70 mm Sort - 100 stk.",
-  "prices": {
-   "davidsen": 185.0,
-   "fog": 179.0
-  },
-  "min": 179.0,
-  "max": 185.0,
-  "spread_pct": 3.4,
-  "match": "exact"
- },
- {
-  "key": "ean:4001116007170",
-  "name": "Roliba selvklæbende tæppeovergang 40x5 mm x 1 m sort",
   "prices": {
    "davidsen": 185.0,
    "fog": 179.0
