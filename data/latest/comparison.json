@@ -12817,6 +12817,18 @@
   "match": "ambiguous"
  },
  {
+  "key": "junckers terrasseolie sort|l:5.0",
+  "name": "Junckers, Terrasseolie, sort, 5 L",
+  "prices": {
+   "silvan": 549.95,
+   "stark": 881.1
+  },
+  "min": 549.95,
+  "max": 881.1,
+  "spread_pct": 60.2,
+  "match": "ambiguous"
+ },
+ {
   "key": "junckers terrasseolie nyatoh|l:5.0",
   "name": "Junckers, Terrasseolie, nyatoh, 5 L",
   "prices": {
@@ -13612,18 +13624,6 @@
   "max": 779.0,
   "spread_pct": 57.4,
   "match": "exact"
- },
- {
-  "key": "lip multifuge sort|kg:5.0",
-  "name": "LIP, Multifuge, sort, 5 kg",
-  "prices": {
-   "silvan": 114.95,
-   "stark": 180.85
-  },
-  "min": 114.95,
-  "max": 180.85,
-  "spread_pct": 57.3,
-  "match": "ambiguous"
  },
  {
   "key": "lip multifuge manhattan|kg:5.0",
@@ -15066,18 +15066,6 @@
  {
   "key": "junckers terrasseolie teak|l:5.0",
   "name": "Junckers, Terrasseolie, teak, 5 L",
-  "prices": {
-   "silvan": 549.95,
-   "stark": 845.1
-  },
-  "min": 549.95,
-  "max": 845.1,
-  "spread_pct": 53.7,
-  "match": "ambiguous"
- },
- {
-  "key": "junckers terrasseolie sort|l:5.0",
-  "name": "Junckers, Terrasseolie, sort, 5 L",
   "prices": {
    "silvan": 549.95,
    "stark": 845.1
@@ -18261,18 +18249,6 @@
  {
   "key": "borup flydende brun sbe|l:1.0",
   "name": "Borup, Flydende brun sæbe, 1 L",
-  "prices": {
-   "silvan": 50.95,
-   "xlbyg": 34.95
-  },
-  "min": 34.95,
-  "max": 50.95,
-  "spread_pct": 45.8,
-  "match": "probable"
- },
- {
-  "key": "borup oxalsyre|kg:0.3",
-  "name": "Borup, Oxalsyre, 300 g",
   "prices": {
    "silvan": 50.95,
    "xlbyg": 34.95
@@ -23364,30 +23340,6 @@
   "match": "exact"
  },
  {
-  "key": "lip fugemasse bahamabeige|kg:5.0",
-  "name": "LIP, Fugemasse, bahamabeige, 5 kg",
-  "prices": {
-   "silvan": 119.95,
-   "stark": 161.05
-  },
-  "min": 119.95,
-  "max": 161.05,
-  "spread_pct": 34.3,
-  "match": "ambiguous"
- },
- {
-  "key": "lip fugemasse sort|kg:5.0",
-  "name": "LIP, Fugemasse, sort, 5 kg",
-  "prices": {
-   "silvan": 119.95,
-   "stark": 161.05
-  },
-  "min": 119.95,
-  "max": 161.05,
-  "spread_pct": 34.3,
-  "match": "ambiguous"
- },
- {
   "key": "lip fugemasse jasmin|kg:5.0",
   "name": "LIP, Fugemasse, jasmin, 5 kg",
   "prices": {
@@ -28430,6 +28382,18 @@
   "match": "exact"
  },
  {
+  "key": "fiskars classic graveskovl",
+  "name": "FISKARS CLASSIC GRAVESKOVL",
+  "prices": {
+   "xlbyg": 499.0,
+   "stark": 395.1
+  },
+  "min": 395.1,
+  "max": 499.0,
+  "spread_pct": 26.3,
+  "match": "probable"
+ },
+ {
   "key": "ean:4053423301649",
   "name": "Bosch GPB 18V-6 C bluetooth byggepladshøjtaler solo",
   "prices": {
@@ -30437,6 +30401,18 @@
   "match": "exact"
  },
  {
+  "key": "lip multifuge sort|kg:5.0",
+  "name": "LIP, Multifuge, sort, 5 kg",
+  "prices": {
+   "silvan": 114.95,
+   "stark": 92.65
+  },
+  "min": 92.65,
+  "max": 114.95,
+  "spread_pct": 24.1,
+  "match": "ambiguous"
+ },
+ {
   "key": "lip multifuge perlehvid|kg:5.0",
   "name": "LIP, Multifuge, perlehvid, 5 kg",
   "prices": {
@@ -30747,18 +30723,6 @@
   "max": 68.0,
   "spread_pct": 23.6,
   "match": "exact"
- },
- {
-  "key": "fiskars classic graveskovl",
-  "name": "FISKARS CLASSIC GRAVESKOVL",
-  "prices": {
-   "xlbyg": 499.0,
-   "stark": 404.1
-  },
-  "min": 404.1,
-  "max": 499.0,
-  "spread_pct": 23.5,
-  "match": "probable"
  },
  {
   "key": "ean:5701159764304",
@@ -33224,6 +33188,19 @@
   "max": 629.0,
   "spread_pct": 21.0,
   "match": "exact"
+ },
+ {
+  "key": "borup kalk og rustfjerner|l:1.0",
+  "name": "Borup, Kalk- og rustfjerner, 1 L",
+  "prices": {
+   "silvan": 78.95,
+   "xlbyg": 69.95,
+   "stark": 84.55
+  },
+  "min": 69.95,
+  "max": 84.55,
+  "spread_pct": 20.9,
+  "match": "ambiguous"
  },
  {
   "key": "ean:3165140425995",
@@ -38418,6 +38395,18 @@
   "match": "ambiguous"
  },
  {
+  "key": "e line baldakin sort",
+  "name": "E-line, Baldakin, sort",
+  "prices": {
+   "silvan": 16.95,
+   "stark": 19.75
+  },
+  "min": 16.95,
+  "max": 19.75,
+  "spread_pct": 16.5,
+  "match": "ambiguous"
+ },
+ {
   "key": "borup saltsyre 30|l:0.5",
   "name": "Borup, Saltsyre, 30 %, 500 ml",
   "prices": {
@@ -39341,6 +39330,18 @@
   "max": 1730.0,
   "spread_pct": 15.5,
   "match": "exact"
+ },
+ {
+  "key": "ecostyle myrefri myresand|l:1.0",
+  "name": "Ecostyle MyreFri, Myresand, 1 L",
+  "prices": {
+   "silvan": 149.95,
+   "stark": 129.95
+  },
+  "min": 129.95,
+  "max": 149.95,
+  "spread_pct": 15.4,
+  "match": "ambiguous"
  },
  {
   "key": "ean:3165140579346",
@@ -42210,18 +42211,6 @@
   "match": "exact"
  },
  {
-  "key": "borup kalk og rustfjerner|l:1.0",
-  "name": "Borup, Kalk- og rustfjerner, 1 L",
-  "prices": {
-   "silvan": 78.95,
-   "xlbyg": 69.95
-  },
-  "min": 69.95,
-  "max": 78.95,
-  "spread_pct": 12.9,
-  "match": "probable"
- },
- {
   "key": "weber deluxe kyllingeholder",
   "name": "WEBER DELUXE KYLLINGEHOLDER",
   "prices": {
@@ -44158,6 +44147,18 @@
   "max": 995.0,
   "spread_pct": 11.4,
   "match": "exact"
+ },
+ {
+  "key": "borup salmiakspiritus 24 5|l:1.0",
+  "name": "Borup, Salmiakspiritus, 24,5 %, 1 L",
+  "prices": {
+   "silvan": 37.95,
+   "stark": 42.25
+  },
+  "min": 37.95,
+  "max": 42.25,
+  "spread_pct": 11.3,
+  "match": "ambiguous"
  },
  {
   "key": "millarco bitsst 25 dele",
@@ -46408,18 +46409,6 @@
   "max": 349.0,
   "spread_pct": 9.7,
   "match": "exact"
- },
- {
-  "key": "e line gennemgangsafbryder sort",
-  "name": "E-line, Gennemgangsafbryder, sort",
-  "prices": {
-   "silvan": 22.95,
-   "stark": 25.15
-  },
-  "min": 22.95,
-  "max": 25.15,
-  "spread_pct": 9.6,
-  "match": "ambiguous"
  },
  {
   "key": "ean:5702161007922",
@@ -57827,18 +57816,6 @@
   "match": "exact"
  },
  {
-  "key": "e line baldakin sort",
-  "name": "E-line, Baldakin, sort",
-  "prices": {
-   "silvan": 16.95,
-   "stark": 16.15
-  },
-  "min": 16.15,
-  "max": 16.95,
-  "spread_pct": 5.0,
-  "match": "ambiguous"
- },
- {
   "key": "junckers natursbe ekstra hvid 2|l:2.5",
   "name": "Junckers, Natursæbe, ekstra hvid, 2,5 L",
   "prices": {
@@ -60249,6 +60226,30 @@
   },
   "min": 58.0,
   "max": 59.95,
+  "spread_pct": 3.4,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5709128655967",
+  "name": "Onduline Galvaniseret Søm 70 mm Sort - 100 stk.",
+  "prices": {
+   "davidsen": 185.0,
+   "fog": 179.0
+  },
+  "min": 179.0,
+  "max": 185.0,
+  "spread_pct": 3.4,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4001116007170",
+  "name": "Roliba selvklæbende tæppeovergang 40x5 mm x 1 m sort",
+  "prices": {
+   "davidsen": 185.0,
+   "fog": 179.0
+  },
+  "min": 179.0,
+  "max": 185.0,
   "spread_pct": 3.4,
   "match": "exact"
  }
