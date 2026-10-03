@@ -59,6 +59,10 @@ if 'SCRAPE_DEADLINE_SECONDS: "18000"' not in wf:
     errors.append("workflow: SCRAPE_DEADLINE_SECONDS missing")
 if 'inputs.full' in wf and not re.search(r"if:.*inputs\.full|inputs\.full ==", wf):
     errors.append("workflow: stale-guard gate missing")
+if "  healer:" not in wf:
+    errors.append("workflow: auto-heal job missing")
+if "needs: [scrape, merge, continue-check, healer]" not in wf:
+    errors.append("workflow: alert does not gate on healer result")
 if not os.path.exists(os.path.join(ROOT, "data", "latest", "schema.json")):
     errors.append("data/latest/schema.json missing (merge git add depends on it)")
 
