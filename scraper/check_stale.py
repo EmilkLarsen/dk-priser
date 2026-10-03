@@ -16,6 +16,13 @@ A CHAINS env var (comma/space separated) overrides discovery if set.
 Skousen legitimately needs ~10 runner-hours per pass (it rate-limits us to
 roughly 10 requests/minute), i.e. two runs, so 'today' is too strict; 3 days
 only trips on a real, sustained stall.
+
+KNOWN_BLOCKED lists chains verified permanently bot-walled from datacenter IPs
+(no marker AND no checkpoint will ever exist for them). They stay in CHAINS so
+each nightly cron still retries for free, but they must not fire a red alert
+every night - a wall we already diagnosed is not a new bug. Verified live:
+k_rauta.fi 403s its sitemap from GitHub runners while serving residential IPs
+(2026-09-30..10-03).
 """
 import os
 import re
@@ -29,6 +36,10 @@ LATEST = os.path.join(ROOT, "data", "latest")
 DEFAULT_CHAINS = ["silvan", "xlbyg", "stark", "bauhaus", "davidsen",
                   "fog", "haraldnyborg", "power", "skousen"]
 MAX_AGE_DAYS = 3
+
+# chains verified permanently bot-walled from datacenter IPs - retried nightly,
+# but excluded from stale alerts (see module docstring)
+KNOWN_BLOCKED = set()
 
 
 def discover_chains():
@@ -65,6 +76,9 @@ def main():
             ckpt = os.path.join(LATEST, f".checkpoint-{chain}.jsonl")
             if os.path.exists(ckpt):
                 print(f"  {chain}: checkpoint build in progress (no marker yet) - not stale")
+                continue
+            if chain in KNOWN_BLOCKED:
+                print(f"  {chain}: known-blocked (bot-walled from CI IPs), retrying nightly - not alerted")
                 continue
             stale.append(f"{chain} (no valid completion marker)")
             continue
