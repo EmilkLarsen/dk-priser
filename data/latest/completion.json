@@ -1,5 +1,5 @@
 {
- "date": "2026-10-03",
+ "date": "2026-10-04",
  "detail": {
   "bauhaus": {
    "rows": 23593,
@@ -14,23 +14,23 @@
    "complete": true
   },
   "haraldnyborg": {
-   "rows": 12096,
+   "rows": 12097,
    "complete": true
   },
   "power": {
-   "rows": 29793,
+   "rows": 29799,
    "complete": true
   },
   "silvan": {
-   "rows": 40619,
+   "rows": 40621,
    "complete": false
   },
   "skousen": {
-   "rows": 5791,
-   "complete": true
+   "rows": 5796,
+   "complete": false
   },
   "stark": {
-   "rows": 80513,
+   "rows": 82463,
    "complete": false
   },
   "xlbyg": {
