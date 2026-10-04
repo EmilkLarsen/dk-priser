@@ -18295,6 +18295,18 @@
   "match": "probable"
  },
  {
+  "key": "junckers natursbe ekstra hvid 2|l:2.5",
+  "name": "Junckers, Natursæbe, ekstra hvid, 2,5 L",
+  "prices": {
+   "silvan": 128.95,
+   "bauhaus": 187.95
+  },
+  "min": 128.95,
+  "max": 187.95,
+  "spread_pct": 45.8,
+  "match": "probable"
+ },
+ {
   "key": "ean:5769720611297",
   "name": "AL-KO 2-taktsolie delsyntetisk 0,1 L",
   "prices": {
@@ -57947,18 +57959,6 @@
   "max": 249.0,
   "spread_pct": 5.1,
   "match": "exact"
- },
- {
-  "key": "junckers natursbe ekstra hvid 2|l:2.5",
-  "name": "Junckers, Natursæbe, ekstra hvid, 2,5 L",
-  "prices": {
-   "silvan": 178.95,
-   "bauhaus": 187.95
-  },
-  "min": 178.95,
-  "max": 187.95,
-  "spread_pct": 5.0,
-  "match": "probable"
  },
  {
   "key": "ean:5701081716280",
