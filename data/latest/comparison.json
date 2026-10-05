@@ -5171,6 +5171,18 @@
   "match": "exact"
  },
  {
+  "key": "icopal murasfalt 2|l:2.5",
+  "name": "Icopal, Murasfalt, 2,5 L",
+  "prices": {
+   "silvan": 199.95,
+   "xlbyg": 99.0
+  },
+  "min": 99.0,
+  "max": 199.95,
+  "spread_pct": 102.0,
+  "match": "probable"
+ },
+ {
   "key": "ean:7317900197888",
   "name": "Habo dørgreb Dallas sort",
   "prices": {
@@ -11047,6 +11059,18 @@
   "max": 269.0,
   "spread_pct": 68.1,
   "match": "exact"
+ },
+ {
+  "key": "skalflex saltbinder primer|l:5.0",
+  "name": "Skalflex®, Saltbinder/primer, 5 L",
+  "prices": {
+   "silvan": 315.0,
+   "stark": 529.2
+  },
+  "min": 315.0,
+  "max": 529.2,
+  "spread_pct": 68.0,
+  "match": "probable"
  },
  {
   "key": "ean:5709636404170",
@@ -23784,18 +23808,6 @@
   "max": 120.0,
   "spread_pct": 33.4,
   "match": "exact"
- },
- {
-  "key": "icopal murasfalt 2|l:2.5",
-  "name": "Icopal, Murasfalt, 2,5 L",
-  "prices": {
-   "silvan": 199.95,
-   "xlbyg": 150.0
-  },
-  "min": 150.0,
-  "max": 199.95,
-  "spread_pct": 33.3,
-  "match": "probable"
  },
  {
   "key": "ean:4975364026583",
@@ -39427,6 +39439,18 @@
   "max": 299.0,
   "spread_pct": 15.4,
   "match": "exact"
+ },
+ {
+  "key": "milwaukee m12 fcn18gs 0x stiftepistol",
+  "name": "MILWAUKEE M12 FCN18GS-0X STIFTEPISTOL ",
+  "prices": {
+   "xlbyg": 2800.0,
+   "stark": 3229.0
+  },
+  "min": 2800.0,
+  "max": 3229.0,
+  "spread_pct": 15.3,
+  "match": "probable"
  },
  {
   "key": "ean:7311490007060",
@@ -56073,6 +56097,18 @@
   "match": "exact"
  },
  {
+  "key": "napoleon travelq pro285x gasgrill sort",
+  "name": "NAPOLEON TRAVELQ PRO285X GASGRILL SORT",
+  "prices": {
+   "xlbyg": 3131.0,
+   "stark": 3309.0
+  },
+  "min": 3131.0,
+  "max": 3309.0,
+  "spread_pct": 5.7,
+  "match": "probable"
+ },
+ {
   "key": "ean:7040665044202",
   "name": "Adax Nova 20 olieradiator 2000W 230V",
   "prices": {
@@ -60216,42 +60252,6 @@
   "min": 115.0,
   "max": 119.0,
   "spread_pct": 3.5,
-  "match": "exact"
- },
- {
-  "key": "ean:4001116024122",
-  "name": "Roliba tæppeovergang m/centrerede huller 5x40 mm x1 m elox. Mes",
-  "prices": {
-   "davidsen": 115.0,
-   "fog": 119.0
-  },
-  "min": 115.0,
-  "max": 119.0,
-  "spread_pct": 3.5,
-  "match": "exact"
- },
- {
-  "key": "ean:8019296000603",
-  "name": "CMT HM 16x20/57 mm K8 notfræsejern",
-  "prices": {
-   "davidsen": 415.0,
-   "fog": 429.0
-  },
-  "min": 415.0,
-  "max": 429.0,
-  "spread_pct": 3.4,
-  "match": "exact"
- },
- {
-  "key": "ean:8019296005981",
-  "name": "CMT savklinge 184x2,6x16 mm Z24W",
-  "prices": {
-   "davidsen": 560.0,
-   "fog": 579.0
-  },
-  "min": 560.0,
-  "max": 579.0,
-  "spread_pct": 3.4,
   "match": "exact"
  }
 ]
