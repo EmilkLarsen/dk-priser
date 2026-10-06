@@ -16774,18 +16774,6 @@
   "match": "exact"
  },
  {
-  "key": "sila 700a3 luftrenser",
-  "name": "SILA 700A3 LUFTRENSER",
-  "prices": {
-   "xlbyg": 8499.0,
-   "stark": 12716.24
-  },
-  "min": 8499.0,
-  "max": 12716.24,
-  "spread_pct": 49.6,
-  "match": "probable"
- },
- {
   "key": "ean:8019296046939",
   "name": "CMT savklinge m/diamantskær til fibercement 160x2,4x20 Z10F",
   "prices": {
@@ -28394,18 +28382,6 @@
   "match": "exact"
  },
  {
-  "key": "swedoor reparationsmaling hvid|l:0.02",
-  "name": "Swedoor, Reparationsmaling, hvid, 20 ml",
-  "prices": {
-   "silvan": 109.95,
-   "stark": 87.75
-  },
-  "min": 87.75,
-  "max": 109.95,
-  "spread_pct": 25.3,
-  "match": "ambiguous"
- },
- {
   "key": "ean:5701951135081",
   "name": "Adora Omnia håndvaskarmatur m/pop-up bundventil krom",
   "prices": {
@@ -32973,6 +32949,18 @@
   "max": 209.95,
   "spread_pct": 20.7,
   "match": "probable"
+ },
+ {
+  "key": "swedoor reparationsmaling hvid|l:0.02",
+  "name": "Swedoor, Reparationsmaling, hvid, 20 ml",
+  "prices": {
+   "silvan": 109.95,
+   "stark": 91.13
+  },
+  "min": 91.13,
+  "max": 109.95,
+  "spread_pct": 20.7,
+  "match": "ambiguous"
  },
  {
   "key": "ean:5712649414029",
@@ -53201,6 +53189,18 @@
   "max": 3075.0,
   "spread_pct": 7.2,
   "match": "exact"
+ },
+ {
+  "key": "sila 700a3 luftrenser",
+  "name": "SILA 700A3 LUFTRENSER",
+  "prices": {
+   "xlbyg": 8499.0,
+   "stark": 9099.0
+  },
+  "min": 8499.0,
+  "max": 9099.0,
+  "spread_pct": 7.1,
+  "match": "probable"
  },
  {
   "key": "ean:7311490000405",
