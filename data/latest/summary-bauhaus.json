@@ -1,12 +1,12 @@
 {
- "date": "2026-10-11",
+ "date": "2026-10-12",
  "chains": {
   "bauhaus": {
-   "products": 22691,
+   "products": 22652,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 2,
-   "seconds": 12068.3
+   "expired": 0,
+   "seconds": 15614.9
   }
  }
 }
