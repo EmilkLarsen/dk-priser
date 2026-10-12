@@ -49853,6 +49853,18 @@
   "match": "exact"
  },
  {
+  "key": "nordic blue askesuger|l:6.0",
+  "name": "Nordic Blue, Askesuger, 6 L",
+  "prices": {
+   "silvan": 201.95,
+   "xlbyg": 220.0
+  },
+  "min": 201.95,
+  "max": 220.0,
+  "spread_pct": 8.9,
+  "match": "probable"
+ },
+ {
   "key": "ean:4059952560106",
   "name": "Bosch Procore startsæt batterier 2x5,5 Ah + lader GAL 1880 CV",
   "prices": {
@@ -50859,18 +50871,6 @@
   "max": 11499.0,
   "spread_pct": 8.5,
   "match": "exact"
- },
- {
-  "key": "nordic blue askesuger|l:6.0",
-  "name": "Nordic Blue, Askesuger, 6 L",
-  "prices": {
-   "silvan": 202.95,
-   "xlbyg": 220.0
-  },
-  "min": 202.95,
-  "max": 220.0,
-  "spread_pct": 8.4,
-  "match": "probable"
  },
  {
   "key": "ean:5701081711865",
