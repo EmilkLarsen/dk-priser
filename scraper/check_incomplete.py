@@ -40,7 +40,10 @@ def discover_chains():
     chains = set()
     if os.path.isdir(LATEST):
         for fn in os.listdir(LATEST):
-            if fn.startswith(".") or fn in ("prices.jsonl", "scrape_state.json"):
+            if fn.startswith(".") or fn in ("prices.jsonl", "prices.jsonl.gz", "scrape_state.json"):
+                continue
+            if fn.endswith(".jsonl.gz"):
+                chains.add(fn[:-len(".jsonl.gz")])
                 continue
             if not fn.endswith(".jsonl"):
                 continue
@@ -54,10 +57,11 @@ def main():
     detail = {}
     for chain in discover_chains():
         marker = os.path.join(LATEST, f".{chain}-complete")
-        path = os.path.join(LATEST, f"{chain}.jsonl")
+        from common import chain_snapshot, open_text
+        path = chain_snapshot(ROOT, chain)
         n = 0
         if os.path.exists(path):
-            with open(path, encoding="utf-8") as f:
+            with open_text(path, "rt") as f:
                 n = sum(1 for _ in f)
         floor = EXPECTED.get(chain, 0) * 0.6   # 0 for unknown chains = marker-only
         ok = (os.path.exists(marker) and open(marker).read().strip() == today
