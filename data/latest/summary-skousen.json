@@ -1,12 +1,12 @@
 {
- "date": "2026-10-12",
+ "date": "2026-10-13",
  "chains": {
   "skousen": {
-   "products": 4748,
+   "products": 229,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 11213.7
+   "seconds": 18071.2
   }
  }
 }
