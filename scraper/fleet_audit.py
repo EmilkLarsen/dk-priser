@@ -59,6 +59,16 @@ if 'SCRAPE_DEADLINE_SECONDS: "18000"' not in wf:
     errors.append("workflow: SCRAPE_DEADLINE_SECONDS missing")
 if 'inputs.full' in wf and not re.search(r"if:.*inputs\.full|inputs\.full ==", wf):
     errors.append("workflow: stale-guard gate missing")
+# 2026-10-14 bugs: bare ${{ inputs.full }} in shell steps is EMPTY on
+# workflow_dispatch; && binds tighter than || in GitHub expressions, so an
+# unparenthesized group split schedule/full runs into different concurrency
+# groups. Both slipped past yaml.safe_load and this auditor once — grep hard.
+if re.search(r"\$\{\{\s*inputs\.full\b", wf):
+    errors.append("workflow: bare ${{ inputs.full }} used (empty on workflow_dispatch) - use github.event.inputs.full")
+if re.search(r"github\.event_name == 'schedule'\s*\|\|\s*github\.event\.inputs\.full == 'true'\s*&&", wf):
+    errors.append("workflow: unparenthesized (schedule || full) && group - precedence bug")
+if not re.search(r"\) && 'daily-prices' \|\| 'daily-prices-smoke'", wf):
+    errors.append("workflow: concurrency group pattern missing/changed")
 if "  healer:" not in wf:
     errors.append("workflow: auto-heal job missing")
 if "needs: [scrape, merge, continue-check, healer]" not in wf:
@@ -66,9 +76,12 @@ if "needs: [scrape, merge, continue-check, healer]" not in wf:
 if not os.path.exists(os.path.join(ROOT, "data", "latest", "schema.json")):
     errors.append("data/latest/schema.json missing (merge git add depends on it)")
 
-# 5) check_stale is checkpoint-aware
-if "checkpoint build in progress" not in read(os.path.join(SCRAPER, "check_stale.py")):
+# 5) check_stale is checkpoint-aware and does not alert on KNOWN_BLOCKED chains
+s = read(os.path.join(SCRAPER, "check_stale.py"))
+if "checkpoint build in progress" not in s:
     errors.append("check_stale: not checkpoint-aware (false alerts on multi-night builds)")
+if re.search(r"KNOWN_BLOCKED\s*=\s*\{", s) and "known-blocked (bot-walled from CI IPs), stale" not in s:
+    errors.append("check_stale: KNOWN_BLOCKED set present but age>MAX branch not exempted (healer caps burned nightly)")
 
 # 6) no DK-poisoned DEFAULT_CHAINS in country repos (dk is allowed its 9)
 is_dk = os.path.basename(ROOT).startswith("dk-byggepriser")
