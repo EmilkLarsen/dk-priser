@@ -1,7 +1,7 @@
 """Byggmax.fi (EUR) — same Magento platform as byggmax.se; sitemap name from
 robots.txt (Sitemap_fi_fi_product*.xml); itemprop price microdata (EUR)."""
 import re
-from common import get, sitemap_urls, sane_price, write_jsonl, scrape_urls
+from common import get, sitemap_urls, sane_price, write_jsonl, scrape_urls, scrape_with_checkpoint
 
 BASE = "https://www.byggmax.fi"
 OUT = "data/latest/byggmax_fi.jsonl"
@@ -45,8 +45,8 @@ def handle(u, html):
     }]
 
 
-def scrape(limit=None):
-    return scrape_urls(fetch_url_list(limit), handle)
+def scrape(limit=None, deadline=None):
+    return scrape_with_checkpoint("byggmax_fi", fetch_url_list(limit), handle, limit, deadline)
 
 
 if __name__ == "__main__":

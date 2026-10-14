@@ -2,7 +2,7 @@
 /sitemap/products{0..N}.xml; URLs /produkt/<slug>/<id>; price JSON blob:
 {"price":959,"comparisonPriceUnit":"STK",...,"vatPercentage":25}."""
 import re
-from common import get, sitemap_urls, sane_price, write_jsonl
+from common import scrape_with_checkpoint,  get, sitemap_urls, sane_price, write_jsonl
 
 BASE = "https://www.byggmakker.no"
 OUT = "data/latest/byggmakker_no.jsonl"
@@ -42,6 +42,8 @@ def handle(u, html):
     t = NAME_RE.search(html)
     name = (t.group(1).split("|")[0].strip() if t else u.rsplit("/", 1)[-1])
     sku = u.rstrip("/").rsplit("/", 1)[-1]
+    og = re.search(r'og:image[^>]*content="([^"]+)"', html)
+    image = og.group(1) if og else None
     return [{
         "chain": "byggmakker_no",
         "country": "no",
@@ -53,20 +55,12 @@ def handle(u, html):
         "price": p,
         "unit": unit,
         "in_stock": None,
-        "image": None,
+        "image": image,
     }]
 
 
-def scrape(limit=None):
-    from common import pmap
-
-    def work(u):
-        try:
-            return handle(u, get(u))
-        except Exception as e:
-            print(f"  ! {u}: {e}")
-            return []
-    return pmap(work, fetch_url_list(limit))
+def scrape(limit=None, deadline=None):
+    return scrape_with_checkpoint("byggmakker_no", fetch_url_list(limit), handle, limit, deadline)
 
 
 if __name__ == "__main__":
