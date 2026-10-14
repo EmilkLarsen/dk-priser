@@ -76,6 +76,15 @@ if "needs: [scrape, merge, continue-check, healer]" not in wf:
 if not os.path.exists(os.path.join(ROOT, "data", "latest", "schema.json")):
     errors.append("data/latest/schema.json missing (merge git add depends on it)")
 
+# 4b) run_daily must never delete the snapshot it just wrote (2026-10-14:
+# pasted legacy-twin-removal blocks deleted f"{chain}.jsonl.gz" right after
+# write_jsonl, so no snapshot reached main and every merge collapsed to 0
+# rows — collapse guard kept the feed but the run failed and the healer
+# burned its cap nightly, dk + se)
+s = read(os.path.join(SCRAPER, "run_daily.py"))
+if re.search(r'os\.remove\([^)]*chain\}\.jsonl\.gz', s):
+    errors.append("run_daily: deletes <chain>.jsonl.gz (snapshot never reaches main, merge = 0 rows)")
+
 # 5) check_stale is checkpoint-aware and does not alert on KNOWN_BLOCKED chains
 s = read(os.path.join(SCRAPER, "check_stale.py"))
 if "checkpoint build in progress" not in s:

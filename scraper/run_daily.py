@@ -219,21 +219,17 @@ def main():
                 print(f"  {stamped} products newly missing, {expired} expired (missing >= {EXPIRE_AFTER_DAYS} days)")
         merged_rows = list(existing.values())
         write_jsonl(out, merged_rows)
-        # remove the legacy raw twin so the old (potentially >100MB) file
-        # stops being committed and readers can't double-count both formats
-        legacy_out = os.path.join(ROOT, "data", "latest", f"{chain}.jsonl")
-        if os.path.exists(legacy_out):
-            os.remove(legacy_out)
-        # remove the legacy raw twin so the old (potentially >100MB) file
-        # stops being committed and readers can't double-count both formats
-        legacy_out = os.path.join(ROOT, "data", "latest", f"{chain}.jsonl.gz")
-        if os.path.exists(legacy_out):
-            os.remove(legacy_out)
-        # remove the legacy raw twin so the old (potentially >100MB) file
-        # stops being committed and readers can't double-count both formats
-        legacy_out = os.path.join(ROOT, "data", "latest", f"{chain}.jsonl.gz")
-        if os.path.exists(legacy_out):
-            os.remove(legacy_out)
+        # remove the legacy raw checkpoint/seen twins (superseded by .gz) so
+        # readers can't double-count both formats - NEVER the .gz snapshot
+        # itself (2026-10-14: pasted blocks re-deleted the just-written
+        # <chain>.jsonl.gz, so no snapshot ever reached main and every merge
+        # collapsed to 0 rows - collapse guard kept the feed, run failed)
+        legacy_ckpt = os.path.join(ROOT, "data", "latest", f".checkpoint-{chain}.jsonl")
+        if os.path.exists(legacy_ckpt):
+            os.remove(legacy_ckpt)
+        legacy_seen = os.path.join(ROOT, "data", "latest", f".seen-{chain}.txt")
+        if os.path.exists(legacy_seen):
+            os.remove(legacy_seen)
         # completion marker only when every url in the chain was processed.
         #
         # Confirmed live (2026-09-18): this used to gate on the WORKFLOW-
