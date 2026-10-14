@@ -2,11 +2,11 @@
  "date": "2026-10-14",
  "chains": {
   "fog": {
-   "products": 29935,
+   "products": 29934,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 13541.9
+   "seconds": 13634.6
   }
  }
 }
