@@ -1,6 +1,6 @@
 {
  "date": "2026-10-15",
- "total_rows": 203172,
+ "total_rows": 203317,
  "chains": {
   "fog": {
    "products": 30039,
@@ -45,11 +45,11 @@
    "seconds": 13173.9
   },
   "skousen": {
-   "products": 866,
+   "products": 1011,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18013.0
+   "seconds": 18054.7
   },
   "haraldnyborg": {
    "products": 11812,
