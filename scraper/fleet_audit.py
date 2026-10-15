@@ -91,6 +91,8 @@ if "checkpoint build in progress" not in s:
     errors.append("check_stale: not checkpoint-aware (false alerts on multi-night builds)")
 if re.search(r"KNOWN_BLOCKED\s*=\s*\{", s) and "known-blocked (bot-walled from CI IPs), stale" not in s:
     errors.append("check_stale: KNOWN_BLOCKED set present but age>MAX branch not exempted (healer caps burned nightly)")
+if "KNOWN_BLOCKED" in s and not re.search(r"^KNOWN_BLOCKED\s*=", s, re.M):
+    errors.append("check_stale: references KNOWN_BLOCKED without defining it (NameError in every run)")
 
 # 6) no DK-poisoned DEFAULT_CHAINS in country repos (dk is allowed its 9)
 is_dk = os.path.basename(ROOT).startswith("dk-byggepriser")
