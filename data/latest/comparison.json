@@ -732,6 +732,30 @@
   "match": "exact"
  },
  {
+  "key": "ean:5703393204516",
+  "name": "Plus Basic Gelændersystem  90x98 cm Varmgalv.",
+  "prices": {
+   "davidsen": 53.0,
+   "fog": 580.0
+  },
+  "min": 53.0,
+  "max": 580.0,
+  "spread_pct": 994.3,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4078500002233",
+  "name": "Master 30 liter affugter DH 732",
+  "prices": {
+   "davidsen": 3495.0,
+   "fog": 339.0
+  },
+  "min": 339.0,
+  "max": 3495.0,
+  "spread_pct": 931.0,
+  "match": "exact"
+ },
+ {
   "key": "ean:4013288157454",
   "name": "WERA IMPAKTOR BITS TORX 10 STK",
   "prices": {
@@ -777,6 +801,18 @@
   "min": 430.0,
   "max": 3943.0,
   "spread_pct": 817.0,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5703393179159",
+  "name": "Plus Cubic rist sampak sort gummimåtte - 88x48x4 cm",
+  "prices": {
+   "davidsen": 38.0,
+   "fog": 340.0
+  },
+  "min": 38.0,
+  "max": 340.0,
+  "spread_pct": 794.7,
   "match": "exact"
  },
  {
@@ -868,11 +904,11 @@
   "name": "Dewalt metal skæreskive Ø125 mm 100 stk",
   "prices": {
    "davidsen": 1580.0,
-   "fog": 262.0
+   "fog": 261.0
   },
-  "min": 262.0,
+  "min": 261.0,
   "max": 1580.0,
-  "spread_pct": 503.1,
+  "spread_pct": 505.4,
   "match": "exact"
  },
  {
@@ -925,7 +961,7 @@
  },
  {
   "key": "ean:5701701040313",
-  "name": "Elmholm Exclusive nedløbsrør G-DP1000",
+  "name": "Juliana Univent vinduesåbner til max 7 kg.",
   "prices": {
    "davidsen": 55.0,
    "fog": 299.0
@@ -933,6 +969,18 @@
   "min": 55.0,
   "max": 299.0,
   "spread_pct": 443.6,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4078500012003",
+  "name": "Gardena Premium sprøjte/strålepistol frostsikker 18305-20",
+  "prices": {
+   "davidsen": 295.0,
+   "fog": 54.95
+  },
+  "min": 54.95,
+  "max": 295.0,
+  "spread_pct": 436.9,
   "match": "exact"
  },
  {
@@ -972,15 +1020,15 @@
   "match": "exact"
  },
  {
-  "key": "ean:5701867007441",
-  "name": "ME|FA postkasse Bosca 34 (101) sort",
+  "key": "ean:5703393179715",
+  "name": "Plus Cubic hjørnebeslag dobbelt til 9x9 cm stolper",
   "prices": {
-   "davidsen": 280.0,
-   "fog": 62.0
+   "davidsen": 46.0,
+   "fog": 210.0
   },
-  "min": 62.0,
-  "max": 280.0,
-  "spread_pct": 351.6,
+  "min": 46.0,
+  "max": 210.0,
+  "spread_pct": 356.5,
   "match": "exact"
  },
  {
@@ -1106,15 +1154,15 @@
   "match": "exact"
  },
  {
-  "key": "ean:5703393179708",
-  "name": "Plus Cubic hjørnebeslag dobbelt til 9x9 cm stolper",
+  "key": "ean:5713804195470",
+  "name": "Scanbad spejl med LED-lys rund Ø75 cm",
   "prices": {
-   "davidsen": 46.0,
-   "fog": 170.0
+   "davidsen": 1795.0,
+   "fog": 6598.0
   },
-  "min": 46.0,
-  "max": 170.0,
-  "spread_pct": 269.6,
+  "min": 1795.0,
+  "max": 6598.0,
+  "spread_pct": 267.6,
   "match": "exact"
  },
  {
@@ -1225,30 +1273,6 @@
   "min": 237.0,
   "max": 790.0,
   "spread_pct": 233.3,
-  "match": "exact"
- },
- {
-  "key": "ean:5708085100084",
-  "name": "Bon-fire bbq pande, emalje, 60 cm",
-  "prices": {
-   "davidsen": 150.0,
-   "fog": 499.0
-  },
-  "min": 150.0,
-  "max": 499.0,
-  "spread_pct": 232.7,
-  "match": "exact"
- },
- {
-  "key": "ean:5706751070563",
-  "name": "LED Pandelampe SSH-50",
-  "prices": {
-   "haraldnyborg": 75.0,
-   "power": 249.0
-  },
-  "min": 75.0,
-  "max": 249.0,
-  "spread_pct": 232.0,
   "match": "exact"
  },
  {
@@ -1411,15 +1435,15 @@
   "match": "exact"
  },
  {
-  "key": "ean:5701291140509",
-  "name": "Paslode firkantet søm 5,5x160 mm varmforzinket 70 stk.",
+  "key": "ean:5706751070563",
+  "name": "LED Pandelampe SSH-50",
   "prices": {
-   "davidsen": 175.0,
-   "fog": 549.0
+   "haraldnyborg": 75.0,
+   "power": 236.0
   },
-  "min": 175.0,
-  "max": 549.0,
-  "spread_pct": 213.7,
+  "min": 75.0,
+  "max": 236.0,
+  "spread_pct": 214.7,
   "match": "exact"
  },
  {
@@ -1663,18 +1687,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5701213000409",
-  "name": "Borup Mineralsk Terpentin 1 Ltr Un 1300 Terpentin, Mineralsk 3 Iii",
-  "prices": {
-   "fog": 74.95,
-   "haraldnyborg": 25.5
-  },
-  "min": 25.5,
-  "max": 74.95,
-  "spread_pct": 193.9,
-  "match": "exact"
- },
- {
   "key": "ean:5709386978280",
   "name": "Grouw fuglenet 4x5 meter - grøn",
   "prices": {
@@ -1896,18 +1908,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5708722292905",
-  "name": "Morsø Cover til Forno Piccolo og Terra bord",
-  "prices": {
-   "davidsen": 575.0,
-   "fog": 1595.0
-  },
-  "min": 575.0,
-  "max": 1595.0,
-  "spread_pct": 177.4,
-  "match": "exact"
- },
- {
   "key": "ean:5703482073580",
   "name": "HT 2H indfatning fyr hvid 14x65x4450 mm",
   "prices": {
@@ -2039,6 +2039,18 @@
   "min": 995.0,
   "max": 2678.0,
   "spread_pct": 169.1,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5703393726124",
+  "name": "Plus Nagano hegn 90x180 cm hvid",
+  "prices": {
+   "davidsen": 1075.0,
+   "fog": 400.0
+  },
+  "min": 400.0,
+  "max": 1075.0,
+  "spread_pct": 168.8,
   "match": "exact"
  },
  {
@@ -2262,18 +2274,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5701081655268",
-  "name": "Borup Saltsyre 30% 5 Ltr Un 1789 Saltsyre 8 Ii",
-  "prices": {
-   "fog": 219.0,
-   "haraldnyborg": 84.75
-  },
-  "min": 84.75,
-  "max": 219.0,
-  "spread_pct": 158.4,
-  "match": "exact"
- },
- {
   "key": "ean:3165140859998",
   "name": "Bosch Starlock Max MAII 52 APB træ/metal-savklinge 52x70 mm",
   "prices": {
@@ -2295,18 +2295,6 @@
   "min": 369.0,
   "max": 949.0,
   "spread_pct": 157.2,
-  "match": "exact"
- },
- {
-  "key": "ean:3253561835506",
-  "name": "Stanley TradeLift løftearm",
-  "prices": {
-   "davidsen": 1165.0,
-   "fog": 455.0
-  },
-  "min": 455.0,
-  "max": 1165.0,
-  "spread_pct": 156.0,
   "match": "exact"
  },
  {
@@ -2383,6 +2371,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:3253561835506",
+  "name": "Stanley TradeLift løftearm",
+  "prices": {
+   "davidsen": 1165.0,
+   "fog": 465.0
+  },
+  "min": 465.0,
+  "max": 1165.0,
+  "spread_pct": 150.5,
+  "match": "exact"
+ },
+ {
   "key": "ean:4058546227685",
   "name": "Milwaukee M12™ SAL-0 arbejdslampe m/stativ solo",
   "prices": {
@@ -2391,18 +2391,6 @@
   },
   "min": 1245.0,
   "max": 3118.0,
-  "spread_pct": 150.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5701081410799",
-  "name": "Borup Malerens/grundrens 1l",
-  "prices": {
-   "fog": 49.95,
-   "haraldnyborg": 19.95
-  },
-  "min": 19.95,
-  "max": 49.95,
   "spread_pct": 150.4,
   "match": "exact"
  },
@@ -2554,6 +2542,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5701081655268",
+  "name": "Borup Saltsyre 30% 5 Ltr Un 1789 Saltsyre 8 Ii",
+  "prices": {
+   "fog": 219.0,
+   "haraldnyborg": 89.0
+  },
+  "min": 89.0,
+  "max": 219.0,
+  "spread_pct": 146.1,
+  "match": "exact"
+ },
+ {
   "key": "ean:5708854459566",
   "name": "Purus afløbsskål Ø110 mm m/ flextop, rist og ramme",
   "prices": {
@@ -2576,6 +2576,18 @@
   "min": 285.0,
   "max": 699.0,
   "spread_pct": 145.3,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4059952532882",
+  "name": "Bosch EXPERT SDS max-8X hammerbor 16x200x340 mm",
+  "prices": {
+   "davidsen": 845.0,
+   "fog": 345.0
+  },
+  "min": 345.0,
+  "max": 845.0,
+  "spread_pct": 144.9,
   "match": "exact"
  },
  {
@@ -2673,18 +2685,6 @@
   "min": 32.95,
   "max": 79.95,
   "spread_pct": 142.6,
-  "match": "exact"
- },
- {
-  "key": "ean:4059952532882",
-  "name": "Bosch EXPERT SDS max-8X hammerbor 16x200x340 mm",
-  "prices": {
-   "davidsen": 845.0,
-   "fog": 350.0
-  },
-  "min": 350.0,
-  "max": 845.0,
-  "spread_pct": 141.4,
   "match": "exact"
  },
  {
@@ -5571,6 +5571,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5701213000409",
+  "name": "Borup Mineralsk Terpentin 1 Ltr Un 1300 Terpentin, Mineralsk 3 Iii",
+  "prices": {
+   "fog": 74.95,
+   "haraldnyborg": 38.0
+  },
+  "min": 38.0,
+  "max": 74.95,
+  "spread_pct": 97.2,
+  "match": "exact"
+ },
+ {
   "key": "ean:3165140665995",
   "name": "Bosch Starlock HCS AIZ 28 SC gummifuge-skær 28x40 mm",
   "prices": {
@@ -5934,18 +5946,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5701081645580",
-  "name": "Linolie Rå 2,5l",
-  "prices": {
-   "fog": 269.0,
-   "haraldnyborg": 139.0
-  },
-  "min": 139.0,
-  "max": 269.0,
-  "spread_pct": 93.5,
-  "match": "exact"
- },
- {
   "key": "ean:5704587007203",
   "name": "DVA varmeblæser 3 kW",
   "prices": {
@@ -6078,6 +6078,18 @@
   "match": "probable"
  },
  {
+  "key": "soundliving earbuds sort",
+  "name": "Soundliving, Earbuds, sort",
+  "prices": {
+   "silvan": 372.95,
+   "stark": 719.1
+  },
+  "min": 372.95,
+  "max": 719.1,
+  "spread_pct": 92.8,
+  "match": "probable"
+ },
+ {
   "key": "ean:3253561757631",
   "name": "Stanley Fatmax metal savbuk 2x4 ben",
   "prices": {
@@ -6111,6 +6123,18 @@
   "min": 52.0,
   "max": 100.0,
   "spread_pct": 92.3,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5701081645580",
+  "name": "Linolie Rå 2,5l",
+  "prices": {
+   "fog": 269.0,
+   "haraldnyborg": 139.95
+  },
+  "min": 139.95,
+  "max": 269.0,
+  "spread_pct": 92.2,
   "match": "exact"
  },
  {
@@ -6210,18 +6234,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5703393175199",
-  "name": "Plus glasbeslag t/firkantet stolper 2 stk zink",
-  "prices": {
-   "davidsen": 153.0,
-   "fog": 80.0
-  },
-  "min": 80.0,
-  "max": 153.0,
-  "spread_pct": 91.2,
-  "match": "exact"
- },
- {
   "key": "ean:5712649413831",
   "name": "Alpha Foam 30 gulvunderlag m/dampspærre",
   "prices": {
@@ -6244,6 +6256,18 @@
   "min": 110.0,
   "max": 210.0,
   "spread_pct": 90.9,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5701984024178",
+  "name": "PN vinduessikrings-beslag",
+  "prices": {
+   "davidsen": 145.0,
+   "fog": 76.0
+  },
+  "min": 76.0,
+  "max": 145.0,
+  "spread_pct": 90.8,
   "match": "exact"
  },
  {
@@ -6887,6 +6911,18 @@
   "match": "exact"
  },
  {
+  "key": "fermacell fugespartel|kg:5.0",
+  "name": "FERMACELL 5 KG FUGESPARTEL",
+  "prices": {
+   "xlbyg": 130.0,
+   "stark": 243.0
+  },
+  "min": 130.0,
+  "max": 243.0,
+  "spread_pct": 86.9,
+  "match": "probable"
+ },
+ {
   "key": "ean:5709386598594",
   "name": "Grouw kloakrenser Ø13x148 cm",
   "prices": {
@@ -7058,6 +7094,18 @@
   "match": "exact"
  },
  {
+  "key": "wavin prop pp 160 mm|dim:160mm",
+  "name": "WAVIN PROP PP 160 MM",
+  "prices": {
+   "xlbyg": 130.0,
+   "stark": 70.15
+  },
+  "min": 70.15,
+  "max": 130.0,
+  "spread_pct": 85.3,
+  "match": "probable"
+ },
+ {
   "key": "ean:7318936601714",
   "name": "Gyproc GNE 13 gipsplade klima normal VPL 12,5x900x1800 mm",
   "prices": {
@@ -7127,6 +7175,18 @@
   "min": 86.0,
   "max": 159.0,
   "spread_pct": 84.9,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5708085100084",
+  "name": "Bon-fire bbq pande, emalje, 60 cm",
+  "prices": {
+   "davidsen": 270.0,
+   "fog": 499.0
+  },
+  "min": 270.0,
+  "max": 499.0,
+  "spread_pct": 84.8,
   "match": "exact"
  },
  {
@@ -8409,6 +8469,18 @@
   },
   "min": 675.0,
   "max": 1199.0,
+  "spread_pct": 77.6,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5701581383388",
+  "name": "Nordlux Birk havelampe 40W E27 sort",
+  "prices": {
+   "davidsen": 219.0,
+   "fog": 389.0
+  },
+  "min": 219.0,
+  "max": 389.0,
   "spread_pct": 77.6,
   "match": "exact"
  },
@@ -10144,6 +10216,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5701081410799",
+  "name": "Borup Malerens/grundrens 1l",
+  "prices": {
+   "fog": 49.95,
+   "haraldnyborg": 29.5
+  },
+  "min": 29.5,
+  "max": 49.95,
+  "spread_pct": 69.3,
+  "match": "exact"
+ },
+ {
   "key": "ean:6411501600660",
   "name": "Fiskars pro graveskovl 127 CM",
   "prices": {
@@ -10322,19 +10406,6 @@
   "min": 104.0,
   "max": 175.0,
   "spread_pct": 68.3,
-  "match": "exact"
- },
- {
-  "key": "ean:5709417002410",
-  "name": "Knudsen kilen K-Klods 45C Mix i plastboks",
-  "prices": {
-   "davidsen": 375.0,
-   "fog": 223.0,
-   "haraldnyborg": 255.0
-  },
-  "min": 223.0,
-  "max": 375.0,
-  "spread_pct": 68.2,
   "match": "exact"
  },
  {
@@ -10577,6 +10648,18 @@
   "max": 249.0,
   "spread_pct": 67.1,
   "match": "exact"
+ },
+ {
+  "key": "ecostyle hvepsefri|l:0.3",
+  "name": "ECOSTYLE HVEPSEFRI 300 ML",
+  "prices": {
+   "xlbyg": 209.0,
+   "stark": 349.0
+  },
+  "min": 209.0,
+  "max": 349.0,
+  "spread_pct": 67.0,
+  "match": "probable"
  },
  {
   "key": "ean:6411501125002",
@@ -11098,18 +11181,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5701581383388",
-  "name": "Nordlux Birk havelampe 40W E27 sort",
-  "prices": {
-   "davidsen": 235.0,
-   "fog": 389.0
-  },
-  "min": 235.0,
-  "max": 389.0,
-  "spread_pct": 65.5,
-  "match": "exact"
- },
- {
   "key": "ean:5701984109844",
   "name": "PN skudrigle blik til 14 mm tap varmforzinket",
   "prices": {
@@ -11179,6 +11250,18 @@
   },
   "min": 490.0,
   "max": 809.0,
+  "spread_pct": 65.1,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5701291140431",
+  "name": "Paslode firkantet søm 5,5x160 mm varmforzinket 70 stk.",
+  "prices": {
+   "davidsen": 175.0,
+   "fog": 289.0
+  },
+  "min": 175.0,
+  "max": 289.0,
   "spread_pct": 65.1,
   "match": "exact"
  },
@@ -11695,18 +11778,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5703393179715",
-  "name": "Plus Cubic galvaniseret dobbelt hjørnebeslag",
-  "prices": {
-   "davidsen": 129.0,
-   "fog": 210.0
-  },
-  "min": 129.0,
-  "max": 210.0,
-  "spread_pct": 62.8,
-  "match": "exact"
- },
- {
   "key": "ean:7311518031442",
   "name": "Bahco klinger t/junior nedstryger 15 TPI 150 mm 5 stk",
   "prices": {
@@ -12008,6 +12079,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:4023103144019",
+  "name": "Vileda Clean fladmoppe 1-2 spray",
+  "prices": {
+   "davidsen": 329.0,
+   "fog": 204.0
+  },
+  "min": 204.0,
+  "max": 329.0,
+  "spread_pct": 61.3,
+  "match": "exact"
+ },
+ {
   "key": "ean:5701983011315",
   "name": "Fejeliste bøg 13x16x1200 mm",
   "prices": {
@@ -12186,6 +12269,19 @@
   },
   "min": 1120.0,
   "max": 1798.0,
+  "spread_pct": 60.5,
+  "match": "exact"
+ },
+ {
+  "key": "ean:8721103046611",
+  "name": "Philips Smart WiZ color LED pære E27 13W standard mat",
+  "prices": {
+   "davidsen": 130.0,
+   "fog": 199.0,
+   "power": 124.0
+  },
+  "min": 124.0,
+  "max": 199.0,
   "spread_pct": 60.5,
   "match": "exact"
  },
@@ -12926,16 +13022,16 @@
   "match": "exact"
  },
  {
-  "key": "ean:4059625325698",
-  "name": "Hg Vernis 210 Køkkenarmatur Matsort",
+  "key": "muffeskjuler hvid",
+  "name": "Muffeskjuler, hvid",
   "prices": {
-   "fog": 817.0,
-   "haraldnyborg": 1289.0
+   "silvan": 60.95,
+   "stark": 38.65
   },
-  "min": 817.0,
-  "max": 1289.0,
-  "spread_pct": 57.8,
-  "match": "exact"
+  "min": 38.65,
+  "max": 60.95,
+  "spread_pct": 57.7,
+  "match": "probable"
  },
  {
   "key": "ean:5703324008626",
@@ -12982,6 +13078,18 @@
   },
   "min": 599.0,
   "max": 944.0,
+  "spread_pct": 57.6,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4059625325698",
+  "name": "Hg Vernis 210 Køkkenarmatur Matsort",
+  "prices": {
+   "fog": 818.0,
+   "haraldnyborg": 1289.0
+  },
+  "min": 818.0,
+  "max": 1289.0,
   "spread_pct": 57.6,
   "match": "exact"
  },
@@ -13249,6 +13357,18 @@
   "max": 469.0,
   "spread_pct": 56.9,
   "match": "exact"
+ },
+ {
+  "key": "juliana plantespiral",
+  "name": "JULIANA PLANTESPIRAL",
+  "prices": {
+   "xlbyg": 179.0,
+   "stark": 280.75
+  },
+  "min": 179.0,
+  "max": 280.75,
+  "spread_pct": 56.8,
+  "match": "probable"
  },
  {
   "key": "ean:5035048468715",
@@ -14012,6 +14132,19 @@
   "match": "exact"
  },
  {
+  "key": "ean:5709417002410",
+  "name": "Knudsen kilen K-Klods 45C Mix i plastboks",
+  "prices": {
+   "davidsen": 375.0,
+   "fog": 242.0,
+   "haraldnyborg": 255.0
+  },
+  "min": 242.0,
+  "max": 375.0,
+  "spread_pct": 55.0,
+  "match": "exact"
+ },
+ {
   "key": "ean:5703873209888",
   "name": "Træskruer til indbygningsdåser elforzinket 2,9x41 mm 10 stk.",
   "prices": {
@@ -14241,18 +14374,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5703393717023",
-  "name": "Plus Cubic blomsterkasse med hjul 87x50x95 cm gråbrun",
-  "prices": {
-   "davidsen": 899.0,
-   "fog": 1385.0
-  },
-  "min": 899.0,
-  "max": 1385.0,
-  "spread_pct": 54.1,
-  "match": "exact"
- },
- {
   "key": "ean:4013288157836",
   "name": "Wera 897/4 IMP R SB impaktor bits holder m/ringmagnet og låsering",
   "prices": {
@@ -14470,17 +14591,16 @@
   "match": "exact"
  },
  {
-  "key": "ean:8721103046611",
-  "name": "Philips Smart WiZ color LED pære E27 13W standard mat",
+  "key": "borup saltsyre 30|l:1.0",
+  "name": "Borup, Saltsyre, 30 %, 1 L",
   "prices": {
-   "davidsen": 130.0,
-   "fog": 199.0,
-   "power": 129.95
+   "silvan": 39.95,
+   "stark": 61.15
   },
-  "min": 129.95,
-  "max": 199.0,
+  "min": 39.95,
+  "max": 61.15,
   "spread_pct": 53.1,
-  "match": "exact"
+  "match": "ambiguous"
  },
  {
   "key": "ean:5711804024325",
@@ -14493,6 +14613,18 @@
   "max": 199.0,
   "spread_pct": 53.1,
   "match": "exact"
+ },
+ {
+  "key": "skalflex reparationsbeton|kg:5.0",
+  "name": "Skalflex®, Reparationsbeton, 5 kg",
+  "prices": {
+   "silvan": 112.95,
+   "stark": 172.8
+  },
+  "min": 112.95,
+  "max": 172.8,
+  "spread_pct": 53.0,
+  "match": "ambiguous"
  },
  {
   "key": "ean:8019296039078",
@@ -15770,6 +15902,18 @@
   "match": "exact"
  },
  {
+  "key": "millarco vandpumpetang 250 mm|dim:250mm",
+  "name": "MILLARCO VANDPUMPETANG 250 MM",
+  "prices": {
+   "xlbyg": 50.0,
+   "stark": 75.0
+  },
+  "min": 50.0,
+  "max": 75.0,
+  "spread_pct": 50.0,
+  "match": "probable"
+ },
+ {
   "key": "ean:5701054010223",
   "name": "Danaseal interior 521 hvid 290 ml",
   "prices": {
@@ -16686,6 +16830,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:7391515101645",
+  "name": "Ifö Sign toilet uden multiquick tilslutning, hvid",
+  "prices": {
+   "davidsen": 2355.0,
+   "fog": 1599.0
+  },
+  "min": 1599.0,
+  "max": 2355.0,
+  "spread_pct": 47.3,
+  "match": "exact"
+ },
+ {
   "key": "ean:4058546286927",
   "name": "Milwaukee PACKOUT™ organizer boks slim large til modulsystem",
   "prices": {
@@ -16838,6 +16994,18 @@
   },
   "min": 149.0,
   "max": 219.0,
+  "spread_pct": 47.0,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4053423689891",
+  "name": "Bosch Akkupumpe Pneo 3,6v 3ah M/taske",
+  "prices": {
+   "fog": 519.0,
+   "haraldnyborg": 353.0
+  },
+  "min": 353.0,
+  "max": 519.0,
   "spread_pct": 47.0,
   "match": "exact"
  },
@@ -17032,18 +17200,6 @@
   },
   "min": 95.0,
   "max": 139.0,
-  "spread_pct": 46.3,
-  "match": "exact"
- },
- {
-  "key": "ean:7391515101645",
-  "name": "Ifö Sign toilet uden multiquick tilslutning, hvid",
-  "prices": {
-   "davidsen": 2340.0,
-   "fog": 1599.0
-  },
-  "min": 1599.0,
-  "max": 2340.0,
   "spread_pct": 46.3,
   "match": "exact"
  },
@@ -17340,18 +17496,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5703538279669",
-  "name": "Weber røgflis seafood 0,7 kg",
-  "prices": {
-   "davidsen": 79.95,
-   "fog": 54.95
-  },
-  "min": 54.95,
-  "max": 79.95,
-  "spread_pct": 45.5,
-  "match": "exact"
- },
- {
   "key": "ean:5703482008674",
   "name": "HT 39H fyr forkantliste 1 rund kant hvid 9x43x3000 mm",
   "prices": {
@@ -17590,7 +17734,7 @@
   "min": 20.65,
   "max": 29.95,
   "spread_pct": 45.0,
-  "match": "ambiguous"
+  "match": "probable"
  },
  {
   "key": "ean:3165140093552",
@@ -18093,6 +18237,18 @@
   },
   "min": 16.0,
   "max": 22.95,
+  "spread_pct": 43.4,
+  "match": "exact"
+ },
+ {
+  "key": "ean:8718696176429",
+  "name": "Philips Hue Enrave S plafond Ø26,1 cm 9,6W sort",
+  "prices": {
+   "davidsen": 939.0,
+   "fog": 655.0
+  },
+  "min": 655.0,
+  "max": 939.0,
   "spread_pct": 43.4,
   "match": "exact"
  },
@@ -19549,6 +19705,18 @@
   "match": "exact"
  },
  {
+  "key": "skalflex siloxanemaling hvid|l:10.0",
+  "name": "Skalflex, Siloxanemaling, hvid, 10 L",
+  "prices": {
+   "silvan": 1320.0,
+   "stark": 1844.1
+  },
+  "min": 1320.0,
+  "max": 1844.1,
+  "spread_pct": 39.7,
+  "match": "probable"
+ },
+ {
   "key": "ean:5701747406708",
   "name": "Ravendo hjul t/sækkevogn",
   "prices": {
@@ -19847,6 +20015,18 @@
   "max": 749.0,
   "spread_pct": 39.0,
   "match": "exact"
+ },
+ {
+  "key": "millarco sekundlim|l:0.03",
+  "name": "Millarco, Sekundlim, 30 ml",
+  "prices": {
+   "silvan": 34.95,
+   "stark": 48.55
+  },
+  "min": 34.95,
+  "max": 48.55,
+  "spread_pct": 38.9,
+  "match": "ambiguous"
  },
  {
   "key": "ean:4005176681356",
@@ -20230,18 +20410,6 @@
   },
   "min": 108.0,
   "max": 149.0,
-  "spread_pct": 38.0,
-  "match": "exact"
- },
- {
-  "key": "ean:5701081655275",
-  "name": "Borup Salmiakspiritus 25% 2,5 Ltr Un 2672 Ammoniakopløsning 8 Iii",
-  "prices": {
-   "fog": 109.0,
-   "haraldnyborg": 79.0
-  },
-  "min": 79.0,
-  "max": 109.0,
   "spread_pct": 38.0,
   "match": "exact"
  },
@@ -20630,6 +20798,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5706751075384",
+  "name": "Denver Fotoramme FRAMEO - 15.6\" Træ",
+  "prices": {
+   "haraldnyborg": 1089.0,
+   "power": 1499.0
+  },
+  "min": 1089.0,
+  "max": 1499.0,
+  "spread_pct": 37.6,
+  "match": "exact"
+ },
+ {
   "key": "ean:5702449120107",
   "name": "Clean Carpet dørmåtte 40x60 cm antracit",
   "prices": {
@@ -20662,18 +20842,6 @@
   },
   "min": 349.0,
   "max": 480.0,
-  "spread_pct": 37.5,
-  "match": "exact"
- },
- {
-  "key": "ean:8718696176429",
-  "name": "Philips Hue Enrave S plafond Ø26,1 cm 9,6W sort",
-  "prices": {
-   "davidsen": 939.0,
-   "fog": 683.0
-  },
-  "min": 683.0,
-  "max": 939.0,
   "spread_pct": 37.5,
   "match": "exact"
  },
@@ -20809,6 +20977,18 @@
   "min": 145.0,
   "max": 199.0,
   "spread_pct": 37.2,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5701867007441",
+  "name": "ME|FA postkasse Bosca 34 (101) sort",
+  "prices": {
+   "davidsen": 85.0,
+   "fog": 62.0
+  },
+  "min": 62.0,
+  "max": 85.0,
+  "spread_pct": 37.1,
   "match": "exact"
  },
  {
@@ -21100,18 +21280,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:4023103144019",
-  "name": "Vileda Clean fladmoppe 1-2 spray",
-  "prices": {
-   "davidsen": 329.0,
-   "fog": 449.0
-  },
-  "min": 329.0,
-  "max": 449.0,
-  "spread_pct": 36.5,
-  "match": "exact"
- },
- {
   "key": "ean:8710839306182",
   "name": "Polyfilla Super Stripper 1l Maling Og Lak Fjerner",
   "prices": {
@@ -21124,18 +21292,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5706751075384",
-  "name": "Denver Fotoramme FRAMEO - 15.6\" Træ",
-  "prices": {
-   "haraldnyborg": 1089.0,
-   "power": 1487.0
-  },
-  "min": 1089.0,
-  "max": 1487.0,
-  "spread_pct": 36.5,
-  "match": "exact"
- },
- {
   "key": "mellerud rustpletfjerner 0|l:0.5",
   "name": "Mellerud, Rustpletfjerner, 0,5 L",
   "prices": {
@@ -21144,6 +21300,18 @@
   },
   "min": 109.95,
   "max": 149.95,
+  "spread_pct": 36.4,
+  "match": "probable"
+ },
+ {
+  "key": "lip sanitetssilikone jasmin|l:0.3",
+  "name": "LIP, Sanitetssilikone, Jasmin, 300 ml",
+  "prices": {
+   "silvan": 134.95,
+   "stark": 98.95
+  },
+  "min": 98.95,
+  "max": 134.95,
   "spread_pct": 36.4,
   "match": "probable"
  },
@@ -21229,6 +21397,18 @@
   },
   "min": 44.0,
   "max": 59.95,
+  "spread_pct": 36.3,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5701081655275",
+  "name": "Borup Salmiakspiritus 25% 2,5 Ltr Un 2672 Ammoniakopløsning 8 Iii",
+  "prices": {
+   "fog": 109.0,
+   "haraldnyborg": 79.95
+  },
+  "min": 79.95,
+  "max": 109.0,
   "spread_pct": 36.3,
   "match": "exact"
  },
@@ -21424,18 +21604,6 @@
   },
   "min": 795.0,
   "max": 1079.0,
-  "spread_pct": 35.7,
-  "match": "exact"
- },
- {
-  "key": "ean:5709636390732",
-  "name": "Knauf varmvæg isoleret stolpe 32x50x2500 mm",
-  "prices": {
-   "davidsen": 175.0,
-   "fog": 129.0
-  },
-  "min": 129.0,
-  "max": 175.0,
   "spread_pct": 35.7,
   "match": "exact"
  },
@@ -22293,6 +22461,19 @@
   },
   "min": 699.0,
   "max": 935.0,
+  "spread_pct": 33.8,
+  "match": "exact"
+ },
+ {
+  "key": "ean:8719514372245",
+  "name": "Philips Smart WiZ white LED pære E27 6,7W edison",
+  "prices": {
+   "davidsen": 95.0,
+   "fog": 71.0,
+   "power": 75.0
+  },
+  "min": 71.0,
+  "max": 95.0,
   "spread_pct": 33.8,
   "match": "exact"
  },
@@ -24565,6 +24746,18 @@
   "match": "exact"
  },
  {
+  "key": "anza elite lang vinkelpensel 35 mm|dim:35mm",
+  "name": "ANZA ELITE LANG VINKELPENSEL 35 MM",
+  "prices": {
+   "xlbyg": 124.95,
+   "stark": 161.95
+  },
+  "min": 124.95,
+  "max": 161.95,
+  "spread_pct": 29.6,
+  "match": "probable"
+ },
+ {
   "key": "ean:5701081708711",
   "name": "Borup olie t/hårdt træ 1 L",
   "prices": {
@@ -24814,6 +25007,18 @@
   },
   "min": 322.0,
   "max": 417.0,
+  "spread_pct": 29.5,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5715687001954",
+  "name": "Dga Kroge Sorte Til Ophæng Af Lyskæde 3,3x2,8cm 24-pk",
+  "prices": {
+   "fog": 12.95,
+   "haraldnyborg": 10.0
+  },
+  "min": 10.0,
+  "max": 12.95,
   "spread_pct": 29.5,
   "match": "exact"
  },
@@ -25223,6 +25428,18 @@
   },
   "min": 349.0,
   "max": 449.0,
+  "spread_pct": 28.7,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4053423629811",
+  "name": "Bosch Akkuskruetrækker Ixo 8 M/10 Dele Bitsæt",
+  "prices": {
+   "fog": 359.0,
+   "haraldnyborg": 279.0
+  },
+  "min": 279.0,
+  "max": 359.0,
   "spread_pct": 28.7,
   "match": "exact"
  },
@@ -25857,6 +26074,18 @@
   "match": "exact"
  },
  {
+  "key": "skalflex lyn beton|kg:25.0",
+  "name": "Skalflex®, Lyn-beton, 25 kg",
+  "prices": {
+   "silvan": 168.95,
+   "stark": 216.0
+  },
+  "min": 168.95,
+  "max": 216.0,
+  "spread_pct": 27.8,
+  "match": "probable"
+ },
+ {
   "key": "ean:5703873249921",
   "name": "4-stikdåse med ledning og USB A+C 1,4m",
   "prices": {
@@ -26021,18 +26250,6 @@
   },
   "min": 18.0,
   "max": 22.95,
-  "spread_pct": 27.5,
-  "match": "exact"
- },
- {
-  "key": "ean:4023103199200",
-  "name": "Vileda fladmoppe 1-2 spray max",
-  "prices": {
-   "davidsen": 305.0,
-   "fog": 389.0
-  },
-  "min": 305.0,
-  "max": 389.0,
   "spread_pct": 27.5,
   "match": "exact"
  },
@@ -26326,6 +26543,18 @@
   "match": "exact"
  },
  {
+  "key": "prop krom 1 2",
+  "name": "Prop, krom, 1/2\"",
+  "prices": {
+   "silvan": 33.95,
+   "stark": 43.15
+  },
+  "min": 33.95,
+  "max": 43.15,
+  "spread_pct": 27.1,
+  "match": "probable"
+ },
+ {
   "key": "ean:5704587036067",
   "name": "Blue Electric Basicline LED projektør 50W",
   "prices": {
@@ -26555,6 +26784,19 @@
   "match": "exact"
  },
  {
+  "key": "ean:8720169229754",
+  "name": "Philips Hue White and color ambiance pære GU10 LED",
+  "prices": {
+   "davidsen": 440.0,
+   "fog": 347.0,
+   "haraldnyborg": 365.0
+  },
+  "min": 347.0,
+  "max": 440.0,
+  "spread_pct": 26.8,
+  "match": "exact"
+ },
+ {
   "key": "ean:5702425145193",
   "name": "Danfoss Eco 2 Elektronisk Radiator Termostat",
   "prices": {
@@ -26575,19 +26817,6 @@
   },
   "min": 165.0,
   "max": 209.0,
-  "spread_pct": 26.7,
-  "match": "exact"
- },
- {
-  "key": "ean:8719514372245",
-  "name": "Philips Smart WiZ white LED pære E27 6,7W edison",
-  "prices": {
-   "davidsen": 95.0,
-   "fog": 90.0,
-   "power": 75.0
-  },
-  "min": 75.0,
-  "max": 95.0,
   "spread_pct": 26.7,
   "match": "exact"
  },
@@ -26784,19 +27013,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:8720169229754",
-  "name": "Philips Hue White and color ambiance pære GU10 LED",
-  "prices": {
-   "davidsen": 440.0,
-   "fog": 348.0,
-   "haraldnyborg": 365.0
-  },
-  "min": 348.0,
-  "max": 440.0,
-  "spread_pct": 26.4,
-  "match": "exact"
- },
- {
   "key": "ean:5704997000412",
   "name": "Rheinzink konsoljern til lige stern 25x4 mm",
   "prices": {
@@ -26925,6 +27141,18 @@
   },
   "min": 1585.0,
   "max": 1995.0,
+  "spread_pct": 25.9,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5709636390732",
+  "name": "Knauf varmvæg isoleret stolpe 32x50x2500 mm",
+  "prices": {
+   "davidsen": 175.0,
+   "fog": 139.0
+  },
+  "min": 139.0,
+  "max": 175.0,
   "spread_pct": 25.9,
   "match": "exact"
  },
@@ -28312,7 +28540,7 @@
  },
  {
   "key": "ean:5701701064494",
-  "name": "Sokkel til Halls Qube Lean-To",
+  "name": "Halls Qube Lean-To 612 vægdrivhus sort med hærdet glas 7,1 m²",
   "prices": {
    "davidsen": 1995.0,
    "haraldnyborg": 1599.0
@@ -28791,6 +29019,18 @@
   "match": "exact"
  },
  {
+  "key": "lip multifuge perlehvid|kg:5.0",
+  "name": "LIP, Multifuge, perlehvid, 5 kg",
+  "prices": {
+   "silvan": 114.95,
+   "stark": 92.65
+  },
+  "min": 92.65,
+  "max": 114.95,
+  "spread_pct": 24.1,
+  "match": "ambiguous"
+ },
+ {
   "key": "lip multifuge manhattan|kg:5.0",
   "name": "LIP, Multifuge, manhattan, 5 kg",
   "prices": {
@@ -28835,19 +29075,6 @@
   },
   "min": 3495.0,
   "max": 4338.0,
-  "spread_pct": 24.1,
-  "match": "exact"
- },
- {
-  "key": "ean:8718696131169",
-  "name": "Philips Capricorn udendørs væglampe med sensor antracit",
-  "prices": {
-   "davidsen": 242.0,
-   "fog": 195.0,
-   "haraldnyborg": 239.0
-  },
-  "min": 195.0,
-  "max": 242.0,
   "spread_pct": 24.1,
   "match": "exact"
  },
@@ -29006,6 +29233,18 @@
   "max": 109.0,
   "spread_pct": 23.9,
   "match": "exact"
+ },
+ {
+  "key": "eskimo gummispartel 300 mm|dim:300mm",
+  "name": "ESKIMO GUMMISPARTEL 300 MM",
+  "prices": {
+   "xlbyg": 85.0,
+   "stark": 105.25
+  },
+  "min": 85.0,
+  "max": 105.25,
+  "spread_pct": 23.8,
+  "match": "probable"
  },
  {
   "key": "ean:7040669138754",
@@ -29429,7 +29668,7 @@
  },
  {
   "key": "ean:5709180731081",
-  "name": "DanoMast flagline til 8 meter stang 5 mm x 15 meter",
+  "name": "DanoMast lineholder 7 - 8 meter 170 mm.",
   "prices": {
    "davidsen": 69.0,
    "fog": 84.95
@@ -29872,6 +30111,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:4023103199200",
+  "name": "Vileda fladmoppe 1-2 spray max",
+  "prices": {
+   "davidsen": 305.0,
+   "fog": 249.0
+  },
+  "min": 249.0,
+  "max": 305.0,
+  "spread_pct": 22.5,
+  "match": "exact"
+ },
+ {
   "key": "ean:4892210216960",
   "name": "RYOBI RPLS18X-0 dyksav 18V ONE+",
   "prices": {
@@ -29928,18 +30179,6 @@
   },
   "min": 179.0,
   "max": 219.0,
-  "spread_pct": 22.3,
-  "match": "exact"
- },
- {
-  "key": "ean:5701081710325",
-  "name": "Borup skole/tavlelak sort 375 ml",
-  "prices": {
-   "davidsen": 170.0,
-   "haraldnyborg": 139.0
-  },
-  "min": 139.0,
-  "max": 170.0,
   "spread_pct": 22.3,
   "match": "exact"
  },
@@ -30048,6 +30287,18 @@
   },
   "min": 130.0,
   "max": 159.0,
+  "spread_pct": 22.3,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5703393179708",
+  "name": "Plus Cubic hjørnebeslag dobbelt til 7x7 cm stolper",
+  "prices": {
+   "davidsen": 139.0,
+   "fog": 170.0
+  },
+  "min": 139.0,
+  "max": 170.0,
   "spread_pct": 22.3,
   "match": "exact"
  },
@@ -30464,6 +30715,18 @@
   "match": "exact"
  },
  {
+  "key": "e line baldakin sort",
+  "name": "E-line, Baldakin, sort",
+  "prices": {
+   "silvan": 16.95,
+   "stark": 20.65
+  },
+  "min": 16.95,
+  "max": 20.65,
+  "spread_pct": 21.8,
+  "match": "ambiguous"
+ },
+ {
   "key": "e line baldakin hvid",
   "name": "E-line, Baldakin, hvid",
   "prices": {
@@ -30688,6 +30951,18 @@
   },
   "min": 895.0,
   "max": 1088.0,
+  "spread_pct": 21.6,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5708722311408",
+  "name": "Morsø Cover til Forno Piccolo og Terra bord",
+  "prices": {
+   "davidsen": 575.0,
+   "fog": 699.0
+  },
+  "min": 575.0,
+  "max": 699.0,
   "spread_pct": 21.6,
   "match": "exact"
  },
@@ -32519,6 +32794,18 @@
   "match": "probable"
  },
  {
+  "key": "e line fodafbryder hvid",
+  "name": "E-line, Fodafbryder, hvid",
+  "prices": {
+   "silvan": 50.95,
+   "stark": 61.15
+  },
+  "min": 50.95,
+  "max": 61.15,
+  "spread_pct": 20.0,
+  "match": "ambiguous"
+ },
+ {
   "key": "ean:5712649600033",
   "name": "Alpha afdækningsfolie klar 0,15 mm x 2 x 50 m",
   "prices": {
@@ -32781,6 +33068,18 @@
   "max": 22230.0,
   "spread_pct": 19.8,
   "match": "exact"
+ },
+ {
+  "key": "borup petroleum lugtfri|l:1.0",
+  "name": "Borup, Petroleum, lugtfri, 1 L",
+  "prices": {
+   "silvan": 69.95,
+   "stark": 58.45
+  },
+  "min": 58.45,
+  "max": 69.95,
+  "spread_pct": 19.7,
+  "match": "ambiguous"
  },
  {
   "key": "ean:4059952535043",
@@ -33756,6 +34055,30 @@
   "match": "exact"
  },
  {
+  "key": "borup lampeolie bio premium|l:1.0",
+  "name": "Borup, Lampeolie, Bio Premium, 1 L",
+  "prices": {
+   "silvan": 52.95,
+   "stark": 62.95
+  },
+  "min": 52.95,
+  "max": 62.95,
+  "spread_pct": 18.9,
+  "match": "ambiguous"
+ },
+ {
+  "key": "fiskars xact kultivator",
+  "name": "Fiskars Xact, Kultivator",
+  "prices": {
+   "silvan": 139.0,
+   "stark": 116.95
+  },
+  "min": 116.95,
+  "max": 139.0,
+  "spread_pct": 18.9,
+  "match": "ambiguous"
+ },
+ {
   "key": "ean:5701951107132",
   "name": "Adora Dominus 115 brusestangsæt med håndbruser, 5-spray, Ø110 mm, børstet stål",
   "prices": {
@@ -33924,6 +34247,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:8720169191396",
+  "name": "Philips Classic LED pære E27 35W",
+  "prices": {
+   "davidsen": 38.0,
+   "fog": 32.0
+  },
+  "min": 32.0,
+  "max": 38.0,
+  "spread_pct": 18.8,
+  "match": "exact"
+ },
+ {
   "key": "ean:8719514491106",
   "name": "Philips Hue krone pære E14 4,3W hvid ambiente",
   "prices": {
@@ -33944,6 +34279,18 @@
   },
   "min": 79.95,
   "max": 95.0,
+  "spread_pct": 18.8,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4892210229298",
+  "name": "Ryobi RHFC18BL-0 18V gulvvasker solo",
+  "prices": {
+   "davidsen": 3399.0,
+   "fog": 2861.0
+  },
+  "min": 2861.0,
+  "max": 3399.0,
   "spread_pct": 18.8,
   "match": "exact"
  },
@@ -34092,18 +34439,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:4892210229298",
-  "name": "Ryobi RHFC18BL-0 18V gulvvasker solo",
-  "prices": {
-   "davidsen": 3399.0,
-   "fog": 2863.0
-  },
-  "min": 2863.0,
-  "max": 3399.0,
-  "spread_pct": 18.7,
-  "match": "exact"
- },
- {
   "key": "ean:4042448859365",
   "name": "Tesa® On & Off Burretape, sort",
   "prices": {
@@ -34208,6 +34543,18 @@
   },
   "min": 119.0,
   "max": 141.0,
+  "spread_pct": 18.5,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5708722302208",
+  "name": "Morsø Balcone E-130 bordgrill El",
+  "prices": {
+   "davidsen": 295.0,
+   "fog": 249.0
+  },
+  "min": 249.0,
+  "max": 295.0,
   "spread_pct": 18.5,
   "match": "exact"
  },
@@ -34508,6 +34855,19 @@
   },
   "min": 4185.0,
   "max": 4948.0,
+  "spread_pct": 18.2,
+  "match": "exact"
+ },
+ {
+  "key": "ean:8718699681036",
+  "name": "Philips Moire plafond 6W hvid",
+  "prices": {
+   "davidsen": 39.0,
+   "fog": 33.0,
+   "haraldnyborg": 35.0
+  },
+  "min": 33.0,
+  "max": 39.0,
   "spread_pct": 18.2,
   "match": "exact"
  },
@@ -35084,18 +35444,6 @@
   },
   "min": 85.0,
   "max": 99.95,
-  "spread_pct": 17.6,
-  "match": "exact"
- },
- {
-  "key": "ean:5701984115500",
-  "name": "Vinkeljern 65x45 mm elforzinket",
-  "prices": {
-   "davidsen": 20.0,
-   "fog": 17.0
-  },
-  "min": 17.0,
-  "max": 20.0,
   "spread_pct": 17.6,
   "match": "exact"
  },
@@ -35858,18 +36206,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5701984024178",
-  "name": "PN vinduessikrings-beslag",
-  "prices": {
-   "davidsen": 145.0,
-   "fog": 124.0
-  },
-  "min": 124.0,
-  "max": 145.0,
-  "spread_pct": 16.9,
-  "match": "exact"
- },
- {
   "key": "ean:4892210247933",
   "name": "Ryobi RSM4-120G 4V USB spraymoppesæt",
   "prices": {
@@ -35904,6 +36240,18 @@
   "max": 54.95,
   "spread_pct": 16.9,
   "match": "exact"
+ },
+ {
+  "key": "borup eddikesyre 32|l:1.0",
+  "name": "Borup, Eddikesyre, 32 %, 1 L",
+  "prices": {
+   "silvan": 36.95,
+   "stark": 43.15
+  },
+  "min": 36.95,
+  "max": 43.15,
+  "spread_pct": 16.8,
+  "match": "ambiguous"
  },
  {
   "key": "champost afretningssand 0 4 mm|kg:1000.0",
@@ -36400,6 +36748,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5708614903292",
+  "name": "Cozze Pizzaskærer 32cm 2-greb",
+  "prices": {
+   "fog": 115.0,
+   "haraldnyborg": 134.0
+  },
+  "min": 115.0,
+  "max": 134.0,
+  "spread_pct": 16.5,
+  "match": "exact"
+ },
+ {
   "key": "cozze g 500 plancha",
   "name": "Cozze G-500, Plancha",
   "prices": {
@@ -36408,6 +36768,18 @@
   },
   "min": 1829.0,
   "max": 2129.0,
+  "spread_pct": 16.4,
+  "match": "probable"
+ },
+ {
+  "key": "makita dbo480z rystepudser 18v lxt",
+  "name": "Makita Dbo480Z Rystepudser 18V Lxt",
+  "prices": {
+   "stark": 1339.0,
+   "davidsen": 1150.0
+  },
+  "min": 1150.0,
+  "max": 1339.0,
   "spread_pct": 16.4,
   "match": "probable"
  },
@@ -36857,6 +37229,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5703393175199",
+  "name": "Plus monteringsskruer t/kompositstolper 24 stk sølvgrå",
+  "prices": {
+   "davidsen": 69.0,
+   "fog": 80.0
+  },
+  "min": 69.0,
+  "max": 80.0,
+  "spread_pct": 15.9,
+  "match": "exact"
+ },
+ {
   "key": "ean:5703393736338",
   "name": "Plus shelter ubehandlet nåletræ inkl. tagpap",
   "prices": {
@@ -36998,6 +37382,18 @@
   },
   "min": 2010.0,
   "max": 2328.0,
+  "spread_pct": 15.8,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5708614913314",
+  "name": "Home It Bambuspinde 120cm Ø10mm 4-pak",
+  "prices": {
+   "fog": 17.95,
+   "haraldnyborg": 15.5
+  },
+  "min": 15.5,
+  "max": 17.95,
   "spread_pct": 15.8,
   "match": "exact"
  },
@@ -37838,18 +38234,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5701984115487",
-  "name": "PN vinkelbeslag 65x65x38x2,5 mm. elforzinket",
-  "prices": {
-   "davidsen": 23.0,
-   "fog": 20.0
-  },
-  "min": 20.0,
-  "max": 23.0,
-  "spread_pct": 15.0,
-  "match": "exact"
- },
- {
   "key": "ean:5713885010389",
   "name": "Protox insekt træbeskyttelsesmiddel 1L",
   "prices": {
@@ -37894,18 +38278,6 @@
   },
   "min": 2120.0,
   "max": 2435.0,
-  "spread_pct": 14.9,
-  "match": "exact"
- },
- {
-  "key": "ean:4078500002233",
-  "name": "Gardena Premium sprøjte/strålepistol frostsikker 18305-20",
-  "prices": {
-   "davidsen": 295.0,
-   "fog": 339.0
-  },
-  "min": 295.0,
-  "max": 339.0,
   "spread_pct": 14.9,
   "match": "exact"
  },
@@ -38664,6 +39036,18 @@
   "min": 359.0,
   "max": 410.0,
   "spread_pct": 14.2,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5701081710325",
+  "name": "Borup skole/tavlelak sort 375 ml",
+  "prices": {
+   "davidsen": 170.0,
+   "haraldnyborg": 149.0
+  },
+  "min": 149.0,
+  "max": 170.0,
+  "spread_pct": 14.1,
   "match": "exact"
  },
  {
@@ -40470,6 +40854,18 @@
   "match": "probable"
  },
  {
+  "key": "ecostyle myrefri lokkemiddel",
+  "name": "Ecostyle MyreFri, Lokkemiddel, 2 stk.",
+  "prices": {
+   "silvan": 159.95,
+   "stark": 179.95
+  },
+  "min": 159.95,
+  "max": 179.95,
+  "spread_pct": 12.5,
+  "match": "probable"
+ },
+ {
   "key": "ean:5701081708476",
   "name": "Borup koncentreret afrenser 2,5 L",
   "prices": {
@@ -40502,18 +40898,6 @@
   },
   "min": 8.0,
   "max": 9.0,
-  "spread_pct": 12.5,
-  "match": "exact"
- },
- {
-  "key": "ean:5701984115470",
-  "name": "PN vinkelbeslag 45x45x38x2,5 mm. elforzinket",
-  "prices": {
-   "davidsen": 18.0,
-   "fog": 16.0
-  },
-  "min": 16.0,
-  "max": 18.0,
   "spread_pct": 12.5,
   "match": "exact"
  },
@@ -41504,18 +41888,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:8720169191396",
-  "name": "Philips Classic LED pære E27 35W",
-  "prices": {
-   "davidsen": 38.0,
-   "fog": 34.0
-  },
-  "min": 34.0,
-  "max": 38.0,
-  "spread_pct": 11.8,
-  "match": "exact"
- },
- {
   "key": "ean:3598300016045",
   "name": "Soppec Pro Rustløsner mos2",
   "prices": {
@@ -41911,19 +42283,6 @@
   },
   "min": 385.0,
   "max": 429.0,
-  "spread_pct": 11.4,
-  "match": "exact"
- },
- {
-  "key": "ean:8718699681036",
-  "name": "Philips Moire plafond 6W hvid",
-  "prices": {
-   "davidsen": 39.0,
-   "fog": 37.0,
-   "haraldnyborg": 35.0
-  },
-  "min": 35.0,
-  "max": 39.0,
   "spread_pct": 11.4,
   "match": "exact"
  },
@@ -42904,18 +43263,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5708614903292",
-  "name": "Cozze Pizzaskærer 32cm 2-greb",
-  "prices": {
-   "fog": 121.0,
-   "haraldnyborg": 134.0
-  },
-  "min": 121.0,
-  "max": 134.0,
-  "spread_pct": 10.7,
-  "match": "exact"
- },
- {
   "key": "ean:5701159750130",
   "name": "Dana DA mastic 551 grå 300 ml",
   "prices": {
@@ -43780,6 +44127,18 @@
   "match": "probable"
  },
  {
+  "key": "nordic blue askesuger|l:6.0",
+  "name": "Nordic Blue, Askesuger, 6 L",
+  "prices": {
+   "silvan": 199.95,
+   "xlbyg": 220.0
+  },
+  "min": 199.95,
+  "max": 220.0,
+  "spread_pct": 10.0,
+  "match": "probable"
+ },
+ {
   "key": "weber rgsmuld bg 0|kg:0.5",
   "name": "Weber røgsmuld bøg 0,5 kg ",
   "prices": {
@@ -44537,18 +44896,6 @@
   "match": "probable"
  },
  {
-  "key": "nordic blue askesuger|l:6.0",
-  "name": "Nordic Blue, Askesuger, 6 L",
-  "prices": {
-   "silvan": 200.95,
-   "xlbyg": 220.0
-  },
-  "min": 200.95,
-  "max": 220.0,
-  "spread_pct": 9.5,
-  "match": "probable"
- },
- {
   "key": "ean:7311491802909",
   "name": "Anza tapetbørste med træskaft 21x260 mm",
   "prices": {
@@ -44605,6 +44952,19 @@
   },
   "min": 4995.0,
   "max": 5468.0,
+  "spread_pct": 9.5,
+  "match": "exact"
+ },
+ {
+  "key": "ean:8718696131169",
+  "name": "Philips Capricorn udendørs væglampe med sensor antracit",
+  "prices": {
+   "davidsen": 242.0,
+   "fog": 221.0,
+   "haraldnyborg": 239.0
+  },
+  "min": 221.0,
+  "max": 242.0,
   "spread_pct": 9.5,
   "match": "exact"
  },
@@ -44701,6 +45061,18 @@
   },
   "min": 1248.0,
   "max": 1365.0,
+  "spread_pct": 9.4,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5703393717023",
+  "name": "Plus PIPE højbed 80x80x36 cm sort",
+  "prices": {
+   "davidsen": 1266.0,
+   "fog": 1385.0
+  },
+  "min": 1266.0,
+  "max": 1385.0,
   "spread_pct": 9.4,
   "match": "exact"
  },
@@ -46230,7 +46602,7 @@
  },
  {
   "key": "ean:5703393718303",
-  "name": "Plus bord/bænkesæt med 2 ryglæn 177 cm trykimp",
+  "name": "Plus bord- og bænkesæt trykimprægneret, 300 cm",
   "prices": {
    "davidsen": 2294.0,
    "fog": 2505.0
@@ -48366,7 +48738,7 @@
  },
  {
   "key": "ean:5703393713582",
-  "name": "Plus omlimet profilstolpe 90x90 mm længde 98 cm hvid",
+  "name": "Plus omlimet profilstolpe 90x90 mmx længde 148cm hvid",
   "prices": {
    "davidsen": 326.0,
    "fog": 355.0
@@ -48733,18 +49105,6 @@
   },
   "min": 299.0,
   "max": 325.0,
-  "spread_pct": 8.7,
-  "match": "exact"
- },
- {
-  "key": "ean:5703393726124",
-  "name": "Plus Nagano hegn 90x180 cm hvid",
-  "prices": {
-   "davidsen": 368.0,
-   "fog": 400.0
-  },
-  "min": 368.0,
-  "max": 400.0,
   "spread_pct": 8.7,
   "match": "exact"
  },
@@ -52194,6 +52554,18 @@
   "match": "exact"
  },
  {
+  "key": "trip trap oliepleje hvid|l:1.0",
+  "name": "Trip Trap, Oliepleje, hvid, 1 L",
+  "prices": {
+   "silvan": 199.0,
+   "stark": 186.48
+  },
+  "min": 186.48,
+  "max": 199.0,
+  "spread_pct": 6.7,
+  "match": "ambiguous"
+ },
+ {
   "key": "fischer filtpude hvid 20 mm|dim:20mm",
   "name": "FISCHER FILTPUDE HVID Ø20 MM 20 STK",
   "prices": {
@@ -52562,6 +52934,19 @@
   },
   "min": 394.0,
   "max": 420.0,
+  "spread_pct": 6.6,
+  "match": "exact"
+ },
+ {
+  "key": "ean:8718696164921",
+  "name": "Philips Kosipo spot 3x10W sort",
+  "prices": {
+   "davidsen": 162.0,
+   "fog": 152.0,
+   "haraldnyborg": 160.0
+  },
+  "min": 152.0,
+  "max": 162.0,
   "spread_pct": 6.6,
   "match": "exact"
  },
@@ -53754,6 +54139,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5701984115470",
+  "name": "PN vinkelbeslag 45x45x38x2,5 mm. elforzinket",
+  "prices": {
+   "davidsen": 18.0,
+   "fog": 17.0
+  },
+  "min": 17.0,
+  "max": 18.0,
+  "spread_pct": 5.9,
+  "match": "exact"
+ },
+ {
   "key": "ean:4892210192851",
   "name": "Ryobi RAKSCRUB skumpude til rengøringsbørste",
   "prices": {
@@ -53978,6 +54375,18 @@
   },
   "min": 1798.0,
   "max": 1900.0,
+  "spread_pct": 5.7,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5703393748669",
+  "name": "PLUS Omlimet stolpe/drager Hvid 9×9×128 cm",
+  "prices": {
+   "davidsen": 350.0,
+   "fog": 370.0
+  },
+  "min": 350.0,
+  "max": 370.0,
   "spread_pct": 5.7,
   "match": "exact"
  },
@@ -54462,6 +54871,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5701951135609",
+  "name": "Adora magna topbruser Ø250 krom/hvid",
+  "prices": {
+   "davidsen": 431.0,
+   "fog": 409.0
+  },
+  "min": 409.0,
+  "max": 431.0,
+  "spread_pct": 5.4,
+  "match": "exact"
+ },
+ {
   "key": "ean:5709831053050",
   "name": "Ergobalje 50 L sort",
   "prices": {
@@ -54482,18 +54903,6 @@
   },
   "min": 569.0,
   "max": 600.0,
-  "spread_pct": 5.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5703393748669",
-  "name": "PLUS Omlimet stolpe/drager Hvid 9×9×128 cm",
-  "prices": {
-   "davidsen": 351.0,
-   "fog": 370.0
-  },
-  "min": 351.0,
-  "max": 370.0,
   "spread_pct": 5.4,
   "match": "exact"
  },
@@ -54580,6 +54989,18 @@
   "max": 199.0,
   "spread_pct": 5.3,
   "match": "probable"
+ },
+ {
+  "key": "ean:5701951135586",
+  "name": "Adora magna topbruser Ø300 guld",
+  "prices": {
+   "davidsen": 513.0,
+   "fog": 487.0
+  },
+  "min": 487.0,
+  "max": 513.0,
+  "spread_pct": 5.3,
+  "match": "exact"
  },
  {
   "key": "ean:5704587036340",
@@ -54723,6 +55144,18 @@
   },
   "min": 19.0,
   "max": 20.0,
+  "spread_pct": 5.3,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4014549358238",
+  "name": "Festool HKC 55 EB-BASIC rundsav solo",
+  "prices": {
+   "davidsen": 1995.0,
+   "fog": 1895.0
+  },
+  "min": 1895.0,
+  "max": 1995.0,
   "spread_pct": 5.3,
   "match": "exact"
  },
@@ -55135,6 +55568,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5701984115500",
+  "name": "Vinkeljern 65x45 mm elforzinket",
+  "prices": {
+   "davidsen": 20.0,
+   "fog": 19.0
+  },
+  "min": 19.0,
+  "max": 20.0,
+  "spread_pct": 5.3,
+  "match": "exact"
+ },
+ {
   "key": "ean:4004025130618",
   "name": "Wagner W975 Black Range Flexio malersprøjte",
   "prices": {
@@ -55183,6 +55628,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:8718696164907",
+  "name": "Philips Kosipo 2-spot Sort",
+  "prices": {
+   "fog": 151.0,
+   "haraldnyborg": 159.0
+  },
+  "min": 151.0,
+  "max": 159.0,
+  "spread_pct": 5.3,
+  "match": "exact"
+ },
+ {
   "key": "ean:4006508200450",
   "name": "Melitta kaffefilter 1 x 4 80-pak",
   "prices": {
@@ -55193,6 +55650,18 @@
   "max": 20.0,
   "spread_pct": 5.3,
   "match": "exact"
+ },
+ {
+  "key": "eskimo tandspartel 8 mm|dim:8mm",
+  "name": "ESKIMO TANDSPARTEL 8 MM",
+  "prices": {
+   "xlbyg": 230.0,
+   "stark": 242.05
+  },
+  "min": 230.0,
+  "max": 242.05,
+  "spread_pct": 5.2,
+  "match": "probable"
  },
  {
   "key": "ean:7311490035230",
@@ -55335,19 +55804,6 @@
   },
   "min": 1658.0,
   "max": 1745.0,
-  "spread_pct": 5.2,
-  "match": "exact"
- },
- {
-  "key": "ean:8718696164921",
-  "name": "Philips Kosipo spot 3x10W sort",
-  "prices": {
-   "davidsen": 162.0,
-   "fog": 154.0,
-   "haraldnyborg": 160.0
-  },
-  "min": 154.0,
-  "max": 162.0,
   "spread_pct": 5.2,
   "match": "exact"
  },
@@ -55745,18 +56201,6 @@
   },
   "min": 1793.0,
   "max": 1882.0,
-  "spread_pct": 5.0,
-  "match": "exact"
- },
- {
-  "key": "ean:5709535141503",
-  "name": "KGK ES-8000 T 400V generator 400V",
-  "prices": {
-   "davidsen": 16167.0,
-   "fog": 15398.0
-  },
-  "min": 15398.0,
-  "max": 16167.0,
   "spread_pct": 5.0,
   "match": "exact"
  },
@@ -56374,18 +56818,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:4014549358238",
-  "name": "Festool HKC 55 EB-BASIC rundsav solo",
-  "prices": {
-   "davidsen": 1995.0,
-   "fog": 2085.0
-  },
-  "min": 1995.0,
-  "max": 2085.0,
-  "spread_pct": 4.5,
-  "match": "exact"
- },
- {
   "key": "ean:5703482076161",
   "name": "HT 15H fodliste fyr hvid 14x43x4450 mm",
   "prices": {
@@ -56434,6 +56866,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5701984115487",
+  "name": "PN vinkelbeslag 65x65x38x2,5 mm. elforzinket",
+  "prices": {
+   "davidsen": 23.0,
+   "fog": 22.0
+  },
+  "min": 22.0,
+  "max": 23.0,
+  "spread_pct": 4.5,
+  "match": "exact"
+ },
+ {
   "key": "ean:5701213000690",
   "name": "Borup Kemisk Ren Acetone  0,5l Un 1090 Acetone 3 Ii",
   "prices": {
@@ -56456,6 +56900,18 @@
   "max": 2298.0,
   "spread_pct": 4.5,
   "match": "exact"
+ },
+ {
+  "key": "eskimo murerske 210 mm|dim:210mm",
+  "name": "ESKIMO MURERSKE 210 MM",
+  "prices": {
+   "xlbyg": 199.0,
+   "stark": 207.85
+  },
+  "min": 199.0,
+  "max": 207.85,
+  "spread_pct": 4.4,
+  "match": "probable"
  },
  {
   "key": "ean:4006325508425",
@@ -58403,6 +58859,18 @@
   "match": "exact"
  },
  {
+  "key": "adora bruseslange 2 1 m|dim:1m",
+  "name": "Adora, Bruseslange, 2,1 m",
+  "prices": {
+   "silvan": 199.95,
+   "stark": 205.95
+  },
+  "min": 199.95,
+  "max": 205.95,
+  "spread_pct": 3.0,
+  "match": "ambiguous"
+ },
+ {
   "key": "ean:5013556123838",
   "name": "Drain clean afløbsrens t/vandslange",
   "prices": {
@@ -59756,474 +60224,6 @@
   "min": 339.0,
   "max": 345.0,
   "spread_pct": 1.8,
-  "match": "exact"
- },
- {
-  "key": "ean:5710122601256",
-  "name": "Varmemølle til brændeovn 280-330 CBM/H",
-  "prices": {
-   "davidsen": 280.0,
-   "fog": 275.0
-  },
-  "min": 275.0,
-  "max": 280.0,
-  "spread_pct": 1.8,
-  "match": "exact"
- },
- {
-  "key": "ean:4007548027694",
-  "name": "Fermacell Greenline klæbefuge+  mintgrøn 580 ml",
-  "prices": {
-   "davidsen": 540.0,
-   "fog": 549.0
-  },
-  "min": 540.0,
-  "max": 549.0,
-  "spread_pct": 1.7,
-  "match": "exact"
- },
- {
-  "key": "ean:5703482007523",
-  "name": "HT 33H fyr forkantliste1 rund kant hvid 5x27x3000 mm",
-  "prices": {
-   "davidsen": 117.0,
-   "fog": 119.0
-  },
-  "min": 117.0,
-  "max": 119.0,
-  "spread_pct": 1.7,
-  "match": "exact"
- },
- {
-  "key": "ean:5703482008636",
-  "name": "HT 34H fyr forkantliste 1 rund kant hvid 5x33x3000 mm",
-  "prices": {
-   "davidsen": 117.0,
-   "fog": 119.0
-  },
-  "min": 117.0,
-  "max": 119.0,
-  "spread_pct": 1.7,
-  "match": "exact"
- },
- {
-  "key": "ean:4892210150103",
-  "name": "Ryobi RC18120 hurtig batterilader 18V ONE+",
-  "prices": {
-   "davidsen": 299.0,
-   "fog": 294.0
-  },
-  "min": 294.0,
-  "max": 299.0,
-  "spread_pct": 1.7,
-  "match": "exact"
- },
- {
-  "key": "ean:4078500053259",
-  "name": "Gardena 9000 dykpumpe til rent vand 300W",
-  "prices": {
-   "davidsen": 495.0,
-   "fog": 487.0
-  },
-  "min": 487.0,
-  "max": 495.0,
-  "spread_pct": 1.6,
-  "match": "exact"
- },
- {
-  "key": "ean:5711074855575",
-  "name": "Mascot Complete knæpuder sort/lys grå str. onesize",
-  "prices": {
-   "davidsen": 323.75,
-   "fog": 329.0
-  },
-  "min": 323.75,
-  "max": 329.0,
-  "spread_pct": 1.6,
-  "match": "exact"
- },
- {
-  "key": "ean:5702756540407",
-  "name": "Plastmo bøjning 75 mm, 70° stål plus",
-  "prices": {
-   "davidsen": 255.0,
-   "fog": 259.0
-  },
-  "min": 255.0,
-  "max": 259.0,
-  "spread_pct": 1.6,
-  "match": "exact"
- },
- {
-  "key": "ean:5703393747792",
-  "name": "PLUS Tagpap 1×5,5 meter (1 rulle) inkl. papsøm",
-  "prices": {
-   "davidsen": 679.0,
-   "fog": 690.0
-  },
-  "min": 679.0,
-  "max": 690.0,
-  "spread_pct": 1.6,
-  "match": "exact"
- },
- {
-  "key": "ean:5708637004525",
-  "name": "Skalflex Beto-kalkbinder grunder 2 L",
-  "prices": {
-   "davidsen": 245.0,
-   "fog": 249.0
-  },
-  "min": 245.0,
-  "max": 249.0,
-  "spread_pct": 1.6,
-  "match": "exact"
- },
- {
-  "key": "borup fugtfjerner|kg:2.0",
-  "name": "Borup, Fugtfjerner, 2 kg",
-  "prices": {
-   "silvan": 68.95,
-   "xlbyg": 69.95
-  },
-  "min": 68.95,
-  "max": 69.95,
-  "spread_pct": 1.5,
-  "match": "probable"
- },
- {
-  "key": "borup gulvskraber 35 cm|dim:35cm",
-  "name": "Borup, Gulvskraber, 35 cm",
-  "prices": {
-   "silvan": 65.95,
-   "xlbyg": 64.95
-  },
-  "min": 64.95,
-  "max": 65.95,
-  "spread_pct": 1.5,
-  "match": "probable"
- },
- {
-  "key": "kema vej og markeringsfarve gul|l:0.6",
-  "name": "KEMA VEJ- OG MARKERINGSFARVE 600 ML GUL",
-  "prices": {
-   "xlbyg": 220.0,
-   "stark": 216.85
-  },
-  "min": 216.85,
-  "max": 220.0,
-  "spread_pct": 1.5,
-  "match": "probable"
- },
- {
-  "key": "ean:5701081708810",
-  "name": "Borup mur- og sokkelasfalt sort 4 L",
-  "prices": {
-   "davidsen": 415.0,
-   "fog": 409.0
-  },
-  "min": 409.0,
-  "max": 415.0,
-  "spread_pct": 1.5,
-  "match": "exact"
- },
- {
-  "key": "ean:4059952654850",
-  "name": "Bosch GRT 18V-33 18V græstrimmer Ø33 cm solo",
-  "prices": {
-   "davidsen": 1870.0,
-   "fog": 1898.0
-  },
-  "min": 1870.0,
-  "max": 1898.0,
-  "spread_pct": 1.5,
-  "match": "exact"
- },
- {
-  "key": "ean:5701291539303",
-  "name": "NKT Deck HE+Terrasseskrue TX20 6x60 mm 150 stk.",
-  "prices": {
-   "davidsen": 275.0,
-   "fog": 279.0
-  },
-  "min": 275.0,
-  "max": 279.0,
-  "spread_pct": 1.5,
-  "match": "exact"
- },
- {
-  "key": "ean:5713909000624",
-  "name": "SkamoWall Board 1000x610x25",
-  "prices": {
-   "davidsen": 275.0,
-   "fog": 279.0
-  },
-  "min": 275.0,
-  "max": 279.0,
-  "spread_pct": 1.5,
-  "match": "exact"
- },
- {
-  "key": "ean:5707883011936",
-  "name": "Ecostyle Insektfri Fangstplader 7-pak",
-  "prices": {
-   "fog": 64.95,
-   "haraldnyborg": 64.0
-  },
-  "min": 64.0,
-  "max": 64.95,
-  "spread_pct": 1.5,
-  "match": "exact"
- },
- {
-  "key": "weber pizzasten 36 cm|dim:36cm",
-  "name": "WEBER PIZZASTEN Ø36 CM",
-  "prices": {
-   "xlbyg": 299.0,
-   "davidsen": 295.0
-  },
-  "min": 295.0,
-  "max": 299.0,
-  "spread_pct": 1.4,
-  "match": "probable"
- },
- {
-  "key": "ean:5701951121350",
-  "name": "Afløbsrør t/håndvask 32x200 mm krom",
-  "prices": {
-   "davidsen": 73.95,
-   "fog": 74.95
-  },
-  "min": 73.95,
-  "max": 74.95,
-  "spread_pct": 1.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5712649413367",
-  "name": "Alpha duplex dampspærretape 25mm x 80m",
-  "prices": {
-   "davidsen": 435.0,
-   "fog": 429.0
-  },
-  "min": 429.0,
-  "max": 435.0,
-  "spread_pct": 1.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5702160389739",
-  "name": "Dyrup facade sokkelmaling sort 2,25 L",
-  "prices": {
-   "davidsen": 355.0,
-   "fog": 349.95
-  },
-  "min": 349.95,
-  "max": 355.0,
-  "spread_pct": 1.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5702820721244",
-  "name": "ENGEL knæpuder 3 hvid one size",
-  "prices": {
-   "davidsen": 373.75,
-   "fog": 379.0
-  },
-  "min": 373.75,
-  "max": 379.0,
-  "spread_pct": 1.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5701951019671",
-  "name": "Juvel overløbssæt",
-  "prices": {
-   "davidsen": 285.0,
-   "fog": 289.0
-  },
-  "min": 285.0,
-  "max": 289.0,
-  "spread_pct": 1.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5701951098379",
-  "name": "Paksalve i tube og pakgarn på rulle",
-  "prices": {
-   "davidsen": 73.95,
-   "fog": 74.95
-  },
-  "min": 73.95,
-  "max": 74.95,
-  "spread_pct": 1.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5703393747808",
-  "name": "PLUS Tagpap 1×7,5 meter (1 rulle) inkl. papsøm",
-  "prices": {
-   "davidsen": 976.0,
-   "fog": 990.0
-  },
-  "min": 976.0,
-  "max": 990.0,
-  "spread_pct": 1.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5701747046607",
-  "name": "Ravendo pladevogn SHT 500 M",
-  "prices": {
-   "davidsen": 4185.0,
-   "fog": 4243.0
-  },
-  "min": 4185.0,
-  "max": 4243.0,
-  "spread_pct": 1.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5701951008590",
-  "name": "Rørholder plast 50 mm 2 stk.",
-  "prices": {
-   "davidsen": 73.95,
-   "fog": 74.95
-  },
-  "min": 73.95,
-  "max": 74.95,
-  "spread_pct": 1.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5701951050148",
-  "name": "Rosetter t/excentrisk forskruninger 2 S/B forkromet",
-  "prices": {
-   "davidsen": 73.95,
-   "fog": 74.95
-  },
-  "min": 73.95,
-  "max": 74.95,
-  "spread_pct": 1.4,
-  "match": "exact"
- },
- {
-  "key": "ean:7332515043429",
-  "name": "Snickers Workwear knæpude til gulvlægger sort/aluminiumsgrå str. One size",
-  "prices": {
-   "davidsen": 660.0,
-   "fog": 669.0
-  },
-  "min": 660.0,
-  "max": 669.0,
-  "spread_pct": 1.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5701953001636",
-  "name": "Sst bandlock pro sokkelanker m12, til 25 og 40 mm bånd",
-  "prices": {
-   "davidsen": 295.0,
-   "fog": 299.0
-  },
-  "min": 295.0,
-  "max": 299.0,
-  "spread_pct": 1.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5701951006442",
-  "name": "Tee klemring 15x15x15 mm messing",
-  "prices": {
-   "davidsen": 73.95,
-   "fog": 74.95
-  },
-  "min": 73.95,
-  "max": 74.95,
-  "spread_pct": 1.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5701951121367",
-  "name": "Vinkel afløbsrør t/håndvask 32x220x250 mm hvid",
-  "prices": {
-   "davidsen": 73.95,
-   "fog": 74.95
-  },
-  "min": 73.95,
-  "max": 74.95,
-  "spread_pct": 1.4,
-  "match": "exact"
- },
- {
-  "key": "ean:8719514337978",
-  "name": "Wiz Smart Superslim Plafond Led 14w Hvid",
-  "prices": {
-   "fog": 299.0,
-   "haraldnyborg": 295.0
-  },
-  "min": 295.0,
-  "max": 299.0,
-  "spread_pct": 1.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5701951088622",
-  "name": "Afløbsrør t/håndvask vinkel 220x250 mm krom",
-  "prices": {
-   "davidsen": 157.0,
-   "fog": 159.0
-  },
-  "min": 157.0,
-  "max": 159.0,
-  "spread_pct": 1.3,
-  "match": "exact"
- },
- {
-  "key": "ean:5701951088639",
-  "name": "Afløbsrør t/håndvask vinkel 220x680 mm krom",
-  "prices": {
-   "davidsen": 157.0,
-   "fog": 159.0
-  },
-  "min": 157.0,
-  "max": 159.0,
-  "spread_pct": 1.3,
-  "match": "exact"
- },
- {
-  "key": "ean:5701081716242",
-  "name": "Borup expert musefældeboks",
-  "prices": {
-   "davidsen": 80.0,
-   "haraldnyborg": 79.0
-  },
-  "min": 79.0,
-  "max": 80.0,
-  "spread_pct": 1.3,
-  "match": "exact"
- },
- {
-  "key": "ean:5705636005676",
-  "name": "Dafa monteringsklods 15-738 C",
-  "prices": {
-   "davidsen": 4.0,
-   "fog": 3.95
-  },
-  "min": 3.95,
-  "max": 4.0,
-  "spread_pct": 1.3,
-  "match": "exact"
- },
- {
-  "key": "ean:5702160379570",
-  "name": "Dyrup facademaling farvetester 0,75 L",
-  "prices": {
-   "davidsen": 80.0,
-   "fog": 79.0
-  },
-  "min": 79.0,
-  "max": 80.0,
-  "spread_pct": 1.3,
   "match": "exact"
  }
 ]
