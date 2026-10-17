@@ -3,38 +3,38 @@
  "detail": {
   "bauhaus": {
    "rows": 22651,
-   "complete": false
+   "complete": true
   },
   "davidsen": {
    "rows": 22373,
-   "complete": false
+   "complete": true
   },
   "fog": {
-   "rows": 30107,
-   "complete": false
+   "rows": 30114,
+   "complete": true
   },
   "haraldnyborg": {
    "rows": 11815,
-   "complete": false
+   "complete": true
   },
   "power": {
-   "rows": 28711,
-   "complete": false
+   "rows": 28809,
+   "complete": true
   },
   "silvan": {
    "rows": 40382,
    "complete": false
   },
   "skousen": {
-   "rows": 1043,
+   "rows": 1045,
    "complete": false
   },
   "stark": {
-   "rows": 24526,
-   "complete": false
+   "rows": 36772,
+   "complete": true
   },
   "xlbyg": {
-   "rows": 34321,
+   "rows": 34331,
    "complete": false
   }
  }
