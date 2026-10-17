@@ -12382,18 +12382,6 @@
   "match": "exact"
  },
  {
-  "key": "junckers terrasseolie natur|l:5.0",
-  "name": "Junckers, Terrasseolie, natur, 5 L",
-  "prices": {
-   "silvan": 549.95,
-   "stark": 881.1
-  },
-  "min": 549.95,
-  "max": 881.1,
-  "spread_pct": 60.2,
-  "match": "ambiguous"
- },
- {
   "key": "ean:4058546296230",
   "name": "Milwaukee PACKOUT™ kasse til modulsystem",
   "prices": {
@@ -16322,6 +16310,18 @@
   "max": 299.0,
   "spread_pct": 49.5,
   "match": "exact"
+ },
+ {
+  "key": "junckers terrasseolie natur|l:5.0",
+  "name": "Junckers, Terrasseolie, natur, 5 L",
+  "prices": {
+   "silvan": 589.95,
+   "stark": 881.1
+  },
+  "min": 589.95,
+  "max": 881.1,
+  "spread_pct": 49.4,
+  "match": "ambiguous"
  },
  {
   "key": "ean:5705568024110",
