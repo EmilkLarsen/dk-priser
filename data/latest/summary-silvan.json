@@ -2,11 +2,11 @@
  "date": "2026-10-17",
  "chains": {
   "silvan": {
-   "products": 33175,
+   "products": 40392,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18001.7
+   "seconds": 3829.0
   }
  }
 }
