@@ -69,6 +69,13 @@ if re.search(r"github\.event_name == 'schedule'\s*\|\|\s*github\.event\.inputs\.
     errors.append("workflow: unparenthesized (schedule || full) && group - precedence bug")
 if not re.search(r"\) && 'daily-prices' \|\| 'daily-prices-smoke'", wf):
     errors.append("workflow: concurrency group pattern missing/changed")
+# continuation case-match must be whitespace-proof: check_incomplete prints
+# ', '-joined names but the case matches ',<chain>,' — without normalization
+# every chain AFTER THE FIRST in the incomplete list is silently skipped
+# (nl/hubo_nl live 2026-10-18: stalled 5 days while flagged incomplete daily)
+if 'case ",$INC," in' in wf and "tr -d ' '" not in wf:
+    errors.append("workflow: continuation case-match not whitespace-normalized (skips non-first incomplete chains)")
+
 if "  healer:" not in wf:
     errors.append("workflow: auto-heal job missing")
 if "needs: [scrape, merge, continue-check, healer]" not in wf:
