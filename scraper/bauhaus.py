@@ -62,6 +62,15 @@ def handle(u, html):
     if not sk:
         return []  # real product pages always carry itemprop sku
     og = OG_RE.search(html)
+    # Magento renders a placeholder price ("1,00 kr.") on out-of-stock
+    # product pages - verified live 2026-10-18 (3/3 OOS pages carried
+    # data-price-amount="1" + schema.org/OutOfStock while the real price
+    # is unset). Record the stock state and drop the placeholder row; a
+    # genuine 1.00 product that is ALSO out of stock is vanishingly rare.
+    oos = "schema.org/OutOfStock" in html
+    in_stock = False if oos else (True if "schema.org/InStock" in html else None)
+    if oos and price == 1.0:
+        return []
     return [{
         "chain": "bauhaus",
         "image": og.group(1) if og else None,
@@ -70,7 +79,7 @@ def handle(u, html):
         "name": title.split("|")[0] or u.rsplit("/", 1)[-1],
         "url": u,
         "price": price,
-        "in_stock": None,
+        "in_stock": in_stock,
     }]
 
 
