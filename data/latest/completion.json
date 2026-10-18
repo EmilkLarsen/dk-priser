@@ -1,5 +1,5 @@
 {
- "date": "2026-10-17",
+ "date": "2026-10-18",
  "detail": {
   "bauhaus": {
    "rows": 22651,
@@ -10,32 +10,32 @@
    "complete": true
   },
   "fog": {
-   "rows": 30114,
+   "rows": 30120,
    "complete": true
   },
   "haraldnyborg": {
-   "rows": 11815,
+   "rows": 11821,
    "complete": true
   },
   "power": {
-   "rows": 28809,
+   "rows": 28831,
    "complete": true
   },
   "silvan": {
-   "rows": 40409,
-   "complete": true
+   "rows": 40412,
+   "complete": false
   },
   "skousen": {
-   "rows": 1045,
+   "rows": 1047,
    "complete": false
   },
   "stark": {
-   "rows": 36772,
-   "complete": true
+   "rows": 48679,
+   "complete": false
   },
   "xlbyg": {
    "rows": 34336,
-   "complete": true
+   "complete": false
   }
  }
 }
