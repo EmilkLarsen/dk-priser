@@ -33,10 +33,12 @@ def fetch_url_list(limit=None):
     chunks = re.findall(r"<loc>([^<]+/sitemap/product/\?index=\d+)</loc>", idx)
     urls = []
     seen = set()
+    failed = 0
     for cp in chunks:
         try:
             xml = _decode(get(cp))
         except Exception:
+            failed += 1
             continue
         for m in re.finditer(
                 r"<loc>(https://www\.hagebau\.at/p/[^<]+)</loc>"
@@ -50,6 +52,11 @@ def fetch_url_list(limit=None):
             urls.append(u)
         if limit and len(urls) >= limit:
             break
+    if not urls:
+        raise RuntimeError(
+            "hagebau_at discovery: 0 product urls from sitemap "
+            f"({failed}/{len(chunks)} chunks failed) - blocked, moved, or "
+            "markup changed; never a clean end-of-chunks signal")
     return urls[:limit] if limit else urls
 
 

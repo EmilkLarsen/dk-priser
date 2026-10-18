@@ -30,6 +30,10 @@ def fetch_url_list(limit=None):
             if "-c-id" in u and "-p-" in u:
                 urls.add(u)  # paginated listing pages, each ~30 products
     urls = sorted(urls)
+    if not urls:
+        raise RuntimeError(
+            "davidsen discovery: 0 listing urls from sitemap-1.xml + "
+            "sitemap-2.xml - blocked, moved, or markup changed")
     return urls[:limit] if limit else urls
 
 

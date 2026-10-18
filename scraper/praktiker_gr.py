@@ -52,6 +52,10 @@ def _old_fetch(limit=None):
                 continue
         if limit and len(urls) >= limit:
             break
+    if not urls:
+        raise RuntimeError(
+            "praktiker_gr discovery: 0 product urls from the 3-level "
+            "sitemap - blocked, moved, or markup changed")
     return urls[:limit] if limit else urls
 
 

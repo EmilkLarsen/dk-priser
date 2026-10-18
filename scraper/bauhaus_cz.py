@@ -28,6 +28,11 @@ def fetch_url_list(limit=None):
             urls.append(u)
         if limit and len(urls) >= limit:
             break
+    if not urls:
+        raise RuntimeError(
+            "bauhaus_cz discovery: 0 product urls from sitemap.xml + "
+            "sitemap-1.xml - blocked, moved, or markup changed; never a "
+            "clean end-of-chunks signal")
     return urls[:limit] if limit else urls
 
 
