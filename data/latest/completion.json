@@ -3,26 +3,26 @@
  "detail": {
   "bauhaus": {
    "rows": 22651,
-   "complete": false
+   "complete": true
   },
   "davidsen": {
    "rows": 22373,
-   "complete": false
+   "complete": true
   },
   "fog": {
-   "rows": 30120,
-   "complete": false
+   "rows": 30121,
+   "complete": true
   },
   "haraldnyborg": {
    "rows": 11821,
-   "complete": false
+   "complete": true
   },
   "power": {
-   "rows": 28831,
-   "complete": false
+   "rows": 28846,
+   "complete": true
   },
   "silvan": {
-   "rows": 40444,
+   "rows": 40446,
    "complete": false
   },
   "skousen": {
@@ -30,7 +30,7 @@
    "complete": false
   },
   "stark": {
-   "rows": 48679,
+   "rows": 60161,
    "complete": false
   },
   "xlbyg": {
