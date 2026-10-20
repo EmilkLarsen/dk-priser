@@ -1,28 +1,7 @@
 {
- "date": "2026-10-19",
+ "date": "2026-10-20",
  "total_rows": 251886,
  "chains": {
-  "haraldnyborg": {
-   "products": 11818,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 5386.1
-  },
-  "skousen": {
-   "products": 885,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 18002.3
-  },
-  "power": {
-   "products": 28589,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 12964.9
-  },
   "fog": {
    "products": 30066,
    "price_changes": 0,
@@ -30,26 +9,12 @@
    "expired": 0,
    "seconds": 13734.1
   },
-  "xlbyg": {
-   "products": 34674,
-   "price_changes": 300,
-   "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 10656.5
-  },
-  "stark": {
-   "products": 0,
+  "silvan": {
+   "products": 40424,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 13.8
-  },
-  "davidsen": {
-   "products": 22804,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 9235.7
+   "seconds": 5919.5
   },
   "bauhaus": {
    "products": 22626,
@@ -58,12 +23,47 @@
    "expired": 0,
    "seconds": 16354.2
   },
-  "silvan": {
-   "products": 40424,
+  "davidsen": {
+   "products": 22804,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 5919.5
+   "seconds": 9235.7
+  },
+  "xlbyg": {
+   "products": 34674,
+   "price_changes": 300,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 10656.5
+  },
+  "power": {
+   "products": 28589,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 12964.9
+  },
+  "skousen": {
+   "products": 935,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 18115.6
+  },
+  "haraldnyborg": {
+   "products": 11818,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 5386.1
+  },
+  "stark": {
+   "products": 0,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 13.9
   }
  }
 }
