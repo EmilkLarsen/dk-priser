@@ -1,29 +1,29 @@
 {
- "date": "2026-10-19",
+ "date": "2026-10-20",
  "detail": {
   "bauhaus": {
    "rows": 22651,
-   "complete": true
+   "complete": false
   },
   "davidsen": {
    "rows": 22373,
-   "complete": true
+   "complete": false
   },
   "fog": {
    "rows": 30121,
-   "complete": true
+   "complete": false
   },
   "haraldnyborg": {
    "rows": 11821,
-   "complete": true
+   "complete": false
   },
   "power": {
    "rows": 28846,
-   "complete": true
+   "complete": false
   },
   "silvan": {
    "rows": 40478,
-   "complete": true
+   "complete": false
   },
   "skousen": {
    "rows": 1052,
@@ -35,7 +35,7 @@
   },
   "xlbyg": {
    "rows": 34383,
-   "complete": true
+   "complete": false
   }
  }
 }
