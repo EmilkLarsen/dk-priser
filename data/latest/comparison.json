@@ -2919,18 +2919,6 @@
   "match": "exact"
  },
  {
-  "key": "plastmo twinlite silikonefugemasse|l:0.1",
-  "name": "Plastmo TwinLite, Silikonefugemasse, 100 ml",
-  "prices": {
-   "silvan": 63.13,
-   "stark": 150.3
-  },
-  "min": 63.13,
-  "max": 150.3,
-  "spread_pct": 138.1,
-  "match": "ambiguous"
- },
- {
   "key": "ean:5708615063070",
   "name": "Icopal Base 400 P undertagpap 1x7m",
   "prices": {
@@ -3899,6 +3887,18 @@
   "max": 299.0,
   "spread_pct": 121.5,
   "match": "exact"
+ },
+ {
+  "key": "plastmo twinlite silikonefugemasse|l:0.1",
+  "name": "Plastmo TwinLite, Silikonefugemasse, 100 ml",
+  "prices": {
+   "silvan": 67.95,
+   "stark": 150.3
+  },
+  "min": 67.95,
+  "max": 150.3,
+  "spread_pct": 121.2,
+  "match": "ambiguous"
  },
  {
   "key": "ean:5704314100641",
@@ -11265,18 +11265,6 @@
   "max": 84.55,
   "spread_pct": 65.9,
   "match": "ambiguous"
- },
- {
-  "key": "bahco topnglest 51 dele",
-  "name": "Bahco, Topnøglesæt, 51 dele",
-  "prices": {
-   "silvan": 410.0,
-   "xlbyg": 680.0
-  },
-  "min": 410.0,
-  "max": 680.0,
-  "spread_pct": 65.9,
-  "match": "probable"
  },
  {
   "key": "ean:4048962289268",
@@ -29345,6 +29333,30 @@
   "max": 849.0,
   "spread_pct": 24.3,
   "match": "exact"
+ },
+ {
+  "key": "pinotex deltrsolie teak 2|l:2.5",
+  "name": "Pinotex, Ædeltræsolie, teak, 2,5 L",
+  "prices": {
+   "silvan": 499.0,
+   "bauhaus": 619.95
+  },
+  "min": 499.0,
+  "max": 619.95,
+  "spread_pct": 24.2,
+  "match": "probable"
+ },
+ {
+  "key": "pinotex deltrsolie nyatoh 2|l:2.5",
+  "name": "Pinotex, Ædeltræsolie, nyatoh, 2,5 L",
+  "prices": {
+   "silvan": 499.0,
+   "bauhaus": 619.95
+  },
+  "min": 499.0,
+  "max": 619.95,
+  "spread_pct": 24.2,
+  "match": "probable"
  },
  {
   "key": "ean:3165140007313",
@@ -60220,18 +60232,6 @@
   },
   "min": 545.0,
   "max": 559.0,
-  "spread_pct": 2.6,
-  "match": "exact"
- },
- {
-  "key": "ean:5701159911227",
-  "name": "Dana H2PS håndfugepistol",
-  "prices": {
-   "davidsen": 730.0,
-   "fog": 749.0
-  },
-  "min": 730.0,
-  "max": 749.0,
   "spread_pct": 2.6,
   "match": "exact"
  }
