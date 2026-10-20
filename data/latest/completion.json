@@ -22,8 +22,8 @@
    "complete": true
   },
   "silvan": {
-   "rows": 40488,
-   "complete": false
+   "rows": 40578,
+   "complete": true
   },
   "skousen": {
    "rows": 1062,
@@ -35,7 +35,7 @@
   },
   "xlbyg": {
    "rows": 34383,
-   "complete": false
+   "complete": true
   }
  }
 }
