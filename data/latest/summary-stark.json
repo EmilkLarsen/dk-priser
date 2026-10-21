@@ -2,7 +2,7 @@
  "date": "2026-10-21",
  "chains": {
   "stark": {
-   "error": "collapse guard: 12261 rows vs 64146 before",
+   "error": "collapse guard: 0 rows vs 64146 before",
    "kept_previous": true
   }
  }
