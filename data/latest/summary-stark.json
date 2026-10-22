@@ -1,9 +1,12 @@
 {
- "date": "2026-10-21",
+ "date": "2026-10-22",
  "chains": {
   "stark": {
-   "error": "collapse guard: 0 rows vs 64146 before",
-   "kept_previous": true
+   "products": 9178,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 18003.5
   }
  }
 }
