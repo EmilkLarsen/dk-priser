@@ -20600,18 +20600,6 @@
   "match": "probable"
  },
  {
-  "key": "gardenlife mejsebolde",
-  "name": "GARDENLIFE MEJSEBOLDE 30 STK.",
-  "prices": {
-   "xlbyg": 69.0,
-   "bauhaus": 49.95
-  },
-  "min": 49.95,
-  "max": 69.0,
-  "spread_pct": 38.1,
-  "match": "probable"
- },
- {
   "key": "ean:5711340028924",
   "name": "Firkantet karm Ø315 - høj model",
   "prices": {
@@ -35550,6 +35538,18 @@
   "max": 218.75,
   "spread_pct": 18.2,
   "match": "exact"
+ },
+ {
+  "key": "gardenlife mejsebolde",
+  "name": "GARDENLIFE MEJSEBOLDE 30 STK.",
+  "prices": {
+   "xlbyg": 59.0,
+   "bauhaus": 49.95
+  },
+  "min": 49.95,
+  "max": 59.0,
+  "spread_pct": 18.1,
+  "match": "probable"
  },
  {
   "key": "ean:5701081715184",
@@ -57959,18 +57959,6 @@
   "match": "exact"
  },
  {
-  "key": "aqua danmark salttabletter|kg:25.0",
-  "name": "Aqua Danmark, Salttabletter, 25 kg",
-  "prices": {
-   "silvan": 163.0,
-   "xlbyg": 170.0
-  },
-  "min": 163.0,
-  "max": 170.0,
-  "spread_pct": 4.3,
-  "match": "probable"
- },
- {
   "key": "ean:7311490028867",
   "name": "Anza Platinum stikrulle grov 25 cm",
   "prices": {
@@ -60236,6 +60224,18 @@
   },
   "min": 106.0,
   "max": 109.0,
+  "spread_pct": 2.8,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5701213030505",
+  "name": "Borup tagtæt sort 1kg",
+  "prices": {
+   "davidsen": 145.0,
+   "fog": 149.0
+  },
+  "min": 145.0,
+  "max": 149.0,
   "spread_pct": 2.8,
   "match": "exact"
  }
