@@ -45,11 +45,11 @@
    "seconds": 12980.7
   },
   "skousen": {
-   "products": 268,
+   "products": 281,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18014.2
+   "seconds": 18012.0
   },
   "haraldnyborg": {
    "products": 11788,
@@ -63,7 +63,7 @@
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 8.3
+   "seconds": 6.9
   }
  }
 }
