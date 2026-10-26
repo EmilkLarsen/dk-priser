@@ -2,11 +2,11 @@
  "date": "2026-10-26",
  "chains": {
   "stark": {
-   "products": 33452,
+   "products": 0,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18019.7
+   "seconds": 6.3
   }
  }
 }
