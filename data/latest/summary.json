@@ -1,5 +1,5 @@
 {
- "date": "2026-10-25",
+ "date": "2026-10-26",
  "total_rows": 265263,
  "chains": {
   "fog": {
@@ -45,11 +45,11 @@
    "seconds": 12869.5
   },
   "skousen": {
-   "products": 425,
+   "products": 524,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18122.6
+   "seconds": 18014.0
   },
   "haraldnyborg": {
    "products": 11792,
@@ -63,7 +63,7 @@
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 12.3
+   "seconds": 9.9
   }
  }
 }
