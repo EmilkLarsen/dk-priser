@@ -3,34 +3,34 @@
  "detail": {
   "bauhaus": {
    "rows": 22767,
-   "complete": false
+   "complete": true
   },
   "davidsen": {
    "rows": 22426,
-   "complete": false
+   "complete": true
   },
   "fog": {
-   "rows": 30356,
-   "complete": false
+   "rows": 30451,
+   "complete": true
   },
   "haraldnyborg": {
    "rows": 11867,
-   "complete": false
+   "complete": true
   },
   "power": {
-   "rows": 29176,
-   "complete": false
+   "rows": 29333,
+   "complete": true
   },
   "silvan": {
-   "rows": 40814,
+   "rows": 40815,
    "complete": false
   },
   "skousen": {
-   "rows": 1133,
+   "rows": 1139,
    "complete": false
   },
   "stark": {
-   "rows": 73450,
+   "rows": 74995,
    "complete": false
   },
   "xlbyg": {
