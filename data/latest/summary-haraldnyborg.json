@@ -1,12 +1,12 @@
 {
- "date": "2026-10-29",
+ "date": "2026-10-30",
  "chains": {
   "haraldnyborg": {
-   "products": 11806,
+   "products": 11805,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 3,
-   "seconds": 5380.8
+   "expired": 0,
+   "seconds": 5368.5
   }
  }
 }
