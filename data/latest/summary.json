@@ -24,11 +24,8 @@
    "seconds": 5368.5
   },
   "skousen": {
-   "products": 0,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 18016.9
+   "error": "collapse guard: 0 rows vs 1143 before",
+   "kept_previous": true
   },
   "xlbyg": {
    "products": 34620,
@@ -63,7 +60,7 @@
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 7.1
+   "seconds": 15.5
   }
  }
 }
