@@ -1,5 +1,5 @@
 {
- "date": "2026-10-29",
+ "date": "2026-10-30",
  "total_rows": 269320,
  "chains": {
   "silvan": {
@@ -28,7 +28,7 @@
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18004.2
+   "seconds": 18045.5
   },
   "xlbyg": {
    "products": 34611,
