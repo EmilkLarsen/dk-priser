@@ -9651,6 +9651,18 @@
   "match": "exact"
  },
  {
+  "key": "junckers bivoks|l:0.23",
+  "name": "Junckers, Bivoks, 230 ml",
+  "prices": {
+   "silvan": 118.95,
+   "stark": 205.15
+  },
+  "min": 118.95,
+  "max": 205.15,
+  "spread_pct": 72.5,
+  "match": "ambiguous"
+ },
+ {
   "key": "ean:5701984106386",
   "name": "Hjørnebånd  112x26x2,5 mm varmforz.",
   "prices": {
@@ -13084,18 +13096,6 @@
   "max": 78.0,
   "spread_pct": 59.2,
   "match": "exact"
- },
- {
-  "key": "junckers bivoks|l:0.23",
-  "name": "Junckers, Bivoks, 230 ml",
-  "prices": {
-   "silvan": 128.95,
-   "stark": 205.15
-  },
-  "min": 128.95,
-  "max": 205.15,
-  "spread_pct": 59.1,
-  "match": "ambiguous"
  },
  {
   "key": "ean:5708337000711",
