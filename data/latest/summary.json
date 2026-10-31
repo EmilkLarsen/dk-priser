@@ -1,66 +1,69 @@
 {
- "date": "2026-10-30",
- "total_rows": 269455,
+ "date": "2026-10-31",
+ "total_rows": 270960,
  "chains": {
   "silvan": {
-   "products": 40813,
+   "products": 31128,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 3,
-   "seconds": 6559.7
+   "expired": 0,
+   "seconds": 18001.5
   },
   "bauhaus": {
-   "products": 22623,
+   "products": 22651,
    "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 2,
-   "seconds": 13103.6
-  },
-  "haraldnyborg": {
-   "products": 11805,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 5368.5
-  },
-  "skousen": {
-   "error": "collapse guard: 0 rows vs 1143 before",
-   "kept_previous": true
-  },
-  "xlbyg": {
-   "products": 34620,
-   "price_changes": 300,
    "suspicious_changes": 0,
    "expired": 3,
-   "seconds": 9946.1
+   "seconds": 12894.4
   },
-  "power": {
-   "products": 28887,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 13,
-   "seconds": 13140.6
-  },
-  "fog": {
-   "products": 30222,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 8,
-   "seconds": 13681.6
-  },
-  "davidsen": {
-   "products": 22799,
+  "haraldnyborg": {
+   "products": 11823,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 9282.0
+   "seconds": 5415.6
   },
-  "stark": {
+  "skousen": {
    "products": 0,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 15.5
+   "seconds": 18263.1
+  },
+  "xlbyg": {
+   "products": 21307,
+   "price_changes": 188,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 18001.6
+  },
+  "power": {
+   "products": 28811,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 29,
+   "seconds": 13160.6
+  },
+  "fog": {
+   "products": 30250,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 9,
+   "seconds": 13721.0
+  },
+  "davidsen": {
+   "products": 22844,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 7,
+   "seconds": 9254.8
+  },
+  "stark": {
+   "products": 14247,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 18003.1
   }
  }
 }
