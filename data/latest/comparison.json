@@ -600,18 +600,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5703393719775",
-  "name": "Plus Zigma bord/bænkesæt med 1 ryglæn 392 cm sort",
-  "prices": {
-   "davidsen": 13657.0,
-   "fog": 720.0
-  },
-  "min": 720.0,
-  "max": 13657.0,
-  "spread_pct": 1796.8,
-  "match": "exact"
- },
- {
   "key": "ean:5708722263806",
   "name": "Morsø fire divider grillrist",
   "prices": {
@@ -888,15 +876,27 @@
   "match": "exact"
  },
  {
-  "key": "ean:5703393719614",
-  "name": "Plus Plankesæt med 1 ryglæn 186 cm gråbrun",
+  "key": "ean:4892210185600",
+  "name": "Ryobi RAC814 stålbørste til fugerenser Ø115 mm sten og fliser",
   "prices": {
-   "davidsen": 4844.0,
-   "fog": 720.0
+   "davidsen": 155.0,
+   "fog": 1098.0
   },
-  "min": 720.0,
-  "max": 4844.0,
-  "spread_pct": 572.8,
+  "min": 155.0,
+  "max": 1098.0,
+  "spread_pct": 608.4,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5703393179067",
+  "name": "Plus Cubic rist ekskl. måtte 40x80x6,8 cm",
+  "prices": {
+   "davidsen": 874.0,
+   "fog": 130.0
+  },
+  "min": 130.0,
+  "max": 874.0,
+  "spread_pct": 572.3,
   "match": "exact"
  },
  {
@@ -1068,6 +1068,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5703393179715",
+  "name": "Plus Cubic hjørnebeslag dobbelt til 9x9 cm stolper",
+  "prices": {
+   "davidsen": 46.0,
+   "fog": 210.0
+  },
+  "min": 46.0,
+  "max": 210.0,
+  "spread_pct": 356.5,
+  "match": "exact"
+ },
+ {
   "key": "ean:5703887132271",
   "name": "Nilfisk Click&Clean Powerspeed dyse",
   "prices": {
@@ -1089,6 +1101,18 @@
   "min": 18.0,
   "max": 79.95,
   "spread_pct": 344.2,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5035048392782",
+  "name": "DeWALT DCB182-XJ batteri 18V XR 4,0 Ah",
+  "prices": {
+   "davidsen": 120.0,
+   "fog": 529.0
+  },
+  "min": 120.0,
+  "max": 529.0,
+  "spread_pct": 340.8,
   "match": "exact"
  },
  {
@@ -1237,18 +1261,6 @@
   "min": 299.0,
   "max": 1125.0,
   "spread_pct": 276.3,
-  "match": "exact"
- },
- {
-  "key": "ean:5703393179708",
-  "name": "Plus monteringsskruer t/træstolper Ø5x50 mm 24 stk sølvgrå",
-  "prices": {
-   "davidsen": 46.0,
-   "fog": 170.0
-  },
-  "min": 46.0,
-  "max": 170.0,
-  "spread_pct": 269.6,
   "match": "exact"
  },
  {
@@ -1607,6 +1619,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:4892210113399",
+  "name": "Ryobi RAK59SD bitssæt m/skruetrækkerhåndtag - 59 dele",
+  "prices": {
+   "davidsen": 305.0,
+   "fog": 99.0
+  },
+  "min": 99.0,
+  "max": 305.0,
+  "spread_pct": 208.1,
+  "match": "exact"
+ },
+ {
   "key": "ean:4058546528201",
   "name": "Milwaukee M18 LPP2A-0 Powerpack M18 SAL2 og M18 AL arbejdslamper",
   "prices": {
@@ -1923,7 +1947,7 @@
  },
  {
   "key": "ean:5703393203694",
-  "name": "Plus omlimet profilstolpe 90x90 mm trykimprægneret",
+  "name": "Plus Bergen hegn m/espalier 90x165 cm trykimprægneret",
   "prices": {
    "davidsen": 167.0,
    "fog": 470.0
@@ -1972,7 +1996,7 @@
  },
  {
   "key": "ean:5708722292905",
-  "name": "Morsø Forno Piccolo gasgrill",
+  "name": "Morsø Cover til Forno Piccolo og Terra bord",
   "prices": {
    "davidsen": 575.0,
    "fog": 1595.0
@@ -6505,18 +6529,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5703393175199",
-  "name": "Plus glasbeslag t/firkantet stolper 2 stk zink",
-  "prices": {
-   "davidsen": 153.0,
-   "fog": 80.0
-  },
-  "min": 80.0,
-  "max": 153.0,
-  "spread_pct": 91.2,
-  "match": "exact"
- },
- {
   "key": "ean:5712649413831",
   "name": "Alpha Foam 30 gulvunderlag m/dampspærre",
   "prices": {
@@ -6637,18 +6649,6 @@
   },
   "min": 50.0,
   "max": 94.95,
-  "spread_pct": 89.9,
-  "match": "exact"
- },
- {
-  "key": "ean:5055018131715",
-  "name": "Plasti-Kote tavle lak sort 400 ml",
-  "prices": {
-   "davidsen": 150.0,
-   "fog": 79.0
-  },
-  "min": 79.0,
-  "max": 150.0,
   "spread_pct": 89.9,
   "match": "exact"
  },
@@ -7445,6 +7445,18 @@
   "min": 86.0,
   "max": 159.0,
   "spread_pct": 84.9,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5708085100084",
+  "name": "Bon-fire bbq pande, emalje, 60 cm",
+  "prices": {
+   "davidsen": 270.0,
+   "fog": 499.0
+  },
+  "min": 270.0,
+  "max": 499.0,
+  "spread_pct": 84.8,
   "match": "exact"
  },
  {
@@ -9204,6 +9216,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5035048809235",
+  "name": "DeWALT DCMWSP156N-XJ 2x18V plæneklipper solo",
+  "prices": {
+   "davidsen": 4370.0,
+   "fog": 2499.0
+  },
+  "min": 2499.0,
+  "max": 4370.0,
+  "spread_pct": 74.9,
+  "match": "exact"
+ },
+ {
   "key": "ean:4895229106086",
   "name": "Philips Minicelle 8LR932 batteri 1 stk.",
   "prices": {
@@ -9866,18 +9890,6 @@
   },
   "min": 32.0,
   "max": 54.95,
-  "spread_pct": 71.7,
-  "match": "exact"
- },
- {
-  "key": "ean:5055018131746",
-  "name": "Plasti-kote twist brændeovn 400 ml",
-  "prices": {
-   "davidsen": 170.0,
-   "fog": 99.0
-  },
-  "min": 99.0,
-  "max": 170.0,
   "spread_pct": 71.7,
   "match": "exact"
  },
@@ -12047,7 +12059,7 @@
  },
  {
   "key": "ean:5709180731555",
-  "name": "DanoMast plasttopbeslag 2 - 8 meter 50 mm.",
+  "name": "DanoMast rød plast knop til 2-6 meter 135 mm",
   "prices": {
    "davidsen": 49.0,
    "fog": 79.95
@@ -12127,18 +12139,6 @@
   "min": 165.0,
   "max": 269.0,
   "spread_pct": 63.0,
-  "match": "exact"
- },
- {
-  "key": "ean:5703393179715",
-  "name": "Plus Cubic hjørnebeslag dobbelt til 9x9 cm stolper",
-  "prices": {
-   "davidsen": 129.0,
-   "fog": 210.0
-  },
-  "min": 129.0,
-  "max": 210.0,
-  "spread_pct": 62.8,
   "match": "exact"
  },
  {
@@ -12803,6 +12803,30 @@
   },
   "min": 30.0,
   "max": 48.0,
+  "spread_pct": 60.0,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4895229109254",
+  "name": "Philips Alkaline LR6/AA batteri 40 stk.",
+  "prices": {
+   "davidsen": 120.0,
+   "fog": 75.0
+  },
+  "min": 75.0,
+  "max": 120.0,
+  "spread_pct": 60.0,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4895229109247",
+  "name": "Philips Alkaline LR03/AAA batteri 40 stk.",
+  "prices": {
+   "davidsen": 120.0,
+   "fog": 75.0
+  },
+  "min": 75.0,
+  "max": 120.0,
   "spread_pct": 60.0,
   "match": "exact"
  },
@@ -17650,18 +17674,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:4892210113399",
-  "name": "Ryobi RAK59SD bitssæt m/skruetrækkerhåndtag - 59 dele",
-  "prices": {
-   "davidsen": 305.0,
-   "fog": 209.0
-  },
-  "min": 209.0,
-  "max": 305.0,
-  "spread_pct": 45.9,
-  "match": "exact"
- },
- {
   "key": "borup flydende brun sbe|l:1.0",
   "name": "Borup, Flydende brun sæbe, 1 L",
   "prices": {
@@ -17744,18 +17756,6 @@
   "min": 699.0,
   "max": 1018.0,
   "spread_pct": 45.6,
-  "match": "exact"
- },
- {
-  "key": "ean:5703538279669",
-  "name": "Weber røgflis seafood 0,7 kg",
-  "prices": {
-   "davidsen": 79.95,
-   "fog": 54.95
-  },
-  "min": 54.95,
-  "max": 79.95,
-  "spread_pct": 45.5,
   "match": "exact"
  },
  {
@@ -22132,7 +22132,7 @@
  },
  {
   "key": "ean:5703393173157",
-  "name": "Plus Tokyo hegn 180x90 cm sort",
+  "name": "Plus Tokyo hegn 83x140 cm sort",
   "prices": {
    "davidsen": 767.0,
    "fog": 1040.0
@@ -29054,7 +29054,7 @@
  },
  {
   "key": "ean:5701701064494",
-  "name": "Halls Qube Lean-To 612 vægdrivhus sort med hærdet glas 7,1 m²",
+  "name": "Sokkel til Halls Qube Lean-To",
   "prices": {
    "davidsen": 1995.0,
    "haraldnyborg": 1599.0
@@ -31009,6 +31009,18 @@
   },
   "min": 130.0,
   "max": 159.0,
+  "spread_pct": 22.3,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5703393179708",
+  "name": "Plus Cubic hjørnebeslag dobbelt til 7x7 cm stolper",
+  "prices": {
+   "davidsen": 139.0,
+   "fog": 170.0
+  },
+  "min": 139.0,
+  "max": 170.0,
   "spread_pct": 22.3,
   "match": "exact"
  },
@@ -35377,6 +35389,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5708722302208",
+  "name": "Morsø Balcone E-130 bordgrill El",
+  "prices": {
+   "davidsen": 295.0,
+   "fog": 249.0
+  },
+  "min": 249.0,
+  "max": 295.0,
+  "spread_pct": 18.5,
+  "match": "exact"
+ },
+ {
   "key": "ean:5701984107390",
   "name": "PN anverfer med øsken elforzinket gul",
   "prices": {
@@ -37795,6 +37819,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5055018131715",
+  "name": "Plasti-Kote tavle lak sort 400 ml",
+  "prices": {
+   "davidsen": 150.0,
+   "fog": 129.0
+  },
+  "min": 129.0,
+  "max": 150.0,
+  "spread_pct": 16.3,
+  "match": "exact"
+ },
+ {
   "key": "ean:5703393711908",
   "name": "PLUS Klink/Plank mellem/topafslutning længde 174 cm",
   "prices": {
@@ -38071,6 +38107,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5703393175199",
+  "name": "Plus monteringsskruer t/kompositstolper 24 stk sølvgrå",
+  "prices": {
+   "davidsen": 69.0,
+   "fog": 80.0
+  },
+  "min": 69.0,
+  "max": 80.0,
+  "spread_pct": 15.9,
+  "match": "exact"
+ },
+ {
   "key": "ean:5703393736338",
   "name": "Plus shelter ubehandlet nåletræ inkl. tagpap",
   "prices": {
@@ -38152,18 +38200,6 @@
   },
   "min": 215.0,
   "max": 249.0,
-  "spread_pct": 15.8,
-  "match": "exact"
- },
- {
-  "key": "ean:4895229109247",
-  "name": "Philips Alkaline LR03/AAA batteri 40 stk.",
-  "prices": {
-   "davidsen": 120.0,
-   "fog": 139.0
-  },
-  "min": 120.0,
-  "max": 139.0,
   "spread_pct": 15.8,
   "match": "exact"
  },
@@ -40025,6 +40061,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5055018131746",
+  "name": "Plasti-kote twist brændeovn 400 ml",
+  "prices": {
+   "davidsen": 170.0,
+   "fog": 149.0
+  },
+  "min": 149.0,
+  "max": 170.0,
+  "spread_pct": 14.1,
+  "match": "exact"
+ },
+ {
   "key": "ean:5701747014507",
   "name": "Ravendo mørtelbør BC 1100 S",
   "prices": {
@@ -41476,18 +41524,6 @@
   },
   "min": 530.0,
   "max": 599.0,
-  "spread_pct": 13.0,
-  "match": "exact"
- },
- {
-  "key": "ean:5703393179067",
-  "name": "Plus Cubic måtte sort - 40x40 cm",
-  "prices": {
-   "davidsen": 115.0,
-   "fog": 130.0
-  },
-  "min": 115.0,
-  "max": 130.0,
   "spread_pct": 13.0,
   "match": "exact"
  },
@@ -44382,7 +44418,7 @@
  },
  {
   "key": "ean:5708722298105",
-  "name": "Morsø Forno Medio gasgrill",
+  "name": "Morsø Medio rotisserie",
   "prices": {
    "davidsen": 995.0,
    "fog": 899.0
@@ -45615,18 +45651,6 @@
   },
   "min": 246.0,
   "max": 270.0,
-  "spread_pct": 9.8,
-  "match": "exact"
- },
- {
-  "key": "ean:5703393180223",
-  "name": "Plus samlebeslag til gyngestativ Cubic",
-  "prices": {
-   "davidsen": 337.0,
-   "fog": 370.0
-  },
-  "min": 337.0,
-  "max": 370.0,
   "spread_pct": 9.8,
   "match": "exact"
  },
@@ -47768,7 +47792,7 @@
  },
  {
   "key": "ean:5703393718303",
-  "name": "Plus bord/bænkesæt med 2 ryglæn 177 cm trykimp",
+  "name": "Plus bord- og bænkesæt trykimprægneret, 300 cm",
   "prices": {
    "davidsen": 2294.0,
    "fog": 2505.0
@@ -50995,6 +51019,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5703393719775",
+  "name": "Plus Zigma ryglæn til bord/bænkesæt 166 cm sort",
+  "prices": {
+   "davidsen": 664.0,
+   "fog": 720.0
+  },
+  "min": 664.0,
+  "max": 720.0,
+  "spread_pct": 8.4,
+  "match": "exact"
+ },
+ {
   "key": "ean:5707883013510",
   "name": "Ecostyle Mårfri Spray 500ml",
   "prices": {
@@ -51831,6 +51867,18 @@
   },
   "min": 1047.0,
   "max": 1130.0,
+  "spread_pct": 7.9,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5703393719614",
+  "name": "Plus Ryglæn til plankebænk 166 cm sort",
+  "prices": {
+   "davidsen": 667.0,
+   "fog": 720.0
+  },
+  "min": 667.0,
+  "max": 720.0,
   "spread_pct": 7.9,
   "match": "exact"
  },
@@ -56954,18 +57002,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:6972489770450",
-  "name": "Reolink Argus PT GO kamera inkl. solar panel hvid",
-  "prices": {
-   "davidsen": 2899.0,
-   "fog": 2754.0
-  },
-  "min": 2754.0,
-  "max": 2899.0,
-  "spread_pct": 5.3,
-  "match": "exact"
- },
- {
   "key": "ean:5701951119715",
   "name": "Samlemuffe 40x32 mm plast",
   "prices": {
@@ -60200,42 +60236,6 @@
  {
   "key": "ean:4007548005609",
   "name": "Fermacell® papirarmeringsbånd 75 m",
-  "prices": {
-   "davidsen": 125.0,
-   "fog": 129.0
-  },
-  "min": 125.0,
-  "max": 129.0,
-  "spread_pct": 3.2,
-  "match": "exact"
- },
- {
-  "key": "ean:8716242879688",
-  "name": "GORI 111 transparent træolie cedertræ 5 L",
-  "prices": {
-   "davidsen": 515.0,
-   "fog": 499.0
-  },
-  "min": 499.0,
-  "max": 515.0,
-  "spread_pct": 3.2,
-  "match": "exact"
- },
- {
-  "key": "ean:5703302163507",
-  "name": "LK Fuga tangent afbryder gl. 1 modul 2 stk koksgrå",
-  "prices": {
-   "davidsen": 40.0,
-   "haraldnyborg": 38.75
-  },
-  "min": 38.75,
-  "max": 40.0,
-  "spread_pct": 3.2,
-  "match": "exact"
- },
- {
-  "key": "ean:5709847507950",
-  "name": "Primo hulkehlliste hvid 21x21x3100 mm",
   "prices": {
    "davidsen": 125.0,
    "fog": 129.0
