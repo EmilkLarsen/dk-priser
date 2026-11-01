@@ -42,7 +42,7 @@
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 5.4
+   "seconds": 7.9
   },
   "power": {
    "products": 28775,
@@ -63,7 +63,7 @@
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18253.7
+   "seconds": 18440.8
   }
  }
 }
