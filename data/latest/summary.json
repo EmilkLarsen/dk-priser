@@ -3,11 +3,11 @@
  "total_rows": 271335,
  "chains": {
   "silvan": {
-   "products": 30433,
+   "products": 41162,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18001.8
+   "seconds": 6083.0
   },
   "bauhaus": {
    "products": 22648,
@@ -28,14 +28,14 @@
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18094.6
+   "seconds": 18278.8
   },
   "xlbyg": {
-   "products": 21141,
-   "price_changes": 187,
+   "products": 34690,
+   "price_changes": 305,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18001.3
+   "seconds": 11151.3
   },
   "power": {
    "products": 28775,
@@ -59,11 +59,11 @@
    "seconds": 9356.4
   },
   "stark": {
-   "products": 20589,
+   "products": 0,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18005.1
+   "seconds": 8.3
   }
  }
 }
