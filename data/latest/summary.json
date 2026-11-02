@@ -1,6 +1,6 @@
 {
  "date": "2026-11-02",
- "total_rows": 274801,
+ "total_rows": 274802,
  "chains": {
   "silvan": {
    "products": 41158,
@@ -59,8 +59,11 @@
    "seconds": 13188.5
   },
   "skousen": {
-   "error": "collapse guard: 249 rows vs 1143 before",
-   "kept_previous": true
+   "products": 177,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 18113.3
   }
  }
 }
