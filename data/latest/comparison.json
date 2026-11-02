@@ -35545,6 +35545,18 @@
   "match": "exact"
  },
  {
+  "key": "junckers natursbe ekstra hvid 2|l:2.5",
+  "name": "Junckers, Natursæbe, ekstra hvid, 2,5 L",
+  "prices": {
+   "silvan": 150.95,
+   "bauhaus": 178.95
+  },
+  "min": 150.95,
+  "max": 178.95,
+  "spread_pct": 18.5,
+  "match": "probable"
+ },
+ {
   "key": "ean:3261543802620",
   "name": "Dyrup grunder fugtbremsende kælder 2,5 L",
   "prices": {
@@ -60230,18 +60242,6 @@
   },
   "min": 125.0,
   "max": 129.0,
-  "spread_pct": 3.2,
-  "match": "exact"
- },
- {
-  "key": "ean:8716242879688",
-  "name": "GORI 111 transparent træolie cedertræ 5 L",
-  "prices": {
-   "davidsen": 515.0,
-   "fog": 499.0
-  },
-  "min": 499.0,
-  "max": 515.0,
   "spread_pct": 3.2,
   "match": "exact"
  }
