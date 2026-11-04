@@ -1,6 +1,6 @@
 {
- "date": "2026-11-03",
- "total_rows": 274698,
+ "date": "2026-11-04",
+ "total_rows": 274702,
  "chains": {
   "silvan": {
    "products": 41065,
@@ -42,7 +42,7 @@
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 6.8
+   "seconds": 6.7
   },
   "power": {
    "products": 28715,
@@ -59,11 +59,11 @@
    "seconds": 12807.1
   },
   "skousen": {
-   "products": 585,
+   "products": 717,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18064.6
+   "seconds": 18113.3
   }
  }
 }
