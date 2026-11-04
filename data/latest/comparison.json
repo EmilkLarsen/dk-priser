@@ -9239,6 +9239,18 @@
   "match": "exact"
  },
  {
+  "key": "junckers bivoks|l:0.23",
+  "name": "Junckers, Bivoks, 230 ml",
+  "prices": {
+   "silvan": 117.95,
+   "stark": 205.15
+  },
+  "min": 117.95,
+  "max": 205.15,
+  "spread_pct": 73.9,
+  "match": "ambiguous"
+ },
+ {
   "key": "ean:7332531013406",
   "name": "Loctite Epoxy universallim 25 ml",
   "prices": {
@@ -9527,18 +9539,6 @@
   "max": 138.0,
   "spread_pct": 72.6,
   "match": "exact"
- },
- {
-  "key": "junckers bivoks|l:0.23",
-  "name": "Junckers, Bivoks, 230 ml",
-  "prices": {
-   "silvan": 118.95,
-   "stark": 205.15
-  },
-  "min": 118.95,
-  "max": 205.15,
-  "spread_pct": 72.5,
-  "match": "ambiguous"
  },
  {
   "key": "ean:5701984106386",
@@ -34462,6 +34462,18 @@
   "match": "exact"
  },
  {
+  "key": "junckers natursbe ekstra hvid 2|l:2.5",
+  "name": "Junckers, Natursæbe, ekstra hvid, 2,5 L",
+  "prices": {
+   "silvan": 149.95,
+   "bauhaus": 178.95
+  },
+  "min": 149.95,
+  "max": 178.95,
+  "spread_pct": 19.3,
+  "match": "probable"
+ },
+ {
   "key": "ean:4059952593364",
   "name": "Bosch GMA 55 magasinforsats",
   "prices": {
@@ -35445,18 +35457,6 @@
   "max": 949.0,
   "spread_pct": 18.6,
   "match": "exact"
- },
- {
-  "key": "junckers natursbe ekstra hvid 2|l:2.5",
-  "name": "Junckers, Natursæbe, ekstra hvid, 2,5 L",
-  "prices": {
-   "silvan": 150.95,
-   "bauhaus": 178.95
-  },
-  "min": 150.95,
-  "max": 178.95,
-  "spread_pct": 18.5,
-  "match": "probable"
  },
  {
   "key": "ean:3261543802620",
