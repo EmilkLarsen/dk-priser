@@ -1,69 +1,69 @@
 {
  "date": "2026-11-04",
- "total_rows": 274702,
+ "total_rows": 275755,
  "chains": {
-  "silvan": {
-   "products": 41065,
+  "xlbyg": {
+   "products": 21203,
+   "price_changes": 188,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 18001.4
+  },
+  "skousen": {
+   "products": 823,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 66,
-   "seconds": 7964.3
+   "expired": 0,
+   "seconds": 18347.9
   },
-  "xlbyg": {
-   "products": 34641,
-   "price_changes": 305,
+  "power": {
+   "products": 28693,
+   "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 7,
-   "seconds": 10692.6
+   "expired": 35,
+   "seconds": 13117.4
   },
-  "haraldnyborg": {
-   "products": 11543,
+  "fog": {
+   "products": 30249,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 31,
+   "seconds": 13682.2
+  },
+  "stark": {
+   "products": 18520,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 18010.0
+  },
+  "bauhaus": {
+   "products": 22639,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 3,
-   "seconds": 5294.2
+   "seconds": 14762.2
   },
   "davidsen": {
-   "products": 22831,
+   "products": 22789,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 5,
-   "seconds": 9132.5
+   "expired": 13,
+   "seconds": 9433.5
   },
-  "fog": {
-   "products": 30191,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 36,
-   "seconds": 13650.4
-  },
-  "stark": {
-   "products": 0,
+  "silvan": {
+   "products": 30219,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 6.7
+   "seconds": 18001.1
   },
-  "power": {
-   "products": 28715,
+  "haraldnyborg": {
+   "products": 11528,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 40,
-   "seconds": 13122.9
-  },
-  "bauhaus": {
-   "products": 22641,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 21,
-   "seconds": 12807.1
-  },
-  "skousen": {
-   "products": 717,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 18113.3
+   "expired": 51,
+   "seconds": 5219.7
   }
  }
 }
