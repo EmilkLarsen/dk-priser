@@ -10,11 +10,11 @@
    "seconds": 10562.5
   },
   "skousen": {
-   "products": 236,
+   "products": 265,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18501.1
+   "seconds": 18001.0
   },
   "power": {
    "products": 28716,
@@ -35,7 +35,7 @@
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 19.6
+   "seconds": 6.9
   },
   "bauhaus": {
    "products": 22627,
