@@ -1,12 +1,12 @@
 {
- "date": "2026-11-04",
+ "date": "2026-11-05",
  "chains": {
   "xlbyg": {
-   "products": 34593,
-   "price_changes": 305,
+   "products": 20866,
+   "price_changes": 180,
    "suspicious_changes": 0,
-   "expired": 2,
-   "seconds": 10475.7
+   "expired": 0,
+   "seconds": 18001.4
   }
  }
 }
