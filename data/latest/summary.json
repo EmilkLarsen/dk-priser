@@ -1,69 +1,69 @@
 {
- "date": "2026-11-05",
- "total_rows": 275894,
+ "date": "2026-11-06",
+ "total_rows": 277609,
  "chains": {
   "xlbyg": {
-   "products": 34556,
-   "price_changes": 305,
+   "products": 24261,
+   "price_changes": 231,
    "suspicious_changes": 0,
-   "expired": 1,
-   "seconds": 10562.5
+   "expired": 0,
+   "seconds": 18001.2
   },
   "skousen": {
-   "products": 265,
+   "products": 350,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18001.0
+   "seconds": 18171.8
   },
   "power": {
-   "products": 28716,
+   "products": 28609,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 75,
-   "seconds": 13189.0
+   "expired": 49,
+   "seconds": 13020.2
   },
   "fog": {
-   "products": 30316,
+   "products": 30379,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 17,
-   "seconds": 13854.8
+   "expired": 5,
+   "seconds": 13920.4
   },
   "stark": {
-   "products": 0,
+   "products": 35802,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 6.9
+   "seconds": 14509.6
   },
   "bauhaus": {
-   "products": 22627,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 9,
-   "seconds": 13543.7
-  },
-  "davidsen": {
-   "products": 22795,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 10,
-   "seconds": 9128.8
-  },
-  "silvan": {
-   "products": 40918,
+   "products": 22736,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 3,
-   "seconds": 8100.1
+   "seconds": 15642.9
   },
-  "haraldnyborg": {
-   "products": 11385,
+  "davidsen": {
+   "products": 22792,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 4,
-   "seconds": 5256.8
+   "expired": 2,
+   "seconds": 9253.6
+  },
+  "silvan": {
+   "products": 29886,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 18002.1
+  },
+  "haraldnyborg": {
+   "products": 11734,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 5592.6
   }
  }
 }
