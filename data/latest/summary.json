@@ -1,20 +1,20 @@
 {
  "date": "2026-11-06",
- "total_rows": 277609,
+ "total_rows": 277585,
  "chains": {
   "xlbyg": {
-   "products": 24261,
-   "price_changes": 231,
+   "products": 34561,
+   "price_changes": 306,
    "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 18001.2
+   "expired": 23,
+   "seconds": 7514.2
   },
   "skousen": {
-   "products": 350,
+   "products": 507,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18171.8
+   "seconds": 18015.3
   },
   "power": {
    "products": 28609,
@@ -52,11 +52,11 @@
    "seconds": 9253.6
   },
   "silvan": {
-   "products": 29886,
+   "products": 40782,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 18002.1
+   "expired": 3,
+   "seconds": 6290.2
   },
   "haraldnyborg": {
    "products": 11734,

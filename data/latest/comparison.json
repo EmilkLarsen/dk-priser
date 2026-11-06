@@ -3357,6 +3357,18 @@
   "match": "exact"
  },
  {
+  "key": "plastmo twinlite silikonefugemasse|l:0.1",
+  "name": "Plastmo TwinLite, Silikonefugemasse, 100 ml",
+  "prices": {
+   "silvan": 64.95,
+   "stark": 150.3
+  },
+  "min": 64.95,
+  "max": 150.3,
+  "spread_pct": 131.4,
+  "match": "ambiguous"
+ },
+ {
   "key": "ean:8019296039269",
   "name": "CMT savklinge 165x1,5x20 Z36",
   "prices": {
@@ -3861,18 +3873,6 @@
   "max": 31.0,
   "spread_pct": 121.4,
   "match": "exact"
- },
- {
-  "key": "plastmo twinlite silikonefugemasse|l:0.1",
-  "name": "Plastmo TwinLite, Silikonefugemasse, 100 ml",
-  "prices": {
-   "silvan": 67.95,
-   "stark": 150.3
-  },
-  "min": 67.95,
-  "max": 150.3,
-  "spread_pct": 121.2,
-  "match": "ambiguous"
  },
  {
   "key": "ean:5704314100641",
@@ -27581,18 +27581,6 @@
   "max": 139.0,
   "spread_pct": 26.4,
   "match": "exact"
- },
- {
-  "key": "fiskars classic graveskovl",
-  "name": "FISKARS CLASSIC GRAVESKOVL",
-  "prices": {
-   "xlbyg": 499.0,
-   "stark": 395.1
-  },
-  "min": 395.1,
-  "max": 499.0,
-  "spread_pct": 26.3,
-  "match": "probable"
  },
  {
   "key": "ean:5703872049379",
@@ -60239,6 +60227,18 @@
   },
   "min": 32.0,
   "max": 33.0,
+  "spread_pct": 3.1,
+  "match": "exact"
+ },
+ {
+  "key": "ean:8019296005622",
+  "name": "CMT savklinge 216x2,8x30 mm Z24W neg.",
+  "prices": {
+   "davidsen": 445.0,
+   "fog": 459.0
+  },
+  "min": 445.0,
+  "max": 459.0,
   "spread_pct": 3.1,
   "match": "exact"
  }
