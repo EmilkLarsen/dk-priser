@@ -1,12 +1,12 @@
 {
- "date": "2026-11-07",
+ "date": "2026-11-08",
  "chains": {
   "fog": {
-   "products": 30398,
+   "products": 30371,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 9,
-   "seconds": 13769.6
+   "expired": 6,
+   "seconds": 13903.5
   }
  }
 }
