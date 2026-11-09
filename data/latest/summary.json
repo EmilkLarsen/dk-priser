@@ -1,6 +1,6 @@
 {
- "date": "2026-11-08",
- "total_rows": 278425,
+ "date": "2026-11-09",
+ "total_rows": 278432,
  "chains": {
   "xlbyg": {
    "products": 34556,
@@ -10,11 +10,11 @@
    "seconds": 6620.0
   },
   "skousen": {
-   "products": 976,
+   "products": 1086,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18045.2
+   "seconds": 18304.6
   },
   "power": {
    "products": 29361,
