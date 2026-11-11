@@ -36013,6 +36013,19 @@
   "match": "exact"
  },
  {
+  "key": "ean:7090023642427",
+  "name": "Tilefix Twist, Flisenivelleringssæt, 200 dele",
+  "prices": {
+   "silvan": 272.0,
+   "davidsen": 405.0,
+   "fog": 289.0
+  },
+  "min": 272.0,
+  "max": 405.0,
+  "spread_pct": 48.9,
+  "match": "exact"
+ },
+ {
   "key": "ean:5702551000915",
   "name": "Tjep BC 60 trykluft beslagtromlesømpistol",
   "prices": {
@@ -42302,18 +42315,6 @@
   },
   "min": 1028.0,
   "max": 1440.0,
-  "spread_pct": 40.1,
-  "match": "exact"
- },
- {
-  "key": "ean:7090023642427",
-  "name": "Tilefix Twist flisenivellering",
-  "prices": {
-   "davidsen": 405.0,
-   "fog": 289.0
-  },
-  "min": 289.0,
-  "max": 405.0,
   "spread_pct": 40.1,
   "match": "exact"
  },
@@ -49676,6 +49677,19 @@
   "match": "exact"
  },
  {
+  "key": "ean:7090023642465",
+  "name": "Tilefix Twist, Nivelleringscaps, 100 stk.",
+  "prices": {
+   "silvan": 229.95,
+   "davidsen": 305.0,
+   "fog": 239.0
+  },
+  "min": 229.95,
+  "max": 305.0,
+  "spread_pct": 32.6,
+  "match": "exact"
+ },
+ {
   "key": "ean:7313463030792",
   "name": "Rapid klammer type 13-6 mm 5 m",
   "prices": {
@@ -55881,18 +55895,6 @@
   },
   "min": 47.0,
   "max": 59.95,
-  "spread_pct": 27.6,
-  "match": "exact"
- },
- {
-  "key": "ean:7090023642465",
-  "name": "Tilefix twist flisenivelleringscaps 100 stk",
-  "prices": {
-   "davidsen": 305.0,
-   "fog": 239.0
-  },
-  "min": 239.0,
-  "max": 305.0,
   "spread_pct": 27.6,
   "match": "exact"
  },
