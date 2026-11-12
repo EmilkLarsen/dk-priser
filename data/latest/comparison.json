@@ -2696,6 +2696,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:4053423656794",
+  "name": "Bosch, Plæneklipper inkl. batterier, Power For All, Rotak 18V2-38",
+  "prices": {
+   "silvan": 2284.0,
+   "fog": 7458.0
+  },
+  "min": 2284.0,
+  "max": 7458.0,
+  "spread_pct": 226.5,
+  "match": "exact"
+ },
+ {
   "key": "ean:5701291541290",
   "name": "Profilskruer, P-Screw SS, sortfosfateret stål, Ø4,2x13 mm, 1.000 stk.",
   "prices": {
@@ -2865,18 +2877,6 @@
   "min": 563.0,
   "max": 1798.0,
   "spread_pct": 219.4,
-  "match": "exact"
- },
- {
-  "key": "ean:4053423656794",
-  "name": "Bosch, Plæneklipper inkl. batterier, Power For All, Rotak 18V2-38",
-  "prices": {
-   "silvan": 2344.0,
-   "fog": 7458.0
-  },
-  "min": 2344.0,
-  "max": 7458.0,
-  "spread_pct": 218.2,
   "match": "exact"
  },
  {
@@ -8883,18 +8883,6 @@
   "min": 2495.0,
   "max": 5578.0,
   "spread_pct": 123.6,
-  "match": "exact"
- },
- {
-  "key": "ean:5401014466335",
-  "name": "Pergo, Laminatgulv, Perstorp, vineyard oak, 8x190xx1200 mm",
-  "prices": {
-   "silvan": 206.4,
-   "fog": 461.24
-  },
-  "min": 206.4,
-  "max": 461.24,
-  "spread_pct": 123.5,
   "match": "exact"
  },
  {
@@ -17116,6 +17104,19 @@
   "match": "exact"
  },
  {
+  "key": "ean:5704628636621",
+  "name": "Tilefix T-Spin, Nivelleringsskruer, genanvendelige, 50 stk.",
+  "prices": {
+   "silvan": 155.0,
+   "davidsen": 295.0,
+   "fog": 279.0
+  },
+  "min": 155.0,
+  "max": 295.0,
+  "spread_pct": 90.3,
+  "match": "exact"
+ },
+ {
   "key": "ean:5706750012380",
   "name": "IBF Holmegaardsten kantblok m. lige kant, 14x21x14 cm, antracit",
   "prices": {
@@ -18774,6 +18775,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5401014466274",
+  "name": "Pergo, Laminatgulv, Perstorp, fresh oak, 8x190xx1200 mm",
+  "prices": {
+   "silvan": 339.2,
+   "davidsen": 183.54
+  },
+  "min": 183.54,
+  "max": 339.2,
+  "spread_pct": 84.8,
+  "match": "exact"
+ },
+ {
   "key": "ean:5708085100084",
   "name": "Bon-fire bbq pande, emalje, 60 cm",
   "prices": {
@@ -19210,6 +19223,18 @@
   },
   "min": 19.0,
   "max": 34.95,
+  "spread_pct": 83.9,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5401014466267",
+  "name": "Pergo, Laminatgulv, Perstorp, nordic white ash, 8x190x1200 mm",
+  "prices": {
+   "silvan": 337.6,
+   "davidsen": 183.54
+  },
+  "min": 183.54,
+  "max": 337.6,
   "spread_pct": 83.9,
   "match": "exact"
  },
@@ -20162,18 +20187,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5415125488827",
-  "name": "Pergo, Laminatgulv, Visby, coastal oak, 8x190x1380 mm",
-  "prices": {
-   "silvan": 384.56,
-   "fog": 695.47
-  },
-  "min": 384.56,
-  "max": 695.47,
-  "spread_pct": 80.8,
-  "match": "exact"
- },
- {
   "key": "ean:5702447590124",
   "name": "Clean Carpet kokosmåtte 40x70 cm sort",
   "prices": {
@@ -20716,6 +20729,19 @@
   },
   "min": 149.95,
   "max": 269.0,
+  "spread_pct": 79.4,
+  "match": "exact"
+ },
+ {
+  "key": "ean:7090023642465",
+  "name": "Tilefix Twist, Nivelleringscaps, 100 stk.",
+  "prices": {
+   "silvan": 170.0,
+   "davidsen": 305.0,
+   "fog": 239.0
+  },
+  "min": 170.0,
+  "max": 305.0,
   "spread_pct": 79.4,
   "match": "exact"
  },
@@ -22370,6 +22396,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:7051820500358",
+  "name": "Søm/brikker t/grundmursplader, 100 stk.",
+  "prices": {
+   "silvan": 90.95,
+   "fog": 159.0
+  },
+  "min": 90.95,
+  "max": 159.0,
+  "spread_pct": 74.8,
+  "match": "exact"
+ },
+ {
   "key": "ean:5703302165686",
   "name": "LK Fuga baseline 50 ramme 2 1/2 modul hvid",
   "prices": {
@@ -23292,18 +23330,6 @@
   },
   "min": 196.95,
   "max": 339.0,
-  "spread_pct": 72.1,
-  "match": "exact"
- },
- {
-  "key": "ean:5400818620189",
-  "name": "Pergo, Laminatgulv, Lillehammer, pure oak, 9x212x1380 mm",
-  "prices": {
-   "silvan": 510.45,
-   "fog": 878.59
-  },
-  "min": 510.45,
-  "max": 878.59,
   "spread_pct": 72.1,
   "match": "exact"
  },
@@ -33490,6 +33516,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:4059625333334",
+  "name": "Hansgrohe, Håndbruser, Pulsify Blend, 8,2 L/min",
+  "prices": {
+   "silvan": 282.0,
+   "fog": 429.0
+  },
+  "min": 282.0,
+  "max": 429.0,
+  "spread_pct": 52.1,
+  "match": "exact"
+ },
+ {
   "key": "ean:4007548015561",
   "name": "Fermacell  Stålsystem 0,6x75x4000 mm",
   "prices": {
@@ -36581,18 +36619,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5701951138471",
-  "name": "Adora, Køkkenarmatur m/udtræk, Cartallum U KV, krom",
-  "prices": {
-   "silvan": 1399.0,
-   "davidsen": 945.0
-  },
-  "min": 945.0,
-  "max": 1399.0,
-  "spread_pct": 48.0,
-  "match": "exact"
- },
- {
   "key": "ean:4022907057068",
   "name": "Paslode Duo-fast CNP65.1 tromlesømpistol 30-65 mm",
   "prices": {
@@ -37522,18 +37548,6 @@
   },
   "min": 2109.0,
   "max": 3088.0,
-  "spread_pct": 46.4,
-  "match": "exact"
- },
- {
-  "key": "ean:4059625333334",
-  "name": "Hansgrohe, Håndbruser, Pulsify Blend, 8,2 L/min",
-  "prices": {
-   "silvan": 293.0,
-   "fog": 429.0
-  },
-  "min": 293.0,
-  "max": 429.0,
   "spread_pct": 46.4,
   "match": "exact"
  },
@@ -38509,18 +38523,6 @@
   },
   "min": 343.95,
   "max": 499.0,
-  "spread_pct": 45.1,
-  "match": "exact"
- },
- {
-  "key": "ean:5401014466298",
-  "name": "Pergo, Laminatgulv, Perstorp, elegant oak, 8x190xx1200 mm",
-  "prices": {
-   "silvan": 302.4,
-   "davidsen": 438.9
-  },
-  "min": 302.4,
-  "max": 438.9,
   "spread_pct": 45.1,
   "match": "exact"
  },
@@ -41489,6 +41491,18 @@
   },
   "min": 169.0,
   "max": 239.0,
+  "spread_pct": 41.4,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5400818620189",
+  "name": "Pergo, Laminatgulv, Lillehammer, pure oak, 9x212x1380 mm",
+  "prices": {
+   "silvan": 621.15,
+   "fog": 878.59
+  },
+  "min": 621.15,
+  "max": 878.59,
   "spread_pct": 41.4,
   "match": "exact"
  },
@@ -44645,6 +44659,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5415125488827",
+  "name": "Pergo, Laminatgulv, Visby, coastal oak, 8x190x1380 mm",
+  "prices": {
+   "silvan": 504.16,
+   "fog": 695.47
+  },
+  "min": 504.16,
+  "max": 695.47,
+  "spread_pct": 37.9,
+  "match": "exact"
+ },
+ {
   "key": "ean:5708504002555",
   "name": "Bycph Beskyttelsesglas IPhone 12/12 P",
   "prices": {
@@ -45226,6 +45252,18 @@
   },
   "min": 123.0,
   "max": 169.0,
+  "spread_pct": 37.4,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5401013674625",
+  "name": "Pergo, Laminatgulv, Trondheim, warm natural oak, 9,5x211x2050 mm",
+  "prices": {
+   "silvan": 748.8,
+   "davidsen": 544.95
+  },
+  "min": 544.95,
+  "max": 748.8,
   "spread_pct": 37.4,
   "match": "exact"
  },
@@ -46472,6 +46510,18 @@
   },
   "min": 264.0,
   "max": 359.0,
+  "spread_pct": 36.0,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5401014466335",
+  "name": "Pergo, Laminatgulv, Perstorp, vineyard oak, 8x190xx1200 mm",
+  "prices": {
+   "silvan": 339.2,
+   "fog": 461.24
+  },
+  "min": 339.2,
+  "max": 461.24,
   "spread_pct": 36.0,
   "match": "exact"
  },
@@ -48035,18 +48085,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:4892210237668",
-  "name": "Ryobi, Stiksav, ekskl. batteri, RJS18BX-0, 18 V",
-  "prices": {
-   "silvan": 1189.0,
-   "davidsen": 1599.0
-  },
-  "min": 1189.0,
-  "max": 1599.0,
-  "spread_pct": 34.5,
-  "match": "exact"
- },
- {
   "key": "ean:5708637008981",
   "name": "Skalflex, Siloxanemaling, hvid, 10 L",
   "prices": {
@@ -48576,18 +48614,6 @@
   },
   "min": 320.95,
   "max": 429.0,
-  "spread_pct": 33.7,
-  "match": "exact"
- },
- {
-  "key": "ean:7051820500358",
-  "name": "Søm/brikker t/grundmursplader, 100 stk.",
-  "prices": {
-   "silvan": 118.95,
-   "fog": 159.0
-  },
-  "min": 118.95,
-  "max": 159.0,
   "spread_pct": 33.7,
   "match": "exact"
  },
@@ -49894,19 +49920,6 @@
   },
   "min": 119.95,
   "max": 159.0,
-  "spread_pct": 32.6,
-  "match": "exact"
- },
- {
-  "key": "ean:7090023642465",
-  "name": "Tilefix Twist, Nivelleringscaps, 100 stk.",
-  "prices": {
-   "silvan": 229.95,
-   "davidsen": 305.0,
-   "fog": 239.0
-  },
-  "min": 229.95,
-  "max": 305.0,
   "spread_pct": 32.6,
   "match": "exact"
  },
@@ -51297,18 +51310,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:7391447046908",
-  "name": "Beslagsboden, Husnummer 9, sort, 150 mm",
-  "prices": {
-   "silvan": 105.95,
-   "fog": 139.0
-  },
-  "min": 105.95,
-  "max": 139.0,
-  "spread_pct": 31.2,
-  "match": "exact"
- },
- {
   "key": "ean:7391447046915",
   "name": "Beslagsboden, Husbogstav A, sort, 120 mm",
   "prices": {
@@ -51321,32 +51322,8 @@
   "match": "exact"
  },
  {
-  "key": "ean:7391447046885",
-  "name": "Beslagsboden, Husnummer 7, sort, 150 mm",
-  "prices": {
-   "silvan": 105.95,
-   "fog": 139.0
-  },
-  "min": 105.95,
-  "max": 139.0,
-  "spread_pct": 31.2,
-  "match": "exact"
- },
- {
   "key": "ean:7391447046878",
   "name": "Beslagsboden, Husnummer 6, sort, 150 mm",
-  "prices": {
-   "silvan": 105.95,
-   "fog": 139.0
-  },
-  "min": 105.95,
-  "max": 139.0,
-  "spread_pct": 31.2,
-  "match": "exact"
- },
- {
-  "key": "ean:7391447046892",
-  "name": "Beslagsboden, Husnummer 8, sort, 150 mm",
   "prices": {
    "silvan": 105.95,
    "fog": 139.0
@@ -53684,6 +53661,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:4892210237668",
+  "name": "Ryobi, Stiksav, ekskl. batteri, RJS18BX-0, 18 V",
+  "prices": {
+   "silvan": 1235.0,
+   "davidsen": 1599.0
+  },
+  "min": 1235.0,
+  "max": 1599.0,
+  "spread_pct": 29.5,
+  "match": "exact"
+ },
+ {
   "key": "ean:5708781225609",
   "name": "Afsætningspæle natur 25x25x600 mm",
   "prices": {
@@ -53862,6 +53851,18 @@
   },
   "min": 1544.0,
   "max": 1998.0,
+  "spread_pct": 29.4,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5401014466298",
+  "name": "Pergo, Laminatgulv, Perstorp, elegant oak, 8x190xx1200 mm",
+  "prices": {
+   "silvan": 339.2,
+   "davidsen": 438.9
+  },
+  "min": 339.2,
+  "max": 438.9,
   "spread_pct": 29.4,
   "match": "exact"
  },
@@ -56311,18 +56312,6 @@
   },
   "min": 54.95,
   "max": 69.95,
-  "spread_pct": 27.3,
-  "match": "exact"
- },
- {
-  "key": "ean:5401014466274",
-  "name": "Pergo, Laminatgulv, Perstorp, fresh oak, 8x190xx1200 mm",
-  "prices": {
-   "silvan": 233.6,
-   "davidsen": 183.54
-  },
-  "min": 183.54,
-  "max": 233.6,
   "spread_pct": 27.3,
   "match": "exact"
  },
@@ -60814,18 +60803,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5707310458013",
-  "name": "Sirius Tech-Line, Lyskæde startsæt, 4,5 m, 45 LED",
-  "prices": {
-   "silvan": 248.0,
-   "fog": 199.0
-  },
-  "min": 199.0,
-  "max": 248.0,
-  "spread_pct": 24.6,
-  "match": "exact"
- },
- {
   "key": "ean:5705636237114",
   "name": "Dafa glasliste GDS GL-30, 1500 mm",
   "prices": {
@@ -61067,6 +61044,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5401014466359",
+  "name": "Pergo, Laminatgulv, Perstorp, natural honey oak, 8x190x1200 mm",
+  "prices": {
+   "silvan": 337.6,
+   "davidsen": 271.32
+  },
+  "min": 271.32,
+  "max": 337.6,
+  "spread_pct": 24.4,
+  "match": "exact"
+ },
+ {
   "key": "ean:5712508012335",
   "name": "Wimex Glyngøre Royal, Terrassebræt, 23x295x3600 mm, sort",
   "prices": {
@@ -61187,6 +61176,18 @@
   },
   "min": 176.95,
   "max": 220.0,
+  "spread_pct": 24.3,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4006825411010",
+  "name": "Einhell, Sprøjtepistol med overkop",
+  "prices": {
+   "silvan": 164.95,
+   "davidsen": 205.0
+  },
+  "min": 164.95,
+  "max": 205.0,
   "spread_pct": 24.3,
   "match": "exact"
  },
