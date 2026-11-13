@@ -1,8 +1,8 @@
 {
- "date": "2026-11-12",
+ "date": "2026-11-13",
  "chains": {
   "stark": {
-   "error": "collapse guard: 0 rows vs 82662 before",
+   "error": "collapse guard: 12140 rows vs 82662 before",
    "kept_previous": true
   }
  }
