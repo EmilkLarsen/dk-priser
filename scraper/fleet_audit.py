@@ -78,6 +78,8 @@ if 'case ",$INC," in' in wf and "tr -d ' '" not in wf:
 
 if "  healer:" not in wf:
     errors.append("workflow: auto-heal job missing")
+if "  resolve-alerts:" not in wf:
+    errors.append("workflow: resolve-alerts job missing (alert issues never auto-close)")
 if "needs: [scrape, merge, continue-check, healer]" not in wf:
     errors.append("workflow: alert does not gate on healer result")
 if not os.path.exists(os.path.join(ROOT, "data", "latest", "schema.json")):
