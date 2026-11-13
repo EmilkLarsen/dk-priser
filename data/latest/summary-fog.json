@@ -2,11 +2,8 @@
  "date": "2026-11-13",
  "chains": {
   "fog": {
-   "products": 30455,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 5,
-   "seconds": 13830.0
+   "error": "collapse guard: 30 rows vs 30740 before",
+   "kept_previous": true
   }
  }
 }
