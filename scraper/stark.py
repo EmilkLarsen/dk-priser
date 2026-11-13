@@ -135,9 +135,18 @@ def scrape(limit=None, deadline=None):
     # catalog-sized view - transparent either way, exactly like a full
     # scrape's return value, so its own collapse guard and merge-by-key
     # logic need no special-casing for rotation at all.
+    # Read the PRIOR snapshot through chain_snapshot/open_text, never a raw
+    # open(): since the gzip migration (2026-10-13) the snapshot is
+    # data/latest/stark.jsonl.gz and the raw .jsonl no longer exists, so the
+    # old raw read silently returned {} - every rotation day then returned
+    # only its ~12k slice, run_daily's collapse guard saw 12k vs 82k and
+    # reported stark as failed (live 2026-11-11..13, dk).
+    from common import chain_snapshot, open_text
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     existing_by_key = {}
-    if os.path.exists(OUT):
-        with open(OUT, encoding="utf-8") as f:
+    snap = chain_snapshot(root, "stark")
+    if os.path.exists(snap):
+        with open_text(snap, "rt") as f:
             for line in f:
                 try:
                     r = json.loads(line)

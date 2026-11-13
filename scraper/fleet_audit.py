@@ -92,6 +92,18 @@ s = read(os.path.join(SCRAPER, "run_daily.py"))
 if re.search(r'os\.remove\([^)]*chain\}\.jsonl\.gz', s):
     errors.append("run_daily: deletes <chain>.jsonl.gz (snapshot never reaches main, merge = 0 rows)")
 
+# 4c) no scraper may read its own snapshot through a raw path: since the gzip
+# migration the snapshot is <chain>.jsonl.gz and open() on it (or a stale raw
+# path) silently yields 0 prior rows - stark lost 70k rows/night this way
+# (2026-11-11..13). Snapshots must be read via chain_snapshot + open_text.
+for sc in glob.glob(os.path.join(SCRAPER, "*.py")):
+    base = os.path.basename(sc)
+    if base.startswith(("common", "run_daily", "merge_all", "build_", "check_", "fleet_", "expand_")):
+        continue
+    body = read(sc)
+    if re.search(r'open\(OUT\b|os\.path\.exists\(OUT\)', body):
+        errors.append(f"{base}: reads its own snapshot via raw OUT path (use chain_snapshot+open_text)")
+
 # 5) check_stale is checkpoint-aware and does not alert on KNOWN_BLOCKED chains
 s = read(os.path.join(SCRAPER, "check_stale.py"))
 if "checkpoint build in progress" not in s:
