@@ -2,11 +2,8 @@
  "date": "2026-11-13",
  "chains": {
   "haraldnyborg": {
-   "products": 11719,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 1,
-   "seconds": 5297.9
+   "error": "collapse guard: 30 rows vs 12404 before",
+   "kept_previous": true
   }
  }
 }
