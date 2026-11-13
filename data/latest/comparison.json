@@ -18265,6 +18265,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5708705503202",
+  "name": "Junckers, Gulvolie, hvid, 2,5 L",
+  "prices": {
+   "silvan": 389.95,
+   "fog": 729.0
+  },
+  "min": 389.95,
+  "max": 729.0,
+  "spread_pct": 86.9,
+  "match": "exact"
+ },
+ {
   "key": "ean:4006825410136",
   "name": "Einhell, Koblingssæt til kompressor, Ø6 mm, 4 dele",
   "prices": {
@@ -19617,18 +19629,6 @@
   "min": 63.0,
   "max": 115.0,
   "spread_pct": 82.5,
-  "match": "exact"
- },
- {
-  "key": "ean:5708705503202",
-  "name": "Junckers, Gulvolie, hvid, 2,5 L",
-  "prices": {
-   "silvan": 399.95,
-   "fog": 729.0
-  },
-  "min": 399.95,
-  "max": 729.0,
-  "spread_pct": 82.3,
   "match": "exact"
  },
  {
@@ -32357,6 +32357,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5708705502953",
+  "name": "Junckers, Gulvolie, klar, 2,5 L",
+  "prices": {
+   "silvan": 388.95,
+   "fog": 599.0
+  },
+  "min": 388.95,
+  "max": 599.0,
+  "spread_pct": 54.0,
+  "match": "exact"
+ },
+ {
   "key": "ean:5701984123185",
   "name": "Bæring m/skråstiver 180x290 mm hvid",
   "prices": {
@@ -35208,18 +35220,6 @@
   },
   "min": 10.0,
   "max": 14.98,
-  "spread_pct": 49.8,
-  "match": "exact"
- },
- {
-  "key": "ean:5708705502953",
-  "name": "Junckers, Gulvolie, klar, 2,5 L",
-  "prices": {
-   "silvan": 399.95,
-   "fog": 599.0
-  },
-  "min": 399.95,
-  "max": 599.0,
   "spread_pct": 49.8,
   "match": "exact"
  },
@@ -51216,6 +51216,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:7391447046908",
+  "name": "Beslagsboden, Husnummer 9, sort, 150 mm",
+  "prices": {
+   "silvan": 105.95,
+   "fog": 139.0
+  },
+  "min": 105.95,
+  "max": 139.0,
+  "spread_pct": 31.2,
+  "match": "exact"
+ },
+ {
   "key": "ean:7391447046915",
   "name": "Beslagsboden, Husbogstav A, sort, 120 mm",
   "prices": {
@@ -51228,8 +51240,32 @@
   "match": "exact"
  },
  {
+  "key": "ean:7391447046885",
+  "name": "Beslagsboden, Husnummer 7, sort, 150 mm",
+  "prices": {
+   "silvan": 105.95,
+   "fog": 139.0
+  },
+  "min": 105.95,
+  "max": 139.0,
+  "spread_pct": 31.2,
+  "match": "exact"
+ },
+ {
   "key": "ean:7391447046878",
   "name": "Beslagsboden, Husnummer 6, sort, 150 mm",
+  "prices": {
+   "silvan": 105.95,
+   "fog": 139.0
+  },
+  "min": 105.95,
+  "max": 139.0,
+  "spread_pct": 31.2,
+  "match": "exact"
+ },
+ {
+  "key": "ean:7391447046892",
+  "name": "Beslagsboden, Husnummer 8, sort, 150 mm",
   "prices": {
    "silvan": 105.95,
    "fog": 139.0
@@ -61306,42 +61342,6 @@
  {
   "key": "ean:4059952726328",
   "name": "Bosch Wood skæreklinge MAII 32 EPC, Starlock, 32x80 mm",
-  "prices": {
-   "davidsen": 120.0,
-   "fog": 149.0
-  },
-  "min": 120.0,
-  "max": 149.0,
-  "spread_pct": 24.2,
-  "match": "exact"
- },
- {
-  "key": "ean:5701159790709",
-  "name": "Dana PVC rørlim 309 150 ml",
-  "prices": {
-   "davidsen": 120.0,
-   "fog": 149.0
-  },
-  "min": 120.0,
-  "max": 149.0,
-  "spread_pct": 24.2,
-  "match": "exact"
- },
- {
-  "key": "ean:7317841003019",
-  "name": "Hultafors meterstok mm 2,4 m",
-  "prices": {
-   "davidsen": 120.0,
-   "fog": 149.0
-  },
-  "min": 120.0,
-  "max": 149.0,
-  "spread_pct": 24.2,
-  "match": "exact"
- },
- {
-  "key": "ean:5704314110015",
-  "name": "Jasa langskilte sæt t/ASSA 233x53x5 mm børstet rustfrit stål",
   "prices": {
    "davidsen": 120.0,
    "fog": 149.0

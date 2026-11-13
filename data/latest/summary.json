@@ -1,20 +1,20 @@
 {
  "date": "2026-11-13",
- "total_rows": 278497,
+ "total_rows": 278510,
  "chains": {
   "xlbyg": {
-   "products": 30,
-   "price_changes": 0,
+   "products": 34507,
+   "price_changes": 305,
    "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 27.0
+   "expired": 1,
+   "seconds": 8480.0
   },
   "skousen": {
-   "products": 7,
+   "products": 1226,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 788.2
+   "seconds": 9460.7
   },
   "power": {
    "error": "collapse guard: 30 rows vs 30189 before",
@@ -37,11 +37,11 @@
    "kept_previous": true
   },
   "silvan": {
-   "products": 30,
+   "products": 40853,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 20.1
+   "seconds": 5796.3
   },
   "haraldnyborg": {
    "error": "collapse guard: 30 rows vs 12404 before",
