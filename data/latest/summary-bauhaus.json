@@ -1,9 +1,12 @@
 {
- "date": "2026-11-13",
+ "date": "2026-11-14",
  "chains": {
   "bauhaus": {
-   "error": "collapse guard: 27 rows vs 22936 before",
-   "kept_previous": true
+   "products": 22859,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 2,
+   "seconds": 12303.9
   }
  }
 }
