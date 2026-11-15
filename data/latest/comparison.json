@@ -3412,6 +3412,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:8720573261647",
+  "name": "Spindelvæv m/edderkopper",
+  "prices": {
+   "silvan": 29.95,
+   "haraldnyborg": 10.0
+  },
+  "min": 10.0,
+  "max": 29.95,
+  "spread_pct": 199.5,
+  "match": "exact"
+ },
+ {
   "key": "ean:5701984116866",
   "name": "PN Beslag, Hyldeknægt i metal, flere varianter",
   "prices": {
@@ -35198,18 +35210,6 @@
   },
   "min": 664.0,
   "max": 995.0,
-  "spread_pct": 49.8,
-  "match": "exact"
- },
- {
-  "key": "ean:8720573261647",
-  "name": "Spindelvæv m/edderkopper",
-  "prices": {
-   "silvan": 14.98,
-   "haraldnyborg": 10.0
-  },
-  "min": 10.0,
-  "max": 14.98,
   "spread_pct": 49.8,
   "match": "exact"
  },
