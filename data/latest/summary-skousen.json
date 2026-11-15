@@ -2,11 +2,7 @@
  "date": "2026-11-15",
  "chains": {
   "skousen": {
-   "products": 641,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 18106.9
+   "error": "HTTPError: HTTP Error 403: Forbidden"
   }
  }
 }
