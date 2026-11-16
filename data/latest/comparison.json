@@ -5606,6 +5606,30 @@
   "match": "exact"
  },
  {
+  "key": "ean:5702773000199",
+  "name": "Plastmo TwinLite, Termotagplade, 10x980x3000 mm, opal",
+  "prices": {
+   "silvan": 625.95,
+   "fog": 1578.0
+  },
+  "min": 625.95,
+  "max": 1578.0,
+  "spread_pct": 152.1,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5702773000076",
+  "name": "Plastmo TwinLite, Termotagplade, 10x980x3000 mm, klar",
+  "prices": {
+   "silvan": 625.95,
+   "fog": 1578.0
+  },
+  "min": 625.95,
+  "max": 1578.0,
+  "spread_pct": 152.1,
+  "match": "exact"
+ },
+ {
   "key": "ean:5011867021720",
   "name": "Hammerite, Spraymaling til metal, sølvgrå, 400 ml",
   "prices": {
@@ -11106,18 +11130,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5702773000199",
-  "name": "Plastmo TwinLite, Termotagplade, 10x980x3000 mm, opal",
-  "prices": {
-   "silvan": 744.95,
-   "fog": 1578.0
-  },
-  "min": 744.95,
-  "max": 1578.0,
-  "spread_pct": 111.8,
-  "match": "exact"
- },
- {
   "key": "ean:5702777066979",
   "name": "Plastmo SunGlaze, Rygningsprofil, 310 cm",
   "prices": {
@@ -11988,18 +12000,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5702773000076",
-  "name": "Plastmo TwinLite, Termotagplade, 10x980x3000 mm, klar",
-  "prices": {
-   "silvan": 754.95,
-   "fog": 1578.0
-  },
-  "min": 754.95,
-  "max": 1578.0,
-  "spread_pct": 109.0,
-  "match": "exact"
- },
- {
   "key": "ean:5708538141190",
   "name": "Ruko låsespray 50 ml",
   "prices": {
@@ -12253,6 +12253,18 @@
   },
   "min": 957.95,
   "max": 1997.5,
+  "spread_pct": 108.5,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5060233800858",
+  "name": "GVS, Gas- og dampfilter, SPR 497",
+  "prices": {
+   "silvan": 224.95,
+   "fog": 469.0
+  },
+  "min": 224.95,
+  "max": 469.0,
   "spread_pct": 108.5,
   "match": "exact"
  },
@@ -13310,18 +13322,6 @@
   },
   "min": 482.95,
   "max": 985.0,
-  "spread_pct": 104.0,
-  "match": "exact"
- },
- {
-  "key": "ean:5060233800858",
-  "name": "GVS, Gas- og dampfilter, SPR 497",
-  "prices": {
-   "silvan": 229.95,
-   "fog": 469.0
-  },
-  "min": 229.95,
-  "max": 469.0,
   "spread_pct": 104.0,
   "match": "exact"
  },
@@ -15476,8 +15476,9 @@
  },
  {
   "key": "ean:5715162436417",
-  "name": "Danfoss Aveo RA termostat m. snapmontage",
+  "name": "Danfoss, Termostat med indbygget føler, Aveo RA, klikmontering",
   "prices": {
+   "silvan": 238.95,
    "davidsen": 230.0,
    "fog": 299.0,
    "haraldnyborg": 152.0
@@ -42669,6 +42670,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5708952816483",
+  "name": "Simple Racks Tribeca, Tøjstativ m/2 niveauer, 210x113 cm",
+  "prices": {
+   "silvan": 925.95,
+   "fog": 1295.0
+  },
+  "min": 925.95,
+  "max": 1295.0,
+  "spread_pct": 39.9,
+  "match": "exact"
+ },
+ {
   "key": "ean:5709386549688",
   "name": "Murerbalje, 40 L",
   "prices": {
@@ -43265,18 +43278,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5708952816483",
-  "name": "Simple Racks Tribeca, Tøjstativ m/2 niveauer, 210x113 cm",
-  "prices": {
-   "silvan": 928.95,
-   "fog": 1295.0
-  },
-  "min": 928.95,
-  "max": 1295.0,
-  "spread_pct": 39.4,
-  "match": "exact"
- },
- {
   "key": "ean:5010424172424",
   "name": "Swarfega, Håndrens, Orange, 1 L",
   "prices": {
@@ -43860,6 +43861,19 @@
   "match": "exact"
  },
  {
+  "key": "ean:5702424626273",
+  "name": "Danfoss, Termostat med indbygget føler, Aveo RA/VL",
+  "prices": {
+   "silvan": 248.95,
+   "fog": 259.0,
+   "haraldnyborg": 187.0
+  },
+  "min": 187.0,
+  "max": 259.0,
+  "spread_pct": 38.5,
+  "match": "exact"
+ },
+ {
   "key": "ean:8719514274617",
   "name": "Philips Hue Dimmer Switch",
   "prices": {
@@ -43870,18 +43884,6 @@
   },
   "min": 122.0,
   "max": 169.0,
-  "spread_pct": 38.5,
-  "match": "exact"
- },
- {
-  "key": "ean:5702424626273",
-  "name": "Danfoss Aveo Ra/vl Servicetermostat Med Indb.føler",
-  "prices": {
-   "fog": 259.0,
-   "haraldnyborg": 187.0
-  },
-  "min": 187.0,
-  "max": 259.0,
   "spread_pct": 38.5,
   "match": "exact"
  },
@@ -53080,7 +53082,7 @@
   "key": "ean:8721264220271",
   "name": "Segway Navimow i220E LiDAR, Robotplæneklipper, 2.000 m²",
   "prices": {
-   "silvan": 12998.0,
+   "silvan": 10947.0,
    "fog": 12998.0,
    "power": 9999.0
   },
@@ -58142,7 +58144,7 @@
  },
  {
   "key": "ean:5702321213590",
-  "name": "Velux BBX 1000 MK08, Dampspærre inkl. stålprofil, 78x140 cm",
+  "name": "VELUX BBX 1000 MK08, Dampspærre inkl. stålprofil, 78x140 cm",
   "prices": {
    "silvan": 500.0,
    "fog": 629.0
@@ -59659,7 +59661,7 @@
  },
  {
   "key": "ean:5702321210902",
-  "name": "Velux BBX 1000 CK02, Dampspærre inkl. stålprofil, 55x78 cm",
+  "name": "VELUX BBX 1000 CK02, Dampspærre inkl. stålprofil, 55x78 cm",
   "prices": {
    "silvan": 500.0,
    "davidsen": 625.0
@@ -60916,19 +60918,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:4004025087134",
-  "name": "Wagner, Malersprøjte, WallSprayer W 450 Set, 460 W",
-  "prices": {
-   "silvan": 1120.0,
-   "davidsen": 956.0,
-   "fog": 899.0
-  },
-  "min": 899.0,
-  "max": 1120.0,
-  "spread_pct": 24.6,
-  "match": "exact"
- },
- {
   "key": "ean:5705636237114",
   "name": "Dafa glasliste GDS GL-30, 1500 mm",
   "prices": {
@@ -61350,6 +61339,18 @@
   },
   "min": 329.0,
   "max": 409.0,
+  "spread_pct": 24.3,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4058546376611",
+  "name": "Milwaukee M12 Fuel™ FPD2-0 slagboremaskine solo",
+  "prices": {
+   "davidsen": 1245.0,
+   "fog": 1548.0
+  },
+  "min": 1245.0,
+  "max": 1548.0,
   "spread_pct": 24.3,
   "match": "exact"
  }
