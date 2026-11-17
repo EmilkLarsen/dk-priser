@@ -4592,6 +4592,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:4053423502848",
+  "name": "Bosch, Våd-/tørstøvsuger, PAS20-220P, 20 L, 1200 W",
+  "prices": {
+   "silvan": 1190.0,
+   "fog": 3198.0
+  },
+  "min": 1190.0,
+  "max": 3198.0,
+  "spread_pct": 168.7,
+  "match": "exact"
+ },
+ {
   "key": "ean:4004025129827",
   "name": "Koncentrat t/stenoverflader, 3-i-1, 500 ml",
   "prices": {
@@ -5743,18 +5755,6 @@
   "min": 338.0,
   "max": 849.0,
   "spread_pct": 151.2,
-  "match": "exact"
- },
- {
-  "key": "ean:4053423502848",
-  "name": "Bosch, Våd-/tørstøvsuger, PAS20-220P, 20 L, 1200 W",
-  "prices": {
-   "silvan": 1274.0,
-   "fog": 3198.0
-  },
-  "min": 1274.0,
-  "max": 3198.0,
-  "spread_pct": 151.0,
   "match": "exact"
  },
  {
@@ -15675,6 +15675,19 @@
   "match": "exact"
  },
  {
+  "key": "ean:4058546356682",
+  "name": "Ryobi, Teleskopstang, RBCLTP1",
+  "prices": {
+   "silvan": 407.0,
+   "davidsen": 800.0,
+   "fog": 439.0
+  },
+  "min": 407.0,
+  "max": 800.0,
+  "spread_pct": 96.6,
+  "match": "exact"
+ },
+ {
   "key": "ean:4008496746347",
   "name": "Varta, Knapcellebatteri, V13GA/LR44, 1,5 V, 2-pak",
   "prices": {
@@ -16643,7 +16656,7 @@
  },
  {
   "key": "ean:5703873206986",
-  "name": "Stikdåse m/3 udtag",
+  "name": "Stikdåse, 3 udtag, m/jord",
   "prices": {
    "silvan": 78.95,
    "davidsen": 41.0,
@@ -16911,19 +16924,6 @@
   },
   "min": 37.0,
   "max": 70.95,
-  "spread_pct": 91.8,
-  "match": "exact"
- },
- {
-  "key": "ean:4058546356682",
-  "name": "Ryobi, Teleskopstang, RBCLTP1",
-  "prices": {
-   "silvan": 417.0,
-   "davidsen": 800.0,
-   "fog": 439.0
-  },
-  "min": 417.0,
-  "max": 800.0,
   "spread_pct": 91.8,
   "match": "exact"
  },
@@ -35822,7 +35822,7 @@
  },
  {
   "key": "ean:5703873225536",
-  "name": "Stikdåse m. ledning, 4 udtag, u/jord, hvid",
+  "name": "Stikdåse m/4 udtag, 5 m ledning, u/jord, hvid",
   "prices": {
    "silvan": 111.95,
    "davidsen": 75.0
@@ -37410,6 +37410,19 @@
   "match": "exact"
  },
  {
+  "key": "ean:5705569052617",
+  "name": "Moland, Vinylgulv, Bastion, sildeben, mørk eg, 5,5x120x720 mm",
+  "prices": {
+   "silvan": 365.63,
+   "davidsen": 372.6,
+   "fog": 536.82
+  },
+  "min": 365.63,
+  "max": 536.82,
+  "spread_pct": 46.8,
+  "match": "exact"
+ },
+ {
   "key": "ean:5700361913852",
   "name": "Swedoor, Tætningsliste, hvid, 5,1 m",
   "prices": {
@@ -38713,18 +38726,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5715049625491",
-  "name": "LED-kalenderlys m/grengrene, 24,5 cm, hvid",
-  "prices": {
-   "silvan": 99.95,
-   "fog": 69.0
-  },
-  "min": 69.0,
-  "max": 99.95,
-  "spread_pct": 44.9,
-  "match": "exact"
- },
- {
   "key": "ean:4059952640495",
   "name": "Bosch GSB 18V-45 slagboremaskine 2x4Ah batteri/lader L-Boxx 82 dele",
   "prices": {
@@ -39196,19 +39197,6 @@
   },
   "min": 687.0,
   "max": 990.0,
-  "spread_pct": 44.1,
-  "match": "exact"
- },
- {
-  "key": "ean:5705569052617",
-  "name": "Moland, Vinylgulv, Bastion, sildeben, mørk eg, 5,5x120x720 mm",
-  "prices": {
-   "silvan": 372.53,
-   "davidsen": 372.6,
-   "fog": 536.82
-  },
-  "min": 372.53,
-  "max": 536.82,
   "spread_pct": 44.1,
   "match": "exact"
  },
@@ -46486,7 +46474,7 @@
  },
  {
   "key": "ean:5703873206863",
-  "name": "Stikdåse m/5 udtag",
+  "name": "Stikdåse, 5 udtag, m/jord",
   "prices": {
    "silvan": 101.95,
    "davidsen": 75.0
@@ -48295,6 +48283,18 @@
   },
   "min": 34.95,
   "max": 46.95,
+  "spread_pct": 34.3,
+  "match": "exact"
+ },
+ {
+  "key": "ean:8710364052400",
+  "name": "Dremel, Limpistol, 940",
+  "prices": {
+   "silvan": 309.0,
+   "davidsen": 415.0
+  },
+  "min": 309.0,
+  "max": 415.0,
   "spread_pct": 34.3,
   "match": "exact"
  },
@@ -51755,18 +51755,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:8710364052400",
-  "name": "Dremel, Limpistol, 940",
-  "prices": {
-   "silvan": 317.0,
-   "davidsen": 415.0
-  },
-  "min": 317.0,
-  "max": 415.0,
-  "spread_pct": 30.9,
-  "match": "exact"
- },
- {
   "key": "ean:5708722257300",
   "name": "Morsø grillrist t/ Grill Forno sort",
   "prices": {
@@ -53693,6 +53681,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:4892210239556",
+  "name": "Ryobi, Luftpumpe, ekskl. batteri, RVI4-0, 4 V",
+  "prices": {
+   "silvan": 308.0,
+   "fog": 399.0
+  },
+  "min": 308.0,
+  "max": 399.0,
+  "spread_pct": 29.5,
+  "match": "exact"
+ },
+ {
   "key": "ean:4892210237668",
   "name": "Ryobi, Stiksav, ekskl. batteri, RJS18BX-0, 18 V",
   "prices": {
@@ -54182,11 +54182,23 @@
   "match": "exact"
  },
  {
-  "key": "ean:4892210239556",
-  "name": "Ryobi, Luftpumpe, ekskl. batteri, RVI4-0, 4 V",
+  "key": "ean:4892210235770",
+  "name": "Ryobi, Forstørrelseslygte, ekskl. batteri, RML4-0, 4 V",
   "prices": {
    "silvan": 309.0,
-   "fog": 399.0
+   "davidsen": 399.0
+  },
+  "min": 309.0,
+  "max": 399.0,
+  "spread_pct": 29.1,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4892210235800",
+  "name": "Ryobi, Inspektionslampe, ekskl. batteri, RLI4-0, 4 V",
+  "prices": {
+   "silvan": 309.0,
+   "davidsen": 399.0
   },
   "min": 309.0,
   "max": 399.0,
@@ -56429,6 +56441,19 @@
   },
   "min": 2089.0,
   "max": 2658.0,
+  "spread_pct": 27.2,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4892210202277",
+  "name": "Ryobi, Fugepistol, ekskl. batteri, RCG18-0, 18 V",
+  "prices": {
+   "silvan": 534.0,
+   "davidsen": 679.0,
+   "fog": 679.0
+  },
+  "min": 534.0,
+  "max": 679.0,
   "spread_pct": 27.2,
   "match": "exact"
  },
@@ -59211,26 +59236,14 @@
   "match": "exact"
  },
  {
-  "key": "ean:4892210235770",
-  "name": "Ryobi, Forstørrelseslygte, ekskl. batteri, RML4-0, 4 V",
+  "key": "ean:4892210221995",
+  "name": "Ryobi, Klemmeventilator, ekskl. batteri, RCF4-0, 4 V",
   "prices": {
-   "silvan": 319.0,
-   "davidsen": 399.0
+   "silvan": 239.0,
+   "davidsen": 299.0
   },
-  "min": 319.0,
-  "max": 399.0,
-  "spread_pct": 25.1,
-  "match": "exact"
- },
- {
-  "key": "ean:4892210235800",
-  "name": "Ryobi, Inspektionslampe, ekskl. batteri, RLI4-0, 4 V",
-  "prices": {
-   "silvan": 319.0,
-   "davidsen": 399.0
-  },
-  "min": 319.0,
-  "max": 399.0,
+  "min": 239.0,
+  "max": 299.0,
   "spread_pct": 25.1,
   "match": "exact"
  },
@@ -60539,19 +60552,6 @@
   },
   "min": 24.0,
   "max": 29.95,
-  "spread_pct": 24.8,
-  "match": "exact"
- },
- {
-  "key": "ean:4892210202277",
-  "name": "Ryobi, Fugepistol, ekskl. batteri, RCG18-0, 18 V",
-  "prices": {
-   "silvan": 544.0,
-   "davidsen": 679.0,
-   "fog": 679.0
-  },
-  "min": 544.0,
-  "max": 679.0,
   "spread_pct": 24.8,
   "match": "exact"
  },
