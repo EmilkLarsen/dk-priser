@@ -1,5 +1,5 @@
 {
- "date": "2026-11-16",
+ "date": "2026-11-17",
  "total_rows": 280542,
  "chains": {
   "xlbyg": {
@@ -10,11 +10,11 @@
    "seconds": 8192.5
   },
   "skousen": {
-   "products": 960,
+   "products": 1042,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18038.2
+   "seconds": 18170.6
   },
   "power": {
    "products": 29182,
@@ -35,7 +35,7 @@
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 12.6
+   "seconds": 7.8
   },
   "bauhaus": {
    "products": 22855,
