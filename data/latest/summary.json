@@ -2,12 +2,19 @@
  "date": "2026-11-17",
  "total_rows": 280462,
  "chains": {
-  "davidsen": {
-   "products": 22556,
+  "xlbyg": {
+   "products": 34529,
+   "price_changes": 305,
+   "suspicious_changes": 0,
+   "expired": 55,
+   "seconds": 8402.6
+  },
+  "skousen": {
+   "products": 1210,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 2,
-   "seconds": 9277.4
+   "expired": 0,
+   "seconds": 6729.9
   },
   "power": {
    "products": 29193,
@@ -16,12 +23,19 @@
    "expired": 32,
    "seconds": 13283.7
   },
-  "xlbyg": {
-   "products": 34529,
-   "price_changes": 305,
+  "fog": {
+   "products": 30359,
+   "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 55,
-   "seconds": 8402.6
+   "expired": 7,
+   "seconds": 13755.7
+  },
+  "stark": {
+   "products": 85200,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 6.6
   },
   "bauhaus": {
    "products": 22847,
@@ -30,12 +44,12 @@
    "expired": 7,
    "seconds": 11561.1
   },
-  "haraldnyborg": {
-   "products": 11731,
+  "davidsen": {
+   "products": 22556,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 19,
-   "seconds": 5322.3
+   "expired": 2,
+   "seconds": 9277.4
   },
   "silvan": {
    "products": 40802,
@@ -44,26 +58,12 @@
    "expired": 0,
    "seconds": 8412.9
   },
-  "fog": {
-   "products": 30359,
+  "haraldnyborg": {
+   "products": 11731,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 7,
-   "seconds": 13755.7
-  },
-  "skousen": {
-   "products": 1158,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 18122.8
-  },
-  "stark": {
-   "products": 85200,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 5.8
+   "expired": 19,
+   "seconds": 5322.3
   }
  }
 }
