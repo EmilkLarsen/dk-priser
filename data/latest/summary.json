@@ -1,6 +1,6 @@
 {
  "date": "2026-11-18",
- "total_rows": 280676,
+ "total_rows": 280677,
  "chains": {
   "xlbyg": {
    "products": 34524,
@@ -10,7 +10,11 @@
    "seconds": 7450.4
   },
   "skousen": {
-   "error": "HTTPError: HTTP Error 403: Forbidden"
+   "products": 527,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 18048.3
   },
   "power": {
    "products": 29278,
@@ -31,7 +35,7 @@
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 6.1
+   "seconds": 6.3
   },
   "bauhaus": {
    "products": 22846,
