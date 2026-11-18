@@ -24480,6 +24480,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5708604634502",
+  "name": "Eskimo, Linotokske, 450 mm",
+  "prices": {
+   "silvan": 247.0,
+   "davidsen": 420.0
+  },
+  "min": 247.0,
+  "max": 420.0,
+  "spread_pct": 70.0,
+  "match": "exact"
+ },
+ {
   "key": "ean:4058546295370",
   "name": "Milwaukee PACKOUT™ monteringsplade",
   "prices": {
@@ -37463,18 +37475,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5712508012137",
-  "name": "Wimex Fur Classic, Terrassebræt, 23x146x3600 mm, koksgrå",
-  "prices": {
-   "silvan": 195.95,
-   "fog": 287.82
-  },
-  "min": 195.95,
-  "max": 287.82,
-  "spread_pct": 46.9,
-  "match": "exact"
- },
- {
   "key": "ean:5703302164542",
   "name": "LK Fuga afdækning rund lampestikkontakt Ø80 mm",
   "prices": {
@@ -44006,18 +44006,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5712508012250",
-  "name": "Wimex Livø Prime, Terrassebræt, 22x140x3600 mm, brun",
-  "prices": {
-   "silvan": 220.95,
-   "fog": 305.82
-  },
-  "min": 220.95,
-  "max": 305.82,
-  "spread_pct": 38.4,
-  "match": "exact"
- },
- {
   "key": "ean:5712508012236",
   "name": "Wimex Livø Prime, Terrassebræt, 22x140x3600 mm, sort",
   "prices": {
@@ -46232,6 +46220,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5702329187053",
+  "name": "VELUX ISU 2093, Top t/fladtagsvindue, plant glas, 100x100 cm",
+  "prices": {
+   "silvan": 4525.0,
+   "davidsen": 3321.0
+  },
+  "min": 3321.0,
+  "max": 4525.0,
+  "spread_pct": 36.3,
+  "match": "exact"
+ },
+ {
   "key": "ean:5035048729168",
   "name": "DeWALT DCS572N-XJ rundsav 184mm solo 18V",
   "prices": {
@@ -46288,6 +46288,18 @@
   },
   "min": 190.95,
   "max": 260.0,
+  "spread_pct": 36.2,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5702329187046",
+  "name": "VELUX ISU 1093, Top t/fladtagsvindue, buet glas, 100x100 cm",
+  "prices": {
+   "silvan": 6485.0,
+   "davidsen": 4763.0
+  },
+  "min": 4763.0,
+  "max": 6485.0,
   "spread_pct": 36.2,
   "match": "exact"
  },
@@ -49126,6 +49138,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5712508012137",
+  "name": "Wimex Fur Classic, Terrassebræt, 23x146x3600 mm, koksgrå",
+  "prices": {
+   "silvan": 215.95,
+   "fog": 287.82
+  },
+  "min": 215.95,
+  "max": 287.82,
+  "spread_pct": 33.3,
+  "match": "exact"
+ },
+ {
   "key": "ean:5701983014798",
   "name": "Hylde, massiv fyr, 18x200x800 mm",
   "prices": {
@@ -51586,18 +51610,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5712508011482",
-  "name": "Wimex, Espalier t/hegn, 570x995 mm",
-  "prices": {
-   "silvan": 1266.0,
-   "fog": 1658.0
-  },
-  "min": 1266.0,
-  "max": 1658.0,
-  "spread_pct": 31.0,
-  "match": "exact"
- },
- {
   "key": "ean:4892210230508",
   "name": "Ryobi, Multipumpe, ekskl. batteri, RMI18-0, 18 V",
   "prices": {
@@ -51904,18 +51916,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5712508016203",
-  "name": "Wimex, Låg t/plantekasse, 1225x525 mm, gyldenbrun",
-  "prices": {
-   "silvan": 327.95,
-   "fog": 429.0
-  },
-  "min": 327.95,
-  "max": 429.0,
-  "spread_pct": 30.8,
-  "match": "exact"
- },
- {
   "key": "ean:6949509223425",
   "name": "Bosch, Hammerbor, PRO SDS plus-5X, Ø8x160 mm",
   "prices": {
@@ -52188,19 +52188,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5712508010638",
-  "name": "Wimex Trend Classic, Læhegn, 1893x900 mm, gyldenbrun",
-  "prices": {
-   "silvan": 1331.0,
-   "davidsen": 1391.0,
-   "fog": 1738.0
-  },
-  "min": 1331.0,
-  "max": 1738.0,
-  "spread_pct": 30.6,
-  "match": "exact"
- },
- {
   "key": "ean:5712508011246",
   "name": "Wimex Trend Classic, Lamelhegn, 1893x1800 mm, gyldenbrun",
   "prices": {
@@ -52209,18 +52196,6 @@
   },
   "min": 2074.0,
   "max": 2708.0,
-  "spread_pct": 30.6,
-  "match": "exact"
- },
- {
-  "key": "ean:5712508011505",
-  "name": "Wimex, Espalier t/hegn, 570x1855 mm",
-  "prices": {
-   "silvan": 1538.0,
-   "fog": 2008.0
-  },
-  "min": 1538.0,
-  "max": 2008.0,
   "spread_pct": 30.6,
   "match": "exact"
  },
@@ -52359,18 +52334,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5712508016135",
-  "name": "Wimex Trend Classic, Plantekasse, 882x482x360 mm, gyldenbrun",
-  "prices": {
-   "silvan": 978.95,
-   "fog": 1278.0
-  },
-  "min": 978.95,
-  "max": 1278.0,
-  "spread_pct": 30.5,
-  "match": "exact"
- },
- {
   "key": "ean:5712508015077",
   "name": "Wimex Trend Classic, Skraldespandsskjuler, gyldenbrun",
   "prices": {
@@ -52379,19 +52342,6 @@
   },
   "min": 4902.0,
   "max": 6398.0,
-  "spread_pct": 30.5,
-  "match": "exact"
- },
- {
-  "key": "ean:5712508010997",
-  "name": "Wimex Preload, Bort-clips m/skrue, 100 stk., sort",
-  "prices": {
-   "silvan": 527.95,
-   "davidsen": 550.0,
-   "fog": 689.0
-  },
-  "min": 527.95,
-  "max": 689.0,
   "spread_pct": 30.5,
   "match": "exact"
  },
@@ -52773,18 +52723,6 @@
   },
   "min": 3687.0,
   "max": 4799.0,
-  "spread_pct": 30.2,
-  "match": "exact"
- },
- {
-  "key": "ean:5712508011499",
-  "name": "Wimex, Espalier t/hegn, 570x1455 mm",
-  "prices": {
-   "silvan": 1450.0,
-   "fog": 1888.0
-  },
-  "min": 1450.0,
-  "max": 1888.0,
   "spread_pct": 30.2,
   "match": "exact"
  },
@@ -54045,18 +53983,6 @@
   },
   "min": 109.0,
   "max": 140.95,
-  "spread_pct": 29.3,
-  "match": "exact"
- },
- {
-  "key": "ean:5712508011468",
-  "name": "Wimex, Hylde t/hegn, 660x1455 mm",
-  "prices": {
-   "silvan": 1275.0,
-   "fog": 1648.0
-  },
-  "min": 1275.0,
-  "max": 1648.0,
   "spread_pct": 29.3,
   "match": "exact"
  },
@@ -55568,18 +55494,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5712508016166",
-  "name": "Wimex Trend Classic, Plantekasse, 1182x482x360 mm, gyldenbrun",
-  "prices": {
-   "silvan": 1099.0,
-   "fog": 1408.0
-  },
-  "min": 1099.0,
-  "max": 1408.0,
-  "spread_pct": 28.1,
-  "match": "exact"
- },
- {
   "key": "ean:6949509243119",
   "name": "Bosch PRO Stainless Steel HSS-Co-spiralbor, 5x52x86 mm",
   "prices": {
@@ -56293,18 +56207,6 @@
   },
   "min": 102.0,
   "max": 129.95,
-  "spread_pct": 27.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5712508010652",
-  "name": "Wimex Trend Classic, Læhegn, 1893x1400 mm, gyldenbrun",
-  "prices": {
-   "silvan": 1875.0,
-   "fog": 2388.0
-  },
-  "min": 1875.0,
-  "max": 2388.0,
   "spread_pct": 27.4,
   "match": "exact"
  },
@@ -57344,18 +57246,6 @@
   },
   "min": 874.95,
   "max": 1108.0,
-  "spread_pct": 26.6,
-  "match": "exact"
- },
- {
-  "key": "ean:5712508016838",
-  "name": "Wimex Fur Royal, Terrassebræt, 25x140x4800 mm, granit",
-  "prices": {
-   "silvan": 379.0,
-   "fog": 479.75
-  },
-  "min": 379.0,
-  "max": 479.75,
   "spread_pct": 26.6,
   "match": "exact"
  },
@@ -58811,8 +58701,33 @@
   "match": "exact"
  },
  {
+  "key": "ean:5712508011468",
+  "name": "Wimex, Hylde t/hegn, 660x1455 mm",
+  "prices": {
+   "silvan": 1315.0,
+   "fog": 1648.0
+  },
+  "min": 1315.0,
+  "max": 1648.0,
+  "spread_pct": 25.3,
+  "match": "exact"
+ },
+ {
   "key": "ean:5712508002398",
   "name": "Wimex Preload, T-clips m/skrue, 100 stk., sort",
+  "prices": {
+   "silvan": 549.95,
+   "davidsen": 550.0,
+   "fog": 689.0
+  },
+  "min": 549.95,
+  "max": 689.0,
+  "spread_pct": 25.3,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5712508010997",
+  "name": "Wimex Preload, Bort-clips m/skrue, 100 stk., sort",
   "prices": {
    "silvan": 549.95,
    "davidsen": 550.0,
@@ -59275,6 +59190,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5712508011482",
+  "name": "Wimex, Espalier t/hegn, 570x995 mm",
+  "prices": {
+   "silvan": 1325.0,
+   "fog": 1658.0
+  },
+  "min": 1325.0,
+  "max": 1658.0,
+  "spread_pct": 25.1,
+  "match": "exact"
+ },
+ {
   "key": "ean:5712508010775",
   "name": "Wimex Trend Classic, Lamelhegn, 1893x1400 mm, gyldenbrun",
   "prices": {
@@ -59711,8 +59638,44 @@
   "match": "exact"
  },
  {
+  "key": "ean:5712508010652",
+  "name": "Wimex Trend Classic, Læhegn, 1893x1400 mm, gyldenbrun",
+  "prices": {
+   "silvan": 1911.0,
+   "fog": 2388.0
+  },
+  "min": 1911.0,
+  "max": 2388.0,
+  "spread_pct": 25.0,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5712508011499",
+  "name": "Wimex, Espalier t/hegn, 570x1455 mm",
+  "prices": {
+   "silvan": 1510.0,
+   "fog": 1888.0
+  },
+  "min": 1510.0,
+  "max": 1888.0,
+  "spread_pct": 25.0,
+  "match": "exact"
+ },
+ {
   "key": "ean:5712508009212",
   "name": "Wimex Fur Royal, Terrassebræt, 25x140x4800 mm, gråbrun",
+  "prices": {
+   "silvan": 383.95,
+   "fog": 479.75
+  },
+  "min": 383.95,
+  "max": 479.75,
+  "spread_pct": 25.0,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5712508016838",
+  "name": "Wimex Fur Royal, Terrassebræt, 25x140x4800 mm, granit",
   "prices": {
    "silvan": 383.95,
    "fog": 479.75
@@ -59988,6 +59951,19 @@
   },
   "min": 52.8,
   "max": 65.95,
+  "spread_pct": 24.9,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5712508010638",
+  "name": "Wimex Trend Classic, Læhegn, 1893x900 mm, gyldenbrun",
+  "prices": {
+   "silvan": 1391.0,
+   "davidsen": 1391.0,
+   "fog": 1738.0
+  },
+  "min": 1391.0,
+  "max": 1738.0,
   "spread_pct": 24.9,
   "match": "exact"
  },
@@ -60776,6 +60752,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5712508011505",
+  "name": "Wimex, Espalier t/hegn, 570x1855 mm",
+  "prices": {
+   "silvan": 1610.0,
+   "fog": 2008.0
+  },
+  "min": 1610.0,
+  "max": 2008.0,
+  "spread_pct": 24.7,
+  "match": "exact"
+ },
+ {
   "key": "borup vinduesskraber 35 cm|dim:35cm",
   "name": "BORUP VINDUESSKRABER 35 CM",
   "prices": {
@@ -61353,6 +61341,18 @@
   },
   "min": 329.0,
   "max": 409.0,
+  "spread_pct": 24.3,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4058546376611",
+  "name": "Milwaukee M12 Fuel™ FPD2-0 slagboremaskine solo",
+  "prices": {
+   "davidsen": 1245.0,
+   "fog": 1548.0
+  },
+  "min": 1245.0,
+  "max": 1548.0,
   "spread_pct": 24.3,
   "match": "exact"
  }
