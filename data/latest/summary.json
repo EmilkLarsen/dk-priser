@@ -1,69 +1,65 @@
 {
  "date": "2026-11-19",
- "total_rows": 280687,
+ "total_rows": 280548,
  "chains": {
-  "xlbyg": {
-   "products": 34524,
-   "price_changes": 305,
-   "suspicious_changes": 0,
-   "expired": 48,
-   "seconds": 7450.4
-  },
-  "skousen": {
-   "products": 617,
+  "davidsen": {
+   "products": 22549,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 18138.1
+   "expired": 1,
+   "seconds": 8973.8
   },
   "power": {
-   "products": 29278,
+   "products": 29267,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 67,
-   "seconds": 13326.1
+   "expired": 32,
+   "seconds": 13428.1
   },
-  "fog": {
-   "products": 30350,
+  "xlbyg": {
+   "products": 23106,
+   "price_changes": 211,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 18001.4
+  },
+  "bauhaus": {
+   "products": 22835,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 12,
-   "seconds": 13894.8
+   "seconds": 13578.1
   },
-  "stark": {
-   "products": 85415,
+  "haraldnyborg": {
+   "products": 11734,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 142,
+   "seconds": 5325.5
+  },
+  "silvan": {
+   "products": 26307,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 34.4
+   "seconds": 18001.5
   },
-  "bauhaus": {
-   "products": 22846,
+  "fog": {
+   "products": 30360,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 9,
-   "seconds": 13954.4
+   "expired": 5,
+   "seconds": 13844.3
   },
-  "davidsen": {
-   "products": 22543,
+  "skousen": {
+   "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  "stark": {
+   "products": 85417,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 43,
-   "seconds": 9027.6
-  },
-  "silvan": {
-   "products": 40800,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 9,
-   "seconds": 8435.3
-  },
-  "haraldnyborg": {
-   "products": 11726,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 48,
-   "seconds": 5348.5
+   "expired": 0,
+   "seconds": 18008.1
   }
  }
 }
