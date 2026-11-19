@@ -2,19 +2,12 @@
  "date": "2026-11-19",
  "total_rows": 280213,
  "chains": {
-  "xlbyg": {
-   "products": 34511,
-   "price_changes": 305,
-   "suspicious_changes": 0,
-   "expired": 39,
-   "seconds": 8159.1
-  },
-  "skousen": {
-   "products": 796,
+  "davidsen": {
+   "products": 22549,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 18030.8
+   "expired": 1,
+   "seconds": 8973.8
   },
   "power": {
    "products": 29267,
@@ -23,19 +16,12 @@
    "expired": 32,
    "seconds": 13428.1
   },
-  "fog": {
-   "products": 30360,
-   "price_changes": 0,
+  "xlbyg": {
+   "products": 34511,
+   "price_changes": 305,
    "suspicious_changes": 0,
-   "expired": 5,
-   "seconds": 13844.3
-  },
-  "stark": {
-   "products": 85417,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 6.6
+   "expired": 39,
+   "seconds": 8159.1
   },
   "bauhaus": {
    "products": 22835,
@@ -44,12 +30,12 @@
    "expired": 12,
    "seconds": 13578.1
   },
-  "davidsen": {
-   "products": 22549,
+  "haraldnyborg": {
+   "products": 11734,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 1,
-   "seconds": 8973.8
+   "expired": 142,
+   "seconds": 5325.5
   },
   "silvan": {
    "products": 40804,
@@ -58,12 +44,22 @@
    "expired": 308,
    "seconds": 8049.4
   },
-  "haraldnyborg": {
-   "products": 11734,
+  "fog": {
+   "products": 30360,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 142,
-   "seconds": 5325.5
+   "expired": 5,
+   "seconds": 13844.3
+  },
+  "skousen": {
+   "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  "stark": {
+   "products": 85417,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 7.4
   }
  }
 }
