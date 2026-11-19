@@ -4377,6 +4377,19 @@
   "match": "exact"
  },
  {
+  "key": "ean:4003318838545",
+  "name": "ABUS, Nøgleboks med kode og LED-lys, 787 LED",
+  "prices": {
+   "silvan": 279.0,
+   "davidsen": 445.0,
+   "fog": 769.0
+  },
+  "min": 279.0,
+  "max": 769.0,
+  "spread_pct": 175.6,
+  "match": "exact"
+ },
+ {
   "key": "ean:5704314100979",
   "name": "Jasa, Dørgreb, husmandsgreb, messing/porcelæn, Ø20 mm",
   "prices": {
@@ -5320,19 +5333,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:4003318838545",
-  "name": "ABUS, Nøgleboks med kode og LED-lys, 787 LED",
-  "prices": {
-   "silvan": 298.95,
-   "davidsen": 445.0,
-   "fog": 769.0
-  },
-  "min": 298.95,
-  "max": 769.0,
-  "spread_pct": 157.2,
-  "match": "exact"
- },
- {
   "key": "ean:7317844118017",
   "name": "Hultafors vaterpas sæt HV 60/120/200",
   "prices": {
@@ -5342,18 +5342,6 @@
   "min": 1150.0,
   "max": 2958.0,
   "spread_pct": 157.2,
-  "match": "exact"
- },
- {
-  "key": "ean:5703873227967",
-  "name": "Stikdåse, 1,5 m ledning, 6 udtag, m/jord",
-  "prices": {
-   "silvan": 35.0,
-   "davidsen": 90.0
-  },
-  "min": 35.0,
-  "max": 90.0,
-  "spread_pct": 157.1,
   "match": "exact"
  },
  {
@@ -5900,18 +5888,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5708615004318",
-  "name": "Icopal 4A, Sternkapsel, 23 mm, alu",
-  "prices": {
-   "silvan": 24.0,
-   "davidsen": 60.0
-  },
-  "min": 24.0,
-  "max": 60.0,
-  "spread_pct": 150.0,
-  "match": "exact"
- },
- {
   "key": "ean:5705568024110",
   "name": "Brynje imprægneringsspray 200 ml sort",
   "prices": {
@@ -6094,6 +6070,18 @@
   "min": 99.95,
   "max": 249.0,
   "spread_pct": 149.1,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4003318488313",
+  "name": "ABUS, Hængelås m/kodelås, 145/40, rød, 41,5 mm",
+  "prices": {
+   "silvan": 71.95,
+   "fog": 179.0
+  },
+  "min": 71.95,
+  "max": 179.0,
+  "spread_pct": 148.8,
   "match": "exact"
  },
  {
@@ -7883,6 +7871,18 @@
   "min": 825.0,
   "max": 1908.0,
   "spread_pct": 131.3,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5703873227967",
+  "name": "Stikdåse, 1,5 m ledning, 6 udtag, m/jord",
+  "prices": {
+   "silvan": 38.95,
+   "davidsen": 90.0
+  },
+  "min": 38.95,
+  "max": 90.0,
+  "spread_pct": 131.1,
   "match": "exact"
  },
  {
@@ -11374,6 +11374,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:4003318822315",
+  "name": "ABUS, Låsespray, PS88, 125 ml",
+  "prices": {
+   "silvan": 80.0,
+   "fog": 169.0
+  },
+  "min": 80.0,
+  "max": 169.0,
+  "spread_pct": 111.2,
+  "match": "exact"
+ },
+ {
   "key": "ean:5702751122417",
   "name": "Plastmo Plast, Tudstykke, 11, grafit",
   "prices": {
@@ -13533,18 +13545,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:4003318822315",
-  "name": "ABUS, Låsespray, PS88, 125 ml",
-  "prices": {
-   "silvan": 83.0,
-   "fog": 169.0
-  },
-  "min": 83.0,
-  "max": 169.0,
-  "spread_pct": 103.6,
-  "match": "exact"
- },
- {
   "key": "ean:7392174503009",
   "name": "Sika-1 vandtætning 1 kg",
   "prices": {
@@ -14405,6 +14405,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5708615004318",
+  "name": "Icopal 4A, Sternkapsel, 23 mm, alu",
+  "prices": {
+   "silvan": 29.95,
+   "davidsen": 60.0
+  },
+  "min": 29.95,
+  "max": 60.0,
+  "spread_pct": 100.3,
+  "match": "exact"
+ },
+ {
   "key": "ean:5704766086074",
   "name": "E-line, Indmuringsdåse, 1½ modul, grøn",
   "prices": {
@@ -15101,18 +15113,6 @@
   },
   "min": 133.0,
   "max": 265.0,
-  "spread_pct": 99.2,
-  "match": "exact"
- },
- {
-  "key": "ean:4003318564130",
-  "name": "ABUS, Hængelås m/nøgle, 64 Ti/40, 2 stk., 40 mm",
-  "prices": {
-   "silvan": 114.95,
-   "fog": 229.0
-  },
-  "min": 114.95,
-  "max": 229.0,
   "spread_pct": 99.2,
   "match": "exact"
  },
@@ -18414,18 +18414,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:4006825410136",
-  "name": "Einhell, Koblingssæt til kompressor, Ø6 mm, 4 dele",
-  "prices": {
-   "silvan": 99.0,
-   "davidsen": 185.0
-  },
-  "min": 99.0,
-  "max": 185.0,
-  "spread_pct": 86.9,
-  "match": "exact"
- },
- {
   "key": "fermacell fugespartel|kg:5.0",
   "name": "FERMACELL 5 KG FUGESPARTEL",
   "prices": {
@@ -19790,18 +19778,6 @@
   },
   "min": 43.95,
   "max": 80.0,
-  "spread_pct": 82.0,
-  "match": "exact"
- },
- {
-  "key": "ean:4006825411706",
-  "name": "Einhell, Spændebånd til trykluftslanger, 5 stk.",
-  "prices": {
-   "silvan": 54.95,
-   "davidsen": 100.0
-  },
-  "min": 54.95,
-  "max": 100.0,
   "spread_pct": 82.0,
   "match": "exact"
  },
@@ -21637,18 +21613,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:4006825511475",
-  "name": "Einhell, Oppumpningssæt til kompressor, 10 dele",
-  "prices": {
-   "silvan": 81.95,
-   "davidsen": 145.0
-  },
-  "min": 81.95,
-  "max": 145.0,
-  "spread_pct": 76.9,
-  "match": "exact"
- },
- {
   "key": "ean:5701984172992",
   "name": "PN, Møbelhjul m. plade og bremse, Ø50 mm, 66 mm",
   "prices": {
@@ -23320,6 +23284,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:4003318564130",
+  "name": "ABUS, Hængelås m/nøgle, 64 Ti/40, 2 stk., 40 mm",
+  "prices": {
+   "silvan": 132.95,
+   "fog": 229.0
+  },
+  "min": 132.95,
+  "max": 229.0,
+  "spread_pct": 72.2,
+  "match": "exact"
+ },
+ {
   "key": "ean:5709636412168",
   "name": "Knauf båndstål 0,56x80x885 mm",
   "prices": {
@@ -24927,6 +24903,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:4006825511475",
+  "name": "Einhell, Oppumpningssæt til kompressor, 10 dele",
+  "prices": {
+   "silvan": 85.95,
+   "davidsen": 145.0
+  },
+  "min": 85.95,
+  "max": 145.0,
+  "spread_pct": 68.7,
+  "match": "exact"
+ },
+ {
   "key": "ean:5708637004518",
   "name": "Skalflex, Beton-Binder, 5 L",
   "prices": {
@@ -25745,6 +25733,18 @@
   },
   "min": 29.95,
   "max": 49.95,
+  "spread_pct": 66.8,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4006825411706",
+  "name": "Einhell, Spændebånd til trykluftslanger, 5 stk.",
+  "prices": {
+   "silvan": 59.95,
+   "davidsen": 100.0
+  },
+  "min": 59.95,
+  "max": 100.0,
   "spread_pct": 66.8,
   "match": "exact"
  },
@@ -26808,18 +26808,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5708705010243",
-  "name": "Junckers, Grundlak, hvid, 2,5 L",
-  "prices": {
-   "silvan": 550.95,
-   "fog": 909.0
-  },
-  "min": 550.95,
-  "max": 909.0,
-  "spread_pct": 65.0,
-  "match": "exact"
- },
- {
   "key": "ean:4045921014022",
   "name": "GeoFennel GEO6X SP grøn multilinje-laser kit",
   "prices": {
@@ -27102,18 +27090,6 @@
   },
   "min": 175.95,
   "max": 289.0,
-  "spread_pct": 64.3,
-  "match": "exact"
- },
- {
-  "key": "ean:4003318488313",
-  "name": "ABUS, Hængelås m/kodelås, 145/40, rød, 41,5 mm",
-  "prices": {
-   "silvan": 108.95,
-   "fog": 179.0
-  },
-  "min": 108.95,
-  "max": 179.0,
   "spread_pct": 64.3,
   "match": "exact"
  },
@@ -33302,18 +33278,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5708705549231",
-  "name": "Junckers, Grundlak, klar, 2,5 L",
-  "prices": {
-   "silvan": 366.95,
-   "fog": 559.0
-  },
-  "min": 366.95,
-  "max": 559.0,
-  "spread_pct": 52.3,
-  "match": "exact"
- },
- {
   "key": "ean:7311518012403",
   "name": "Bahco, Kløfthammer, 450 g",
   "prices": {
@@ -33447,18 +33411,6 @@
   },
   "min": 199.0,
   "max": 302.95,
-  "spread_pct": 52.2,
-  "match": "exact"
- },
- {
-  "key": "ean:5708705542744",
-  "name": "Junckers, Gulvolie, valnød, 2,5 L",
-  "prices": {
-   "silvan": 478.95,
-   "fog": 729.0
-  },
-  "min": 478.95,
-  "max": 729.0,
   "spread_pct": 52.2,
   "match": "exact"
  },
@@ -36405,18 +36357,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5710122904715",
-  "name": "Milano, Underskab inkl. vask, 120 cm, eg",
-  "prices": {
-   "silvan": 1684.0,
-   "davidsen": 2499.0
-  },
-  "min": 1684.0,
-  "max": 2499.0,
-  "spread_pct": 48.4,
-  "match": "exact"
- },
- {
   "key": "ean:5703302168090",
   "name": "LK Fuga afbryderskrue 40x2,7 mm",
   "prices": {
@@ -36513,6 +36453,18 @@
   },
   "min": 1592.0,
   "max": 2358.0,
+  "spread_pct": 48.1,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4006825410136",
+  "name": "Einhell, Koblingssæt til kompressor, Ø6 mm, 4 dele",
+  "prices": {
+   "silvan": 124.95,
+   "davidsen": 185.0
+  },
+  "min": 124.95,
+  "max": 185.0,
   "spread_pct": 48.1,
   "match": "exact"
  },
@@ -37817,18 +37769,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5707310100059",
-  "name": "Sirius, Fjernbetjening Colour Change",
-  "prices": {
-   "silvan": 89.0,
-   "fog": 61.0
-  },
-  "min": 61.0,
-  "max": 89.0,
-  "spread_pct": 45.9,
-  "match": "exact"
- },
- {
   "key": "ean:5715492289349",
   "name": "Nilfisk Terrace Cleaner 50 træterrassevasker ",
   "prices": {
@@ -38870,6 +38810,18 @@
   },
   "min": 89.95,
   "max": 129.95,
+  "spread_pct": 44.5,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5708705010243",
+  "name": "Junckers, Grundlak, hvid, 2,5 L",
+  "prices": {
+   "silvan": 628.95,
+   "fog": 909.0
+  },
+  "min": 628.95,
+  "max": 909.0,
   "spread_pct": 44.5,
   "match": "exact"
  },
@@ -40303,18 +40255,6 @@
   },
   "min": 21.0,
   "max": 29.95,
-  "spread_pct": 42.6,
-  "match": "exact"
- },
- {
-  "key": "ean:5708705012148",
-  "name": "Junckers, Rustik Bordpladeolie, klar, 2,5 L",
-  "prices": {
-   "silvan": 398.95,
-   "fog": 569.0
-  },
-  "min": 398.95,
-  "max": 569.0,
   "spread_pct": 42.6,
   "match": "exact"
  },
@@ -43436,6 +43376,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5710122904715",
+  "name": "Milano, Underskab inkl. vask, 120 cm, eg",
+  "prices": {
+   "silvan": 1799.0,
+   "davidsen": 2499.0
+  },
+  "min": 1799.0,
+  "max": 2499.0,
+  "spread_pct": 38.9,
+  "match": "exact"
+ },
+ {
   "key": "ean:5707883009865",
   "name": "Ecostyle MyreFri, Myrelokkedåser, 2 stk.",
   "prices": {
@@ -43753,30 +43705,6 @@
   },
   "min": 7.95,
   "max": 11.0,
-  "spread_pct": 38.4,
-  "match": "exact"
- },
- {
-  "key": "ean:3250790102560",
-  "name": "Decosa, Loftroset, Eleonora, Ø410 mm",
-  "prices": {
-   "silvan": 158.95,
-   "davidsen": 220.0
-  },
-  "min": 158.95,
-  "max": 220.0,
-  "spread_pct": 38.4,
-  "match": "exact"
- },
- {
-  "key": "ean:5712508012274",
-  "name": "Wimex Livø Prime, Terrassebræt, 22x140x3600 mm, umber",
-  "prices": {
-   "silvan": 220.95,
-   "fog": 305.82
-  },
-  "min": 220.95,
-  "max": 305.82,
   "spread_pct": 38.4,
   "match": "exact"
  },
@@ -51059,18 +50987,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:4007155136406",
-  "name": "Decosa, Vægpynt, Fleurie, Ø160 cm, 2 stk.",
-  "prices": {
-   "silvan": 79.95,
-   "davidsen": 105.0
-  },
-  "min": 79.95,
-  "max": 105.0,
-  "spread_pct": 31.3,
-  "match": "exact"
- },
- {
   "key": "anza elite rundpensel 20 mm|dim:20mm",
   "name": "ANZA ELITE RUNDPENSEL 20 MM",
   "prices": {
@@ -51230,18 +51146,6 @@
  {
   "key": "ean:7391447046878",
   "name": "Beslagsboden, Husnummer 6, sort, 150 mm",
-  "prices": {
-   "silvan": 105.95,
-   "fog": 139.0
-  },
-  "min": 105.95,
-  "max": 139.0,
-  "spread_pct": 31.2,
-  "match": "exact"
- },
- {
-  "key": "ean:7391447046892",
-  "name": "Beslagsboden, Husnummer 8, sort, 150 mm",
   "prices": {
    "silvan": 105.95,
    "fog": 139.0
@@ -52037,6 +51941,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5712508010218",
+  "name": "Wimex Glyngøre Royal, Komposithegn, 1893x900 mm, sort",
+  "prices": {
+   "silvan": 1453.0,
+   "fog": 1898.0
+  },
+  "min": 1453.0,
+  "max": 1898.0,
+  "spread_pct": 30.6,
+  "match": "exact"
+ },
+ {
   "key": "ean:5712508011246",
   "name": "Wimex Trend Classic, Lamelhegn, 1893x1800 mm, gyldenbrun",
   "prices": {
@@ -52411,6 +52327,18 @@
   },
   "min": 3567.0,
   "max": 4648.0,
+  "spread_pct": 30.3,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5708705549231",
+  "name": "Junckers, Grundlak, klar, 2,5 L",
+  "prices": {
+   "silvan": 428.95,
+   "fog": 559.0
+  },
+  "min": 428.95,
+  "max": 559.0,
   "spread_pct": 30.3,
   "match": "exact"
  },
@@ -56246,18 +56174,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:5712508010713",
-  "name": "Wimex Trend Classic, Lamelhegn, 1893x1400 mm, gyldenbrun",
-  "prices": {
-   "silvan": 2089.0,
-   "fog": 2658.0
-  },
-  "min": 2089.0,
-  "max": 2658.0,
-  "spread_pct": 27.2,
-  "match": "exact"
- },
- {
   "key": "ean:4892210202277",
   "name": "Ryobi, Fugepistol, ekskl. batteri, RCG18-0, 18 V",
   "prices": {
@@ -56593,18 +56509,6 @@
   },
   "min": 260.0,
   "max": 330.0,
-  "spread_pct": 26.9,
-  "match": "exact"
- },
- {
-  "key": "ean:3250790102607",
-  "name": "Decosa, Loftroset, Emilia, Ø480 mm",
-  "prices": {
-   "silvan": 204.95,
-   "davidsen": 260.0
-  },
-  "min": 204.95,
-  "max": 260.0,
   "spread_pct": 26.9,
   "match": "exact"
  },
@@ -58309,18 +58213,6 @@
   "match": "exact"
  },
  {
-  "key": "ean:4007155160043",
-  "name": "Decosa, Loftroset, Elena, Ø625 mm",
-  "prices": {
-   "silvan": 294.95,
-   "davidsen": 370.0
-  },
-  "min": 294.95,
-  "max": 370.0,
-  "spread_pct": 25.4,
-  "match": "exact"
- },
- {
   "key": "ean:5708614905357",
   "name": "Cozze, Udebord, sort",
   "prices": {
@@ -58760,6 +58652,18 @@
   "match": "exact"
  },
  {
+  "key": "ean:5707310458013",
+  "name": "Sirius Tech-Line, Lyskæde startsæt, 4,5 m, 45 LED",
+  "prices": {
+   "silvan": 159.0,
+   "fog": 199.0
+  },
+  "min": 159.0,
+  "max": 199.0,
+  "spread_pct": 25.2,
+  "match": "exact"
+ },
+ {
   "key": "ean:6411501111111",
   "name": "Fiskars beskærersaks solid stor ss P341",
   "prices": {
@@ -58998,18 +58902,6 @@
   },
   "min": 1365.0,
   "max": 1708.0,
-  "spread_pct": 25.1,
-  "match": "exact"
- },
- {
-  "key": "ean:5712508011222",
-  "name": "Wimex Trend Classic, Lamelhegn, 1893x1800 mm, gyldenbrun",
-  "prices": {
-   "silvan": 2685.0,
-   "fog": 3358.0
-  },
-  "min": 2685.0,
-  "max": 3358.0,
   "spread_pct": 25.1,
   "match": "exact"
  },
@@ -59519,6 +59411,18 @@
   },
   "min": 79.95,
   "max": 99.95,
+  "spread_pct": 25.0,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5707310458051",
+  "name": "Sirius Tech-Line, Lyskæde, forlængersæt, 30 m, 300 LED",
+  "prices": {
+   "silvan": 639.0,
+   "fog": 799.0
+  },
+  "min": 639.0,
+  "max": 799.0,
   "spread_pct": 25.0,
   "match": "exact"
  },
@@ -60368,6 +60272,18 @@
   },
   "min": 24.0,
   "max": 29.95,
+  "spread_pct": 24.8,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5712508010713",
+  "name": "Wimex Trend Classic, Lamelhegn, 1893x1400 mm, gyldenbrun",
+  "prices": {
+   "silvan": 2130.0,
+   "fog": 2658.0
+  },
+  "min": 2130.0,
+  "max": 2658.0,
   "spread_pct": 24.8,
   "match": "exact"
  },
@@ -61350,6 +61266,91 @@
   "min": 120.0,
   "max": 149.0,
   "spread_pct": 24.2,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5708525033156",
+  "name": "Wavin P-vandlås - 110 mm",
+  "prices": {
+   "davidsen": 620.0,
+   "fog": 499.0
+  },
+  "min": 499.0,
+  "max": 620.0,
+  "spread_pct": 24.2,
+  "match": "exact"
+ },
+ {
+  "key": "ean:5708055023665",
+  "name": "Trip Trap, Terrasseolie Eksklusiv, sort, 5 L",
+  "prices": {
+   "silvan": 399.0,
+   "davidsen": 495.0
+  },
+  "min": 399.0,
+  "max": 495.0,
+  "spread_pct": 24.1,
+  "match": "exact"
+ },
+ {
+  "key": "ean:9003414650404",
+  "name": "Biohort 130, Hyndeboks, mørkegrå",
+  "prices": {
+   "silvan": 2818.0,
+   "fog": 3498.0
+  },
+  "min": 2818.0,
+  "max": 3498.0,
+  "spread_pct": 24.1,
+  "match": "exact"
+ },
+ {
+  "key": "ean:9003414480612",
+  "name": "Biohort AvantGarde, Gulvpanel, 7,9 m²",
+  "prices": {
+   "silvan": 6845.0,
+   "fog": 8498.0
+  },
+  "min": 6845.0,
+  "max": 8498.0,
+  "spread_pct": 24.1,
+  "match": "exact"
+ },
+ {
+  "key": "ean:4042448101662",
+  "name": "Tesa, Skridsikker tape, Extra Resistant, 25 mm x 5 m",
+  "prices": {
+   "silvan": 179.95,
+   "davidsen": 145.0,
+   "fog": 149.0
+  },
+  "min": 145.0,
+  "max": 179.95,
+  "spread_pct": 24.1,
+  "match": "exact"
+ },
+ {
+  "key": "ean:9003414650251",
+  "name": "Biohort, Højbed, mørkegrå, L-formet",
+  "prices": {
+   "silvan": 6845.0,
+   "fog": 8498.0
+  },
+  "min": 6845.0,
+  "max": 8498.0,
+  "spread_pct": 24.1,
+  "match": "exact"
+ },
+ {
+  "key": "ean:9003414680258",
+  "name": "Biohort, Højbed, kvartsgrå, L-formet",
+  "prices": {
+   "silvan": 6845.0,
+   "fog": 8498.0
+  },
+  "min": 6845.0,
+  "max": 8498.0,
+  "spread_pct": 24.1,
   "match": "exact"
  }
 ]
