@@ -1,41 +1,55 @@
 {
- "date": "2026-11-19",
- "total_rows": 280213,
+ "date": "2026-11-20",
+ "total_rows": 280119,
  "chains": {
-  "davidsen": {
-   "products": 22549,
+  "xlbyg": {
+   "products": 24947,
+   "price_changes": 237,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 18001.8
+  },
+  "skousen": {
+   "products": 842,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 18058.8
+  },
+  "power": {
+   "products": 29269,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 157,
+   "seconds": 13279.6
+  },
+  "fog": {
+   "products": 30362,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 9,
+   "seconds": 13828.5
+  },
+  "stark": {
+   "products": 85419,
+   "price_changes": 0,
+   "suspicious_changes": 0,
+   "expired": 0,
+   "seconds": 18003.3
+  },
+  "bauhaus": {
+   "products": 22836,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 1,
-   "seconds": 8973.8
+   "seconds": 12600.1
   },
-  "power": {
-   "products": 29267,
+  "davidsen": {
+   "products": 22541,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 32,
-   "seconds": 13428.1
-  },
-  "xlbyg": {
-   "products": 34511,
-   "price_changes": 305,
-   "suspicious_changes": 0,
-   "expired": 39,
-   "seconds": 8159.1
-  },
-  "bauhaus": {
-   "products": 22835,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 12,
-   "seconds": 13578.1
-  },
-  "haraldnyborg": {
-   "products": 11734,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 142,
-   "seconds": 5325.5
+   "expired": 6,
+   "seconds": 9177.2
   },
   "silvan": {
    "products": 40804,
@@ -44,22 +58,12 @@
    "expired": 308,
    "seconds": 8049.4
   },
-  "fog": {
-   "products": 30360,
+  "haraldnyborg": {
+   "products": 11711,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 5,
-   "seconds": 13844.3
-  },
-  "skousen": {
-   "error": "HTTPError: HTTP Error 403: Forbidden"
-  },
-  "stark": {
-   "products": 85417,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 7.4
+   "expired": 11,
+   "seconds": 5358.2
   }
  }
 }
