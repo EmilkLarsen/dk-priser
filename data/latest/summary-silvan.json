@@ -1,12 +1,8 @@
 {
- "date": "2026-11-19",
+ "date": "2026-11-20",
  "chains": {
   "silvan": {
-   "products": 40804,
-   "price_changes": 0,
-   "suspicious_changes": 0,
-   "expired": 308,
-   "seconds": 8049.4
+   "error": "HTTPError: HTTP Error 403: Forbidden"
   }
  }
 }
