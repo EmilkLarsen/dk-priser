@@ -1,12 +1,12 @@
 {
- "date": "2026-11-19",
+ "date": "2026-11-20",
  "chains": {
   "davidsen": {
-   "products": 22549,
+   "products": 22541,
    "price_changes": 0,
    "suspicious_changes": 0,
-   "expired": 1,
-   "seconds": 8973.8
+   "expired": 6,
+   "seconds": 9177.2
   }
  }
 }
