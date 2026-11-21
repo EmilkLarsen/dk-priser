@@ -1,6 +1,6 @@
 {
  "date": "2026-11-21",
- "total_rows": 280000,
+ "total_rows": 279995,
  "chains": {
   "power": {
    "products": 29288,
@@ -24,7 +24,7 @@
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18002.8
+   "seconds": 4.8
   },
   "bauhaus": {
    "products": 22841,
@@ -34,11 +34,11 @@
    "seconds": 12011.9
   },
   "xlbyg": {
-   "products": 25294,
-   "price_changes": 237,
+   "products": 34500,
+   "price_changes": 305,
    "suspicious_changes": 0,
-   "expired": 0,
-   "seconds": 18001.6
+   "expired": 5,
+   "seconds": 6627.9
   },
   "haraldnyborg": {
    "products": 11709,
