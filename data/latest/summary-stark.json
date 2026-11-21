@@ -1,12 +1,12 @@
 {
- "date": "2026-11-20",
+ "date": "2026-11-21",
  "chains": {
   "stark": {
-   "products": 85419,
+   "products": 85421,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 5.1
+   "seconds": 18002.8
   }
  }
 }
